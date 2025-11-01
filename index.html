@@ -3,50 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TaskHub | Online Tools Suite</title>
-  <meta name="description" content="TaskHub — simple, fast, and free online tools like file converter, ZIP extractor, CSV cleaner, and more.">
+  <title>TaskHub | Free Online Tools</title>
+  <meta name="description" content="TaskHub — smart, simple, and fast tools for everyday tasks like file conversion, data cleaning, password generation, and more.">
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" type="image/png" href="./assets/taskhub-logo.png">
 </head>
 
 <body>
-  <!-- 🔝 Navigation -->
+  <!-- 🧭 Navbar -->
   <header class="navbar">
-    <a href="./index.html" class="brand">⚙️ TaskHub</a>
+    <div class="nav-left">
+      <img src="./assets/taskhub-logo.png" alt="TaskHub Logo" class="nav-logo">
+      <span class="brand">TaskHub</span>
+    </div>
     <nav>
-      <a href="./index.html">Home</a>
+      <a href="./index.html" class="active">Home</a>
       <a href="./privacy.html">Privacy</a>
       <a href="#">About</a>
     </nav>
   </header>
 
-  <!-- 🧾 Header Section -->
-  <section class="tool-header" style="padding-top:3rem;">
-    <img src="./assets/TaskHub.svg" alt="TaskHub Icon" class="tool-icon">
-    <div>
-      <h1>TaskHub</h1>
-      <p class="subtitle">Fast, simple, and useful tools — all in one place.</p>
+  <!-- 🌅 Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>All your essential tools in one place ⚙️</h1>
+      <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and for free.</p>
+      <div class="lang-btns">
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('fa')">فارسی</button>
+      </div>
     </div>
   </section>
 
-  <!-- 🌐 Language Switch -->
-  <div class="lang-btns" style="text-align:center;">
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('fa')">فارسی</button>
-  </div>
-
-  <!-- 🌎 English Section -->
+  <!-- 🧰 Tool Grid -->
   <main id="en">
+    <h2 class="section-title">Our Free Tools</h2>
     <div class="tool-grid">
-      <a href="./tools/file-converter.html" class="tool-card">🧾 File Converter</a>
-      <a href="./tools/zip-unzip.html" class="tool-card">📦 ZIP / Unzip</a>
-      <a href="./tools/csv-cleaner.html" class="tool-card">📊 CSV Cleaner</a>
-      <a href="./tools/password-generator.html" class="tool-card">🔐 Password Generator</a>
-      <a href="./tools/url-shortener.html" class="tool-card">🌐 URL Shortener</a>
+      <a href="./tools/file-converter.html" class="tool-card">
+        <img src="./assets/file-icon.svg" width="28"> File Converter
+      </a>
+      <a href="./tools/zip-unzip.html" class="tool-card">
+        <img src="./assets/zip-icon.svg" width="28"> ZIP / Unzip
+      </a>
+      <a href="./tools/csv-cleaner.html" class="tool-card">
+        <img src="./assets/csv-icon.svg" width="28"> CSV Cleaner
+      </a>
+      <a href="./tools/password-generator.html" class="tool-card">
+        <img src="./assets/password-icon.svg" width="28"> Password Generator
+      </a>
+      <a href="./tools/url-shortener.html" class="tool-card">
+        <img src="./assets/link-icon.svg" width="28"> URL Shortener
+      </a>
     </div>
   </main>
 
-  <!-- 🇮🇷 Farsi Section -->
+  <!-- 🇮🇷 Persian Section -->
   <main id="fa" dir="rtl" style="display:none;">
+    <h2 class="section-title">ابزارهای رایگان ما</h2>
     <div class="tool-grid">
       <a href="./tools/file-converter.html" class="tool-card">🧾 تبدیل فایل</a>
       <a href="./tools/zip-unzip.html" class="tool-card">📦 فشرده‌سازی / استخراج</a>
@@ -56,12 +69,14 @@
     </div>
   </main>
 
-  <!-- 🧾 Footer -->
+  <!-- 📢 Ad placeholder -->
+  <div class="ad-placeholder">Advertisement area</div>
+
+  <!-- 🧭 Footer -->
   <footer>
-    <p><a href="./privacy.html">Privacy Policy</a> | © 2025 TaskHub</p>
+    <p><a href="./privacy.html">Privacy Policy</a> | © 2025 TaskHub — Fast, Simple, Free Tools</p>
   </footer>
 
-  <!-- ⚙️ Script -->
   <script>
     function setLang(lang) {
       document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
