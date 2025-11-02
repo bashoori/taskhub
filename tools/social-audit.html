@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg"/>
 
+  <!-- ✅ Google AdSense Global Script (replace client id) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+
   <style>
     /* Page-specific polish */
     .tool-header { text-align:center; padding:3rem 1rem 1.5rem; background:linear-gradient(180deg,#f8fbff 0%,#f0f2f5 100%); border-bottom:1px solid #eaeaea; }
@@ -21,9 +25,11 @@
     }
     .card textarea{ min-height:120px; resize:vertical; }
     .hint{ font-size:.82rem; color:#777; margin-top:.25rem; }
-    .actions { text-align:center; margin:1rem auto 0; }
-    .actions button{ padding:.85rem 1.2rem; min-width:220px; font-weight:700; border:none; border-radius:10px; background:var(--primary); color:#fff; cursor:pointer; }
+    .actions { text-align:center; margin:1rem auto 0; display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; }
+    .actions button{ padding:.85rem 1.2rem; min-width:200px; font-weight:700; border:none; border-radius:10px; background:var(--primary); color:#fff; cursor:pointer; }
     .actions button:hover{ background:var(--primary-dark); }
+    .btn-secondary{ background:#fff; color:#333; border:1px solid #ddd; }
+    .btn-secondary:hover{ background:#f6f6f6; }
     .results{ max-width:900px; margin:1.2rem auto 2rem; display:grid; grid-template-columns:1fr; gap:1rem; }
     .kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
     .kpi{ background:#fff; border-radius:12px; padding:1rem 1.2rem; box-shadow:0 4px 12px rgba(0,0,0,.05); }
@@ -35,11 +41,10 @@
     .suggestions li{ margin:.25rem 0; }
     .meta{ font-size:.85rem; color:#666; }
     .pill{ display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#eef5ff; color:#0a58ca; font-size:.8rem; margin:.1rem .25rem 0 0; }
-    .btn-secondary{ background:#fff; color:#333; border:1px solid #ddd; }
-    .btn-secondary:hover{ background:#f6f6f6; }
-    .toolbar{ text-align:center; margin-top:.4rem; }
-    .toolbar button{ margin:.25rem .25rem; padding:.55rem .9rem; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer; }
+    .toolbar{ text-align:center; margin:.6rem 0 0; display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; }
+    .toolbar button{ padding:.6rem .9rem; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer; }
     .toolbar button:hover{ background:#f6f6f6; }
+    .ad-placeholder{ text-align:center; margin:1.2rem auto; max-width:900px; }
     @media (max-width:600px){ .actions button{ min-width:unset; width:100%; } }
   </style>
 </head>
@@ -63,6 +68,17 @@
     <h1 id="t_title">Social Media Audit Tool</h1>
     <p id="t_sub">Get a pro score and specific recommendations for your post & profile setup.</p>
   </section>
+
+  <!-- 🧱 AdSense: Below header -->
+  <div class="ad-placeholder">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1111111111"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
   <div class="lang-btns" style="text-align:center">
     <button onclick="setLang('en')" aria-label="English">English</button>
@@ -118,10 +134,8 @@
 
   <div class="actions">
     <button onclick="runAudit()" id="t_run">Run Audit</button>
-  </div>
-
-  <div class="toolbar">
     <button class="btn-secondary" onclick="window.print()" id="t_download">Download report (Print to PDF)</button>
+    <button class="btn-secondary" onclick="exportCSV()" id="t_export">Export CSV</button>
     <button class="btn-secondary" onclick="resetForm()" id="t_reset">Reset</button>
   </div>
 
@@ -155,6 +169,17 @@
     </div>
   </section>
 
+  <!-- 🧱 AdSense: Above footer -->
+  <div class="ad-placeholder">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="2222222222"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
   <!-- Footer -->
   <footer>
     <p><a href="../privacy.html">Privacy Policy</a> | © 2025 <strong>TaskHub</strong> — Built for simplicity & trust.</p>
@@ -184,6 +209,7 @@
         qualityHint: "Clear CTA + strong hook + consistent brand ↑ engagement.",
         run: "Run Audit",
         download: "Download report (Print to PDF)",
+        export: "Export CSV",
         reset: "Reset",
         engRate: "Engagement Rate",
         engMeta: "Target: 1%–5% for most niches",
@@ -193,7 +219,6 @@
         hashMeta: "Best: 8–15 relevant tags",
         suggestTitle: "Recommendations",
         disclaimer: "This score is heuristic. Always test & iterate for your niche.",
-        // suggestions fragments
         s_lowFollowers: "Consider collaborations to grow followers.",
         s_engLow: "Engagement is low — test hooks, stronger CTA, and carousels/Reels.",
         s_engGood: "Good engagement — keep consistency and experiment with timing.",
@@ -227,6 +252,7 @@
         qualityHint: "CTA واضح + هوک قوی + برند منسجم → تعامل بالاتر.",
         run: "اجرای ارزیابی",
         download: "دانلود گزارش (پرینت به PDF)",
+        export: "خروجی CSV",
         reset: "ریست",
         engRate: "نرخ تعامل",
         engMeta: "هدف: حدود ۱٪ تا ۵٪ در بیشتر نیچ‌ها",
@@ -274,6 +300,7 @@
       document.getElementById('t_qualityHint').textContent = t.qualityHint;
       document.getElementById('t_run').textContent = t.run;
       document.getElementById('t_download').textContent = t.download;
+      document.getElementById('t_export').textContent = t.export;
       document.getElementById('t_reset').textContent = t.reset;
       document.getElementById('t_engRate').textContent = t.engRate;
       document.getElementById('t_engMeta').textContent = t.engMeta;
@@ -285,13 +312,13 @@
       document.getElementById('t_disclaimer').textContent = t.disclaimer;
     }
 
-    // ===== Audit Logic =====
+    // ===== Helpers =====
     function countHashtags(str){
       if(!str) return 0;
-      // Split by space or comma, count tokens starting with #
       return str.split(/[\s,]+/).filter(x => x.trim().startsWith('#')).length;
     }
 
+    // ===== Audit Logic =====
     function runAudit(){
       const caption = document.getElementById('caption').value.trim();
       const hashtags = document.getElementById('hashtags').value.trim();
@@ -303,18 +330,14 @@
       const hook = document.getElementById('hook').value;
       const brand = document.getElementById('brand').value;
 
-      // Engagement rate
       let eng = 0;
       if(followers > 0) eng = ((likes + comments) / followers) * 100;
       const engRounded = Math.round(eng * 10) / 10;
 
-      // Caption stats
       const capLen = caption.length;
       const hashCount = countHashtags(hashtags);
 
-      // Scoring (0-100) heuristic
       let score = 0;
-      // Engagement weight (40)
       if(eng >= 1 && eng < 2) score += 22;
       else if(eng >= 2 && eng < 4) score += 30;
       else if(eng >= 4 && eng < 6) score += 36;
@@ -322,7 +345,6 @@
       else if(eng > 0.5) score += 14;
       else score += 8;
 
-      // Caption length weight (15)
       if((capLen >= 80 && capLen <= 220) || (capLen >= 200 && capLen <= 400)){
         score += 15;
       } else if(capLen >= 40 && capLen < 80){
@@ -333,32 +355,25 @@
         score += 4;
       }
 
-      // Hashtags weight (15)
       if(hashCount >= 8 && hashCount <= 15) score += 15;
       else if(hashCount >= 4 && hashCount < 8) score += 10;
       else if(hashCount > 15 && hashCount <= 25) score += 7;
       else score += 4;
 
-      // CTA weight (10)
-      score += (cta === 'yes') ? 10 : 3;
+      score += (cta === 'yes') ? 10 : 3;      // CTA
+      score += (hook === 'yes') ? 8 : 3;      // Hook
 
-      // Hook weight (8)
-      score += (hook === 'yes') ? 8 : 3;
-
-      // Brand consistency weight (12)
       if(brand === 'high') score += 12;
       else if(brand === 'medium') score += 8;
       else score += 4;
 
       score = Math.min(100, Math.round(score));
 
-      // Fill KPIs
       document.getElementById('engVal').textContent = (engRounded || 0) + '%';
       document.getElementById('capChars').textContent = capLen;
       document.getElementById('hashCount').textContent = hashCount;
       document.getElementById('score').textContent = score;
 
-      // Suggestions
       const t = TXT[LANG];
       const sug = [];
       if(followers < 2000) sug.push(t.s_lowFollowers);
@@ -390,6 +405,33 @@
       ['cta','hook','brand'].forEach(id => document.getElementById(id).selectedIndex = 0);
       document.getElementById('results').style.display = 'none';
       document.getElementById('suggestList').innerHTML = '';
+    }
+
+    // ===== Export CSV (client-side, no backend) =====
+    function exportCSV(){
+      const rows = [];
+      const get = id => document.getElementById(id);
+      rows.push(['Language', LANG]);
+      rows.push(['Followers', get('followers').value || 0]);
+      rows.push(['Likes', get('likes').value || 0]);
+      rows.push(['Comments', get('comments').value || 0]);
+      rows.push(['Posts per week', get('ppw').value || 0]);
+      rows.push(['CTA', get('cta').value]);
+      rows.push(['Hook', get('hook').value]);
+      rows.push(['Brand consistency', get('brand').value]);
+      rows.push(['Caption length', (get('caption').value || '').length]);
+      rows.push(['Hashtag count', (get('hashtags').value || '').split(/[\s,]+/).filter(x => x.trim().startsWith('#')).length]);
+      rows.push(['Engagement Rate (%)', (document.getElementById('engVal').textContent || '').replace('%','')]);
+      rows.push(['Score (/100)', document.getElementById('score').textContent || '']);
+
+      // Build CSV
+      const csv = rows.map(r => r.map(x => `"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'social_audit_report.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
     }
 
     // default language
