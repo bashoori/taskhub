@@ -92,18 +92,19 @@
     <h1>Contact Us</h1>
     <p>Have a question, suggestion, or business inquiry? Send us a message below — we’ll get back to you soon!</p>
 
-    <!-- ✅ Updated FormSubmit endpoint -->
-    <form id="contactForm" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+    <form id="contactForm" method="POST" action="https://formsubmit.co/contact@bitadigitalhub.com">
+      <!-- 🔒 Hidden fields for FormSubmit -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="New message from TaskHub contact form">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://bitadigitalhub.com/thankyou.html">
 
+      <!-- 🧍 Visible fields -->
       <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="e.g. Alex Johnson" required />
+      <input type="text" id="name" name="name" placeholder="e.g. Alex Johnson" required>
 
       <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="e.g. alex@email.com" required />
+      <input type="email" id="email" name="email" placeholder="e.g. alex@email.com" required>
 
       <label for="message">Message</label>
       <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
@@ -124,14 +125,33 @@
   </footer>
 
   <script>
-    // Simple UX message after submission (no backend)
     const form = document.getElementById("contactForm");
     const status = document.getElementById("status");
-    form.addEventListener("submit", () => {
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
       status.textContent = "⏳ Sending your message...";
-      setTimeout(() => {
-        status.textContent = "✅ Thank you! Your message has been sent successfully.";
-      }, 1500);
+      
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          // Show success briefly before redirect
+          status.textContent = "✅ Message sent successfully! Redirecting...";
+          setTimeout(() => {
+            window.location.href = "https://bitadigitalhub.com/thankyou.html";
+          }, 1200);
+        } else {
+          status.textContent = "❌ Something went wrong. Please try again later.";
+        }
+      } catch (error) {
+        status.textContent = "⚠️ Network error. Please try again later.";
+      }
     });
   </script>
 </body>
