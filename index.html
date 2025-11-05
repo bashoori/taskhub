@@ -31,78 +31,121 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-3215014361489762" crossorigin="anonymous"></script>
 
   <style>
-    /* === TOOL GRID === */
+    /* === HEADER CALENDAR FIX === */
+    header {
+      position: relative;
+    }
+    .today-widget-header {
+      position: absolute;
+      top: 50%;
+      right: 1.5rem;
+      transform: translateY(-50%);
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 9999px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.85rem;
+      color: #475569;
+      white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    @media (max-width: 768px) { .today-widget-header { display: none; } }
+
+    /* === TOOL CARDS (Light Grey Style) === */
     .tool-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.8rem;
-      margin: 2.5rem auto;
-      max-width: 1150px;
+      padding: 2.5rem;
+      max-width: 1100px;
+      margin: auto;
     }
-
     .tool-card {
-      display: block;
-      background: rgba(243,244,246,1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #f3f4f6;
       border: 1px solid #e5e7eb;
-      border-radius: 1.25rem;
-      padding: 1.7rem 1.5rem;
+      border-radius: 16px;
+      padding: 1.8rem 1.5rem;
       text-decoration: none;
       color: #1f2937;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      min-height: 160px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+      transition: all 0.25s ease;
+      height: 180px;
     }
-
     .tool-card:hover {
-      transform: translateY(-6px);
       background: #f9fafb;
+      transform: translateY(-5px);
       box-shadow: 0 6px 18px rgba(0,120,215,0.12);
     }
-
     .tool-title {
-      font-weight: 700;
       font-size: 1.15rem;
+      font-weight: 700;
       margin-bottom: 0.4rem;
       color: #111827;
     }
-
     .tool-desc {
-      font-size: 0.95rem;
       color: #475569;
+      font-size: 0.95rem;
       line-height: 1.5;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 1.9rem;
-      margin-top: 2.5rem;
-      color: #111;
-    }
-
-    @media (max-width: 900px) {
-      .tool-grid {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      }
-      .tool-card {
-        padding: 1.3rem;
-        min-height: 140px;
-      }
-      .tool-title { font-size: 1.05rem; }
-      .tool-desc { font-size: 0.85rem; }
-    }
-
-    /* Contact Section */
+    /* === CONTACT + FOOTER === */
     .contact-section {
-      max-width: 700px;
+      max-width: 720px;
       margin: 3rem auto;
       padding: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: left;
+      background: rgba(15,23,42,0.9);
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      color: #f1f5f9;
+    }
+    .contact-section h2 {
+      color: #a5b4fc;
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+    .contact-section p {
+      text-align: center;
+      color: #cbd5e1;
+      margin-bottom: 1.8rem;
+    }
+    .contact-section input,
+    .contact-section textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid rgba(148,163,184,0.3);
+      border-radius: 0.75rem;
+      background: rgba(30,41,59,0.6);
+      color: #f8fafc;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-section button {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      border: none;
+      color: #0f172a;
+      font-weight: 700;
+      padding: 0.9rem;
+      border-radius: 9999px;
+      cursor: pointer;
+    }
+    .contact-section button:hover {
+      box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+      transform: translateY(-2px);
     }
 
-    .contact-section[dir="rtl"] { text-align: right; }
+    footer {
+      background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(30,41,59,0.95));
+      border-top: 1px solid rgba(148,163,184,0.2);
+      padding: 2rem 1rem;
+      text-align: center;
+      color: #cbd5e1;
+    }
+    footer a { color: #a5b4fc; text-decoration: none; }
+    footer a:hover { color: #f0f9ff; }
+    footer strong { color: #f9fafb; }
   </style>
 </head>
 
@@ -128,7 +171,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>⚙️ All your Essential Tools in one place</h1>
-      <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and free.</p>
+      <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and for free.</p>
 
       <div class="typing-tagline">
         <span id="typing-text"></span><span class="cursor">|</span>
@@ -141,72 +184,39 @@
     </div>
   </section>
 
-  <!-- Ads -->
-  <div class="ad-placeholder">
-    <ins class="adsbygoogle" style="display:block; text-align:center; margin:1rem auto;"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="1111111111"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
   <!-- English Tools -->
   <main id="en">
     <h2 class="section-title">Our Free Tools</h2>
     <div class="tool-grid">
-      <a href="./tools/file-converter.html" class="tool-card">
-        <div class="tool-title">🧾 File Converter</div>
-        <div class="tool-desc">Convert documents, images, and videos instantly online.</div>
-      </a>
-      <a href="./tools/zip-unzip.html" class="tool-card">
-        <div class="tool-title">📦 ZIP / Unzip</div>
-        <div class="tool-desc">Compress or extract ZIP files securely in seconds.</div>
-      </a>
-      <a href="./tools/csv-cleaner.html" class="tool-card">
-        <div class="tool-title">📊 CSV Cleaner</div>
-        <div class="tool-desc">Clean, format, and validate messy CSV or Excel data.</div>
-      </a>
-      <a href="./tools/password-generator.html" class="tool-card">
-        <div class="tool-title">🔐 Password Generator</div>
-        <div class="tool-desc">Generate strong, secure passwords instantly.</div>
-      </a>
-      <a href="./tools/url-shortener.html" class="tool-card">
-        <div class="tool-title">🌐 URL Shortener</div>
-        <div class="tool-desc">Create short, trackable links for your campaigns.</div>
-      </a>
-      <a href="./tools/social-audit.html" class="tool-card">
-        <div class="tool-title">🧠 Social Media Audit</div>
-        <div class="tool-desc">Analyze engagement, caption quality, and hashtags.</div>
-      </a>
-      <a href="./tools/ai-bio-generator.html" class="tool-card">
-        <div class="tool-title">✨ AI Bio Generator</div>
-        <div class="tool-desc">Generate professional bios for Instagram, LinkedIn, and YouTube in seconds.</div>
-      </a>
-      <a href="./tools/ai-caption-generator.html" class="tool-card">
-        <div class="tool-title">💬 AI Caption & Hashtag Generator</div>
-        <div class="tool-desc">Create catchy captions and viral hashtags powered by AI.</div>
-      </a>
+      <a href="./tools/file-converter.html" class="tool-card"><div class="tool-title">🧾 File Converter</div><div class="tool-desc">Convert documents, images, and videos instantly online.</div></a>
+      <a href="./tools/zip-unzip.html" class="tool-card"><div class="tool-title">📦 ZIP / Unzip</div><div class="tool-desc">Compress or extract ZIP files securely in seconds.</div></a>
+      <a href="./tools/csv-cleaner.html" class="tool-card"><div class="tool-title">📊 CSV Cleaner</div><div class="tool-desc">Clean, format, and validate messy CSV or Excel data.</div></a>
+      <a href="./tools/password-generator.html" class="tool-card"><div class="tool-title">🔐 Password Generator</div><div class="tool-desc">Generate strong, secure passwords instantly.</div></a>
+      <a href="./tools/url-shortener.html" class="tool-card"><div class="tool-title">🌐 URL Shortener</div><div class="tool-desc">Create short, trackable links for your campaigns.</div></a>
+      <a href="./tools/social-audit.html" class="tool-card"><div class="tool-title">🧠 Social Media Audit</div><div class="tool-desc">Analyze engagement, caption quality, and hashtags.</div></a>
+      <a href="./tools/ai-bio-generator.html" class="tool-card"><div class="tool-title">✨ AI Bio Generator</div><div class="tool-desc">Generate professional bios for Instagram, LinkedIn, and YouTube in seconds.</div></a>
+      <a href="./tools/ai-caption-generator.html" class="tool-card"><div class="tool-title">💬 AI Caption & Hashtag Generator</div><div class="tool-desc">Create catchy captions and viral hashtags powered by AI.</div></a>
     </div>
   </main>
 
-  <!-- Persian Tools -->
-  <main id="fa" dir="rtl" style="display:none;">
-    <h2 class="section-title">ابزارهای رایگان ما</h2>
-    <div class="tool-grid">
-      <a href="./tools/file-converter.html" class="tool-card"><div class="tool-title">🧾 تبدیل فایل</div><div class="tool-desc">تبدیل سریع فایل‌های مختلف از جمله عکس، ویدیو و سند.</div></a>
-      <a href="./tools/zip-unzip.html" class="tool-card"><div class="tool-title">📦 فشرده‌سازی / استخراج</div><div class="tool-desc">ایجاد یا باز کردن فایل‌های ZIP به‌صورت آنلاین و امن.</div></a>
-      <a href="./tools/csv-cleaner.html" class="tool-card"><div class="tool-title">📊 پاکسازی داده‌ها</div><div class="tool-desc">تمیز و منظم کردن داده‌های CSV و اکسل در چند ثانیه.</div></a>
-      <a href="./tools/password-generator.html" class="tool-card"><div class="tool-title">🔐 ساخت رمز عبور</div><div class="tool-desc">ساخت رمزهای قوی و تصادفی برای امنیت بیشتر.</div></a>
-      <a href="./tools/url-shortener.html" class="tool-card"><div class="tool-title">🌐 کوتاه‌کننده لینک</div><div class="tool-desc">ساخت لینک‌های کوتاه و قابل ردیابی برای اشتراک آسان‌تر.</div></a>
-      <a href="./tools/social-audit-fa.html" class="tool-card"><div class="tool-title">🧠 ارزیابی سوشال‌مدیا</div><div class="tool-desc">تحلیل نرخ تعامل، کپشن و هشتگ‌های پست‌های شما.</div></a>
-      <a href="./tools/ai-bio-generator.html" class="tool-card"><div class="tool-title">✨ تولید بایو با هوش مصنوعی</div><div class="tool-desc">نوشتن بایوی حرفه‌ای برای اینستاگرام، لینکدین و یوتیوب.</div></a>
-      <a href="./tools/ai-caption-generator.html" class="tool-card"><div class="tool-title">💬 تولید کپشن و هشتگ با هوش مصنوعی</div><div class="tool-desc">تولید کپشن و هشتگ‌های جذاب برای پست‌های شما.</div></a>
-    </div>
-  </main>
+  <!-- Contact -->
+  <section id="contact-en" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Have feedback, ideas, or collaboration proposals? Send us a quick message below.</p>
+    <form action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+      <input type="hidden" name="_subject" value="New message from Bita Digital Hub">
+      <label>Name</label><input type="text" name="name" required>
+      <label>Email</label><input type="email" name="email" required>
+      <label>Message</label><textarea name="message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-  <!-- Contact Sections + Footer -->
-  <!-- (unchanged from your last version) -->
+  <!-- Footer -->
+  <footer>
+    <p><a href="./privacy.html">Privacy Policy</a> | © 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools</p>
+    <p>📩 <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a></p>
+  </footer>
 
   <!-- 📅 Today Widget Script -->
   <script>
@@ -214,43 +224,15 @@
       const now = new Date();
       return new Intl.DateTimeFormat("fa-IR-u-ca-persian", { year: "numeric", month: "long", day: "numeric" }).format(now);
     }
-
     function getEnglishDate() {
       const now = new Date();
       return new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" }).format(now);
     }
-
     function updateTodayWidget() {
       const widget = document.getElementById("today-widget");
-      if (widget) {
-        widget.innerHTML = `
-          <span style="white-space:nowrap; font-size:0.85rem; color:#475569;">
-            📅 ${getEnglishDate()} |
-            <span style="font-family:'Vazirmatn', sans-serif;">${getPersianDate()}</span>
-          </span>`;
-      }
+      if (widget) widget.innerHTML = `📅 ${getEnglishDate()} | <span style="font-family:'Vazirmatn',sans-serif;">${getPersianDate()}</span>`;
     }
     document.addEventListener("DOMContentLoaded", updateTodayWidget);
-  </script>
-
-  <!-- Language Switch -->
-  <script>
-    function setLang(lang) {
-      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
-      document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
-      document.getElementById('contact-en').style.display = (lang === 'en') ? 'block' : 'none';
-      document.getElementById('contact-fa').style.display = (lang === 'fa') ? 'block' : 'none';
-      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
-      const heroTitle = document.querySelector('.hero-content h1');
-      const heroDesc = document.querySelector('.hero-content p');
-      if (lang === 'fa') {
-        heroTitle.textContent = '⚙️ همه ابزارهای ضروری شما در یک جا';
-        heroDesc.textContent = 'فایل‌ها را تبدیل کنید، داده‌ها را فشرده کنید، جدول‌ها را تمیز کنید و خیلی کارهای دیگر — فوری، امن و رایگان.';
-      } else {
-        heroTitle.textContent = 'All your Essential Tools in one place ⚙️';
-        heroDesc.textContent = 'Convert files, compress data, clean spreadsheets, and more — instantly, securely, and for free.';
-      }
-    }
   </script>
 
   <!-- Typing Animation -->
@@ -258,7 +240,6 @@
     const words = ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"];
     let i = 0, j = 0, isDeleting = false;
     const typingSpeed = 120, deletingSpeed = 60, delayBetweenWords = 1000;
-
     function type() {
       const typingText = document.getElementById("typing-text");
       const currentWord = words[i];
@@ -269,12 +250,9 @@
         typingText.textContent = currentWord.substring(0, j--);
         setTimeout(type, deletingSpeed);
       } else if (!isDeleting && j === currentWord.length) {
-        isDeleting = true;
-        setTimeout(type, delayBetweenWords);
+        isDeleting = true; setTimeout(type, delayBetweenWords);
       } else {
-        isDeleting = false;
-        i = (i + 1) % words.length;
-        setTimeout(type, 200);
+        isDeleting = false; i = (i + 1) % words.length; setTimeout(type, 200);
       }
     }
     document.addEventListener("DOMContentLoaded", type);
