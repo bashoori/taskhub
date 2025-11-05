@@ -28,9 +28,6 @@
   <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
   <meta property="og:url" content="https://bitadigitalhub.com/privacy.html">
   <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="stylesheet" href="../css/style.css" />
-
 </head>
 
 <body>
@@ -41,53 +38,49 @@
       <a href="./index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="./index.html" class="active">Home</a>
+      <a href="./index.html">Home</a>
       <a href="./about.html">About</a>
-      <a href="./privacy.html">Privacy</a>
+      <a href="./privacy.html" class="active">Privacy</a>
       <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
-  <!-- 🌐 Language Switch -->
-  <div style="text-align:center;margin:1.2rem 0;">
-    <button onclick="window.location.href='./privacy.html'" style="padding:0.5rem 1rem;border:1px solid #ddd;border-radius:6px;cursor:pointer;background:#fff;">English</button>
-    <button onclick="window.location.href='./privacy-fa.html'" style="padding:0.5rem 1rem;border:1px solid #ddd;border-radius:6px;cursor:pointer;background:#fff;">فارسی</button>
+  <!-- 🌐 Language Toggle -->
+  <div class="lang-btns" style="margin-top: 2rem;">
+    <button id="btnEnglish">English</button>
+    <button id="btnFarsi">فارسی</button>
   </div>
 
-  <!-- 🧾 Main Section -->
-  <main>
-    <h1>Privacy Policy</h1>
-    <p><em>Last updated: October 2025</em></p>
+  <!-- 🧾 Privacy Section -->
+  <main class="tool-box" style="text-align:left; line-height:1.7;">
+    <h1 id="title">Privacy Policy</h1>
+    <p><em id="updated">Last updated: October 2025</em></p>
 
-    <p>Welcome to <strong>Bita Digital Hub</strong>. Your privacy is important to us. This page explains what information we collect, how we use it, and how we protect it.</p>
+    <p id="intro">Welcome to <strong>Bita Digital Hub</strong>. Your privacy is important to us. This page explains what information we collect, how we use it, and how we protect it.</p>
 
-    <h2>1. Information We Collect</h2>
-    <ul>
+    <h2 id="section1Title">1. Information We Collect</h2>
+    <ul id="section1List" style="margin-left:1.5rem;">
       <li>We do not store uploaded files permanently. All file operations occur securely in your browser (client-side).</li>
       <li>We may collect non-personal data such as device type, browser version, and anonymized analytics for performance improvements.</li>
     </ul>
 
-    <h2>2. How We Use Information</h2>
-    <ul>
+    <h2 id="section2Title">2. How We Use Information</h2>
+    <ul id="section2List" style="margin-left:1.5rem;">
       <li>To improve user experience and optimize tool performance.</li>
       <li>To display relevant ads via Google AdSense and gather usage insights through Google Analytics.</li>
     </ul>
 
-    <h2>3. Cookies</h2>
-    <p>We may use cookies for analytics and advertising. You can disable cookies anytime in your browser settings.</p>
+    <h2 id="section3Title">3. Cookies</h2>
+    <p id="section3Text">We may use cookies for analytics and advertising. You can disable cookies anytime in your browser settings.</p>
 
-    <h2>4. Third-Party Services</h2>
-    <p>This site uses Google AdSense and Google Analytics, which may collect anonymized traffic data to show personalized ads and measure site engagement.</p>
+    <h2 id="section4Title">4. Third-Party Services</h2>
+    <p id="section4Text">This site uses Google AdSense and Google Analytics, which may collect anonymized traffic data to show personalized ads and measure site engagement.</p>
 
-    <h2>5. Data Security</h2>
-    <p>Your data and uploaded files are never stored on our servers. We never share or sell any user data to third parties.</p>
+    <h2 id="section5Title">5. Data Security</h2>
+    <p id="section5Text">Your data and uploaded files are never stored on our servers. We never share or sell any user data to third parties.</p>
 
-    <h2>6. Contact</h2>
-    <p>If you have any questions about this Privacy Policy, please reach out at
-      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>.
-    </p>
-
-   
+    <h2 id="section6Title">6. Contact</h2>
+    <p id="section6Text">If you have any questions about this Privacy Policy, please reach out at <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>.</p>
   </main>
 
   <!-- 📢 AdSense -->
@@ -108,5 +101,83 @@
       <a href="privacy.html">Privacy Policy</a> · <a href="about.html">About</a>
     </p>
   </footer>
+
+  <!-- ⚙️ Language Script -->
+  <script>
+    const texts = {
+      en: {
+        title: "Privacy Policy",
+        updated: "Last updated: October 2025",
+        intro: "Welcome to Bita Digital Hub. Your privacy is important to us. This page explains what information we collect, how we use it, and how we protect it.",
+        section1Title: "1. Information We Collect",
+        section1List: [
+          "We do not store uploaded files permanently. All file operations occur securely in your browser (client-side).",
+          "We may collect non-personal data such as device type, browser version, and anonymized analytics for performance improvements."
+        ],
+        section2Title: "2. How We Use Information",
+        section2List: [
+          "To improve user experience and optimize tool performance.",
+          "To display relevant ads via Google AdSense and gather usage insights through Google Analytics."
+        ],
+        section3Title: "3. Cookies",
+        section3Text: "We may use cookies for analytics and advertising. You can disable cookies anytime in your browser settings.",
+        section4Title: "4. Third-Party Services",
+        section4Text: "This site uses Google AdSense and Google Analytics, which may collect anonymized traffic data to show personalized ads and measure site engagement.",
+        section5Title: "5. Data Security",
+        section5Text: "Your data and uploaded files are never stored on our servers. We never share or sell any user data to third parties.",
+        section6Title: "6. Contact",
+        section6Text: "If you have any questions about this Privacy Policy, please reach out at contact@bitadigitalhub.com."
+      },
+      fa: {
+        title: "سیاست حفظ حریم خصوصی",
+        updated: "آخرین به‌روزرسانی: اکتبر ۲۰۲۵",
+        intro: "به بیتا دیجیتال هاب خوش آمدید. حریم خصوصی شما برای ما اهمیت دارد. این صفحه توضیح می‌دهد چه اطلاعاتی جمع‌آوری می‌کنیم، چگونه از آن استفاده می‌کنیم و چطور از آن محافظت می‌شود.",
+        section1Title: "۱. اطلاعاتی که جمع‌آوری می‌کنیم",
+        section1List: [
+          "ما فایل‌های بارگذاری‌شده را به‌صورت دائمی ذخیره نمی‌کنیم. همه عملیات فایل به‌صورت ایمن در مرورگر شما انجام می‌شود (سمت کاربر).",
+          "ممکن است داده‌های غیرشخصی مانند نوع دستگاه، نسخه مرورگر و آمار ناشناس برای بهبود عملکرد جمع‌آوری کنیم."
+        ],
+        section2Title: "۲. نحوه استفاده از اطلاعات",
+        section2List: [
+          "برای بهبود تجربه کاربری و بهینه‌سازی عملکرد ابزارها.",
+          "برای نمایش تبلیغات مرتبط از طریق Google AdSense و جمع‌آوری داده‌های تحلیلی از طریق Google Analytics."
+        ],
+        section3Title: "۳. کوکی‌ها",
+        section3Text: "ممکن است از کوکی‌ها برای تحلیل و تبلیغات استفاده کنیم. می‌توانید هر زمان در تنظیمات مرورگر خود کوکی‌ها را غیرفعال کنید.",
+        section4Title: "۴. خدمات شخص ثالث",
+        section4Text: "این سایت از Google AdSense و Google Analytics استفاده می‌کند که ممکن است داده‌های ترافیک ناشناس را برای نمایش تبلیغات شخصی‌سازی‌شده جمع‌آوری کنند.",
+        section5Title: "۵. امنیت داده‌ها",
+        section5Text: "داده‌ها و فایل‌های بارگذاری‌شده شما هرگز در سرورهای ما ذخیره نمی‌شوند. ما هیچ‌گاه داده کاربران را به اشخاص ثالث نمی‌فروشیم و به اشتراک نمی‌گذاریم.",
+        section6Title: "۶. تماس با ما",
+        section6Text: "اگر در مورد این سیاست حریم خصوصی پرسشی دارید، لطفاً از طریق contact@bitadigitalhub.com با ما تماس بگیرید."
+      }
+    };
+
+    function setLang(lang) {
+      const t = texts[lang];
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("updated").innerText = t.updated;
+      document.getElementById("intro").innerText = t.intro;
+
+      document.getElementById("section1Title").innerText = t.section1Title;
+      document.getElementById("section1List").innerHTML = t.section1List.map(i => `<li>${i}</li>`).join("");
+
+      document.getElementById("section2Title").innerText = t.section2Title;
+      document.getElementById("section2List").innerHTML = t.section2List.map(i => `<li>${i}</li>`).join("");
+
+      document.getElementById("section3Title").innerText = t.section3Title;
+      document.getElementById("section3Text").innerText = t.section3Text;
+      document.getElementById("section4Title").innerText = t.section4Title;
+      document.getElementById("section4Text").innerText = t.section4Text;
+      document.getElementById("section5Title").innerText = t.section5Title;
+      document.getElementById("section5Text").innerText = t.section5Text;
+      document.getElementById("section6Title").innerText = t.section6Title;
+      document.getElementById("section6Text").innerText = t.section6Text;
+    }
+
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+  </script>
 </body>
 </html>

@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Bita Digital Hub</title>
-  <meta name="description" content="Learn more about Bita Digital Hub — a free collection of simple, smart, and time-saving digital tools built by data engineer Bita Ashoori to make online work easier for everyone.">
+  <meta name="description" content="Learn more about Bita Digital Hub — a free collection of smart, practical, and time-saving tools built by data engineer Bita Ashoori to make online work easier for everyone.">
   <meta name="keywords" content="about Bita Digital Hub, Bita Ashoori, free online tools, productivity, file converter, zip tool, password generator, Vancouver">
+
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
 
@@ -28,9 +29,6 @@
   <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
   <meta property="og:url" content="https://bitadigitalhub.com/about.html">
   <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="stylesheet" href="../css/style.css" />
-
 </head>
 
 <body>
@@ -42,49 +40,46 @@
     </div>
     <nav>
       <a href="./index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="./about.html" class="active">About</a>
       <a href="./privacy.html">Privacy</a>
       <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
-  <!-- 🌍 Language Switch -->
-  <div class="lang-switch">
-    <button onclick="window.location.href='./about.html'">English</button>
-    <button onclick="window.location.href='./about-fa.html'">فارسی</button>
+  <!-- 🌍 Language Toggle -->
+  <div class="lang-btns" style="margin-top: 2rem;">
+    <button id="btnEnglish">English</button>
+    <button id="btnFarsi">فارسی</button>
   </div>
 
   <!-- 🧠 About Section -->
-  <section class="about-section">
-    <h1>About Bita Digital Hub</h1>
-    <p><strong>Bita Digital Hub</strong> is a free collection of smart, practical, and time-saving tools built for creators, students, and digital professionals.
-      Our goal is simple — to make your everyday online tasks easier, faster, and more reliable — all in one place.</p>
+  <section class="tool-box" id="aboutBox" style="text-align:left;">
+    <h1 id="title">About Bita Digital Hub</h1>
+    <p id="intro"><strong>Bita Digital Hub</strong> is a free collection of smart, practical, and time-saving tools built for creators, students, and digital professionals. Our goal is simple — to make your everyday online tasks easier, faster, and more reliable — all in one place.</p>
 
-    <h2>🌍 What We Offer</h2>
-    <p>Bita Digital Hub combines essential digital utilities into a single clean platform:</p>
-    <ul>
+    <h2 id="offerTitle">🌍 What We Offer</h2>
+    <p id="offerText">Bita Digital Hub combines essential digital utilities into a single clean platform:</p>
+    <ul id="offerList" style="margin-left:1.5rem;">
       <li>📁 <strong>File Converter</strong> — Convert between PDF, Word, Excel, and image formats easily.</li>
       <li>📦 <strong>ZIP & Unzip</strong> — Compress or extract files online with one click.</li>
       <li>📊 <strong>CSV & Excel Cleaner</strong> — Merge, clean, and format spreadsheet data fast.</li>
       <li>🔐 <strong>Password Generator</strong> — Create strong, unique passwords instantly.</li>
       <li>🌐 <strong>URL Shortener & QR Generator</strong> — Share professional, trackable links.</li>
       <li>💬 <strong>Social Media Audit</strong> — Analyze your post engagement and caption quality.</li>
+      <li>🤖 <strong>AI Caption & Bio Generators</strong> — Instantly write professional captions or bios with AI.</li>
     </ul>
 
-    <h2>🎯 Our Mission</h2>
-    <p>We believe technology should be simple and accessible.  
-    Bita Digital Hub was built with the mission to give everyone — from data engineers and marketers to students — access to reliable digital tools without cost or complexity.</p>
+    <h2 id="missionTitle">🎯 Our Mission</h2>
+    <p id="missionText">We believe technology should be simple and accessible. Bita Digital Hub was built with the mission to give everyone — from data engineers and marketers to students — access to reliable digital tools without cost or complexity.</p>
 
-    <h2>🤝 Who We Are</h2>
-    <p>Bita Digital Hub was created by <strong>Bita Ashoori</strong>, a Vancouver-based Data Engineer and digital creator passionate about building useful tools that empower people to work smarter online.  
-    What started as a small set of utilities for data and file handling has grown into a full online productivity hub serving users worldwide.</p>
+    <h2 id="whoTitle">🤝 Who We Are</h2>
+    <p id="whoText">Bita Digital Hub was created by <strong>Bita Ashoori</strong>, a Vancouver-based Data Engineer and digital creator passionate about building useful tools that empower people to work smarter online. What started as a small set of utilities for data and file handling has grown into a full online productivity hub serving users worldwide.</p>
 
-    <h2>💌 Get in Touch</h2>
-    <p>We love feedback, collaboration, and new ideas!  
-    Email us anytime at <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>.</p>
+    <h2 id="contactTitle">💌 Get in Touch</h2>
+    <p id="contactText">We love feedback, collaboration, and new ideas! Email us anytime at <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>.</p>
   </section>
 
-  <!-- 🧱 AdSense Placement -->
+  <!-- 📢 AdSense -->
   <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
@@ -102,5 +97,53 @@
       © 2025 <strong>Bita Digital Hub</strong> — Fast, Simple, Free Tools
     </p>
   </footer>
+
+  <!-- ⚙️ Language Script -->
+  <script>
+    const texts = {
+      en: {
+        title: "About Bita Digital Hub",
+        intro: "Bita Digital Hub is a free collection of smart, practical, and time-saving tools built for creators, students, and digital professionals. Our goal is simple — to make your everyday online tasks easier, faster, and more reliable — all in one place.",
+        offerTitle: "🌍 What We Offer",
+        offerText: "Bita Digital Hub combines essential digital utilities into a single clean platform:",
+        missionTitle: "🎯 Our Mission",
+        missionText: "We believe technology should be simple and accessible. Bita Digital Hub was built with the mission to give everyone — from data engineers and marketers to students — access to reliable digital tools without cost or complexity.",
+        whoTitle: "🤝 Who We Are",
+        whoText: "Bita Digital Hub was created by Bita Ashoori, a Vancouver-based Data Engineer and digital creator passionate about building useful tools that empower people to work smarter online. What started as a small set of utilities for data and file handling has grown into a full online productivity hub serving users worldwide.",
+        contactTitle: "💌 Get in Touch",
+        contactText: "We love feedback, collaboration, and new ideas! Email us anytime at contact@bitadigitalhub.com.",
+      },
+      fa: {
+        title: "درباره بیتا دیجیتال هاب",
+        intro: "بیتا دیجیتال هاب مجموعه‌ای رایگان از ابزارهای هوشمند و کاربردی است که برای سازندگان محتوا، دانشجویان و متخصصان دیجیتال ساخته شده است. هدف ما ساده است — انجام کارهای روزمره آنلاین شما را آسان‌تر، سریع‌تر و قابل اعتمادتر کنیم.",
+        offerTitle: "🌍 آنچه ارائه می‌دهیم",
+        offerText: "بیتا دیجیتال هاب ابزارهای دیجیتال ضروری را در یک پلتفرم تمیز و یکپارچه ترکیب می‌کند:",
+        missionTitle: "🎯 مأموریت ما",
+        missionText: "ما باور داریم فناوری باید ساده و در دسترس باشد. بیتا دیجیتال هاب با هدف دسترسی آسان همه افراد — از مهندسان داده و بازاریابان تا دانشجویان — به ابزارهای دیجیتال قابل اعتماد و رایگان ساخته شد.",
+        whoTitle: "🤝 ما که هستیم",
+        whoText: "بیتا دیجیتال هاب توسط بیتا عشوری، مهندس داده ساکن ونکوور و خالق دیجیتال ساخته شده است که به ساخت ابزارهای مفید برای کار هوشمندتر آنلاین علاقه‌مند است. آنچه به‌عنوان مجموعه کوچکی از ابزارهای داده و فایل آغاز شد، اکنون به یک پلتفرم کامل بهره‌وری آنلاین تبدیل شده است.",
+        contactTitle: "💌 تماس با ما",
+        contactText: "ما از بازخورد، همکاری و ایده‌های جدید استقبال می‌کنیم! هر زمان از طریق contact@bitadigitalhub.com با ما در تماس باشید.",
+      }
+    };
+
+    function setLang(lang) {
+      const t = texts[lang];
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("intro").innerText = t.intro;
+      document.getElementById("offerTitle").innerText = t.offerTitle;
+      document.getElementById("offerText").innerText = t.offerText;
+      document.getElementById("missionTitle").innerText = t.missionTitle;
+      document.getElementById("missionText").innerText = t.missionText;
+      document.getElementById("whoTitle").innerText = t.whoTitle;
+      document.getElementById("whoText").innerText = t.whoText;
+      document.getElementById("contactTitle").innerText = t.contactTitle;
+      document.getElementById("contactText").innerText = t.contactText;
+    }
+
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+  </script>
 </body>
 </html>
