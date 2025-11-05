@@ -6,6 +6,7 @@
   <title>ZIP & Unzip Files | Bita Digital Hub</title>
   <meta name="description" content="Compress or extract files instantly — fast, secure, and free online ZIP & Unzip tool by Bita Digital Hub.">
   <meta name="keywords" content="zip unzip online, compress files, extract zip, free tools, Bita Digital Hub">
+
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
@@ -36,70 +37,99 @@
   <style>
     .tool-header {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
     }
     .tool-header img {
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
       margin-bottom: 1rem;
     }
     .tool-header h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #222;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #0f172a;
     }
     .tool-header p {
-      color: #555;
+      color: #475569;
       font-size: 1rem;
+      max-width: 650px;
+      margin: 0.5rem auto 1.5rem;
     }
+
     .tool-box {
-      margin: 2rem auto;
-      padding: 2rem;
+      margin: 2.5rem auto;
+      padding: 2rem 2.5rem;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      max-width: 460px;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+      max-width: 520px;
       text-align: center;
     }
     .tool-box input[type="file"] {
       margin: 1rem 0;
       width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 0.8rem;
+      background: #f9fafb;
     }
     .tool-box button {
       width: 100%;
-      max-width: 300px;
+      max-width: 280px;
       margin: 0.5rem auto;
-      padding: 0.8rem;
-      border-radius: 8px;
+      padding: 0.9rem;
+      border-radius: 10px;
       font-weight: 600;
       font-size: 1rem;
+      border: none;
       cursor: pointer;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #fff;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .tool-box button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(99,102,241,0.4);
     }
     #result {
       margin-top: 1.2rem;
       font-size: 0.95rem;
-      color: #333;
+      color: #1e293b;
       line-height: 1.5;
+      text-align: left;
     }
     .lang-btns {
       text-align: center;
       margin-top: 1.5rem;
     }
     .lang-btns button {
-      padding: 0.5rem 1rem;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
       margin: 0 0.3rem;
       background: #fff;
       cursor: pointer;
+      font-weight: 500;
     }
     .lang-btns button:hover {
-      background: #f2f2f2;
+      background: #f1f5f9;
     }
-    .ad-placeholder {
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid #e2e8f0;
+      background: #fff;
       text-align: center;
-      margin: 2rem auto;
-      max-width: 800px;
+      color: #475569;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+    }
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -108,11 +138,11 @@
   <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="32" height="32" />
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36" />
       <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="../index.html">Home</a>
+      <a href="../index.html" class="active">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
       <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
@@ -123,7 +153,7 @@
   <section class="tool-header">
     <img src="../assets/zip-icon.svg" alt="ZIP Tool Icon" class="tool-icon" />
     <h1>ZIP & Unzip Files</h1>
-    <p>Compress or extract files easily — fast, secure & free.</p>
+    <p>Compress or extract files easily — fast, secure & free online tool.</p>
   </section>
 
   <!-- 🌐 Language Switch -->
@@ -143,23 +173,21 @@
     <div id="result"></div>
 
     <!-- 📢 AdSense -->
-    <div class="ad-placeholder">
+    <div class="ad-placeholder" style="margin-top:2rem;">
       <ins class="adsbygoogle"
            style="display:block; text-align:center;"
            data-ad-client="ca-pub-3215014361489762"
            data-ad-slot="7777777777"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
   </div>
 
   <!-- 🧭 Footer -->
   <footer>
     <p>
-      © 2025 <strong>Bita Digital Hub</strong> | Built for simplicity & trust.<br>
+      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
       <a href="../privacy.html">Privacy Policy</a> · 
       <a href="../about.html">About</a> · 
       <a href="mailto:contact@bitadigitalhub.com">Contact</a>
@@ -213,7 +241,7 @@
           const item = zip.files[filename];
           if (!item.dir) {
             const fileData = await item.async("blob");
-            saveAs(fileData, `${folderName}/${filename}`);
+            saveAs(fileData, `${folderName}-${filename}`);
             output += `<li>💾 ${filename}</li>`;
           }
         }

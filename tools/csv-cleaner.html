@@ -6,10 +6,11 @@
   <title>CSV & Excel Cleaner | Bita Digital Hub</title>
   <meta name="description" content="Clean, merge, and deduplicate CSV or Excel files instantly — simple, secure, and free with Bita Digital Hub.">
   <meta name="keywords" content="csv cleaner, excel cleaner, data deduplication, merge csv, data cleaning tool">
+
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
-  <!-- 📈 Google Analytics (GA4) -->
+  <!-- 📈 Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -28,17 +29,116 @@
   <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
   <meta property="og:url" content="https://bitadigitalhub.com/tools/csv-cleaner.html">
   <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    .tool-header {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+    .tool-header img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1rem;
+    }
+    .tool-header h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .tool-header p {
+      color: #475569;
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    .tool-box {
+      margin: 2.5rem auto;
+      padding: 2rem 2.5rem;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+      max-width: 520px;
+      text-align: center;
+    }
+    .tool-box input[type="file"] {
+      width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 0.8rem;
+      margin: 1rem 0;
+      font-size: 1rem;
+      background: #f9fafb;
+    }
+    .tool-box button {
+      width: 100%;
+      max-width: 260px;
+      margin: 0.6rem auto;
+      padding: 0.9rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #fff;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .tool-box button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+    }
+    #csvResult {
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    .lang-btns {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .lang-btns button {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin: 0 0.3rem;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .lang-btns button:hover {
+      background: #f1f5f9;
+    }
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid #e2e8f0;
+      background: #fff;
+      text-align: center;
+      color: #475569;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+    }
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- 🔝 Navigation -->
+  <!-- 🔝 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="32" height="32" />
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36" />
       <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="../index.html">Home</a>
+      <a href="../index.html" class="active">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
       <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
@@ -47,61 +147,43 @@
 
   <!-- 🧾 Tool Header -->
   <section class="tool-header">
-    <img src="../assets/csv-icon.svg" alt="CSV Tool Icon" class="tool-icon">
-    <div>
-      <h1>CSV & Excel Cleaner</h1>
-      <p class="subtitle">Upload, merge, clean, and deduplicate your data — all in your browser.</p>
-    </div>
+    <img src="../assets/csv-icon.svg" alt="CSV Tool Icon" class="tool-icon" />
+    <h1>CSV & Excel Cleaner</h1>
+    <p>Upload, merge, clean, and deduplicate your data — all securely in your browser.</p>
   </section>
 
   <!-- 🌐 Language Switch -->
-  <div class="lang-btns" style="text-align:center;">
+  <div class="lang-btns">
     <button onclick="setLang('en')">English</button>
     <button onclick="setLang('fa')">فارسی</button>
   </div>
 
-  <main id="content">
-    <!-- English Section -->
-    <section id="en">
-      <div class="tool-box">
-        <p>Upload one or more CSV/Excel files to clean or merge:</p>
-        <input type="file" id="csvInput" accept=".csv, .xls, .xlsx" multiple>
-        <button id="cleanBtn">Clean Data</button>
-        <button id="mergeBtn">Merge Files</button>
-        <div id="csvResult"></div>
-      </div>
-    </section>
+  <!-- 🧰 Tool -->
+  <div class="tool-box">
+    <p>Upload one or more CSV or Excel files to clean or merge:</p>
+    <input type="file" id="csvInput" accept=".csv, .xls, .xlsx" multiple />
+    <button id="cleanBtn">Clean Data</button>
+    <button id="mergeBtn">Merge Files</button>
+    <div id="csvResult"></div>
+  </div>
 
-    <!-- Persian Section -->
-    <section id="fa" dir="rtl" style="display:none;">
-      <div class="tool-box">
-        <p>فایل‌های CSV یا Excel خود را برای پاک‌سازی یا ترکیب انتخاب کنید:</p>
-        <input type="file" accept=".csv, .xls, .xlsx" multiple>
-        <button>پاک‌سازی داده‌ها</button>
-        <button>ترکیب فایل‌ها</button>
-        <div id="csvResult-fa"></div>
-      </div>
-    </section>
-
-    <!-- 📢 AdSense Placeholder -->
-    <div class="ad-placeholder">
-      <ins class="adsbygoogle"
-           style="display:block; text-align:center; margin:1.5rem auto;"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="3333333333"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </main>
+  <!-- 📢 AdSense -->
+  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="3333333333"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
   <!-- 🧭 Footer -->
   <footer>
     <p>
-      © 2025 <strong>Bita Digital Hub</strong> | Built for simplicity & trust.<br>
-      <a href="../privacy.html">Privacy Policy</a> · <a href="../about.html">About</a> · 
+      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
+      <a href="../privacy.html">Privacy Policy</a> · 
+      <a href="../about.html">About</a> · 
       <a href="mailto:contact@bitadigitalhub.com">Contact</a>
     </p>
   </footer>
@@ -109,8 +191,6 @@
   <!-- ⚙️ Script -->
   <script>
     function setLang(lang) {
-      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
-      document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
       document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
     }
 

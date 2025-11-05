@@ -6,10 +6,11 @@
   <title>Social Media Audit Tool | Bita Digital Hub</title>
   <meta name="description" content="Analyze your social media posts for engagement, caption quality, hashtags, and branding. Get a professional score and actionable recommendations — free and online.">
   <meta name="keywords" content="social media audit, engagement rate, caption analysis, hashtag checker, digital marketing tools">
+
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png"/>
 
-  <!-- Google Analytics -->
+  <!-- 📈 Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,40 +19,149 @@
     gtag('config', 'G-YHKWTPXDHC');
   </script>
 
-  <!-- Google AdSense -->
+  <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
      crossorigin="anonymous"></script>
 
   <style>
-    .tool-header { text-align:center; padding:3rem 1rem 1.5rem; background:linear-gradient(180deg,#f8fbff 0%,#f0f2f5 100%); border-bottom:1px solid #eaeaea; }
-    .tool-header .tool-icon { width:46px; height:46px; margin-bottom:.4rem; }
-    .audit-grid{ max-width:900px; margin:1rem auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
-    .card{ background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05); padding:1rem 1.2rem; }
-    .card h3{ margin:.2rem 0 .6rem; font-size:1.05rem; }
-    .card label{ display:block; font-size:.92rem; margin:.5rem 0 .25rem; color:#444; }
-    .card input[type="number"], .card textarea{
-      width:100%; padding:.7rem; border:1px solid #ccc; border-radius:8px; font-size:.95rem; background:#fafafa;
+    .tool-header {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
     }
-    .hint{ font-size:.82rem; color:#777; margin-top:.25rem; }
-    .actions { text-align:center; margin:1rem auto 0; display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; }
-    .actions button{ padding:.85rem 1.2rem; min-width:180px; font-weight:700; border:none; border-radius:10px; background:var(--primary,#0078d7); color:#fff; cursor:pointer; }
-    .actions button:hover{ background:#005fa3; }
-    .btn-secondary{ background:#fff; color:#333; border:1px solid #ddd; }
-    .btn-secondary:hover{ background:#f6f6f6; }
-    .lang-btns{ text-align:center; margin-top:1.5rem; }
-    .lang-btns button{ padding:.5rem 1rem; border:1px solid #ddd; border-radius:6px; margin:0 .3rem; cursor:pointer; background:#fff; }
-    .lang-btns button:hover{ background:#f2f2f2; }
+    .tool-header img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1rem;
+    }
+    .tool-header h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .tool-header p {
+      color: #475569;
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    .audit-grid {
+      max-width: 950px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      padding: 1.2rem 1.4rem;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .card label {
+      display: block;
+      font-size: 0.92rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+      color: #334155;
+    }
+    .card input[type="number"],
+    .card textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: #f9fafb;
+    }
+    .hint {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 0.4rem;
+    }
+    .actions {
+      text-align: center;
+      margin: 2rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+    .actions button {
+      padding: 0.9rem 1.4rem;
+      min-width: 180px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .actions button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+    }
+    .btn-secondary {
+      background: #fff;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
+    }
+    .btn-secondary:hover {
+      background: #f8fafc;
+    }
+    .lang-btns {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .lang-btns button {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin: 0 0.3rem;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .lang-btns button:hover {
+      background: #f1f5f9;
+    }
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid #e2e8f0;
+      background: #fff;
+      text-align: center;
+      color: #475569;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+    }
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
+
 <body>
   <!-- 🔝 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="32" height="32"/>
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36"/>
       <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="../index.html">Home</a>
+      <a href="../index.html" class="active">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
       <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
@@ -62,7 +172,7 @@
   <section class="tool-header">
     <img src="../assets/audit-icon.svg" alt="Audit Tool Icon" class="tool-icon"/>
     <h1 id="t_title">Social Media Audit Tool</h1>
-    <p id="t_sub">Get a pro score and specific recommendations for your post & profile setup.</p>
+    <p id="t_sub">Get a professional score and actionable recommendations for your posts.</p>
   </section>
 
   <!-- 🌐 Language Buttons -->
@@ -71,7 +181,7 @@
     <button onclick="setLang('fa')">فارسی</button>
   </div>
 
-  <!-- 🔍 Inputs -->
+  <!-- 🔍 Audit Inputs -->
   <div class="audit-grid">
     <div class="card">
       <h3 id="t_captionLabel">Post Caption</h3>
@@ -104,10 +214,22 @@
     <button class="btn-secondary" id="t_reset">Reset</button>
   </div>
 
+  <!-- 📢 AdSense -->
+  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="8888888888"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
   <!-- 🧭 Footer -->
   <footer>
     <p>
-      © 2025 <strong>Bita Digital Hub</strong> | <a href="../privacy.html">Privacy</a> · 
+      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
+      <a href="../privacy.html">Privacy Policy</a> · 
       <a href="../about.html">About</a> · 
       <a href="mailto:contact@bitadigitalhub.com">Contact</a>
     </p>
@@ -118,7 +240,7 @@
     const TXT = {
       en: {
         title: "Social Media Audit Tool",
-        sub: "Get a pro score and specific recommendations for your post & profile setup.",
+        sub: "Get a professional score and actionable recommendations for your post & profile setup.",
         captionLabel: "Post Caption",
         captionHint: "We’ll analyze caption length, emojis, and CTAs.",
         hashtagsLabel: "Hashtags",

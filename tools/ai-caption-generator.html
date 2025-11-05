@@ -5,56 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Caption & Hashtag Generator | Bita Digital Hub</title>
   <meta name="description" content="Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube posts — powered by AI.">
-  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png"/>
-  <link rel="stylesheet" href="../css/style.css"/>
+  <meta name="keywords" content="caption generator, hashtag generator, AI content creator, social media tool, Bita Digital Hub">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
-  <!-- ✅ Google AdSense -->
+  <!-- 📈 Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YHKWTPXDHC');
+  </script>
+
+  <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
+     crossorigin="anonymous"></script>
+
+  <!-- 🧭 Open Graph -->
+  <meta property="og:title" content="AI Caption & Hashtag Generator | Bita Digital Hub">
+  <meta property="og:description" content="Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube — free, smart & powered by AI.">
+  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
+  <meta property="og:url" content="https://bitadigitalhub.com/tools/ai-caption-generator.html">
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
-    body{background:#f9fafb;color:#0f172a;font-family:system-ui,sans-serif;margin:0;padding:0;}
-    header{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:0.8rem 2rem;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:10;}
-    header .brand{display:flex;align-items:center;gap:0.5rem;text-decoration:none;color:#111827;font-weight:700;font-size:1.1rem;}
-    header nav a{margin-left:1.2rem;text-decoration:none;color:#374151;font-weight:500;transition:color .2s ease;}
-    header nav a:hover{color:#2563eb;}
+    .tool-header {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+    .tool-header img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1rem;
+    }
+    .tool-header h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .tool-header p {
+      color: #475569;
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0.5rem auto 1.5rem;
+    }
 
-    .tool-container{max-width:700px;margin:3rem auto;background:#fff;border-radius:1.2rem;border:1px solid #e5e7eb;box-shadow:0 4px 12px rgba(0,0,0,.05);padding:2rem;position:relative;}
-    #langToggle{position:absolute;top:1rem;right:1rem;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:9999px;color:#374151;font-size:.8rem;padding:.3rem .8rem;cursor:pointer;}
-    h1{text-align:center;font-size:1.6rem;color:#111827;margin-bottom:.3rem;}
-    p.subtitle{text-align:center;color:#4b5563;margin-bottom:2rem;}
-    label{display:block;font-weight:600;margin-top:1rem;margin-bottom:.3rem;color:#111827;}
-    textarea,select{width:100%;padding:.8rem 1rem;border-radius:.75rem;border:1px solid #d1d5db;background:#f9fafb;font-size:1rem;margin-bottom:.8rem;color:#111827;resize:vertical;}
-    .btn-primary{background:linear-gradient(135deg,#38bdf8 0%,#6366f1 100%);border:none;color:#fff;font-weight:600;padding:.9rem 1.4rem;border-radius:9999px;cursor:pointer;display:block;width:100%;margin-top:1rem;transition:opacity .25s ease;}
-    .btn-primary:hover{opacity:.9;}
-    .output-box{background:#f9fafb;border:1px solid #e5e7eb;border-radius:.8rem;padding:1rem;margin-top:1.5rem;white-space:pre-line;}
-    .ad-slot{display:block;text-align:center;margin:2rem auto;}
-    footer{text-align:center;color:#6b7280;font-size:.9rem;margin-top:4rem;padding:1rem;border-top:1px solid #e5e7eb;}
-    footer a{color:#2563eb;text-decoration:none;}footer a:hover{text-decoration:underline;}
+    .tool-box {
+      margin: 2.5rem auto;
+      padding: 2rem 2.5rem;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+      max-width: 520px;
+      text-align: center;
+      position: relative;
+    }
+    .tool-box label {
+      display: block;
+      text-align: left;
+      font-weight: 600;
+      margin-top: 1rem;
+      color: #111827;
+    }
+    .tool-box textarea, .tool-box select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      font-size: 1rem;
+      color: #111827;
+      margin-top: 0.4rem;
+    }
+    .tool-box button {
+      width: 100%;
+      max-width: 280px;
+      margin: 1rem auto 0;
+      padding: 0.9rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #fff;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .tool-box button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+    }
+    .lang-btns {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .lang-btns button {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin: 0 0.3rem;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .lang-btns button:hover {
+      background: #f1f5f9;
+    }
+    .output-box {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      text-align: left;
+      font-size: 0.95rem;
+      white-space: pre-line;
+    }
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid #e2e8f0;
+      background: #fff;
+      text-align: center;
+      color: #475569;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+    }
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header>
-    <a href="../index.html" class="brand">
-      <img src="../assets/taskhub-logo.svg" alt="Logo" width="28" height="28">
-      <span>Bita Digital Hub</span>
-    </a>
+  <!-- 🔝 Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36" />
+      <a href="../index.html" class="brand">Bita Digital Hub</a>
+    </div>
     <nav>
-      <a href="../index.html">Home</a>
+      <a href="../index.html" class="active">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 Contact</a>
+      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
-  <!-- MAIN TOOL -->
-  <main class="tool-container">
-    <button id="langToggle">🌐 FA</button>
+  <!-- 🧠 Tool Header -->
+  <section class="tool-header">
+    <img src="../assets/ai-icon.svg" alt="AI Tool Icon" class="tool-icon" />
     <h1 id="title">AI Caption & Hashtag Generator</h1>
-    <p id="subtitle" class="subtitle">Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube posts — powered by AI.</p>
+    <p id="subtitle">Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube — powered by AI.</p>
+  </section>
 
+  <!-- 🌐 Language Switch -->
+  <div class="lang-btns">
+    <button id="langToggle">🌐 فارسی</button>
+  </div>
+
+  <!-- 🧰 Tool -->
+  <div class="tool-box">
     <form id="captionForm">
       <label id="lblPlatform">Platform</label>
       <select id="platform">
@@ -73,81 +189,97 @@
         <option value="professional">Professional</option>
       </select>
 
-      <button type="submit" class="btn-primary" id="btnGenerate">Generate Captions</button>
+      <button type="submit" id="btnGenerate">Generate Captions</button>
     </form>
 
-    <!-- 📢 Ad below form -->
-    <ins class="adsbygoogle ad-slot"
+    <div id="status" style="margin-top:1rem; color:#64748b;"></div>
+    <div id="output"></div>
+  </div>
+
+  <!-- 📢 AdSense -->
+  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="2768335564"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
-    <div id="status"></div>
-    <div id="output"></div>
-
-    <p style="margin-top:1.5rem;color:#6b7280;font-size:.85rem;text-align:center;">
-      💡 Tip: Add emojis for Instagram, stats for LinkedIn, and hooks for YouTube.
-    </p>
-  </main>
-
-  <!-- 📢 Ad before footer -->
-  <ins class="adsbygoogle ad-slot"
-       data-ad-client="ca-pub-3215014361489762"
-       data-ad-slot="9214451203"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <!-- FOOTER -->
+  <!-- 🧭 Footer -->
   <footer>
-    © 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools |
-    <a href="../privacy.html">Privacy Policy</a>
+    <p>
+      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
+      <a href="../privacy.html">Privacy Policy</a> · 
+      <a href="../about.html">About</a> · 
+      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
+    </p>
   </footer>
 
-  <!-- JS -->
+  <!-- ⚙️ Script -->
   <script>
-    // 🌐 Language toggle
-    const langToggle=document.getElementById("langToggle");
-    let lang="en";
-    const texts={
-      en:{title:"AI Caption & Hashtag Generator",subtitle:"Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube posts — powered by AI.",
-          lblPlatform:"Platform",lblTopic:"What is your post about?",lblTone:"Tone",btnGenerate:"Generate Captions",toggle:"🌐 FA",loading:"Generating captions..."},
-      fa:{title:"تولید کپشن و هشتگ با هوش مصنوعی",subtitle:"کپشن و هشتگ حرفه‌ای برای پست‌های خود بسازید — با کمک هوش مصنوعی واقعی.",
-          lblPlatform:"پلتفرم",lblTopic:"موضوع پست چیست؟",lblTone:"لحن متن",btnGenerate:"تولید کپشن",toggle:"🌐 EN",loading:"در حال تولید کپشن..."}
+    const langToggle = document.getElementById("langToggle");
+    let lang = "en";
+    const texts = {
+      en: {
+        title: "AI Caption & Hashtag Generator",
+        subtitle: "Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube — powered by AI.",
+        lblPlatform: "Platform",
+        lblTopic: "What is your post about?",
+        lblTone: "Tone",
+        btnGenerate: "Generate Captions",
+        toggle: "🌐 فارسی",
+        loading: "Generating captions..."
+      },
+      fa: {
+        title: "تولید کپشن و هشتگ با هوش مصنوعی",
+        subtitle: "کپشن و هشتگ حرفه‌ای برای پست‌های خود بسازید — با کمک هوش مصنوعی.",
+        lblPlatform: "پلتفرم",
+        lblTopic: "موضوع پست چیست؟",
+        lblTone: "لحن متن",
+        btnGenerate: "تولید کپشن",
+        toggle: "🌐 English",
+        loading: "در حال تولید کپشن..."
+      }
     };
 
-    langToggle.addEventListener("click",()=>{
-      lang=lang==="en"?"fa":"en";const t=texts[lang];
-      document.getElementById("title").innerText=t.title;
-      document.getElementById("subtitle").innerText=t.subtitle;
-      document.getElementById("lblPlatform").innerText=t.lblPlatform;
-      document.getElementById("lblTopic").innerText=t.lblTopic;
-      document.getElementById("lblTone").innerText=t.lblTone;
-      document.getElementById("btnGenerate").innerText=t.btnGenerate;
-      langToggle.innerText=t.toggle;
-      document.body.dir=lang==="fa"?"rtl":"ltr";
+    langToggle.addEventListener("click", () => {
+      lang = lang === "en" ? "fa" : "en";
+      const t = texts[lang];
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("subtitle").innerText = t.subtitle;
+      document.getElementById("lblPlatform").innerText = t.lblPlatform;
+      document.getElementById("lblTopic").innerText = t.lblTopic;
+      document.getElementById("lblTone").innerText = t.lblTone;
+      document.getElementById("btnGenerate").innerText = t.btnGenerate;
+      langToggle.innerText = t.toggle;
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
     });
 
-    // ✨ Mock AI generator
-    const form=document.getElementById("captionForm");
-    const output=document.getElementById("output");
-    const status=document.getElementById("status");
-    form.addEventListener("submit",e=>{
+    const form = document.getElementById("captionForm");
+    const output = document.getElementById("output");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const platform=document.getElementById("platform").value;
-      const topic=document.getElementById("topic").value;
-      const tone=document.getElementById("tone").value;
-      status.textContent=texts[lang].loading;status.style.color="#6b7280";output.innerHTML="";
-      setTimeout(()=>{
-        status.textContent="";
-        output.innerHTML=`<div class="output-box">
-          <strong>${lang==="fa"?"کپشن نمونه:":"Sample Captions:"}</strong><br><br>
-          ${tone==="friendly"?"☕":"💡"} ${topic||"Your post"} — ${platform} post idea.<br>
-          #creativity #AI #socialmedia
-        </div>`;
-      },1000);
+      const platform = document.getElementById("platform").value;
+      const topic = document.getElementById("topic").value || "your topic";
+      const tone = document.getElementById("tone").value;
+      const t = texts[lang];
+
+      status.textContent = t.loading;
+      output.innerHTML = "";
+      setTimeout(() => {
+        status.textContent = "";
+        output.innerHTML = `
+          <div class="output-box">
+            <strong>${lang === "fa" ? "📢 کپشن نمونه:" : "📢 Sample Caption:"}</strong><br><br>
+            ${tone === "friendly" ? "😊" : tone === "motivational" ? "💪" : "💼"} 
+            ${topic} — ${platform.charAt(0).toUpperCase() + platform.slice(1)} post idea.<br>
+            #${topic.split(" ")[0] || "AI"} #${tone} #${platform}
+          </div>`;
+      }, 1000);
     });
   </script>
 </body>

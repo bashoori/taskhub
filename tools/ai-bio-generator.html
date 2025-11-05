@@ -5,91 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Bio Generator | Bita Digital Hub</title>
   <meta name="description" content="Generate professional bios for LinkedIn, Instagram, or YouTube instantly with AI.">
+  <meta name="keywords" content="bio generator, AI bio, LinkedIn bio, Instagram bio, YouTube bio, Bita Digital Hub">
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png"/>
   <link rel="stylesheet" href="../css/style.css"/>
 
-  <!-- ✅ Google AdSense -->
+  <!-- 📈 Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YHKWTPXDHC');
+  </script>
+
+  <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
+     crossorigin="anonymous"></script>
+
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="AI Bio Generator | Bita Digital Hub">
+  <meta property="og:description" content="Generate professional bios for LinkedIn, Instagram, or YouTube — fast, simple, and free.">
+  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
+  <meta property="og:url" content="https://bitadigitalhub.com/tools/ai-bio-generator.html">
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
-    body { background:#f9fafb; color:#0f172a; font-family:system-ui,sans-serif; margin:0; padding:0; }
-
-    /* HEADER */
-    header {
-      display:flex; justify-content:space-between; align-items:center;
-      background:#fff; padding:0.8rem 2rem; border-bottom:1px solid #e5e7eb;
-      position:sticky; top:0; z-index:10;
+    .tool-header {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
     }
-    header .brand { display:flex; align-items:center; gap:0.5rem; text-decoration:none; color:#111827; font-weight:700; font-size:1.1rem; }
-    header nav a { margin-left:1.2rem; text-decoration:none; color:#374151; font-weight:500; transition:color .2s ease; }
-    header nav a:hover { color:#2563eb; }
-
-    /* TOOL CARD */
-    .tool-container {
-      max-width:700px; margin:3rem auto; background:#fff; border-radius:1.2rem;
-      border:1px solid #e5e7eb; box-shadow:0 4px 12px rgba(0,0,0,.05);
-      padding:2rem; position:relative;
+    .tool-header img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1rem;
     }
-    #langToggle { position:absolute; top:1rem; right:1rem; background:#f3f4f6;
-      border:1px solid #e5e7eb; border-radius:9999px; color:#374151;
-      font-size:.8rem; padding:.3rem .8rem; cursor:pointer; }
-    h1 { text-align:center; font-size:1.6rem; color:#111827; margin-bottom:.3rem; }
-    p.subtitle { text-align:center; color:#4b5563; margin-bottom:2rem; }
-
-    label { display:block; font-weight:600; margin-top:1rem; margin-bottom:.3rem; color:#111827; }
-    select,textarea {
-      width:100%; padding:.8rem 1rem; border-radius:.75rem; border:1px solid #d1d5db;
-      background:#f9fafb; font-size:1rem; margin-bottom:.8rem; color:#111827; resize:vertical;
+    .tool-header h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .tool-header p {
+      color: #475569;
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0.5rem auto 1.5rem;
     }
 
-    .btn-primary {
-      background:linear-gradient(135deg,#38bdf8 0%,#6366f1 100%);
-      border:none; color:white; font-weight:600; padding:.9rem 1.4rem;
-      border-radius:9999px; cursor:pointer; display:block; width:100%; margin-top:1rem;
-      transition:opacity .25s ease;
+    .tool-box {
+      margin: 2.5rem auto;
+      padding: 2rem 2.5rem;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+      max-width: 520px;
+      text-align: center;
+      position: relative;
     }
-    .btn-primary:hover { opacity:.9; }
-
-    .output-box { background:#f9fafb; border:1px solid #e5e7eb; border-radius:.8rem;
-      padding:1rem; margin-top:1.5rem; white-space:pre-line; }
-
-    /* ADS */
-    .ad-slot {
-      display:block; text-align:center; margin:2rem auto;
+    .tool-box label {
+      display: block;
+      text-align: left;
+      font-weight: 600;
+      margin-top: 1rem;
+      color: #111827;
     }
-
-    /* FOOTER */
+    .tool-box textarea, .tool-box select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      font-size: 1rem;
+      color: #111827;
+      margin-top: 0.4rem;
+    }
+    .tool-box button {
+      width: 100%;
+      max-width: 280px;
+      margin: 1rem auto 0;
+      padding: 0.9rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #fff;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .tool-box button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+    }
+    .lang-btns {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .lang-btns button {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin: 0 0.3rem;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .lang-btns button:hover {
+      background: #f1f5f9;
+    }
+    .output-box {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      text-align: left;
+      font-size: 0.95rem;
+      white-space: pre-line;
+    }
     footer {
-      text-align:center; color:#6b7280; font-size:.9rem;
-      margin-top:4rem; padding:1rem; border-top:1px solid #e5e7eb;
+      margin-top: 3rem;
+      border-top: 1px solid #e2e8f0;
+      background: #fff;
+      text-align: center;
+      color: #475569;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
     }
-    footer a { color:#2563eb; text-decoration:none; }
-    footer a:hover { text-decoration:underline; }
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header>
-    <a href="../index.html" class="brand">
-      <img src="../assets/taskhub-logo.svg" alt="Logo" width="28" height="28">
-      <span>Bita Digital Hub</span>
-    </a>
+  <!-- 🔝 Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36" />
+      <a href="../index.html" class="brand">Bita Digital Hub</a>
+    </div>
     <nav>
-      <a href="../index.html">Home</a>
+      <a href="../index.html" class="active">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 Contact</a>
+      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
-  <!-- MAIN TOOL -->
-  <main class="tool-container">
-    <button id="langToggle">🌐 FA</button>
+  <!-- 🧠 Tool Header -->
+  <section class="tool-header">
+    <img src="../assets/ai-icon.svg" alt="AI Bio Icon" class="tool-icon" />
     <h1 id="title">AI Bio Generator</h1>
-    <p id="subtitle" class="subtitle">Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.</p>
+    <p id="subtitle">Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.</p>
+  </section>
 
+  <!-- 🌐 Language Switch -->
+  <div class="lang-btns">
+    <button id="langToggle">🌐 فارسی</button>
+  </div>
+
+  <!-- 🧰 Tool -->
+  <div class="tool-box">
     <form id="bioForm">
       <label id="lblPlatform">Platform</label>
       <select id="platform">
@@ -108,84 +189,95 @@
         <option value="creative">Creative</option>
       </select>
 
-      <button type="submit" class="btn-primary" id="btnGenerate">Generate Bio</button>
+      <button type="submit" id="btnGenerate">Generate Bio</button>
     </form>
 
-    <!-- 📢 Ad below form -->
-    <ins class="adsbygoogle ad-slot"
+    <div id="status" style="margin-top:1rem; color:#64748b;"></div>
+    <div id="output"></div>
+  </div>
+
+  <!-- 📢 AdSense -->
+  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="4389251115"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
-    <div id="status"></div>
-    <div id="output"></div>
-
-    <p style="margin-top:1.5rem; color:#6b7280; font-size:0.85rem; text-align:center;">
-      💡 Tip: Try a friendly tone for Instagram, professional for LinkedIn, and creative for YouTube.
-    </p>
-  </main>
-
-  <!-- 📢 Ad before footer -->
-  <ins class="adsbygoogle ad-slot"
-       data-ad-client="ca-pub-3215014361489762"
-       data-ad-slot="2314477225"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <!-- FOOTER -->
+  <!-- 🧭 Footer -->
   <footer>
-    © 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools |
-    <a href="../privacy.html">Privacy Policy</a>
+    <p>
+      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
+      <a href="../privacy.html">Privacy Policy</a> · 
+      <a href="../about.html">About</a> · 
+      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
+    </p>
   </footer>
 
-  <!-- 🧠 Scripts -->
+  <!-- ⚙️ Script -->
   <script>
-    // 🌐 Language toggle
     const langToggle = document.getElementById("langToggle");
     let lang = "en";
     const texts = {
-      en:{title:"AI Bio Generator",subtitle:"Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.",
-          lblPlatform:"Platform",lblKeywords:"Describe yourself or your work",lblStyle:"Style",
-          btnGenerate:"Generate Bio",toggle:"🌐 FA",loading:"Generating bio..."},
-      fa:{title:"تولید بیو با هوش مصنوعی",subtitle:"برای لینکدین، اینستاگرام یا یوتیوب بیوی حرفه‌ای و جذاب بسازید — در چند ثانیه.",
-          lblPlatform:"پلتفرم",lblKeywords:"خودتان یا کارتان را توصیف کنید",lblStyle:"سبک نوشتار",
-          btnGenerate:"تولید بیو",toggle:"🌐 EN",loading:"در حال تولید بیو..."}
+      en: {
+        title: "AI Bio Generator",
+        subtitle: "Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.",
+        lblPlatform: "Platform",
+        lblKeywords: "Describe yourself or your work",
+        lblStyle: "Style",
+        btnGenerate: "Generate Bio",
+        toggle: "🌐 فارسی",
+        loading: "Generating bio..."
+      },
+      fa: {
+        title: "تولید بیو با هوش مصنوعی",
+        subtitle: "برای لینکدین، اینستاگرام یا یوتیوب بیوی حرفه‌ای و جذاب بسازید — در چند ثانیه.",
+        lblPlatform: "پلتفرم",
+        lblKeywords: "خودتان یا کارتان را توصیف کنید",
+        lblStyle: "سبک نوشتار",
+        btnGenerate: "تولید بیو",
+        toggle: "🌐 English",
+        loading: "در حال تولید بیو..."
+      }
     };
 
-    langToggle.addEventListener("click",()=>{
-      lang=lang==="en"?"fa":"en";const t=texts[lang];
-      document.getElementById("title").innerText=t.title;
-      document.getElementById("subtitle").innerText=t.subtitle;
-      document.getElementById("lblPlatform").innerText=t.lblPlatform;
-      document.getElementById("lblKeywords").innerText=t.lblKeywords;
-      document.getElementById("lblStyle").innerText=t.lblStyle;
-      document.getElementById("btnGenerate").innerText=t.btnGenerate;
-      langToggle.innerText=t.toggle;
-      document.body.dir=lang==="fa"?"rtl":"ltr";
+    langToggle.addEventListener("click", () => {
+      lang = lang === "en" ? "fa" : "en";
+      const t = texts[lang];
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("subtitle").innerText = t.subtitle;
+      document.getElementById("lblPlatform").innerText = t.lblPlatform;
+      document.getElementById("lblKeywords").innerText = t.lblKeywords;
+      document.getElementById("lblStyle").innerText = t.lblStyle;
+      document.getElementById("btnGenerate").innerText = t.btnGenerate;
+      langToggle.innerText = t.toggle;
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
     });
 
-    // ✨ Mock AI generator
-    const form=document.getElementById("bioForm");
-    const output=document.getElementById("output");
-    const status=document.getElementById("status");
+    const form = document.getElementById("bioForm");
+    const output = document.getElementById("output");
+    const status = document.getElementById("status");
 
-    form.addEventListener("submit",e=>{
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const platform=document.getElementById("platform").value;
-      const keywords=document.getElementById("keywords").value;
-      const style=document.getElementById("style").value;
-      status.textContent=texts[lang].loading; status.style.color="#6b7280"; output.innerHTML="";
+      const platform = document.getElementById("platform").value;
+      const keywords = document.getElementById("keywords").value || "a creative professional";
+      const style = document.getElementById("style").value;
+      const t = texts[lang];
 
-      setTimeout(()=>{
-        status.textContent="";
-        const bio=lang==="fa"
-          ?`👋 من ${keywords||"یک فرد خلاق"} هستم. در ${platform} محتوای ${style==="professional"?"حرفه‌ای":style==="friendly"?"صمیمی":"خلاقانه"} تولید می‌کنم تا الهام‌بخش دیگران باشم.`
-          :`👋 ${keywords||"A passionate creator"} — sharing ${style} insights and content on ${platform}. Let’s grow together!`;
-        output.innerHTML=`<div class="output-box">${bio}</div>`;
-      },1000);
+      status.textContent = t.loading;
+      output.innerHTML = "";
+      setTimeout(() => {
+        status.textContent = "";
+        const bio =
+          lang === "fa"
+            ? `👋 من ${keywords} هستم. در ${platform} محتوای ${style === "professional" ? "حرفه‌ای" : style === "friendly" ? "صمیمی" : "خلاقانه"} تولید می‌کنم تا الهام‌بخش دیگران باشم.`
+            : `👋 ${keywords} — sharing ${style} stories and insights on ${platform}. Let's grow together!`;
+        output.innerHTML = `<div class="output-box">${bio}</div>`;
+      }, 1000);
     });
   </script>
 </body>
