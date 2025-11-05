@@ -2,168 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Social Media Audit Tool | Bita Digital Hub</title>
-  <meta name="description" content="Analyze your social media posts for engagement, caption quality, hashtags, and branding. Get a professional score and actionable recommendations — free and online.">
-  <meta name="keywords" content="social media audit, engagement rate, caption analysis, hashtag checker, digital marketing tools">
-
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png"/>
-
-  <!-- 📈 Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YHKWTPXDHC');
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Audit | Bita Digital Hub</title>
+  <meta name="description" content="Analyze your social media post — caption strength, hashtags, and engagement rate — free, smart, and fast." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
   <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- 🔝 Navbar -->
+  <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36"/>
+      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
       <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="../index.html" class="active">Home</a>
+      <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
-  <!-- 🧠 Header -->
-  <section class="tool-header">
-    <img src="../assets/audit-icon.svg" alt="Audit Tool Icon" class="tool-icon"/>
-    <h1 id="t_title">Social Media Audit Tool</h1>
-    <p id="t_sub">Get a professional score and actionable recommendations for your post & profile setup.</p>
-  </section>
+  <div class="page-wrapper">
+    <!-- Left Ad -->
+    <aside class="ad-left">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="1111111111"
+           data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
 
-  <!-- 🌐 Language Buttons -->
-  <div class="lang-btns">
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('fa')">فارسی</button>
+    <main class="container">
+      <section class="tool-header">
+        <h1 id="title">Social Media Audit 💬</h1>
+        <p id="desc">Analyze your post caption, hashtags, and engagement rate instantly — free & private.</p>
+
+        <!-- 🌐 Language Switch -->
+        <div class="lang-btns">
+          <button id="btnEnglish" class="active">English</button>
+          <button id="btnFarsi">فارسی</button>
+        </div>
+      </section>
+
+      <div class="tool-box" style="max-width:600px;">
+        <label id="lblCaption">Paste your caption:</label>
+        <textarea id="captionInput" rows="5" placeholder="Write or paste your caption here..."></textarea>
+
+        <label id="lblLikes">Likes:</label>
+        <input type="number" id="likesInput" placeholder="Enter number of likes" />
+
+        <label id="lblComments">Comments:</label>
+        <input type="number" id="commentsInput" placeholder="Enter number of comments" />
+
+        <label id="lblFollowers">Followers:</label>
+        <input type="number" id="followersInput" placeholder="Enter total followers" />
+
+        <button id="analyzeBtn">Analyze</button>
+
+        <div id="output" class="output-box" style="display:none;">
+          <p id="resultMsg"></p>
+        </div>
+      </div>
+
+      <!-- Mid Ad -->
+      <div class="ad-mid">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3215014361489762"
+             data-ad-slot="3333333333"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </main>
+
+    <!-- Right Ad -->
+    <aside class="ad-right">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
   </div>
 
-  <!-- 🧰 Tool Card -->
-  <div class="tool-box">
-    <div class="audit-grid">
-      <div class="card">
-        <h3 id="t_captionLabel">Post Caption</h3>
-        <textarea id="caption" placeholder="Write your post caption here..."></textarea>
-        <p class="hint" id="t_captionHint">We’ll analyze caption length, emojis, and CTAs.</p>
-      </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
+  </footer>
 
-      <div class="card">
-        <h3 id="t_hashtagsLabel">Hashtags</h3>
-        <textarea id="hashtags" placeholder="#marketing #growth #branding"></textarea>
-        <p class="hint" id="t_hashtagsHint">Use 8–15 relevant hashtags for best performance.</p>
-      </div>
-
-      <div class="card">
-        <h3 id="t_metrics">Metrics</h3>
-        <label id="t_followers">Followers</label>
-        <input type="number" id="followers" placeholder="1000"/>
-        <label id="t_likes">Likes</label>
-        <input type="number" id="likes" placeholder="50"/>
-        <label id="t_comments">Comments</label>
-        <input type="number" id="comments" placeholder="10"/>
-      </div>
-    </div>
-
-    <div class="actions">
-      <button id="t_run">Run Audit</button>
-      <button class="btn-secondary" id="t_download">Download PDF</button>
-      <button class="btn-secondary" id="t_export">Export CSV</button>
-      <button class="btn-secondary" id="t_reset">Reset</button>
-    </div>
-  </div>
-
-  <!-- 📢 AdSense -->
-  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
+  <!-- Sticky Ad -->
+  <div class="ad-sticky">
     <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="8888888888"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
+         data-ad-slot="5555555555"
+         data-ad-format="horizontal"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
-  <!-- 🧭 Footer -->
-  <footer>
-    <p>
-      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
-      <a href="../privacy.html">Privacy Policy</a> · 
-      <a href="../about.html">About</a> · 
-      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
-    </p>
-  </footer>
-
-  <!-- 🌐 Language + Audit Logic -->
+  <!-- ⚙️ Script -->
   <script>
-    const TXT = {
+    const texts = {
       en: {
-        title: "Social Media Audit Tool",
-        sub: "Get a professional score and actionable recommendations for your post & profile setup.",
-        captionLabel: "Post Caption",
-        captionHint: "We’ll analyze caption length, emojis, and CTAs.",
-        hashtagsLabel: "Hashtags",
-        hashtagsHint: "Use 8–15 relevant hashtags for best performance.",
-        metrics: "Metrics",
-        followers: "Followers",
-        likes: "Likes",
-        comments: "Comments",
-        run: "Run Audit",
-        download: "Download PDF",
-        export: "Export CSV",
-        reset: "Reset"
+        title: "Social Media Audit 💬",
+        desc: "Analyze your post caption, hashtags, and engagement rate instantly — free & private.",
+        caption: "Paste your caption:",
+        likes: "Likes:",
+        comments: "Comments:",
+        followers: "Followers:",
+        analyze: "Analyze",
+        resultPrefix: "Your post quality score:",
+        resultEngagement: "Engagement rate:",
       },
       fa: {
-        title: "ابزار ارزیابی سوشال‌مدیا",
-        sub: "امتیاز حرفه‌ای بگیرید و پیشنهادهای دقیق برای پست و پروفایل خود دریافت کنید.",
-        captionLabel: "متن کپشن پست",
-        captionHint: "طول، اموجی‌ها و CTA بررسی می‌شود.",
-        hashtagsLabel: "هشتگ‌ها",
-        hashtagsHint: "بهترین عملکرد معمولاً با ۸ تا ۱۵ هشتگ مرتبط است.",
-        metrics: "شاخص‌ها",
-        followers: "تعداد فالوئر",
-        likes: "تعداد لایک",
-        comments: "تعداد کامنت",
-        run: "اجرای ارزیابی",
-        download: "دانلود PDF",
-        export: "خروجی CSV",
-        reset: "ریست"
+        title: "ارزیاب شبکه‌های اجتماعی 💬",
+        desc: "کپشن، هشتگ‌ها و نرخ تعامل پست خود را فوراً تحلیل کنید — رایگان و خصوصی.",
+        caption: "کپشن خود را وارد کنید:",
+        likes: "تعداد لایک‌ها:",
+        comments: "تعداد کامنت‌ها:",
+        followers: "تعداد فالوورها:",
+        analyze: "تحلیل",
+        resultPrefix: "امتیاز کیفیت پست شما:",
+        resultEngagement: "نرخ تعامل:",
       }
     };
 
     function setLang(lang) {
-      const t = TXT[lang];
-      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
-      document.getElementById('t_title').textContent = t.title;
-      document.getElementById('t_sub').textContent = t.sub;
-      document.getElementById('t_captionLabel').textContent = t.captionLabel;
-      document.getElementById('t_captionHint').textContent = t.captionHint;
-      document.getElementById('t_hashtagsLabel').textContent = t.hashtagsLabel;
-      document.getElementById('t_hashtagsHint').textContent = t.hashtagsHint;
-      document.getElementById('t_metrics').textContent = t.metrics;
-      document.getElementById('t_followers').textContent = t.followers;
-      document.getElementById('t_likes').textContent = t.likes;
-      document.getElementById('t_comments').textContent = t.comments;
-      document.getElementById('t_run').textContent = t.run;
-      document.getElementById('t_download').textContent = t.download;
-      document.getElementById('t_export').textContent = t.export;
-      document.getElementById('t_reset').textContent = t.reset;
+      const t = texts[lang];
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("desc").innerText = t.desc;
+      document.getElementById("lblCaption").innerText = t.caption;
+      document.getElementById("lblLikes").innerText = t.likes;
+      document.getElementById("lblComments").innerText = t.comments;
+      document.getElementById("lblFollowers").innerText = t.followers;
+      document.getElementById("analyzeBtn").innerText = t.analyze;
+      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
+      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
     }
 
-    document.addEventListener("DOMContentLoaded", () => setLang('en'));
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+    setLang("en");
+
+    // Audit Logic
+    document.getElementById("analyzeBtn").addEventListener("click", () => {
+      const caption = document.getElementById("captionInput").value.trim();
+      const likes = parseInt(document.getElementById("likesInput").value) || 0;
+      const comments = parseInt(document.getElementById("commentsInput").value) || 0;
+      const followers = parseInt(document.getElementById("followersInput").value) || 1;
+      const hashtags = (caption.match(/#[\w\u0600-\u06FF]+/g) || []).length;
+
+      // Simple quality scoring
+      let score = 0;
+      if (caption.length > 50) score += 20;
+      if (hashtags >= 3 && hashtags <= 10) score += 20;
+      if (/[!?]/.test(caption)) score += 10;
+      if (caption.length > 150) score += 10;
+      score = Math.min(100, score + hashtags * 3);
+
+      const engagement = (((likes + comments) / followers) * 100).toFixed(2);
+
+      document.getElementById("output").style.display = "block";
+      document.getElementById("resultMsg").innerHTML = `
+        <strong>${texts.en.resultPrefix}</strong> ${score}/100 <br>
+        <strong>${texts.en.resultEngagement}</strong> ${engagement}%`;
+    });
   </script>
 </body>
 </html>

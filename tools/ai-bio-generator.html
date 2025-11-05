@@ -2,170 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Bio Generator | Bita Digital Hub</title>
-  <meta name="description" content="Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.">
-  <meta name="keywords" content="AI bio generator, social media bio, LinkedIn bio, Instagram bio, YouTube bio, Bita Digital Hub">
-
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png"/>
-
-  <!-- 📈 Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YHKWTPXDHC');
-  </script>
+  <meta name="description" content="Generate professional bios for Instagram, LinkedIn, or YouTube — powered by smart templates and AI-style creativity." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
   <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- 🔝 Navbar -->
+  <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36"/>
+      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
       <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="../index.html" class="active">Home</a>
+      <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
-  <!-- 🤖 Tool Header -->
-  <section class="tool-header">
-    <!-- 🧠 AI Bio Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="64" height="64" style="margin-bottom:1rem;">
-      <circle cx="24" cy="24" r="22" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
-      <path d="M24 14a6 6 0 016 6v2h-2v-2a4 4 0 00-8 0v2h-2v-2a6 6 0 016-6zm-7 10h14v10a2 2 0 01-2 2H19a2 2 0 01-2-2V24z" fill="#6366f1"/>
-    </svg>
+  <div class="page-wrapper">
+    <!-- 📢 Left Ad -->
+    <aside class="ad-left">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="1111111111"
+           data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
 
-    <h1 id="t_title">AI Bio Generator</h1>
-    <p id="t_sub">Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.</p>
-  </section>
+    <!-- 🧠 Main Content -->
+    <main class="container">
+      <section class="tool-header">
+        <h1 id="title">AI Bio Generator 🤖</h1>
+        <p id="desc">Create professional, engaging bios for Instagram, LinkedIn, or YouTube — powered by AI-style templates.</p>
 
-  <!-- 🌐 Language Buttons -->
-  <div class="lang-btns">
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('fa')">فارسی</button>
-  </div>
+        <!-- 🌐 Language Toggle -->
+        <div class="lang-btns">
+          <button id="btnEnglish" class="active">English</button>
+          <button id="btnFarsi">فارسی</button>
+        </div>
+      </section>
 
-  <!-- 🧰 Tool Box -->
-  <div class="tool-box">
-    <label id="t_platform">Platform</label>
-    <select id="platform">
-      <option>LinkedIn</option>
-      <option>Instagram</option>
-      <option>YouTube</option>
-      <option>Twitter</option>
-    </select>
+      <!-- 🧰 Tool -->
+      <div class="tool-box" style="max-width:580px;">
+        <label id="lblPlatform">Platform:</label>
+        <select id="platform">
+          <option value="instagram">Instagram</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="youtube">YouTube</option>
+        </select>
 
-    <label id="t_desc">Describe yourself or your work</label>
-    <textarea id="description" placeholder="e.g. Data engineer, content creator, or small business owner"></textarea>
+        <label id="lblTopic">Describe yourself or your niche:</label>
+        <textarea id="topic" rows="4" placeholder="e.g., Data engineer passionate about automation and clean code"></textarea>
 
-    <label id="t_style">Style</label>
-    <select id="style">
-      <option>Professional</option>
-      <option>Friendly</option>
-      <option>Funny</option>
-      <option>Inspirational</option>
-    </select>
+        <button id="generateBtn">Generate Bios</button>
 
-    <button id="generateBtn">Generate Bio</button>
+        <div id="output" class="output-box" style="display:none;">
+          <p id="resultMsg"></p>
+        </div>
+      </div>
 
-    <div id="output" class="output-box"></div>
-  </div>
+      <!-- 📢 Mid Ad -->
+      <div class="ad-mid">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3215014361489762"
+             data-ad-slot="3333333333"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </main>
 
-  <!-- 📢 AdSense -->
-  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="7777777777"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- 📢 Right Ad -->
+    <aside class="ad-right">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
   </div>
 
   <!-- 🧭 Footer -->
   <footer>
-    <p>
-      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
-      <a href="../privacy.html">Privacy Policy</a> · 
-      <a href="../about.html">About</a> · 
-      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
-    </p>
+    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
   </footer>
+
+  <!-- 📢 Sticky Ad -->
+  <div class="ad-sticky">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="5555555555"
+         data-ad-format="horizontal"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
   <!-- ⚙️ Script -->
   <script>
-    const TXT = {
+    const texts = {
       en: {
-        title: "AI Bio Generator",
-        sub: "Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.",
-        platform: "Platform",
-        desc: "Describe yourself or your work",
-        style: "Style",
-        button: "Generate Bio",
-        placeholder: "e.g. Data engineer, content creator, or small business owner"
+        title: "AI Bio Generator 🤖",
+        desc: "Create professional, engaging bios for Instagram, LinkedIn, or YouTube — powered by AI-style templates.",
+        platform: "Platform:",
+        topic: "Describe yourself or your niche:",
+        generate: "Generate Bios",
+        success: "Here are your AI-generated bios:"
       },
       fa: {
-        title: "تولیدکننده بایو با هوش مصنوعی",
-        sub: "بایو حرفه‌ای برای اینستاگرام، لینکدین یا یوتیوب بسازید — فوری و رایگان.",
-        platform: "پلتفرم",
-        desc: "خود یا کارتان را توصیف کنید",
-        style: "سبک نوشتار",
-        button: "تولید بیو",
-        placeholder: "مثلاً: مهندس داده، تولیدکننده محتوا یا صاحب کسب‌وکار کوچک"
+        title: "تولیدکننده بیو هوش مصنوعی 🤖",
+        desc: "برای اینستاگرام، لینکدین یا یوتیوب بیوهای حرفه‌ای و جذاب بسازید — با قالب‌های هوش مصنوعی.",
+        platform: "پلتفرم:",
+        topic: "خود یا زمینه فعالیتتان را توصیف کنید:",
+        generate: "تولید بیوها",
+        success: "بیوهای پیشنهادی شما:"
       }
     };
 
     function setLang(lang) {
-      const t = TXT[lang];
-      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
-      document.getElementById('t_title').textContent = t.title;
-      document.getElementById('t_sub').textContent = t.sub;
-      document.getElementById('t_platform').textContent = t.platform;
-      document.getElementById('t_desc').textContent = t.desc;
-      document.getElementById('t_style').textContent = t.style;
-      document.getElementById('generateBtn').textContent = t.button;
-      document.getElementById('description').placeholder = t.placeholder;
+      const t = texts[lang];
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("desc").innerText = t.desc;
+      document.getElementById("lblPlatform").innerText = t.platform;
+      document.getElementById("lblTopic").innerText = t.topic;
+      document.getElementById("generateBtn").innerText = t.generate;
+      document.getElementById("resultMsg").innerText = t.success;
+
+      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
+      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
     }
 
-    document.addEventListener("DOMContentLoaded", () => setLang('en'));
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+    setLang("en");
 
-    // Simple Bio Generator (mock)
-    const generateBtn = document.getElementById("generateBtn");
+    const btn = document.getElementById("generateBtn");
+    const platform = document.getElementById("platform");
+    const topic = document.getElementById("topic");
     const output = document.getElementById("output");
+    const resultMsg = document.getElementById("resultMsg");
 
-    generateBtn.addEventListener("click", () => {
-      const platform = document.getElementById("platform").value;
-      const desc = document.getElementById("description").value.trim();
-      const style = document.getElementById("style").value;
-
-      if (!desc) {
-        output.innerHTML = "<p style='color:red'>⚠️ Please describe yourself first.</p>";
+    btn.addEventListener("click", () => {
+      const userTopic = topic.value.trim();
+      if (!userTopic) {
+        alert("Please describe yourself or your niche first.");
         return;
       }
 
-      const examples = {
-        Professional: `🔹 ${desc} | Crafting value through innovation and data-driven strategies.`,
-        Friendly: `👋 Hey there! I'm a ${desc} who loves connecting and sharing ideas.`,
-        Funny: `😂 ${desc} — caffeine-powered and always one meme ahead.`,
-        Inspirational: `🌟 ${desc} | Turning dreams into data and purpose into action.`
-      };
+      const bios = [
+        `✨ ${userTopic} | Sharing insights and inspiration daily | ${platform.value.toUpperCase()} Creator`,
+        `🚀 Passionate about ${userTopic} | Helping others grow smarter online | ${platform.value.toUpperCase()} Bio`,
+        `💡 ${userTopic} | Building connections, learning, and creating value | ${platform.value.toUpperCase()} Profile`
+      ];
 
-      output.innerHTML = `
-        <p><strong>✨ Generated Bio (${platform}):</strong></p>
-        <p>${examples[style]}</p>
-      `;
+      output.style.display = "block";
+      resultMsg.innerHTML = `<strong>${texts.en.success}</strong><br><br>` +
+        bios.map(b => `• ${b}`).join("<br><br>");
     });
   </script>
 </body>

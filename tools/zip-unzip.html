@@ -3,161 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZIP & Unzip Files | Bita Digital Hub</title>
-  <meta name="description" content="Compress or extract files instantly — fast, secure, and free online ZIP & Unzip tool by Bita Digital Hub.">
-  <meta name="keywords" content="zip unzip online, compress files, extract zip, free tools, Bita Digital Hub">
-
+  <title>ZIP & Unzip Tool | Bita Digital Hub</title>
+  <meta name="description" content="Compress or extract ZIP files instantly — simple, secure, and free tool by Bita Digital Hub." />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
-  <!-- 📈 Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YHKWTPXDHC');
-  </script>
-
   <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
-  <!-- 🧭 Open Graph -->
-  <meta property="og:title" content="ZIP & Unzip Files | Bita Digital Hub">
-  <meta property="og:description" content="Compress or extract files easily — fast, secure & free online ZIP tool.">
-  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
-  <meta property="og:url" content="https://bitadigitalhub.com/tools/zip-unzip.html">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- 📦 JSZip & FileSaver -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-
-  <link rel="stylesheet" href="../css/style.css" />
-
+  <!-- 📦 JSZip for compression/extraction -->
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 
 <body>
   <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="nav-logo" width="36" height="36" />
+      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
       <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="../index.html" class="active">Home</a>
+      <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
       <a href="../privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
   </header>
 
-  <!-- 📦 Tool Header -->
-  <section class="tool-header">
-    <img src="../assets/zip-icon.svg" alt="ZIP Tool Icon" class="tool-icon" />
-    <h1>ZIP & Unzip Files</h1>
-    <p>Compress or extract files easily — fast, secure & free online tool.</p>
-  </section>
-
-  <!-- 🌐 Language Switch -->
-  <div class="lang-btns">
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('fa')">فارسی</button>
-  </div>
-
-  <!-- 🧰 Tool -->
-  <div class="tool-box">
-    <p>Upload files to compress, or select a ZIP file to extract:</p>
-    <input type="file" id="fileInput" multiple />
-
-    <button onclick="compressFiles()">Compress (ZIP)</button>
-    <button onclick="extractFiles()">Extract (Unzip)</button>
-
-    <div id="result"></div>
-
-    <!-- 📢 AdSense -->
-    <div class="ad-placeholder" style="margin-top:2rem;">
+  <div class="page-wrapper">
+    <!-- 📢 Left Ad -->
+    <aside class="ad-left">
       <ins class="adsbygoogle"
-           style="display:block; text-align:center;"
+           style="display:block"
            data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="7777777777"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+           data-ad-slot="1111111111"
+           data-ad-format="auto"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+    </aside>
+
+    <!-- 🧰 Main Section -->
+    <main class="container">
+      <section class="tool-header">
+        <h1 id="title">ZIP & Unzip Files 📦</h1>
+        <p id="desc">Compress or extract ZIP files instantly — safe and fast, right in your browser.</p>
+
+        <!-- 🌐 Language Switch -->
+        <div class="lang-btns">
+          <button id="btnEnglish" class="active">English</button>
+          <button id="btnFarsi">فارسی</button>
+        </div>
+      </section>
+
+      <!-- 🗂️ Tool Box -->
+      <div class="tool-box" style="max-width:580px;">
+        <label id="lblMode">Select mode:</label>
+        <select id="modeSelect">
+          <option value="zip">Compress files (ZIP)</option>
+          <option value="unzip">Extract ZIP file</option>
+        </select>
+
+        <label id="lblUpload" for="fileInput">Choose file(s):</label>
+        <input type="file" id="fileInput" multiple />
+
+        <button id="processBtn" style="margin-top:1rem;">Start</button>
+
+        <div id="output" class="output-box" style="display:none; text-align:center;">
+          <p id="resultMsg"></p>
+          <a id="downloadLink" href="#" download="bita-archive.zip" style="color:#2563eb; display:block; margin-top:0.5rem;">⬇️ Download</a>
+        </div>
+      </div>
+
+      <!-- 📢 Mid Ad -->
+      <div class="ad-mid">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3215014361489762"
+             data-ad-slot="3333333333"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </main>
+
+    <!-- 📢 Right Ad -->
+    <aside class="ad-right">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
   </div>
 
   <!-- 🧭 Footer -->
   <footer>
-    <p>
-      © 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.<br>
-      <a href="../privacy.html">Privacy Policy</a> · 
-      <a href="../about.html">About</a> · 
-      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
-    </p>
+    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
   </footer>
 
-  <!-- 🌐 Language Toggle -->
-  <script>
-    function setLang(lang) {
-      document.body.dir = lang === "fa" ? "rtl" : "ltr";
-    }
-  </script>
+  <!-- 📢 Sticky Ad -->
+  <div class="ad-sticky">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="5555555555"
+         data-ad-format="horizontal"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
-  <!-- ⚙️ ZIP / UNZIP Logic -->
+  <!-- ⚙️ Script -->
   <script>
-    async function compressFiles() {
-      const input = document.getElementById("fileInput");
-      const files = input.files;
+    const texts = {
+      en: {
+        title: "ZIP & Unzip Files 📦",
+        desc: "Compress or extract ZIP files instantly — safe and fast, right in your browser.",
+        mode: "Select mode:",
+        upload: "Choose file(s):",
+        start: "Start",
+        compressSuccess: "✅ Files compressed successfully!",
+        extractSuccess: "✅ Files extracted successfully!",
+        download: "⬇️ Download"
+      },
+      fa: {
+        title: "فشرده‌سازی و استخراج 📦",
+        desc: "فایل‌ها را به سرعت فشرده یا از حالت ZIP خارج کنید — کاملاً امن و آنلاین.",
+        mode: "حالت را انتخاب کنید:",
+        upload: "فایل(ها) را انتخاب کنید:",
+        start: "شروع",
+        compressSuccess: "✅ فایل‌ها با موفقیت فشرده شدند!",
+        extractSuccess: "✅ فایل‌ها با موفقیت استخراج شدند!",
+        download: "⬇️ دانلود"
+      }
+    };
+
+    function setLang(lang) {
+      const t = texts[lang];
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("desc").innerText = t.desc;
+      document.getElementById("lblMode").innerText = t.mode;
+      document.getElementById("lblUpload").innerText = t.upload;
+      document.getElementById("processBtn").innerText = t.start;
+
+      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
+      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
+    }
+
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+    setLang("en");
+
+    const btn = document.getElementById("processBtn");
+    const modeSelect = document.getElementById("modeSelect");
+    const fileInput = document.getElementById("fileInput");
+    const outputBox = document.getElementById("output");
+    const resultMsg = document.getElementById("resultMsg");
+    const downloadLink = document.getElementById("downloadLink");
+
+    btn.addEventListener("click", async () => {
+      const mode = modeSelect.value;
+      const files = fileInput.files;
       if (!files.length) {
-        alert("Please select at least one file to compress.");
+        alert("Please select at least one file.");
         return;
       }
 
       const zip = new JSZip();
-      for (const file of files) {
-        const data = await file.arrayBuffer();
-        zip.file(file.name, data);
-      }
 
-      document.getElementById("result").innerHTML = "⏳ Compressing files...";
-      const blob = await zip.generateAsync({ type: "blob" });
-      saveAs(blob, "compressed_files.zip");
-      document.getElementById("result").innerHTML = "✅ Files compressed successfully and downloaded!";
-    }
-
-    async function extractFiles() {
-      const input = document.getElementById("fileInput");
-      const file = input.files[0];
-      if (!file || !file.name.endsWith(".zip")) {
-        alert("Please upload a valid ZIP file to extract.");
-        return;
-      }
-
-      document.getElementById("result").innerHTML = "⏳ Extracting files...";
-      try {
-        const zip = await JSZip.loadAsync(await file.arrayBuffer());
-        const folderName = file.name.replace(".zip", "") || "unzipped_files";
-        let output = `<h4>📂 Extracted Files from: ${folderName}</h4><ul>`;
-
-        for (const filename in zip.files) {
-          const item = zip.files[filename];
-          if (!item.dir) {
-            const fileData = await item.async("blob");
-            saveAs(fileData, `${folderName}-${filename}`);
-            output += `<li>💾 ${filename}</li>`;
-          }
+      if (mode === "zip") {
+        for (const f of files) {
+          const content = await f.arrayBuffer();
+          zip.file(f.name, content);
         }
-
-        output += "</ul><p>✅ All extracted files downloaded successfully!</p>";
-        document.getElementById("result").innerHTML = output;
-      } catch (err) {
-        console.error(err);
-        document.getElementById("result").innerHTML =
-          "❌ Error extracting files. The file might be corrupted or invalid.";
+        const blob = await zip.generateAsync({ type: "blob" });
+        const url = URL.createObjectURL(blob);
+        downloadLink.href = url;
+        resultMsg.innerText = texts.en.compressSuccess;
+        outputBox.style.display = "block";
+      } else {
+        const zipFile = files[0];
+        const data = await zip.loadAsync(await zipFile.arrayBuffer());
+        const folderZip = new JSZip();
+        for (const filename of Object.keys(data.files)) {
+          const content = await data.files[filename].async("blob");
+          folderZip.file(filename, content);
+        }
+        const blob = await folderZip.generateAsync({ type: "blob" });
+        const url = URL.createObjectURL(blob);
+        downloadLink.href = url;
+        resultMsg.innerText = texts.en.extractSuccess;
+        outputBox.style.display = "block";
       }
-    }
+    });
   </script>
 </body>
 </html>
