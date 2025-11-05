@@ -88,22 +88,34 @@
     }
 
     /* ========== Language Buttons ========== */
+   
     .lang-btns {
-      text-align: center;
-      margin: 1.5rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1.5rem auto 0;
     }
+
     .lang-btns button {
-      margin: 0 0.4rem;
-      padding: 0.5rem 1.2rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      background: #fff;
+      background: #ffffff;
+      color: var(--text-dark);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 1.4rem;
+      min-width: 100px;
       cursor: pointer;
-      font-weight: 500;
-      transition: 0.2s;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     }
+
     .lang-btns button:hover {
       background: #f1f5f9;
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+      transform: translateY(-1px);
     }
 
     /* ========== Tool Cards ========== */
