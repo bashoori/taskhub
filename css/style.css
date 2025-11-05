@@ -232,3 +232,52 @@ footer a:hover {
     font-size: 1.6rem;
   }
 }
+
+/* ===== TOOL GRID (Home page cards) ===== */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.tool-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: #111827;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.tool-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.tool-desc {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+/* Section title style for “Our Free Tools” */
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
