@@ -3,161 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Bita Digital Hub | Free Online Tools for Creators</title>
-  <meta name="description" content="Smart, simple, and free online tools for digital creators — convert files, clean data, shorten links, and automate daily tasks.">
-  <meta name="keywords" content="AI tools, social media audit, bio generator, caption generator, online tools, data cleaning">
-
+  <title>Bita Digital Hub | Smart, Simple, Free Tools</title>
+  <meta name="description" content="Convert files, compress data, clean Excel sheets, generate passwords, and more — free, fast, and secure online tools." />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
-
-  <!-- SEO & Sharing -->
-  <meta property="og:title" content="Bita Digital Hub – Free Tools for Creators">
-  <meta property="og:description" content="Boost your workflow with free tools and AI generators made for digital creators.">
-  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
-  <meta property="og:url" content="https://bitadigitalhub.com">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YHKWTPXDHC');
-  </script>
-
-  <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- 🌐 Navbar -->
+  <!-- 🔝 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="./assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
+      <img src="./assets/taskhub-logo.svg" alt="Logo" class="nav-logo" width="36" height="36" />
       <a href="./index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
       <a href="./index.html" class="active">Home</a>
       <a href="./about.html">About</a>
       <a href="./privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
-      
     </nav>
   </header>
 
-  <!-- 🌄 Hero -->
-  <section class="tool-header" style="text-align:center; padding:4rem 1rem 2rem;">
-    <h1>⚙️ All your Essential Tools in one place</h1>
-    <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and free.</p>
-    <div class="typing-tagline" style="margin-top:1rem;">
-      <span id="typing-text"></span><span class="cursor">|</span>
-    </div>
-    <div class="lang-btns" style="margin-top:2rem;">
-      <button onclick="setLang('en')">English</button>
-      <button onclick="setLang('fa')">فارسی</button>
-    </div>
+  <!-- 🌍 Hero Section -->
+  <section class="tool-header">
+    <h1 id="heroTitle">All Your Essential Tools in One Place ⚙️</h1>
+    <p id="heroDesc">Convert files, clean data, compress tables, and do much more — fast, secure, and free.</p>
   </section>
 
-  <!-- 🧰 Tools -->
-  <section class="tool-box" style="max-width:900px; margin:auto;">
-    <h2 class="section-title" style="text-align:center;">🧰 Our Free Tools</h2>
+  <!-- 🌐 Language Switch -->
+  <div class="lang-btns">
+    <button id="btnFarsi">فارسی</button>
+    <button id="btnEnglish">English</button>
+  </div>
+
+  <!-- 🧰 Tool Grid -->
+  <section>
+    <h2 class="section-title" id="toolsTitle">Our Free Tools 🔐</h2>
     <div class="tool-grid">
-      <a href="./tools/password-generator.html" class="tool-card">
-        <div class="tool-title">🔐 Password Generator</div>
-        <div class="tool-desc">Generate strong, secure passwords instantly.</div>
-      </a>
-      <a href="./tools/url-shortener.html" class="tool-card">
-        <div class="tool-title">🌐 URL Shortener</div>
-        <div class="tool-desc">Create short, trackable links for your campaigns.</div>
-      </a>
-      <a href="./tools/social-audit.html" class="tool-card">
-        <div class="tool-title">🧠 Social Media Audit</div>
-        <div class="tool-desc">Analyze engagement, caption quality, and hashtags.</div>
-      </a>
-      <a href="./tools/ai-bio-generator.html" class="tool-card">
-        <div class="tool-title">✨ AI Bio Generator</div>
-        <div class="tool-desc">Generate professional bios for Instagram, LinkedIn, and YouTube in seconds.</div>
-      </a>
-      <a href="./tools/ai-caption-generator.html" class="tool-card">
-        <div class="tool-title">💬 AI Caption & Hashtag Generator</div>
-        <div class="tool-desc">Create catchy captions and viral hashtags powered by AI.</div>
-      </a>
-      <a href="./tools/file-converter.html" class="tool-card">
-        <div class="tool-title">📄 File Converter</div>
-        <div class="tool-desc">Convert between PDF, Word, Excel, and image files — secure and fast.</div>
-      </a>
-      <a href="./tools/csv-cleaner.html" class="tool-card">
-        <div class="tool-title">📊 CSV & Excel Cleaner</div>
-        <div class="tool-desc">Clean, merge, and deduplicate spreadsheet data online.</div>
-      </a>
+      <div class="tool-card">
+        <h3 id="tool1Title">URL Shortener 🌐</h3>
+        <p id="tool1Desc">Create short, trackable links for your campaigns.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="tool2Title">Password Generator 🔒</h3>
+        <p id="tool2Desc">Generate strong, secure passwords instantly.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="tool3Title">AI Bio Generator ✨</h3>
+        <p id="tool3Desc">Generate professional bios for Instagram, LinkedIn, and YouTube in seconds.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="tool4Title">Social Media Audit 🧠</h3>
+        <p id="tool4Desc">Analyze engagement, caption quality, and hashtags.</p>
+      </div>
     </div>
   </section>
 
-  <!-- 💬 Contact -->
-  <section class="tool-box contact-section" style="max-width:700px; margin:auto; text-align:center;">
-    <h2>📬 Contact Us</h2>
-    <p>Have feedback, ideas, or collaboration proposals? Send us a quick message below.</p>
-    <form action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
-      <input type="hidden" name="_subject" value="New message from Bita Digital Hub">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email" required />
-      <textarea name="message" placeholder="Write your message here..." required></textarea>
-      <button type="submit">Send Message</button>
+  <!-- 📬 Contact Section -->
+  <section class="contact-section">
+    <h2 id="contactTitle">Get in Touch 💌</h2>
+    <p id="contactDesc">We love feedback and ideas! Send us your message below.</p>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button type="submit" id="submitBtn">Send Message</button>
     </form>
   </section>
 
-  <!-- 🌙 Footer -->
-  <footer class="site-footer">
-    <p>
-      <a href="./privacy.html">Privacy Policy</a> |
-      © 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools<br>
-      📩 <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
-    </p>
+  <!-- 🧭 Footer -->
+  <footer>
+    <p>© 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.</p>
   </footer>
 
-  <!-- 🌐 Language Switch -->
+  <!-- ⚙️ Script -->
   <script>
-    function setLang(lang) {
-      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
-      const heroTitle = document.querySelector('.tool-header h1');
-      const heroDesc = document.querySelector('.tool-header p');
-      if (lang === 'fa') {
-        heroTitle.textContent = '⚙️ همه ابزارهای ضروری شما در یک جا';
-        heroDesc.textContent = 'فایل‌ها را تبدیل کنید، داده‌ها را فشرده کنید، جدول‌ها را تمیز کنید و خیلی کارهای دیگر — فوری، امن و رایگان.';
-      } else {
-        heroTitle.textContent = '⚙️ All your Essential Tools in one place';
-        heroDesc.textContent = 'Convert files, compress data, clean spreadsheets, and more — instantly, securely, and free.';
+    const texts = {
+      en: {
+        heroTitle: "All Your Essential Tools in One Place ⚙️",
+        heroDesc: "Convert files, clean data, compress tables, and do much more — fast, secure, and free.",
+        toolsTitle: "Our Free Tools 🔐",
+        tool1Title: "URL Shortener 🌐",
+        tool1Desc: "Create short, trackable links for your campaigns.",
+        tool2Title: "Password Generator 🔒",
+        tool2Desc: "Generate strong, secure passwords instantly.",
+        tool3Title: "AI Bio Generator ✨",
+        tool3Desc: "Generate professional bios for Instagram, LinkedIn, and YouTube in seconds.",
+        tool4Title: "Social Media Audit 🧠",
+        tool4Desc: "Analyze engagement, caption quality, and hashtags.",
+        contactTitle: "Get in Touch 💌",
+        contactDesc: "We love feedback and ideas! Send us your message below.",
+        namePlaceholder: "Your Name",
+        emailPlaceholder: "Your Email",
+        msgPlaceholder: "Your Message",
+        submitBtn: "Send Message"
+      },
+      fa: {
+        heroTitle: "🛠️ همه ابزارهای ضروری شما در یک جا",
+        heroDesc: "فایل‌ها را تبدیل کنید، داده‌ها را تمیز و فشرده کنید و خیلی کارهای دیگر — فوری، امن و رایگان.",
+        toolsTitle: "ابزارهای رایگان ما 🔐",
+        tool1Title: "کوتاه‌کننده لینک 🌐",
+        tool1Desc: "لینک‌های قابل ردیابی برای کمپین‌های خود ایجاد کنید.",
+        tool2Title: "تولیدکننده رمز عبور 🔒",
+        tool2Desc: "رمزهای عبور قوی و امن را فوراً بسازید.",
+        tool3Title: "تولیدکننده بیو هوش مصنوعی ✨",
+        tool3Desc: "بیوهای حرفه‌ای برای اینستاگرام، لینکدین و یوتیوب در چند ثانیه بسازید.",
+        tool4Title: "ارزیابی شبکه‌های اجتماعی 🧠",
+        tool4Desc: "درگیری، کیفیت کپشن و هشتگ‌ها را تحلیل کنید.",
+        contactTitle: "تماس با ما 💌",
+        contactDesc: "از نظرات و ایده‌های شما استقبال می‌کنیم! پیام خود را برای ما ارسال کنید.",
+        namePlaceholder: "نام شما",
+        emailPlaceholder: "ایمیل شما",
+        msgPlaceholder: "پیام شما",
+        submitBtn: "ارسال پیام"
       }
-    }
-  </script>
+    };
 
-  <!-- ⌨️ Typing Animation -->
-  <script>
-    const words = ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"];
-    let i = 0, j = 0, isDeleting = false;
-    const typingSpeed = 120, deletingSpeed = 60, delayBetweenWords = 1000;
-    function type() {
-      const typingText = document.getElementById("typing-text");
-      const currentWord = words[i];
-      if (!isDeleting && j <= currentWord.length) {
-        typingText.textContent = currentWord.substring(0, j++);
-        setTimeout(type, typingSpeed);
-      } else if (isDeleting && j >= 0) {
-        typingText.textContent = currentWord.substring(0, j--);
-        setTimeout(type, deletingSpeed);
-      } else if (!isDeleting && j === currentWord.length) {
-        isDeleting = true;
-        setTimeout(type, delayBetweenWords);
-      } else {
-        isDeleting = false;
-        i = (i + 1) % words.length;
-        setTimeout(type, 200);
-      }
+    const elements = {
+      heroTitle: document.getElementById("heroTitle"),
+      heroDesc: document.getElementById("heroDesc"),
+      toolsTitle: document.getElementById("toolsTitle"),
+      tool1Title: document.getElementById("tool1Title"),
+      tool1Desc: document.getElementById("tool1Desc"),
+      tool2Title: document.getElementById("tool2Title"),
+      tool2Desc: document.getElementById("tool2Desc"),
+      tool3Title: document.getElementById("tool3Title"),
+      tool3Desc: document.getElementById("tool3Desc"),
+      tool4Title: document.getElementById("tool4Title"),
+      tool4Desc: document.getElementById("tool4Desc"),
+      contactTitle: document.getElementById("contactTitle"),
+      contactDesc: document.getElementById("contactDesc"),
+      name: document.getElementById("name"),
+      email: document.getElementById("email"),
+      message: document.getElementById("message"),
+      submitBtn: document.getElementById("submitBtn")
+    };
+
+    function setLang(lang) {
+      const t = texts[lang];
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
+
+      elements.heroTitle.innerText = t.heroTitle;
+      elements.heroDesc.innerText = t.heroDesc;
+      elements.toolsTitle.innerText = t.toolsTitle;
+
+      elements.tool1Title.innerText = t.tool1Title;
+      elements.tool1Desc.innerText = t.tool1Desc;
+      elements.tool2Title.innerText = t.tool2Title;
+      elements.tool2Desc.innerText = t.tool2Desc;
+      elements.tool3Title.innerText = t.tool3Title;
+      elements.tool3Desc.innerText = t.tool3Desc;
+      elements.tool4Title.innerText = t.tool4Title;
+      elements.tool4Desc.innerText = t.tool4Desc;
+
+      elements.contactTitle.innerText = t.contactTitle;
+      elements.contactDesc.innerText = t.contactDesc;
+      elements.name.placeholder = t.namePlaceholder;
+      elements.email.placeholder = t.emailPlaceholder;
+      elements.message.placeholder = t.msgPlaceholder;
+      elements.submitBtn.innerText = t.submitBtn;
     }
-    document.addEventListener("DOMContentLoaded", type);
+
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
   </script>
 </body>
 </html>
