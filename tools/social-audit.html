@@ -22,9 +22,6 @@
   <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
      crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="../css/style.css" />
-
 </head>
 
 <body>
@@ -46,7 +43,7 @@
   <section class="tool-header">
     <img src="../assets/audit-icon.svg" alt="Audit Tool Icon" class="tool-icon"/>
     <h1 id="t_title">Social Media Audit Tool</h1>
-    <p id="t_sub">Get a professional score and actionable recommendations for your posts.</p>
+    <p id="t_sub">Get a professional score and actionable recommendations for your post & profile setup.</p>
   </section>
 
   <!-- 🌐 Language Buttons -->
@@ -55,37 +52,38 @@
     <button onclick="setLang('fa')">فارسی</button>
   </div>
 
-  <!-- 🔍 Audit Inputs -->
-  <div class="audit-grid">
-    <div class="card">
-      <h3 id="t_captionLabel">Post Caption</h3>
-      <textarea id="caption" placeholder="Write your post caption here..."></textarea>
-      <p class="hint" id="t_captionHint">We’ll analyze caption length, emojis, and CTAs.</p>
+  <!-- 🧰 Tool Card -->
+  <div class="tool-box">
+    <div class="audit-grid">
+      <div class="card">
+        <h3 id="t_captionLabel">Post Caption</h3>
+        <textarea id="caption" placeholder="Write your post caption here..."></textarea>
+        <p class="hint" id="t_captionHint">We’ll analyze caption length, emojis, and CTAs.</p>
+      </div>
+
+      <div class="card">
+        <h3 id="t_hashtagsLabel">Hashtags</h3>
+        <textarea id="hashtags" placeholder="#marketing #growth #branding"></textarea>
+        <p class="hint" id="t_hashtagsHint">Use 8–15 relevant hashtags for best performance.</p>
+      </div>
+
+      <div class="card">
+        <h3 id="t_metrics">Metrics</h3>
+        <label id="t_followers">Followers</label>
+        <input type="number" id="followers" placeholder="1000"/>
+        <label id="t_likes">Likes</label>
+        <input type="number" id="likes" placeholder="50"/>
+        <label id="t_comments">Comments</label>
+        <input type="number" id="comments" placeholder="10"/>
+      </div>
     </div>
 
-    <div class="card">
-      <h3 id="t_hashtagsLabel">Hashtags</h3>
-      <textarea id="hashtags" placeholder="#marketing #growth #branding"></textarea>
-      <p class="hint" id="t_hashtagsHint">Use 8–15 relevant hashtags for best performance.</p>
+    <div class="actions">
+      <button id="t_run">Run Audit</button>
+      <button class="btn-secondary" id="t_download">Download PDF</button>
+      <button class="btn-secondary" id="t_export">Export CSV</button>
+      <button class="btn-secondary" id="t_reset">Reset</button>
     </div>
-
-    <div class="card">
-      <h3 id="t_metrics">Metrics</h3>
-      <label id="t_followers">Followers</label>
-      <input type="number" id="followers" placeholder="1000"/>
-      <label id="t_likes">Likes</label>
-      <input type="number" id="likes" placeholder="50"/>
-      <label id="t_comments">Comments</label>
-      <input type="number" id="comments" placeholder="10"/>
-    </div>
-  </div>
-
-  <!-- 🧮 Actions -->
-  <div class="actions">
-    <button id="t_run">Run Audit</button>
-    <button class="btn-secondary" id="t_download">Download PDF</button>
-    <button class="btn-secondary" id="t_export">Export CSV</button>
-    <button class="btn-secondary" id="t_reset">Reset</button>
   </div>
 
   <!-- 📢 AdSense -->
@@ -149,7 +147,6 @@
     function setLang(lang) {
       const t = TXT[lang];
       document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
-
       document.getElementById('t_title').textContent = t.title;
       document.getElementById('t_sub').textContent = t.sub;
       document.getElementById('t_captionLabel').textContent = t.captionLabel;
