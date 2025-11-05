@@ -6,6 +6,7 @@
   <title>AI Caption & Hashtag Generator | Bita Digital Hub</title>
   <meta name="description" content="Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube posts — powered by AI.">
   <meta name="keywords" content="caption generator, hashtag generator, AI content creator, social media tool, Bita Digital Hub">
+
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
@@ -29,8 +30,6 @@
   <meta property="og:url" content="https://bitadigitalhub.com/tools/ai-caption-generator.html">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="../css/style.css" />
-
 </head>
 
 <body>
@@ -50,17 +49,18 @@
 
   <!-- 🧠 Tool Header -->
   <section class="tool-header">
-    <img src="../assets/ai-icon.svg" alt="AI Tool Icon" class="tool-icon" />
+    <img src="../assets/ai-tool-icon.svg" alt="AI Tool Icon" class="tool-icon" />
     <h1 id="title">AI Caption & Hashtag Generator</h1>
     <p id="subtitle">Create catchy captions and hashtags for Instagram, LinkedIn, or YouTube — powered by AI.</p>
   </section>
 
   <!-- 🌐 Language Switch -->
   <div class="lang-btns">
-    <button id="langToggle">🌐 فارسی</button>
+    <button id="btnEnglish">🌐 English</button>
+    <button id="btnFarsi">🌐 فارسی</button>
   </div>
 
-  <!-- 🧰 Tool -->
+  <!-- 🧰 Tool Box -->
   <div class="tool-box">
     <form id="captionForm">
       <label id="lblPlatform">Platform</label>
@@ -110,8 +110,6 @@
 
   <!-- ⚙️ Script -->
   <script>
-    const langToggle = document.getElementById("langToggle");
-    let lang = "en";
     const texts = {
       en: {
         title: "AI Caption & Hashtag Generator",
@@ -120,7 +118,6 @@
         lblTopic: "What is your post about?",
         lblTone: "Tone",
         btnGenerate: "Generate Captions",
-        toggle: "🌐 فارسی",
         loading: "Generating captions..."
       },
       fa: {
@@ -130,23 +127,26 @@
         lblTopic: "موضوع پست چیست؟",
         lblTone: "لحن متن",
         btnGenerate: "تولید کپشن",
-        toggle: "🌐 English",
         loading: "در حال تولید کپشن..."
       }
     };
 
-    langToggle.addEventListener("click", () => {
-      lang = lang === "en" ? "fa" : "en";
-      const t = texts[lang];
+    let lang = "en";
+
+    const setLang = (lng) => {
+      lang = lng;
+      const t = texts[lng];
+      document.body.dir = (lng === "fa") ? "rtl" : "ltr";
       document.getElementById("title").innerText = t.title;
       document.getElementById("subtitle").innerText = t.subtitle;
       document.getElementById("lblPlatform").innerText = t.lblPlatform;
       document.getElementById("lblTopic").innerText = t.lblTopic;
       document.getElementById("lblTone").innerText = t.lblTone;
       document.getElementById("btnGenerate").innerText = t.btnGenerate;
-      langToggle.innerText = t.toggle;
-      document.body.dir = lang === "fa" ? "rtl" : "ltr";
-    });
+    };
+
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
 
     const form = document.getElementById("captionForm");
     const output = document.getElementById("output");
@@ -163,12 +163,13 @@
       output.innerHTML = "";
       setTimeout(() => {
         status.textContent = "";
+        const icon = tone === "friendly" ? "😊" : tone === "motivational" ? "💪" : "💼";
+        const hashtags = topic.split(" ").slice(0, 3).map(w => "#" + w.replace(/[^\w]/g, "")).join(" ");
         output.innerHTML = `
           <div class="output-box">
             <strong>${lang === "fa" ? "📢 کپشن نمونه:" : "📢 Sample Caption:"}</strong><br><br>
-            ${tone === "friendly" ? "😊" : tone === "motivational" ? "💪" : "💼"} 
-            ${topic} — ${platform.charAt(0).toUpperCase() + platform.slice(1)} post idea.<br>
-            #${topic.split(" ")[0] || "AI"} #${tone} #${platform}
+            ${icon} ${topic} — ${platform.charAt(0).toUpperCase() + platform.slice(1)} post idea.<br>
+            ${hashtags} #${tone} #${platform}
           </div>`;
       }, 1000);
     });
