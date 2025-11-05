@@ -2,237 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AI Bio Generator | Bita Digital Hub</title>
-  <meta name="description" content="Generate professional bios for Instagram, LinkedIn, and YouTube in English or Persian. Perfect for creators, freelancers, and job seekers."/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Bio Generator | Bita Digital Hub</title>
+  <meta name="description" content="Generate professional bios for LinkedIn, Instagram, or YouTube instantly with AI.">
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png"/>
   <link rel="stylesheet" href="../css/style.css"/>
 
+  <!-- ✅ Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+          crossorigin="anonymous"></script>
+
   <style>
-    body {
-      background: #0f172a;
-      color: #e2e8f0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      padding: 1.5rem;
-      direction: ltr;
-      transition: direction 0.3s;
+    body { background:#f9fafb; color:#0f172a; font-family:system-ui,sans-serif; margin:0; padding:0; }
+
+    /* HEADER */
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      background:#fff; padding:0.8rem 2rem; border-bottom:1px solid #e5e7eb;
+      position:sticky; top:0; z-index:10;
     }
-    body.fa {
-      direction: rtl;
-      font-family: "Vazirmatn", sans-serif;
-    }
+    header .brand { display:flex; align-items:center; gap:0.5rem; text-decoration:none; color:#111827; font-weight:700; font-size:1.1rem; }
+    header nav a { margin-left:1.2rem; text-decoration:none; color:#374151; font-weight:500; transition:color .2s ease; }
+    header nav a:hover { color:#2563eb; }
+
+    /* TOOL CARD */
     .tool-container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: rgba(15,23,42,0.4);
-      border: 1px solid rgba(148,163,184,0.2);
-      border-radius: 1.25rem;
-      padding: 1.5rem 1.5rem 2rem;
-      backdrop-filter: blur(4px);
-      position: relative;
+      max-width:700px; margin:3rem auto; background:#fff; border-radius:1.2rem;
+      border:1px solid #e5e7eb; box-shadow:0 4px 12px rgba(0,0,0,.05);
+      padding:2rem; position:relative;
     }
-    #langToggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(15,23,42,0.4);
-      border: 1px solid rgba(148,163,184,0.25);
-      border-radius: 9999px;
-      color: #e2e8f0;
-      font-size: 0.8rem;
-      padding: 0.3rem 0.8rem;
-      cursor: pointer;
+    #langToggle { position:absolute; top:1rem; right:1rem; background:#f3f4f6;
+      border:1px solid #e5e7eb; border-radius:9999px; color:#374151;
+      font-size:.8rem; padding:.3rem .8rem; cursor:pointer; }
+    h1 { text-align:center; font-size:1.6rem; color:#111827; margin-bottom:.3rem; }
+    p.subtitle { text-align:center; color:#4b5563; margin-bottom:2rem; }
+
+    label { display:block; font-weight:600; margin-top:1rem; margin-bottom:.3rem; color:#111827; }
+    select,textarea {
+      width:100%; padding:.8rem 1rem; border-radius:.75rem; border:1px solid #d1d5db;
+      background:#f9fafb; font-size:1rem; margin-bottom:.8rem; color:#111827; resize:vertical;
     }
-    .tool-header h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
-    .tool-header p { color: #94a3b8; margin-bottom: 1.25rem; }
-    label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
-    select, textarea, input {
-      width: 100%;
-      background: rgba(15,23,42,0.6);
-      border: 1px solid rgba(148,163,184,0.3);
-      border-radius: 0.75rem;
-      padding: 0.6rem 0.7rem;
-      color: #e2e8f0;
-      outline: none;
-      margin-bottom: 1rem;
-    }
-    textarea { min-height: 90px; resize: vertical; }
+
     .btn-primary {
-      background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
-      border: none;
-      color: #0f172a;
-      font-weight: 600;
-      padding: 0.7rem 1.4rem;
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: transform 0.15s ease;
+      background:linear-gradient(135deg,#38bdf8 0%,#6366f1 100%);
+      border:none; color:white; font-weight:600; padding:.9rem 1.4rem;
+      border-radius:9999px; cursor:pointer; display:block; width:100%; margin-top:1rem;
+      transition:opacity .25s ease;
     }
-    .btn-primary:hover { transform: translateY(-1px); }
-    .output-wrapper { margin-top: 1.5rem; display: grid; gap: 1rem; }
-    .output-box {
-      background: rgba(15,23,42,0.35);
-      border: 1px solid rgba(148,163,184,0.12);
-      border-radius: 1rem;
-      padding: 1rem;
-      position: relative;
+    .btn-primary:hover { opacity:.9; }
+
+    .output-box { background:#f9fafb; border:1px solid #e5e7eb; border-radius:.8rem;
+      padding:1rem; margin-top:1.5rem; white-space:pre-line; }
+
+    /* ADS */
+    .ad-slot {
+      display:block; text-align:center; margin:2rem auto;
     }
-    .output-box h3 { margin-bottom: 0.4rem; font-size: 0.9rem; color: #94a3b8; }
-    .copy-btn {
-      position: absolute;
-      top: 0.8rem;
-      right: 0.8rem;
-      background: rgba(15,23,42,0.4);
-      border: 1px solid rgba(148,163,184,0.25);
-      border-radius: 9999px;
-      padding: 0.3rem 0.6rem;
-      font-size: 0.65rem;
-      color: #e2e8f0;
-      cursor: pointer;
+
+    /* FOOTER */
+    footer {
+      text-align:center; color:#6b7280; font-size:.9rem;
+      margin-top:4rem; padding:1rem; border-top:1px solid #e5e7eb;
     }
-    .tips-box {
-      background: rgba(148,163,184,0.04);
-      border: 1px solid rgba(148,163,184,0.08);
-      border-radius: 0.85rem;
-      padding: 0.7rem 0.9rem;
-      font-size: 0.75rem;
-      color: #94a3b8;
-      margin-top: 1rem;
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(99,102,241,0.15);
-      border: 1px solid rgba(99,102,241,0.25);
-      color: #e2e8f0;
-      font-size: 0.6rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 9999px;
-      margin-left: 0.25rem;
-    }
+    footer a { color:#2563eb; text-decoration:none; }
+    footer a:hover { text-decoration:underline; }
   </style>
 </head>
+
 <body>
+  <!-- HEADER -->
+  <header>
+    <a href="../index.html" class="brand">
+      <img src="../assets/taskhub-logo.svg" alt="Logo" width="28" height="28">
+      <span>Bita Digital Hub</span>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="mailto:contact@bitadigitalhub.com">📩 Contact</a>
+    </nav>
+  </header>
+
+  <!-- MAIN TOOL -->
   <main class="tool-container">
     <button id="langToggle">🌐 FA</button>
-    <div class="tool-header">
-      <h1 id="title">AI Bio Generator</h1>
-      <p id="subtitle">Generate ready-to-post bios for Instagram, LinkedIn, or YouTube. Describe yourself and let the tool write it.</p>
-    </div>
+    <h1 id="title">AI Bio Generator</h1>
+    <p id="subtitle" class="subtitle">Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.</p>
 
     <form id="bioForm">
-      <label id="lblPlatform" for="platform">Platform</label>
-      <select id="platform" name="platform" required>
-        <option value="instagram">Instagram Bio</option>
-        <option value="linkedin">LinkedIn Bio</option>
-        <option value="youtube">YouTube Channel Description</option>
+      <label id="lblPlatform">Platform</label>
+      <select id="platform">
+        <option value="linkedin">LinkedIn</option>
+        <option value="instagram">Instagram</option>
+        <option value="youtube">YouTube</option>
       </select>
 
-      <label id="lblAbout" for="aboutYou">Describe yourself:</label>
-      <textarea id="aboutYou" placeholder="e.g. Data engineer in Vancouver, helping businesses build ETL pipelines and digital content."></textarea>
+      <label id="lblKeywords">Describe yourself or your work</label>
+      <textarea id="keywords" placeholder="e.g. Data engineer, content creator, or small business owner"></textarea>
 
-      <label id="lblTone" for="tone">Tone</label>
-      <select id="tone" name="tone">
+      <label id="lblStyle">Style</label>
+      <select id="style">
         <option value="professional">Professional</option>
         <option value="friendly">Friendly</option>
-        <option value="creator">Creator / Personal Brand</option>
+        <option value="creative">Creative</option>
       </select>
 
       <button type="submit" class="btn-primary" id="btnGenerate">Generate Bio</button>
     </form>
 
-    <div class="tips-box" id="tips">💡 Tip: Keep Instagram bios short, LinkedIn detailed, and YouTube informative.</div>
+    <!-- 📢 Ad below form -->
+    <ins class="adsbygoogle ad-slot"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="4389251115"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-    <div id="output" class="output-wrapper" style="display:none;"></div>
+    <div id="status"></div>
+    <div id="output"></div>
+
+    <p style="margin-top:1.5rem; color:#6b7280; font-size:0.85rem; text-align:center;">
+      💡 Tip: Try a friendly tone for Instagram, professional for LinkedIn, and creative for YouTube.
+    </p>
   </main>
 
+  <!-- 📢 Ad before footer -->
+  <ins class="adsbygoogle ad-slot"
+       data-ad-client="ca-pub-3215014361489762"
+       data-ad-slot="2314477225"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools |
+    <a href="../privacy.html">Privacy Policy</a>
+  </footer>
+
+  <!-- 🧠 Scripts -->
   <script>
-    const langToggle = document.getElementById('langToggle');
-    let lang = 'en';
+    // 🌐 Language toggle
+    const langToggle = document.getElementById("langToggle");
+    let lang = "en";
     const texts = {
-      en: {
-        title: "AI Bio Generator",
-        subtitle: "Generate ready-to-post bios for Instagram, LinkedIn, or YouTube. Describe yourself and let the tool write it.",
-        lblPlatform: "Platform",
-        lblAbout: "Describe yourself:",
-        lblTone: "Tone",
-        btnGenerate: "Generate Bio",
-        tips: "💡 Tip: Keep Instagram bios short, LinkedIn detailed, and YouTube informative.",
-        toggle: "🌐 FA"
-      },
-      fa: {
-        title: "تولیدکننده بایو با هوش مصنوعی",
-        subtitle: "برای اینستاگرام، لینکدین یا یوتیوب بایو بنویس! فقط خودت را توصیف کن، بقیه‌اش با ما.",
-        lblPlatform: "پلتفرم",
-        lblAbout: "خودت را توصیف کن:",
-        lblTone: "لحن متن",
-        btnGenerate: "تولید بایو",
-        tips: "💡 نکته: بایوی اینستاگرام کوتاه‌تر باشه، لینکدین رسمی‌تر، یوتیوب توضیح‌دارتر.",
-        toggle: "🌐 EN"
-      }
+      en:{title:"AI Bio Generator",subtitle:"Generate professional bios for Instagram, LinkedIn, or YouTube — instantly with AI.",
+          lblPlatform:"Platform",lblKeywords:"Describe yourself or your work",lblStyle:"Style",
+          btnGenerate:"Generate Bio",toggle:"🌐 FA",loading:"Generating bio..."},
+      fa:{title:"تولید بیو با هوش مصنوعی",subtitle:"برای لینکدین، اینستاگرام یا یوتیوب بیوی حرفه‌ای و جذاب بسازید — در چند ثانیه.",
+          lblPlatform:"پلتفرم",lblKeywords:"خودتان یا کارتان را توصیف کنید",lblStyle:"سبک نوشتار",
+          btnGenerate:"تولید بیو",toggle:"🌐 EN",loading:"در حال تولید بیو..."}
     };
 
-    langToggle.addEventListener('click', () => {
-      lang = lang === 'en' ? 'fa' : 'en';
-      const t = texts[lang];
-      document.body.classList.toggle('fa', lang === 'fa');
-      document.getElementById('title').innerText = t.title;
-      document.getElementById('subtitle').innerText = t.subtitle;
-      document.getElementById('lblPlatform').innerText = t.lblPlatform;
-      document.getElementById('lblAbout').innerText = t.lblAbout;
-      document.getElementById('lblTone').innerText = t.lblTone;
-      document.getElementById('btnGenerate').innerText = t.btnGenerate;
-      document.getElementById('tips').innerText = t.tips;
-      langToggle.innerText = t.toggle;
+    langToggle.addEventListener("click",()=>{
+      lang=lang==="en"?"fa":"en";const t=texts[lang];
+      document.getElementById("title").innerText=t.title;
+      document.getElementById("subtitle").innerText=t.subtitle;
+      document.getElementById("lblPlatform").innerText=t.lblPlatform;
+      document.getElementById("lblKeywords").innerText=t.lblKeywords;
+      document.getElementById("lblStyle").innerText=t.lblStyle;
+      document.getElementById("btnGenerate").innerText=t.btnGenerate;
+      langToggle.innerText=t.toggle;
+      document.body.dir=lang==="fa"?"rtl":"ltr";
     });
 
-    const bioForm = document.getElementById('bioForm');
-    const output = document.getElementById('output');
+    // ✨ Mock AI generator
+    const form=document.getElementById("bioForm");
+    const output=document.getElementById("output");
+    const status=document.getElementById("status");
 
-    const templates = {
-      instagram: (about) => [
-        `${about}\n✨ Sharing creative & digital vibes\n🚀 DM for collabs`,
-        `${about}\n📍 Vancouver | 🎥 Creator\n#AI #DigitalBusiness`,
-        `${about}\n💡 Learn. Build. Grow.\n👇 Explore my latest work`
-      ],
-      linkedin: (about) => [
-        `${about} | Building scalable data solutions & digital brands.`,
-        `${about} | Experienced in SQL, Python, Azure, and AI tools.`,
-        `${about} | Helping teams turn raw data into insights.`
-      ],
-      youtube: (about) => [
-        `${about}\n🎬 Weekly videos on AI, data, and online growth.`,
-        `${about}\nPractical tutorials & digital tips for creators.`,
-        `${about}\nSubscribe to learn, build, and grow!`
-      ]
-    };
-
-    bioForm.addEventListener('submit', (e) => {
+    form.addEventListener("submit",e=>{
       e.preventDefault();
-      const platform = document.getElementById('platform').value;
-      const aboutYou = document.getElementById('aboutYou').value.trim() || "Content creator and data engineer sharing what I learn.";
-      const tone = document.getElementById('tone').value;
+      const platform=document.getElementById("platform").value;
+      const keywords=document.getElementById("keywords").value;
+      const style=document.getElementById("style").value;
+      status.textContent=texts[lang].loading; status.style.color="#6b7280"; output.innerHTML="";
 
-      let bios = templates[platform](aboutYou);
-      output.innerHTML = "";
-      bios.forEach((text, i) => {
-        const box = document.createElement('div');
-        box.className = 'output-box';
-        box.innerHTML = `
-          <h3>${lang === 'fa' ? 'پیشنهاد' : 'Suggestion'} ${i + 1} <span class="badge">${platform}</span></h3>
-          <button class="copy-btn" data-text="${text.replace(/"/g, '&quot;')}">${lang === 'fa' ? 'کپی' : 'Copy'}</button>
-          <p>${text.replace(/\n/g, '<br>')}</p>`;
-        output.appendChild(box);
-      });
-      output.style.display = 'grid';
-
-      // copy functionality
-      document.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.onclick = () => {
-          const text = btn.getAttribute('data-text').replace(/&quot;/g, '"');
-          navigator.clipboard.writeText(text);
-          btn.innerText = lang === 'fa' ? 'کپی شد!' : 'Copied!';
-          setTimeout(() => btn.innerText = lang === 'fa' ? 'کپی' : 'Copy', 1500);
-        };
-      });
+      setTimeout(()=>{
+        status.textContent="";
+        const bio=lang==="fa"
+          ?`👋 من ${keywords||"یک فرد خلاق"} هستم. در ${platform} محتوای ${style==="professional"?"حرفه‌ای":style==="friendly"?"صمیمی":"خلاقانه"} تولید می‌کنم تا الهام‌بخش دیگران باشم.`
+          :`👋 ${keywords||"A passionate creator"} — sharing ${style} insights and content on ${platform}. Let’s grow together!`;
+        output.innerHTML=`<div class="output-box">${bio}</div>`;
+      },1000);
     });
   </script>
 </body>

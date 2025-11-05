@@ -290,6 +290,53 @@
   </form>
 </section>
 
+
+<!-- 📅 Today Widget -->
+<div id="today-widget" class="today-widget"></div>
+
+<script>
+  // --- Today Widget Script ---
+  function getPersianDate() {
+    const now = new Date();
+    return new Intl.DateTimeFormat("fa-IR-u-ca-persian", {
+      year: "numeric", month: "long", day: "numeric",
+    }).format(now);
+  }
+
+  function getEnglishDate() {
+    const now = new Date();
+    return new Intl.DateTimeFormat("en-US", {
+      weekday: "short", month: "short", day: "numeric", year: "numeric",
+    }).format(now);
+  }
+
+  const todayWidget = document.getElementById("today-widget");
+  todayWidget.innerHTML = `
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; font-size:0.9rem; color:#475569;">
+      📅 <span>${getEnglishDate()}</span> | <span style="font-family:'Vazirmatn',sans-serif;">${getPersianDate()}</span>
+    </div>
+  `;
+</script>
+
+<style>
+  /* --- Today Widget Style --- */
+  .today-widget {
+    margin-top: 0.8rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    font-family: system-ui, sans-serif;
+  }
+  footer .today-widget {
+    background: transparent;
+    border: none;
+    color: #475569;
+    font-size: 0.9rem;
+  }
+</style>
+
+
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-content">
