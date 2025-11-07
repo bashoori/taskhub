@@ -171,8 +171,15 @@ nav a:hover {
 
 .tool-card h3 {
   margin-bottom: 0.5rem;
-  color: var(--primary-blue);
+  color: var(--text-dark);
+  font-weight: 700;
 }
+
+.tool-card p {
+  color: var(--text-mid);
+  font-weight: 400;
+}
+
 
 /* ---------- Contact Section ---------- */
 .contact-wrapper {
