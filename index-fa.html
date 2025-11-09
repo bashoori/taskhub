@@ -10,38 +10,15 @@
 </head>
 
 <body>
-  <!-- 🧭 نوار بالا -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="assets/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" width="36" height="36" />
-      <div class="brand-group">
-        <a href="index-fa.html" class="brand">بیتا دیجیتال هاب</a>
-        <span class="tagline">نوآوری و راهکارهای دیجیتال</span>
-      </div>
-    </div>
-
-    <nav class="nav-links">
-      <a href="index-fa.html" class="active">خانه</a>
-      <a href="about.html">درباره ما</a>
-      <a href="services.html">خدمات</a>
-      <a href="projects.html">پروژه‌ها</a>
-      <a href="contact.html">تماس</a>
-    </nav>
-
-    <div class="nav-actions">
-      <!-- 🌐 منوی زبان -->
-      <div class="lang-switch">
-        <button class="lang-toggle">
-          🌐 <img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی ▾
-        </button>
-        <ul class="lang-menu">
-          <li><a href="index.html"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</a></li>
-          <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</a></li>
-        </ul>
-      </div>
-      <a href="contact.html" class="btn-primary get-started">شروع کن</a>
-    </div>
-  </header>
+    
+  <!-- 🔗 Header Import -->
+  <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
 
   <!-- 🌟 بخش معرفی -->
   <main>

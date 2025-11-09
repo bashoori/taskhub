@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telegram Bots | Bita Digital Hub</title>
+  <meta name="description" content="Explore custom Telegram bots for digital marketing, automation, and education — built by Bita Digital Hub to scale your business." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
+</head>
+
+<body>
+  <!-- 🔗 Header -->
+  <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
+
+  <!-- 🌟 Hero -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-badge">🤖 Smart Automation</div>
+      <h1 class="hero-title">Custom Telegram Bots</h1>
+      <p class="hero-subtitle">
+        Automate your digital business with interactive, AI-powered Telegram bots —
+        perfect for marketing, data collection, lead management, and education.
+      </p>
+      <div class="hero-buttons">
+        <a href="#bots" class="btn-primary">Explore Bots</a>
+        <a href="contact.html" class="btn-secondary">Request a Custom Bot</a>
+      </div>
+    </section>
+
+    <!-- 🧰 Bot Catalog -->
+    <section id="bots" class="container" style="max-width:1100px; padding:3rem 1rem;">
+      <h2 class="section-title">Ready-to-Use Bots</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>🎯 Digital Marketing Academy Bot</h3>
+          <p>
+            An educational bot that guides users through marketing lessons, sends
+            resources, and captures leads directly into Google Sheets.
+          </p>
+          <p style="font-weight:600;">Use Cases:</p>
+          <ul style="color:var(--text-mid); line-height:1.6;">
+            <li>Online course onboarding</li>
+            <li>Franchise digital training</li>
+            <li>Automated content delivery</li>
+          </ul>
+          <a href="#" class="btn-secondary" target="_blank">Demo Coming Soon</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>💼 Business Franchise Bot</h3>
+          <p>
+            Automates franchise enrollment and partner communication.
+            Includes multi-step forms, contact syncing, and broadcast features.
+          </p>
+          <p style="font-weight:600;">Use Cases:</p>
+          <ul style="color:var(--text-mid); line-height:1.6;">
+            <li>Lead qualification & intake</li>
+            <li>Partner onboarding</li>
+            <li>Sales funnel automation</li>
+          </ul>
+          <a href="#" class="btn-secondary" target="_blank">Demo Coming Soon</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>🧠 AI Chat Assistant</h3>
+          <p>
+            A conversational assistant powered by OpenAI integration — answers FAQs, 
+            assists users, and provides dynamic responses in English or Persian.
+          </p>
+          <p style="font-weight:600;">Use Cases:</p>
+          <ul style="color:var(--text-mid); line-height:1.6;">
+            <li>Customer support</li>
+            <li>Educational chat tutoring</li>
+            <li>Personalized recommendations</li>
+          </ul>
+          <a href="#" class="btn-secondary" target="_blank">Demo Coming Soon</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⚙️ Custom Development -->
+    <section class="container" style="max-width:1100px; padding:3rem 1rem;">
+      <h2 class="section-title">Custom Bot Development</h2>
+      <p style="color:var(--text-mid); text-align:center; max-width:800px; margin:auto;">
+        We design and deploy Telegram bots tailored to your business — from marketing automation and 
+        education platforms to data dashboards. Every bot includes setup, integration, and support.
+      </p>
+
+      <div class="tool-grid" style="margin-top:2rem;">
+        <div class="tool-card">
+          <h3>Integration Options</h3>
+          <p>Google Sheets, Airtable, Render, AWS Lambda, APIs, or CRMs like HubSpot and Notion.</p>
+        </div>
+
+        <div class="tool-card">
+          <h3>Automation Features</h3>
+          <p>Form capture, scheduled messages, user tracking, file uploads, and analytics dashboards.</p>
+        </div>
+
+        <div class="tool-card">
+          <h3>Languages & Customization</h3>
+          <p>Bots can support English + Persian and integrate branding, custom commands, and AI modules.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💰 Pricing -->
+    <section class="container" style="max-width:1100px; padding:3rem 1rem;">
+      <h2 class="section-title">Pricing & Plans</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Starter</h3>
+          <p>Basic chatbot setup with pre-defined responses and Google Sheets integration.</p>
+          <p><strong>$99</strong> one-time setup</p>
+        </div>
+
+        <div class="tool-card">
+          <h3>Professional</h3>
+          <p>Fully branded automation with multi-step logic, lead tracking, and database sync.</p>
+          <p><strong>$199</strong> one-time setup</p>
+        </div>
+
+        <div class="tool-card">
+          <h3>Enterprise</h3>
+          <p>Advanced AI integration, analytics dashboard, and 24/7 maintenance support.</p>
+          <p><strong>$299+</strong> custom development</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💬 CTA -->
+    <section class="contact-section">
+      <h2>Want a Custom Telegram Bot?</h2>
+      <p>Let’s automate your workflow and connect your data seamlessly.</p>
+      <a href="contact.html" class="btn-primary">Contact Me</a>
+    </section>
+  </main>
+
+  <!-- 🔗 Footer -->
+  <div id="footer"></div>
+  <script>
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html)
+      .catch(err => console.error("Footer failed to load:", err));
+  </script>
+</body>
+</html>

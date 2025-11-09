@@ -10,31 +10,15 @@
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
-      <a href="index.html" class="brand">Bita Digital Hub</a>
-    </div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-
-      <!-- 🌐 Language Dropdown -->
-      <div class="lang-switch">
-        <button id="langBtn" class="lang-toggle">
-          🌐 <span id="selectedLang"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾</span>
-        </button>
-        <ul id="langMenu" class="lang-menu">
-          <li data-lang="en"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</li>
-          <li data-lang="fa"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+    
+  <!-- 🔗 Header Import -->
+  <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
 
   <!-- 🌟 Hero Section -->
   <section class="hero-section">

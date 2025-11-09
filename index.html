@@ -84,31 +84,13 @@
   </main>
 
   <!-- ⚫ Footer -->
- <!-- 🔗 Footer Import -->
+ <!-- 🔗 Footer -->
   <div id="footer"></div>
   <script>
     fetch("components/footer.html")
       .then(res => res.text())
       .then(html => document.getElementById("footer").innerHTML = html)
       .catch(err => console.error("Footer failed to load:", err));
-  </script>
-
-  <!-- 🌐 Language Menu Script -->
-  <script>
-    const langToggle = document.querySelector('.lang-toggle');
-    const langMenu = document.querySelector('.lang-menu');
-    langToggle.addEventListener('click', () => langMenu.classList.toggle('show'));
-    document.addEventListener('click', (e) => {
-      if (!langToggle.contains(e.target)) langMenu.classList.remove('show');
-    });
-  </script>
-
-  <!-- 🌍 Auto-redirect for Persian users -->
-  <script>
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang && userLang.toLowerCase().startsWith('fa')) {
-      window.location.href = "index-fa.html";
-    }
   </script>
 </body>
 </html>

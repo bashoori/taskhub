@@ -105,29 +105,13 @@
   </main>
 
   <!-- ⚫ Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h3>Bita Digital Hub</h3>
-        <p>Empowering creators and professionals with automation, analytics, and online-business solutions.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="tools.html">Tools</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="sources.html">Sources</a></li>
-          <li><a href="franchise.html">Franchise</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><strong>Email:</strong> contact@bitadigitalhub.com</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Bita Digital Hub — Smart, Simple, Human.</p>
-    </div>
-  </footer>
+  <!-- 🔗 Footer -->
+  <div id="footer"></div>
+  <script>
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html)
+      .catch(err => console.error("Footer failed to load:", err));
+  </script>
 </body>
 </html>
