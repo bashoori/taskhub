@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <!-- 🔗 Header Import -->
+  <!-- 🔗 Header Import -->
   <div id="header"></div>
   <script>
     fetch("components/header.html")
@@ -23,7 +23,7 @@
   <main>
     <section class="hero-section">
       <div class="hero-badge">📞 Let’s Connect</div>
-      <h1 class="hero-title">Contact us</h1>
+      <h1 class="hero-title">Contact Us</h1>
       <p class="hero-subtitle">
         Have a question, collaboration idea, or project request?  
         Send a message and we’ll get back to you soon.
@@ -31,32 +31,32 @@
     </section>
 
     <!-- 📬 Contact Form -->
-    <section class="container" style="margin-top:3rem; max-width:800px;">
-      <h2 class="section-title">Send a Message</h2>
-      <form 
-        action="https://formsubmit.co/contact@bitadigitalhub.com" 
-        method="POST" 
-        class="contact-form"
-      >
-        <input type="hidden" name="_subject" value="New message from Bita Digital Hub">
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html" />
+    <section class="contact-page">
+      <div class="contact-container">
+        <h2 style="text-align:center; color:var(--primary-blue); margin-bottom:1.5rem;">
+          Send a Message
+        </h2>
 
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required />
+        <form id="contactForm" class="contact-form">
+          <input type="hidden" name="_subject" value="New message from Bita Digital Hub">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html" />
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
 
-        <button type="submit" class="btn-primary" style="margin-top:1rem;">Send Message</button>
-      </form>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+          <button type="submit" class="btn-primary" style="margin-top:1rem;">Send Message</button>
+        </form>
+      </div>
     </section>
 
     <!-- 💰 AdSense Area -->
-    <!-- 🟢 Place Google AdSense script here -->
     <div class="container" style="text-align:center; margin:3rem 0;">
       <p style="color:gray;">(Ad space – insert your AdSense code here)</p>
     </div>
@@ -89,6 +89,95 @@
       .then(res => res.text())
       .then(html => document.getElementById("footer").innerHTML = html)
       .catch(err => console.error("Footer failed to load:", err));
+  </script>
+
+  <!-- ✨ Inline Style for Contact Centering -->
+  <style>
+    .contact-page {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 1rem;
+      background: var(--bg-light);
+      min-height: 70vh;
+    }
+
+    .contact-container {
+      width: 100%;
+      max-width: 600px;
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+    }
+
+    /* ✅ Toast Notification */
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary-blue);
+      color: var(--white);
+      padding: 1rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .contact-page {
+        padding: 2rem 1rem;
+      }
+      .contact-container {
+        padding: 2rem 1.25rem;
+      }
+      .toast {
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%) translateY(10px);
+      }
+    }
+  </style>
+
+  <!-- ✅ Toast Script -->
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = '✅ Message sent successfully — we’ll reply soon!';
+    document.body.appendChild(toast);
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+
+      try {
+        await fetch('https://formsubmit.co/ajax/contact@bitadigitalhub.com', {
+          method: 'POST',
+          body: formData
+        });
+
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+        setTimeout(() => window.location.href = 'thank-you.html', 2500);
+
+        contactForm.reset();
+      } catch (err) {
+        toast.textContent = '⚠️ Something went wrong. Please try again.';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+      }
+    });
   </script>
 </body>
 </html>

@@ -455,4 +455,24 @@ a:hover {
     margin: 0 auto;
   }
 }
+/* ===============================
+📩 Contact Page Center Alignment
+=============================== */
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 70vh;
+  background: var(--bg-light);
+  padding: 3rem 1rem;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 600px;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.08);
+}
 
