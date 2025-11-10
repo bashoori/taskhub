@@ -46,74 +46,85 @@ a:hover {
 /* ... (keep your navbar & brand-header rules unchanged) ... */
 
 /* =========================================================
-🧰 Tools / File Converter Page Styles
+🎨 File Converter / Tool Pages Unified Styling
 ========================================================= */
 
 .tool-page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 75vh;
   padding: 3rem 1rem;
-  background: linear-gradient(to bottom right, #f8fafc, #e0e7ff);
+  background: linear-gradient(to bottom right, #eef2ff, #e0e7ff);
 }
 
 .tool-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
-  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
+  padding: 2rem 2.5rem;
   width: 100%;
+  max-width: 640px;
   text-align: center;
-  margin-bottom: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.2);
 }
 
 .tool-card h2 {
-  font-size: 1.6rem;
   color: var(--primary-blue);
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
 }
 
 .tool-card p {
   color: var(--text-mid);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .tool-form {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  margin-top: 1rem;
+}
+
+.tool-form label {
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: left;
 }
 
 .file-input,
 .select-input {
   width: 100%;
-  padding: 0.7rem;
+  margin: 0.4rem 0 1rem;
+  padding: 0.65rem 0.8rem;
   border: 1px solid var(--border);
-  border-radius: 0.6rem;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  background: #f8fafc;
 }
 
 .file-input:focus,
 .select-input:focus {
   border-color: var(--primary-cyan);
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
 }
 
 .primary-btn {
+  width: 100%;
   background: var(--primary-blue);
   color: var(--white);
-  border: none;
-  border-radius: 0.6rem;
-  padding: 0.75rem 1.2rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: background 0.25s ease;
 }
 
 .primary-btn:hover {
@@ -125,6 +136,8 @@ a:hover {
 }
 
 .download-link {
+  display: inline-block;
+  margin-top: 0.3rem;
   color: var(--primary-cyan);
   font-weight: 600;
 }
@@ -139,12 +152,11 @@ a:hover {
 .lang-btns button {
   border: 1px solid var(--border);
   background: var(--white);
-  padding: 0.4rem 1rem;
+  padding: 0.35rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.2s ease;
   font-weight: 500;
-  color: var(--text-dark);
+  transition: all 0.25s ease;
 }
 
 .lang-btns button.active {
@@ -153,15 +165,16 @@ a:hover {
 }
 
 .ad-container {
-  width: 100%;
-  max-width: 700px;
-  margin: 2rem auto;
+  margin-top: 2rem;
   text-align: center;
 }
 
-.hidden {
-  display: none;
+@media (max-width: 768px) {
+  .tool-card {
+    padding: 1.5rem;
+  }
 }
+
 
 /* =========================================================
 📱 Responsive Layout
