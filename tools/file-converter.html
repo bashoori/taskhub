@@ -7,104 +7,74 @@
   <meta name="description" content="Convert PDF ⇄ Word / Excel / JPG / PNG / TXT — free, fast, and secure online tool by Bita Digital Hub." />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
-
-  <!-- 💰 Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
     crossorigin="anonymous"></script>
-
-  <!-- 🧰 File conversion support -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 </head>
 
 <body>
-  <!-- 🔗 Header Import -->
+  <!-- 🔗 Header -->
   <div id="header"></div>
   <script>
-    fetch("components/header.html")
+    fetch("../components/header.html")
       .then(res => res.text())
-      .then(html => document.getElementById("header").innerHTML = html)
-      .catch(err => console.error("Header failed to load:", err));
+      .then(html => document.getElementById("header").innerHTML = html);
   </script>
 
-  <!-- 🧭 Brand Header (like screenshot) -->
-  <section class="brand-header">
-    <img src="../assets/taskhub-logo.svg" alt="BI Digital Hub Logo" class="brand-logo" />
+  <!-- 🧭 Brand Section -->
+  <section class="brand-header center">
+    <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
     <div class="brand-text">
-      <h1 class="brand-title">BI Digital Hub</h1>
-      <p class="brand-subtitle">Solutions Digitales Innovantes</p>
+      <h1 class="brand-title">Bita Digital Hub</h1>
+      <p class="brand-subtitle">Start and Grow Your Digital Business</p>
     </div>
   </section>
 
-  <!-- 🧰 Main Page Wrapper -->
-  <div class="page-wrapper">
-    <!-- 📢 Left Ad -->
-    <aside class="ad-left">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="1111111111"
-           data-ad-format="auto"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
+  <!-- 🧰 Tool Section -->
+  <main class="tool-page">
+    <div class="tool-card">
+      <h2 id="title">File Converter 🔁</h2>
+      <p id="desc">Convert between PDF, Word, Excel, JPG, PNG, and TXT — fast, secure, and free.</p>
 
-    <!-- 🧰 Main Content -->
-    <main class="container">
-      <section class="tool-header">
-        <h2 id="title">File Converter 🔁</h2>
-        <p id="desc">Convert between PDF, Word, Excel, JPG, PNG, and TXT — fast, secure, and free.</p>
+      <div class="lang-btns">
+        <button id="btnEnglish" class="active">English</button>
+        <button id="btnFarsi">فارسی</button>
+      </div>
 
-        <!-- 🌐 Language Switch -->
-        <div class="lang-btns">
-          <button id="btnEnglish" class="active">English</button>
-          <button id="btnFarsi">فارسی</button>
-        </div>
-      </section>
-
-      <!-- 🗂️ Tool UI -->
-      <div class="tool-box" style="max-width:600px;">
+      <div class="tool-form">
         <label id="lblUpload" for="fileInput">Select a file to convert:</label>
-        <input type="file" id="fileInput" />
+        <input type="file" id="fileInput" class="file-input" />
 
         <label id="lblFormat">Choose output format:</label>
-        <select id="formatSelect">
+        <select id="formatSelect" class="select-input">
           <option value="txt">TXT</option>
           <option value="pdf">PDF</option>
           <option value="png">PNG</option>
           <option value="jpg">JPG</option>
         </select>
 
-        <button id="convertBtn" style="margin-top:1rem;">Convert</button>
-
-        <div id="output" class="output-box" style="display:none;">
-          <p id="resultMsg"></p>
-          <a id="downloadLink" href="#" style="color:#2563eb;">⬇️ Download converted file</a>
-        </div>
+        <button id="convertBtn" class="primary-btn">Convert</button>
       </div>
 
-      <!-- 📢 Mid Ad -->
-      <div class="ad-mid">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3215014361489762"
-             data-ad-slot="3333333333"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <div id="output" class="output-box hidden">
+        <p id="resultMsg"></p>
+        <a id="downloadLink" href="#" class="download-link">⬇️ Download converted file</a>
       </div>
-    </main>
+    </div>
 
-    <!-- 📢 Right Ad -->
-    <aside class="ad-right">
+    <!-- 📢 Ad Area -->
+    <div class="ad-container">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"></ins>
+           data-ad-slot="3333333333"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
-  </div>
+    </div>
+  </main>
 
-  <!-- ⚙️ Conversion Script -->
+  <!-- ⚙️ Script -->
   <script>
     const texts = {
       en: {
@@ -118,7 +88,7 @@
       },
       fa: {
         title: "تبدیل‌گر فایل 🔁",
-        desc: "بین فرمت‌های PDF، Word، Excel، JPG، PNG و TXT تبدیل کنید — سریع، امن و رایگان.",
+        desc: "تبدیل بین فرمت‌های PDF، Word، Excel، JPG، PNG و TXT — سریع، امن و رایگان.",
         upload: "فایلی برای تبدیل انتخاب کنید:",
         format: "فرمت خروجی را انتخاب کنید:",
         convert: "تبدیل",
@@ -146,9 +116,9 @@
     document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
     setLang("en");
 
-    const convertBtn = document.getElementById("convertBtn");
     const fileInput = document.getElementById("fileInput");
     const formatSelect = document.getElementById("formatSelect");
+    const convertBtn = document.getElementById("convertBtn");
     const outputBox = document.getElementById("output");
     const resultMsg = document.getElementById("resultMsg");
     const downloadLink = document.getElementById("downloadLink");
@@ -156,10 +126,7 @@
     convertBtn.addEventListener("click", async () => {
       const file = fileInput.files[0];
       const format = formatSelect.value;
-      if (!file) {
-        alert("Please select a file to convert.");
-        return;
-      }
+      if (!file) return alert("Please select a file to convert.");
 
       const reader = new FileReader();
       reader.onload = () => {
@@ -168,7 +135,7 @@
         downloadLink.href = url;
         downloadLink.download = file.name.split('.')[0] + "." + format;
         resultMsg.innerText = texts.en.success;
-        outputBox.style.display = "block";
+        outputBox.classList.remove("hidden");
       };
       reader.readAsArrayBuffer(file);
     });
@@ -177,10 +144,9 @@
   <!-- 🔗 Footer -->
   <div id="footer"></div>
   <script>
-    fetch("components/footer.html")
+    fetch("../components/footer.html")
       .then(res => res.text())
-      .then(html => document.getElementById("footer").innerHTML = html)
-      .catch(err => console.error("Footer failed to load:", err));
+      .then(html => document.getElementById("footer").innerHTML = html);
   </script>
 
 </body>
