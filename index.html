@@ -3,85 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="meta.title">Bita Digital Hub | Digital Solutions & Online Business</title>
+  <title>Bita Digital Hub | Innovative Digital Solutions</title>
   <meta name="description"
-    content="Bita Digital Hub helps creators, data professionals, and entrepreneurs build digital systems — from AI-powered tools and data automation to online business growth." />
+    content="Bita Digital Hub empowers creators and businesses to automate, scale, and grow using Data, Cloud, and AI-powered systems." />
 
   <!-- 🌈 Unified Styles -->
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
-
   <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
 </head>
 
 <body>
-  <!-- 🧭 Header Placeholder -->
+
+  <!-- 🧭 Header Import -->
   <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
 
   <!-- 🌟 Hero Section -->
   <main>
     <section class="hero-section">
-      <div class="hero-badge" data-i18n="hero.badge">✨ Build Smarter, Work Freer</div>
-      <h1 class="hero-title" data-i18n="hero.title">All-in-One Hub for Digital Growth</h1>
-      <p class="hero-subtitle" data-i18n="hero.subtitle">
-        Tools, systems, and learning resources to help you automate, grow, and monetize your digital business.
+      <div class="hero-badge">✨ Digital Transformation</div>
+      <h1 class="hero-title">Innovative Digital Solutions</h1>
+      <p class="hero-subtitle">
+        Bita Digital Hub empowers creators and businesses to automate, scale, and grow using Data,
+        Cloud, and AI-powered systems.
       </p>
-      <a href="services/online-business.html" class="btn-primary" data-i18n="hero.button">Start Your Business</a>
+      <div style="margin-top: 1.5rem;">
+        <a href="franchise.html" class="btn-primary">Start Your Online Business →</a>
+        <a href="contact.html" class="btn-secondary" style="margin-left: 0.8rem;">Book a Call</a>
+      </div>
     </section>
 
-    <!-- 🧩 Core Sections -->
-    <section class="container" style="margin-top:3rem;">
-      <h2 class="section-title" data-i18n="section.title">What You’ll Find Here</h2>
+    <!-- 🧩 What We Help You Build -->
+    <section class="container" style="margin-top: 3rem;">
+      <h2 class="section-title">What We Help You Build</h2>
       <div class="tool-grid">
 
-        <!-- Tools -->
         <a class="tool-card" href="tools.html">
-          <h3 data-i18n="section.tools.title">Online Tools</h3>
-          <p data-i18n="section.tools.desc">
-            Free, AI-powered tools to simplify your workflow — QR generator, URL shortener, file converter, and more.
-          </p>
+          <h3>Automation Tools</h3>
+          <p>Free, AI-powered tools like QR generator, URL shortener, and file converter.</p>
         </a>
 
-        <!-- Services -->
         <a class="tool-card" href="services.html">
-          <h3 data-i18n="section.services.title">Digital Services</h3>
-          <p data-i18n="section.services.desc">
-            Custom-built systems for automation, Telegram bots, and marketing funnels designed to grow your brand.
-          </p>
+          <h3>Digital Systems</h3>
+          <p>Automation pipelines, Telegram bots, and marketing funnels to grow your brand.</p>
         </a>
 
-        <!-- Sources -->
         <a class="tool-card" href="sources.html">
-          <h3 data-i18n="section.sources.title">Marketing & Data Sources</h3>
-          <p data-i18n="section.sources.desc">
-            Curated digital marketing templates, AI datasets, and learning materials to support your projects.
-          </p>
+          <h3>Resources & Templates</h3>
+          <p>Access datasets, learning materials, and digital marketing templates.</p>
         </a>
 
-        <!-- Franchise -->
         <a class="tool-card" href="franchise.html">
-          <h3 data-i18n="section.franchise.title">Digital Franchise Academy</h3>
-          <p data-i18n="section.franchise.desc">
-            Learn the franchise model — get mentorship, marketing assets, and start your own online business.
-          </p>
+          <h3>Franchise Academy</h3>
+          <p>Learn our franchise model — get mentorship and start your online business.</p>
         </a>
       </div>
     </section>
 
     <!-- 💬 Call to Action -->
     <section class="contact-section">
-      <h2 data-i18n="cta.title">Ready to Launch Your Digital System?</h2>
-      <p data-i18n="cta.subtitle">Tell us your idea — we’ll help you choose the right tools and strategy to make it real.</p>
-      <a href="contact.html" class="btn-primary" data-i18n="cta.button">Contact Me</a>
+      <h2>Ready to Build Your Digital Future?</h2>
+      <p>Share your idea — we’ll help you design the tools, data systems, and marketing flow to grow it.</p>
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
     </section>
   </main>
 
-  <!-- 🦶 Footer Placeholder -->
+  <!-- 🦶 Footer Import -->
   <div id="footer"></div>
+  <script>
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html)
+      .catch(err => console.error("Footer failed to load:", err));
+  </script>
 
-  <!-- 📜 Unified Script Loader -->
-  <script type="module" src="js/main.js"></script>
 </body>
 </html>
