@@ -1,5 +1,6 @@
 /* =========================================================
-🌐 Bita Digital Hub – Global Stylesheet (Final Updated)
+🌐 Bita Digital Hub – Unified Global Stylesheet
+Author: Bita Ashoori
 ========================================================= */
 
 /* ---------- Theme Variables ---------- */
@@ -39,18 +40,22 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 0.8rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* ✅ Prevent overflow */
+  gap: 1rem;
 }
 
-/* Left Brand Section */
+/* --- Left Section --- */
 .nav-left {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  min-width: 220px;
 }
 
 .brand-info .brand {
@@ -67,17 +72,20 @@ img {
   line-height: 1.2;
 }
 
-/* Center Navigation Links */
+/* --- Center Navigation Links --- */
 .nav-links {
+  flex: 2;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .nav-links a {
-  color: #334155;
+  color: var(--text-dark);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -85,11 +93,14 @@ img {
   color: var(--primary);
 }
 
-/* Right Side Actions */
+/* --- Right Actions (Lang + Button) --- */
 .nav-actions {
+  flex: 1;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 1rem;
+  min-width: 220px;
 }
 
 /* 🌍 Language Dropdown */
@@ -110,6 +121,7 @@ img {
   align-items: center;
   gap: 0.4rem;
   transition: background 0.2s;
+  white-space: nowrap;
 }
 
 .lang-toggle:hover {
@@ -148,17 +160,12 @@ img {
   color: #334155;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: background 0.2s;
+  transition: background 0.2s ease;
 }
 
 .lang-menu li a:hover {
   background: #f1f5f9;
   color: var(--primary);
-}
-
-.lang-menu li img {
-  width: 18px;
-  height: 12px;
 }
 
 /* 🚀 Get Started Button */
@@ -170,6 +177,7 @@ img {
   font-weight: 600;
   text-decoration: none;
   transition: background 0.3s;
+  white-space: nowrap;
 }
 
 .btn-primary.get-started:hover {
@@ -217,10 +225,10 @@ img {
 .hero p {
   max-width: 600px;
   margin: 1rem auto;
-  color: #475569;
+  color: var(--text-mid);
 }
 
-/* About */
+/* About Section */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -405,21 +413,37 @@ textarea {
 }
 
 /* =========================================================
-📱 RESPONSIVE (Mobile)
+📱 RESPONSIVE
 ========================================================= */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar.modern {
-    flex-wrap: wrap;
-    padding: 1rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
   }
 
   .nav-links {
-    display: none;
+    justify-content: center;
+    margin: 0.5rem 0;
   }
 
   .nav-actions {
-    flex: 1;
-    justify-content: flex-end;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .lang-toggle {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .btn-primary.get-started {
+    padding: 0.5rem 1rem;
   }
 
   .hero h1 {
