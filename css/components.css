@@ -46,3 +46,119 @@
 .card p {
   color: var(--text-mid);
 }
+/* =========================================================
+🌟 Hero Modern Grid Style (BI Digital Hub)
+========================================================= */
+.grid-bg {
+  background: linear-gradient(to bottom right, #f9fbff, #ecf3ff);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.08), transparent 50%),
+    linear-gradient(180deg, #f9fbff 0%, #eef2ff 100%);
+  position: relative;
+  text-align: center;
+  padding: 6rem 1rem 5rem;
+}
+
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#e2e8f0 1px, transparent 1px),
+    linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #ffffff;
+  border-radius: 2rem;
+  padding: 0.5rem 1.2rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.1);
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  color: var(--text-mid);
+  font-size: 1.1rem;
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 2.5rem auto 0;
+}
+
+.stat-box {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.stat-box h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 0.3rem;
+}
+
+.stat-box p {
+  color: var(--text-mid);
+  font-weight: 500;
+}
+
+/* CTA */
+.contact-section {
+  background: linear-gradient(to right, #1e3a8a, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  margin-top: 5rem;
+  border-radius: 0;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.contact-section p {
+  color: #e0e7ff;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
