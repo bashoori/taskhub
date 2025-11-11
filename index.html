@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bita Digital Hub</title>
 
-  <!-- 🔗 CSS -->
+  <!-- 🔗 Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- 🔧 JS -->
+  <!-- 🔧 JavaScript -->
   <script src="js/script.js" defer></script>
 
   <!-- 🧩 Lucide Icons -->
@@ -16,10 +16,10 @@
 </head>
 
 <body>
-  <!-- ===== HEADER ===== -->
+  <!-- ================= HEADER ================= -->
   <div id="header-placeholder"></div>
 
-  <!-- ================= HOME ================= -->
+  <!-- ================= HERO ================= -->
   <section id="home" class="section hero">
     <div class="hero-content">
       <h1>Innovative Digital Solutions</h1>
@@ -29,7 +29,7 @@
       </p>
       <div class="cta-buttons">
         <a href="#courses" class="btn primary">Start Your Online Business</a>
-        <a href="#contact" class="btn outline">Book a Call</a>
+        <a href="contact.html" class="btn outline">Book a Call</a>
       </div>
     </div>
   </section>
@@ -41,14 +41,15 @@
         <h3>Welcome to Bita Digital Hub</h3>
         <h4>Leading digital transformation with data, AI, and automation</h4>
         <p>
-          At Bita Digital Hub, we believe in the power of technology to create new opportunities 
-          for individuals and businesses alike. 
-          Our mission is to simplify the path to digital success from intelligent strategy and 
-          system design to full-scale automation. 
+          At Bita Digital Hub, we believe in the power of technology to create
+          new opportunities for individuals and businesses alike.
+          Our mission is to simplify the path to digital success —
+          from intelligent strategy and system design to full-scale automation.
         </p>
         <p>
-          With deep experience in analytics, cloud platforms, and AI-driven solutions, 
-          we help you build, optimize, and scale your digital presence with confidence and clarity.
+          With deep experience in analytics, cloud platforms, and AI-driven
+          solutions, we help you build, optimize, and scale your digital
+          presence with confidence and clarity.
         </p>
         <p class="signature">Bita Ashoori, CEO & Founder, Bita Digital Hub</p>
       </div>
@@ -166,21 +167,17 @@
     </div>
   </section>
 
-  <!-- ================= CONTACT ================= -->
-  <section id="contact" class="section contact light">
-    <h2>Contact Us</h2>
-    <p class="section-sub">Let’s build something amazing together</p>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn primary">Send Message</button>
-    </form>
+  <!-- ================= CONTACT LINK ================= -->
+  <section id="contact-redirect" class="section contact light">
+    <h2>Get in Touch</h2>
+    <p class="section-sub">We’d love to hear from you — let’s build something amazing together.</p>
+    <a href="contact.html" class="btn primary">Go to Contact Page</a>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ================= FOOTER ================= -->
   <div id="footer-placeholder"></div>
 
+  <!-- 🌀 Init Lucide Icons -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();

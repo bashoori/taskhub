@@ -1,6 +1,6 @@
 <!-- =========================================================
-🧭 Bita Digital Hub – Responsive Navbar
-Features: Language Dropdown | Mobile Menu | Smooth Scroll
+🧭 Bita Digital Hub – Responsive Header
+Clean version with language dropdown + smooth scroll
 ========================================================= -->
 
 <header class="navbar modern">
@@ -8,19 +8,19 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
   <div class="nav-left">
     <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
     <div class="brand-info">
-      <a href="#home" class="brand">Bita Digital Hub</a>
+      <a href="index.html#home" class="brand">Bita Digital Hub</a>
       <p class="tagline">Innovative Digital Solutions</p>
     </div>
   </div>
 
   <!-- 🔹 Navigation -->
   <nav class="nav-links" aria-label="Main navigation">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#courses">Courses</a>
-    <a href="#tools">Tools</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html#home" class="active">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#courses">Courses</a>
+    <a href="index.html#tools">Tools</a>
+    <a href="contact.html">Contact</a>
 
     <!-- 📱 Mobile-only actions -->
     <div class="mobile-actions">
@@ -33,11 +33,11 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
           <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
         </ul>
       </div>
-      <a href="#contact" class="btn-primary get-started">Get Started</a>
+      <a href="contact.html" class="btn-primary get-started">Get Started</a>
     </div>
   </nav>
 
-  <!-- 🔹 Right-side Actions (Desktop only) -->
+  <!-- 🔹 Desktop Actions -->
   <div class="nav-actions">
     <div class="lang-switch">
       <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
@@ -48,22 +48,24 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
         <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" /> فارسی</a></li>
       </ul>
     </div>
-    <a href="#contact" class="btn-primary get-started">Get Started</a>
+    <a href="contact.html" class="btn-primary get-started">Get Started</a>
   </div>
 
-  <!-- ☰ Mobile Menu Button -->
+  <!-- ☰ Mobile Menu -->
   <button class="menu-toggle" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
 </header>
 
 <!-- =========================================================
-🔧 Header Script – Interactions
+🔧 Header Interactions
 ========================================================= -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // 🌍 Language dropdown setup (desktop + mobile)
-    function setupLangDropdown(btnId, menuId) {
+    // 🌍 Language Dropdowns
+    const setupLangDropdown = (btnId, menuId) => {
       const btn = document.getElementById(btnId);
       const menu = document.getElementById(menuId);
       if (!btn || !menu) return;
@@ -71,8 +73,7 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         menu.classList.toggle("show");
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", !expanded);
+        btn.setAttribute("aria-expanded", menu.classList.contains("show"));
       });
 
       document.addEventListener("click", (e) => {
@@ -81,12 +82,12 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
           btn.setAttribute("aria-expanded", "false");
         }
       });
-    }
+    };
 
     setupLangDropdown("lang-btn", "lang-menu");
     setupLangDropdown("lang-btn-mobile", "lang-menu-mobile");
 
-    // 📱 Mobile menu toggle
+    // 📱 Mobile Menu
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
 
@@ -97,16 +98,19 @@ Features: Language Dropdown | Mobile Menu | Smooth Scroll
       });
     }
 
-    // 🌀 Smooth scroll for internal links
+    // 🌀 Smooth Scroll (only if anchors exist)
     document.querySelectorAll('.nav-links a[href^="#"], .get-started[href^="#"]').forEach((link) => {
       link.addEventListener("click", (e) => {
-        const target = document.querySelector(link.getAttribute("href"));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
+        const href = link.getAttribute("href");
+        if (href.startsWith("#")) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+          navLinks.classList.remove("show");
+          menuToggle.classList.remove("open");
         }
-        navLinks.classList.remove("show");
-        menuToggle.classList.remove("open");
       });
     });
   });
