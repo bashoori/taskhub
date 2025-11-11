@@ -1,7 +1,7 @@
 /* =========================================================
-🌐 Bita Digital Hub – Global Stylesheet (Professional v6.2)
+🌐 Bita Digital Hub – Global Stylesheet (Professional v6.3)
 Author: Bita Ashoori
-Minimal • Elegant • Responsive • Consistent
+Purpose: Unified design for main & tools pages
 ========================================================= */
 
 /* ---------- THEME VARIABLES ---------- */
@@ -45,7 +45,7 @@ a {
 }
 
 /* =========================================================
-🧭 HEADER / NAVBAR
+🧭 HEADER / NAVBAR (MAIN)
 ========================================================= */
 .navbar.modern {
   position: fixed;
@@ -55,7 +55,6 @@ a {
   background: var(--white);
   box-shadow: var(--shadow-sm);
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-inner {
@@ -82,7 +81,6 @@ a {
 
 .brand-logo {
   width: 40px;
-  height: auto;
 }
 
 .brand-info .brand {
@@ -96,7 +94,7 @@ a {
   color: var(--text-mid);
 }
 
-/* --- Navigation Links --- */
+/* --- Nav Links --- */
 .nav-links {
   display: flex;
   gap: 1.8rem;
@@ -120,7 +118,7 @@ a {
   gap: 1rem;
 }
 
-/* --- Language Dropdown --- */
+/* --- Language Switch --- */
 .lang-switch {
   position: relative;
 }
@@ -139,9 +137,7 @@ a {
   transition: background 0.2s ease;
 }
 
-.lang-toggle:hover {
-  background: #e2e8f0;
-}
+.lang-toggle:hover { background: #e2e8f0; }
 
 .lang-menu {
   display: none;
@@ -158,9 +154,7 @@ a {
   z-index: 2000;
 }
 
-.lang-menu.show {
-  display: block;
-}
+.lang-menu.show { display: block; }
 
 .lang-menu li a {
   display: flex;
@@ -192,32 +186,82 @@ a {
 }
 
 /* =========================================================
+🧭 SIMPLE TOOL HEADER
+========================================================= */
+.navbar.simple {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+}
+
+.navbar.simple .nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.8rem 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar.simple .brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.navbar.simple .brand-logo { width: 40px; }
+
+.navbar.simple .brand-info .brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.btn-back-home {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-back-home:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
 🌐 BRAND HEADER (TOOLS)
 ========================================================= */
-.brand-header {
+[data-page="tools"] .brand-header {
   text-align: center;
   margin-top: 7rem;
   margin-bottom: 2.5rem;
 }
 
-.brand-inner {
+[data-page="tools"] .brand-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
 }
 
-.brand-logo {
+[data-page="tools"] .brand-logo {
   width: 72px;
 }
 
-.brand-title {
+[data-page="tools"] .brand-title {
   font-size: 1.9rem;
   font-weight: 700;
   color: var(--text-dark);
 }
 
-.brand-subtitle {
+[data-page="tools"] .brand-subtitle {
   color: var(--text-mid);
   font-size: 1rem;
 }
@@ -225,7 +269,7 @@ a {
 /* =========================================================
 🧰 TOOL PAGE LAYOUT
 ========================================================= */
-.tool-layout {
+[data-page="tools"] .tool-layout {
   display: grid;
   grid-template-columns: 1fr minmax(320px, 600px) 1fr;
   gap: 2rem;
@@ -233,12 +277,12 @@ a {
   align-items: start;
 }
 
-.tool-center {
+[data-page="tools"] .tool-center {
   display: flex;
   justify-content: center;
 }
 
-.tool-card {
+[data-page="tools"] .tool-card {
   background: var(--white);
   border-radius: 14px;
   box-shadow: var(--shadow-md);
@@ -248,28 +292,28 @@ a {
   width: 100%;
 }
 
-.tool-card h2 {
+[data-page="tools"] .tool-card h2 {
   color: var(--primary);
   font-weight: 700;
   font-size: 1.4rem;
   margin-bottom: 0.6rem;
 }
 
-.tool-card p {
+[data-page="tools"] .tool-card p {
   color: var(--text-mid);
   font-size: 0.95rem;
   margin-bottom: 1.4rem;
 }
 
 /* --- Language Buttons --- */
-.lang-btns {
+[data-page="tools"] .lang-btns {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.lang-btns button {
+[data-page="tools"] .lang-btns button {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -280,46 +324,30 @@ a {
   transition: all 0.2s ease;
 }
 
-.lang-btns button.active {
+[data-page="tools"] .lang-btns button.active {
   background: var(--primary);
   color: #fff;
 }
 
 /* --- Form --- */
-.tool-form {
+[data-page="tools"] .tool-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.9rem;
 }
 
-.tool-form label {
-  font-weight: 500;
-  color: var(--text-dark);
-  font-size: 0.9rem;
-}
-
-.tool-form select,
-.tool-form input {
+[data-page="tools"] .tool-form select,
+[data-page="tools"] .tool-form input {
   width: 90%;
   max-width: 360px;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.6rem 0.9rem;
   background: #f9fafb;
-  transition: all 0.2s ease;
 }
 
-.tool-form select:focus,
-.tool-form input:focus {
-  border-color: var(--primary);
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  outline: none;
-}
-
-/* --- Buttons --- */
-.primary-btn {
+[data-page="tools"] .primary-btn {
   background: var(--primary);
   color: var(--white);
   border: none;
@@ -331,35 +359,9 @@ a {
   width: 200px;
 }
 
-.primary-btn:hover {
+[data-page="tools"] .primary-btn:hover {
   background: var(--primary-hover);
   transform: translateY(-2px);
-}
-
-/* --- Output Box --- */
-.output-box {
-  margin-top: 1rem;
-  padding: 0.9rem 1rem;
-  background: #f8fafc;
-  border: 1px dashed var(--border);
-  border-radius: 10px;
-  color: var(--text-dark);
-  word-wrap: break-word;
-  max-width: 100%;
-  font-family: monospace;
-  font-size: 0.9rem;
-}
-
-.output-box.hidden {
-  display: none;
-}
-
-/* --- Ad columns --- */
-.ad-side {
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 /* =========================================================
@@ -376,7 +378,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -410,12 +412,7 @@ a {
     width: 100%;
     background: var(--text-dark);
     border-radius: 2px;
-    transition: all 0.3s ease;
   }
-
-  .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translateY(7px); }
-  .menu-toggle.open span:nth-child(2) { opacity: 0; }
-  .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translateY(-7px); }
 
   .nav-links {
     display: none;
@@ -430,160 +427,8 @@ a {
   }
 
   .nav-links.show { display: flex; }
+  .nav-links a { padding: 1rem 0; text-align: center; }
 
-  .nav-links a {
-    padding: 1rem 0;
-    text-align: center;
-    border-bottom: 1px solid #f1f5f9;
-  }
-
-  .tool-layout {
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem 3rem;
-  }
-
-  .brand-header { margin-top: 6rem; }
-}
-
-/* ==========================================
-🧭 SIMPLE TOOL HEADER
-========================================== */
-.navbar.simple {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--white);
-  box-shadow: var(--shadow-sm);
-  z-index: 1000;
-}
-
-.navbar.simple .nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0.8rem 1.8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar.simple .brand-link {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-
-.navbar.simple .brand-logo {
-  width: 40px;
-  height: auto;
-}
-
-.navbar.simple .brand-info .brand {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--primary);
-}
-
-.navbar.simple .brand-info .tagline {
-  font-size: 0.8rem;
-  color: var(--text-mid);
-  margin-top: -2px;
-}
-
-/* --- Back to Home Button --- */
-.btn-back-home {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.5rem 1.2rem;
-  border-radius: var(--radius);
-  font-weight: 500;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn-back-home:hover {
-  background: var(--primary-hover);
-  transform: translateY(-1px);
-}
-/* ==========================================
-🦶 SIMPLE FOOTER FOR TOOLS
-========================================== */
-.footer.dark {
-  background: #0f172a;
-  color: #cbd5e1;
-  padding: 3.5rem 2rem 2rem;
-  font-size: 0.95rem;
-}
-
-.footer.dark a {
-  color: #cbd5e1;
-  transition: color 0.2s ease;
-}
-
-.footer.dark a:hover {
-  color: var(--accent);
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.footer-brand h3 {
-  color: var(--white);
-  margin-bottom: 0.4rem;
-}
-
-.footer-brand p {
-  color: #94a3b8;
-  margin-top: 0.3rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.footer-logo {
-  width: 48px;
-  margin-bottom: 0.8rem;
-}
-
-.footer-links h4,
-.footer-contact h4 {
-  color: var(--white);
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-}
-
-.footer-links ul,
-.footer-contact ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li,
-.footer-contact li {
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 2rem;
-  padding-top: 1rem;
-  text-align: center;
-  color: #94a3b8;
-  font-size: 0.85rem;
-}
-
-.footer-bottom a {
-  margin: 0 0.3rem;
-  color: #94a3b8;
-  text-decoration: underline;
-  transition: color 0.2s ease;
-}
-
-.footer-bottom a:hover {
-  color: var(--accent);
+  [data-page="tools"] .tool-layout { grid-template-columns: 1fr; padding: 2rem 1rem 3rem; }
+  [data-page="tools"] .brand-header { margin-top: 6rem; }
 }

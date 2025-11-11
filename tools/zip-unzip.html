@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-tool="zip-unzip">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZIP & Unzip Tool | Bita Digital Hub</title>
-  <meta name="description"
-        content="Compress or extract ZIP files instantly — safe, simple, and fast tool by Bita Digital Hub." />
+  <meta name="description" content="Compress or extract ZIP files instantly — safe, simple, and fast tool by Bita Digital Hub." />
 
   <!-- 🌈 Unified Styles -->
   <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
@@ -23,16 +22,16 @@
 </head>
 
 <body>
-  <!-- 🧭 Minimal Header (Tools only) -->
+  <!-- 🧭 Header -->
   <div id="header-placeholder"></div>
   <script>
     fetch("../components/header-tools.html")
       .then(res => res.text())
       .then(html => document.getElementById("header-placeholder").innerHTML = html)
-      .catch(err => console.error("Header load error:", err));
+      .catch(console.error);
   </script>
 
-  <!-- 🌐 Brand Section -->
+  <!-- 🌐 Brand -->
   <section class="brand-header center">
     <div class="brand-inner">
       <img src="../assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
@@ -43,32 +42,20 @@
     </div>
   </section>
 
-  <!-- 🧰 ZIP / UnZIP TOOL -->
+  <!-- 🧰 Tool Section -->
   <main class="tool-layout">
-    <!-- Left Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="1111111111"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
+    <aside class="ad-side"></aside>
 
-    <!-- Tool Core -->
     <section class="tool-center">
       <div class="tool-card gradient-gray">
         <h2>ZIP & Unzip Files 📦</h2>
         <p>Compress or extract ZIP files instantly — safe, simple, and fast.</p>
 
-        <!-- 🌐 Language Buttons -->
         <div class="lang-btns">
           <button id="btnEnglish" class="active">English</button>
           <button id="btnFarsi">فارسی</button>
         </div>
 
-        <!-- 🗂️ Form -->
         <form class="tool-form">
           <label for="modeSelect">Select mode:</label>
           <select id="modeSelect" class="select-input">
@@ -89,30 +76,18 @@
       </div>
     </section>
 
-    <!-- Right Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
+    <aside class="ad-side"></aside>
   </main>
 
-  <!-- 🦶 Simple Footer -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("../components/footer-tools.html")
-    .then(res => res.text())
-    .then(html => document.getElementById("footer-placeholder").innerHTML = html)
-    .catch(err => console.error("Footer load error:", err));
-</script>
+  <!-- 🦶 Footer -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("../components/footer-tools.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html)
+      .catch(console.error);
+  </script>
 
-
-  <!-- 📜 Scripts -->
   <script src="../js/zip-main.js"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
 </body>
 </html>
