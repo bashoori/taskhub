@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-page="home">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بیتا دیجیتال هاب | ساخت، خودکارسازی و درآمد آنلاین</title>
+  <meta name="description" content="کمک به افراد و کسب‌وکارها برای رشد دیجیتال با استفاده از داده، هوش مصنوعی و اتوماسیون. ابزارها و دوره‌های رایگان برای موفقیت در دنیای دیجیتال." />
+
+  <!-- 🌈 استایل‌ها -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/script.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding-top: 80px;
+      font-family: "Vazirmatn", "IRANSans", sans-serif;
+      background: #f9fafb;
+      color: #0f172a;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem 5rem;
+      background: #f8fafc;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      color: #334155;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      padding: 4rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #475569;
+      margin-bottom: 2rem;
+    }
+
+    .tools-grid, .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      color: #0f172a;
+      background: #fff;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .btn.primary { background: #1e3a8a; color: #fff; }
+    .btn.outline { border: 2px solid #1e3a8a; color: #1e3a8a; }
+    .btn.primary:hover { background: #2563eb; }
+    .btn.outline:hover { background: #1e3a8a; color: #fff; }
+  </style>
+</head>
+
+<body>
+  <!-- 🧭 هدر -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("components/header-fa.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; })
+      .catch(console.error);
+  </script>
+
+  <!-- 🌟 قهرمان صفحه -->
+  <section id="home" class="section hero">
+    <h1>به شما کمک می‌کنیم بسازید، خودکار کنید و آنلاین درآمد داشته باشید</h1>
+    <p>
+      بیتا دیجیتال هاب به افراد و کسب‌وکارها کمک می‌کند تا با استفاده از داده، فضای ابری و سیستم‌های هوش مصنوعی رشد کنند و مقیاس‌پذیر شوند.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://www.bitaashoori.com" target="_blank" rel="noopener noreferrer" class="btn primary">
+        شروع کسب‌وکار آنلاین
+      </a>
+      <a href="#contact" class="btn outline">رزرو جلسه مشاوره</a>
+    </div>
+  </section>
+
+  <!-- 💡 درباره ما -->
+  <section id="about" class="section about light">
+    <h2>درباره بیتا دیجیتال هاب</h2>
+    <p>
+      در بیتا دیجیتال هاب، ما باور داریم تکنولوژی می‌تواند مسیر رشد و استقلال را برای همه هموار کند.
+      مأموریت ما ساده‌سازی مسیر موفقیت دیجیتال از طراحی استراتژی تا اجرای سیستم‌های هوشمند است.
+    </p>
+    <p>— بیتا عشوری، بنیان‌گذار و مدیرعامل</p>
+  </section>
+
+  <!-- 🧰 ابزارها -->
+  <section id="tools" class="section tools light">
+    <h2>ابزارهای رایگان</h2>
+    <p class="section-sub">ابزارهای هوش مصنوعی و اتوماسیون برای افزایش بهره‌وری شما</p>
+
+    <div class="tools-grid">
+      <a href="tools/password-generator.html" class="card gradient-blue">
+        <h3>تولید رمز عبور</h3>
+        <p>ساخت رمزهای قوی و ایمن برای حفظ امنیت فضای دیجیتال شما.</p>
+      </a>
+      <a href="tools/file-converter.html" class="card gradient-pink">
+        <h3>تبدیل فایل</h3>
+        <p>تبدیل انواع فایل‌های PDF، متنی و داده‌ای با یک کلیک.</p>
+      </a>
+      <a href="tools/qr-generator.html" class="card gradient-yellow">
+        <h3>سازنده QR کد</h3>
+        <p>ایجاد کدهای QR سفارشی برای وب‌سایت‌ها، محصولات و کمپین‌ها.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ⚙️ خدمات -->
+  <section id="services" class="section">
+    <h2>خدمات ما</h2>
+    <p class="section-sub">راهکارهای جامع برای تحول دیجیتال شما</p>
+    <div class="cards">
+      <div class="card gradient-green">
+        <h3>طراحی وب‌سایت</h3>
+        <p>وب‌سایت‌های واکنش‌گرا و بهینه‌شده برای کسب‌وکار شما.</p>
+      </div>
+      <div class="card gradient-yellow">
+        <h3>داده و تحلیل</h3>
+        <p>تبدیل داده‌های خام به بینش‌های کاربردی و داشبوردهای هوشمند.</p>
+      </div>
+      <div class="card gradient-pink">
+        <h3>روبات‌های تلگرام</h3>
+        <p>اتوماسیون ارتباط با مشتریان، جذب سرنخ و بازاریابی هوشمند.</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="#contact" class="btn primary">درخواست مشاوره</a>
+    </div>
+  </section>
+
+  <!-- 💬 تماس با ما -->
+  <section id="contact" class="section contact light">
+    <h2>تماس با ما</h2>
+    <p class="section-sub">بیایید با هم پروژه‌ای فوق‌العاده بسازیم</p>
+
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-grid">
+        <input type="text" name="name" placeholder="نام کامل *" required />
+        <input type="email" name="email" placeholder="ایمیل *" required />
+      </div>
+
+      <textarea name="message" placeholder="پیام شما..." required></textarea>
+
+      <button type="submit" class="btn primary">ارسال پیام</button>
+    </form>
+  </section>
+
+  <!-- 🦶 فوتر -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("components/footer-fa.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
+      .then(() => lucide.createIcons())
+      .catch(console.error);
+  </script>
+</body>
+</html>
