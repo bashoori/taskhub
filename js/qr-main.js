@@ -1,61 +1,51 @@
-<!DOCTYPE html>
-<html lang="en" data-page="tools">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QR Generator | Bita Digital Hub</title>
-  <meta name="description" content="Generate custom QR codes instantly — perfect for links, campaigns, and products." />
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("qrText");
+  const btn = document.getElementById("generateQRBtn");
+  const outputBox = document.getElementById("output");
+  const canvas = document.getElementById("qrCanvas");
+  const downloadLink = document.getElementById("downloadLink");
 
-  <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
-</head>
+  // safety: make sure the QRCode lib exists
+  if (typeof QRCode === "undefined") {
+    console.error("QRCode library not loaded.");
+    return;
+  }
 
-<body>
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("../components/header-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
-  </script>
+  btn.addEventListener("click", function () {
+    const text = (input.value || "").trim();
 
-  <main class="tool-layout">
-    <aside class="ad-side"></aside>
+    if (!text) {
+      alert("Please enter a URL or text.");
+      return;
+    }
 
-    <section class="tool-center">
-      <div class="tool-card gradient-yellow">
-        <h2>QR Generator 🟨</h2>
-        <p>Create QR codes for URLs or text — download instantly as PNG.</p>
+    // clear previous QR
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        <form class="tool-form" onsubmit="return false;">
-          <label for="qrText">Enter text or URL:</label>
-          <input type="text" id="qrText" class="text-input" placeholder="https://bitadigitalhub.com" />
+    // generate
+    QRCode.toCanvas(
+      canvas,
+      text,
+      {
+        width: 256,
+        margin: 2,
+        errorCorrectionLevel: "H",
+      },
+      function (err) {
+        if (err) {
+          console.error(err);
+          alert("Could not generate QR. Check console.");
+          return;
+        }
 
-          <button type="button" id="generateQRBtn" class="primary-btn">Generate QR</button>
+        // show box
+        outputBox.classList.remove("hidden");
 
-          <div id="output" class="output-box hidden">
-            <canvas id="qrCanvas"></canvas>
-            <a id="downloadLink" class="secondary-btn" download="bita-qr.png">Download PNG</a>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <aside class="ad-side"></aside>
-  </main>
-
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("../components/footer-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
-  </script>
-
-  <!-- QR library -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js" defer></script>
-  <!-- your script (below one depends on the library) -->
-  <script src="../js/qr-main.js" defer></script>
-</body>
-</html>
+        // make download work
+        const dataURL = canvas.toDataURL("image/png");
+        downloadLink.href = dataURL;
+      }
+    );
+  });
+});
