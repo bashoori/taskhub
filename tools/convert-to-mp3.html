@@ -12,6 +12,14 @@
 </head>
 
 <body>
+  <!-- header -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header-tools.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
+  </script>
+
   <main class="tool-layout">
     <section class="tool-center">
       <div class="tool-card gradient-gray">
@@ -30,6 +38,13 @@
       </div>
     </section>
   </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("../components/footer-tools.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.6/dist/ffmpeg.min.js"></script>
   <script src="../js/convert-mp3.js"></script>
