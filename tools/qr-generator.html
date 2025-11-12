@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <!-- header -->
   <div id="header-placeholder"></div>
   <script>
     fetch("../components/header-tools.html")
@@ -29,14 +30,26 @@
         <h2>QR Generator 🟨</h2>
         <p>Create QR codes for URLs or text — download instantly as PNG.</p>
 
-        <form class="tool-form">
+        <!-- prevent form submit reload -->
+        <form class="tool-form" onsubmit="return false;">
           <label for="qrText">Enter text or URL:</label>
-          <input type="text" id="qrText" class="text-input" placeholder="https://bitadigitalhub.com" />
+          <input
+            type="text"
+            id="qrText"
+            class="text-input"
+            placeholder="https://bitadigitalhub.com"
+            autocomplete="off"
+          />
 
-          <button type="button" id="generateQRBtn" class="primary-btn">Generate QR</button>
+          <button type="button" id="generateQRBtn" class="primary-btn">
+            Generate QR
+          </button>
 
           <div id="output" class="output-box hidden">
             <canvas id="qrCanvas"></canvas>
+            <a id="downloadLink" class="secondary-btn" download="bita-qr.png">
+              Download PNG
+            </a>
           </div>
         </form>
       </div>
@@ -45,6 +58,7 @@
     <aside class="ad-side"></aside>
   </main>
 
+  <!-- footer -->
   <div id="footer-placeholder"></div>
   <script>
     fetch("../components/footer-tools.html")
@@ -52,6 +66,7 @@
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 
+  <!-- QR library must load before our script -->
   <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js" defer></script>
   <script src="../js/qr-main.js" defer></script>
 </body>

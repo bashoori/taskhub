@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const canvas = document.getElementById("qrCanvas");
   const downloadLink = document.getElementById("downloadLink");
 
-  // safety: make sure the QRCode lib exists
+  // guard: library loaded?
   if (typeof QRCode === "undefined") {
     console.error("QRCode library not loaded.");
     return;
@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!text) {
       alert("Please enter a URL or text.");
+      input.focus();
       return;
     }
 
-    // clear previous QR
+    // clear previous draw
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // generate
     QRCode.toCanvas(
       canvas,
       text,
@@ -35,14 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
       function (err) {
         if (err) {
           console.error(err);
-          alert("Could not generate QR. Check console.");
+          alert("QR generation failed. Check console.");
           return;
         }
 
         // show box
         outputBox.classList.remove("hidden");
 
-        // make download work
+        // make download link
         const dataURL = canvas.toDataURL("image/png");
         downloadLink.href = dataURL;
       }
