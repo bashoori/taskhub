@@ -528,3 +528,31 @@ a {
   background: var(--primary-hover);
   transform: translateY(-2px);
 }
+/* =========================================================
+💰 ADSENSE SIDE AREAS (TOOLS)
+========================================================= */
+[data-page="tools"] .ad-side {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+[data-page="tools"] .ad-side ins.adsbygoogle {
+  width: 160px;
+  height: 600px;
+  max-width: 100%;
+  background: transparent;
+}
+
+/* Hide ads on small screens */
+@media (max-width: 1000px) {
+  [data-page="tools"] .ad-side {
+    display: none;
+  }
+
+  [data-page="tools"] .tool-layout {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem 3rem;
+  }
+}

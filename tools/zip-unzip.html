@@ -27,8 +27,20 @@
       .catch(err => console.error("Header load error:", err));
   </script>
 
-  <!-- 🧰 Tool Layout -->
+  <!-- 🧰 Tool Layout with Ads -->
   <main class="tool-layout" role="main">
+
+    <!-- 🧭 Left Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="1234567890"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
+
+    <!-- 🎯 Center Tool -->
     <section class="tool-center">
       <div class="tool-card gradient-gray">
         <h2>ZIP & Unzip Files 📦</h2>
@@ -53,6 +65,16 @@
         </form>
       </div>
     </section>
+
+    <!-- 🧭 Right Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="9876543210"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
   </main>
 
   <!-- 🦶 Footer -->
@@ -127,6 +149,13 @@
         else await extractZip(files[0]);
       });
     });
+  </script>
+
+  <!-- 💰 AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+          crossorigin="anonymous"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </body>
 </html>
