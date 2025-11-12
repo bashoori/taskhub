@@ -6,7 +6,7 @@
   <title>ZIP & Unzip Tool | Bita Digital Hub</title>
   <meta name="description" content="Compress or extract ZIP files instantly — safe, simple, and fast tool by Bita Digital Hub." />
 
-  <!-- 🌈 Unified Styles -->
+  <!-- 🌈 Styles -->
   <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/theme.css" />
@@ -15,6 +15,50 @@
 
   <!-- 📦 JSZip -->
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" defer></script>
+
+  <!-- 💰 Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+          crossorigin="anonymous"></script>
+
+  <style>
+    main.tool-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 180px;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .ad-side {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 2rem;
+    }
+
+    .ad-mid {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .ad-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+      text-align: center;
+      z-index: 999;
+    }
+
+    @media (max-width: 900px) {
+      main.tool-layout { grid-template-columns: 1fr; }
+      .ad-side { display: none; }
+    }
+  </style>
 </head>
 
 <body>
@@ -24,20 +68,20 @@
     fetch("../components/header-tools.html")
       .then(res => res.text())
       .then(html => document.getElementById("header-placeholder").innerHTML = html)
-      .catch(err => console.error("Header load error:", err));
+      .catch(console.error);
   </script>
 
-  <!-- 🧰 Tool Layout with Ads -->
+  <!-- 🧰 Tool Layout -->
   <main class="tool-layout" role="main">
 
     <!-- 🧭 Left Ad -->
     <aside class="ad-side">
       <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="1234567890"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="1111111111"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
     </aside>
 
     <!-- 🎯 Center Tool -->
@@ -63,17 +107,27 @@
             <a id="downloadLink" href="#" class="btn outline" download>⬇️ Download</a>
           </div>
         </form>
+
+        <!-- 📢 Mid Ad -->
+        <div class="ad-mid">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-3215014361489762"
+               data-ad-slot="3333333333"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
       </div>
     </section>
 
     <!-- 🧭 Right Ad -->
     <aside class="ad-side">
       <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="9876543210"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
     </aside>
   </main>
 
@@ -83,17 +137,27 @@
     fetch("../components/footer-tools.html")
       .then(res => res.text())
       .then(html => document.getElementById("footer-placeholder").innerHTML = html)
-      .catch(err => console.error("Footer load error:", err));
+      .catch(console.error);
   </script>
+
+  <!-- 📢 Sticky Footer Ad -->
+  <div class="ad-sticky">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="5555555555"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+  </div>
 
   <!-- ⚙️ ZIP & UNZIP Logic -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const modeSelect   = document.getElementById("modeSelect");
-      const fileInput    = document.getElementById("fileInput");
-      const processBtn   = document.getElementById("processBtn");
-      const outputBox    = document.getElementById("outputBox");
-      const resultMsg    = document.getElementById("resultMsg");
+      const modeSelect = document.getElementById("modeSelect");
+      const fileInput = document.getElementById("fileInput");
+      const processBtn = document.getElementById("processBtn");
+      const outputBox = document.getElementById("outputBox");
+      const resultMsg = document.getElementById("resultMsg");
       const downloadLink = document.getElementById("downloadLink");
 
       async function compressFiles(files) {
@@ -106,8 +170,7 @@
         outputBox.classList.remove("hidden");
 
         const blob = await zip.generateAsync({ type: "blob" });
-        const url  = URL.createObjectURL(blob);
-
+        const url = URL.createObjectURL(blob);
         downloadLink.href = url;
         downloadLink.download = "compressed-files.zip";
         resultMsg.textContent = `✅ Successfully compressed ${files.length} file(s).`;
@@ -115,48 +178,43 @@
 
       async function extractZip(file) {
         if (!file) return alert("Please select a ZIP file to extract.");
-        if (!file.name.toLowerCase().endsWith(".zip")) return alert("This is not a valid ZIP file.");
+        if (!file.name.toLowerCase().endsWith(".zip")) return alert("Invalid ZIP file.");
 
         resultMsg.textContent = "Extracting ZIP contents...";
         outputBox.classList.remove("hidden");
 
         const zip = await JSZip.loadAsync(file);
-        const outZip = new JSZip();
+        const newZip = new JSZip();
         const extractedFiles = [];
 
         await Promise.all(Object.keys(zip.files).map(async name => {
           const entry = zip.files[name];
           if (!entry.dir) {
             const data = await entry.async("blob");
-            outZip.file(name, data);
+            newZip.file(name, data);
             extractedFiles.push(name);
           }
         }));
 
-        const outBlob = await outZip.generateAsync({ type: "blob" });
+        const outBlob = await newZip.generateAsync({ type: "blob" });
         const url = URL.createObjectURL(outBlob);
         downloadLink.href = url;
         downloadLink.download = "extracted-files.zip";
-
         resultMsg.textContent = `✅ Extracted ${extractedFiles.length} file(s) successfully.`;
       }
 
       processBtn.addEventListener("click", async () => {
         const mode = modeSelect.value;
         const files = fileInput.files;
-
         if (mode === "zip") await compressFiles(files);
         else await extractZip(files[0]);
       });
     });
   </script>
 
-  <!-- 💰 AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
+  <!-- 💰 Initialize AdSense -->
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </body>
 </html>
-
