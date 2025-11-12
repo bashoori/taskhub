@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <!-- header -->
   <div id="header-placeholder"></div>
   <script>
     fetch("../components/header-tools.html")
@@ -21,21 +22,22 @@
       .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
   </script>
 
+  <!-- layout -->
   <main class="tool-layout">
     <aside class="ad-side"></aside>
 
     <section class="tool-center">
       <div class="tool-card gradient-cyan">
         <h2>CSV Cleaner 🧹</h2>
-        <p>Clean your CSV files — remove duplicates, fix column order, and export in seconds.</p>
+        <p>Clean your CSV files — remove duplicates, fix simple formatting, and export in seconds.</p>
 
-        <form class="tool-form">
+        <form class="tool-form" onsubmit="return false;">
           <label for="csvFile">Upload CSV file:</label>
           <input type="file" id="csvFile" accept=".csv" class="file-input" />
 
           <button type="button" id="cleanBtn" class="primary-btn">Clean File</button>
 
-          <div id="output" class="output-box hidden">
+          <div id="outputBox" class="output-box hidden">
             <p id="resultMsg"></p>
             <a id="downloadLink" href="#" class="btn outline" download>⬇️ Download Clean File</a>
           </div>
@@ -46,6 +48,7 @@
     <aside class="ad-side"></aside>
   </main>
 
+  <!-- footer -->
   <div id="footer-placeholder"></div>
   <script>
     fetch("../components/footer-tools.html")
@@ -53,6 +56,65 @@
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 
-  <script src="../js/csv-main.js" defer></script>
+  <!-- CSV cleaner logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const fileInput   = document.getElementById("csvFile");
+      const cleanBtn    = document.getElementById("cleanBtn");
+      const outputBox   = document.getElementById("outputBox");
+      const resultMsg   = document.getElementById("resultMsg");
+      const downloadLink= document.getElementById("downloadLink");
+
+      cleanBtn.addEventListener("click", () => {
+        const file = fileInput.files[0];
+        if (!file) {
+          alert("Please select a CSV file first.");
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const raw = e.target.result;
+
+          // split rows (support \r\n and \n)
+          const rows = raw.split(/\r?\n/).filter(line => line.trim().length > 0);
+
+          if (rows.length === 0) {
+            alert("This CSV seems empty.");
+            return;
+          }
+
+          // first row = header
+          const header = rows[0];
+          const dataRows = rows.slice(1);
+
+          // remove duplicate rows based on full line
+          const seen = new Set();
+          const cleanedRows = [];
+          dataRows.forEach(row => {
+            const trimmed = row.trim();
+            if (!seen.has(trimmed)) {
+              seen.add(trimmed);
+              cleanedRows.push(trimmed);
+            }
+          });
+
+          // rebuild CSV
+          const cleanedCsv = [header, ...cleanedRows].join("\n");
+
+          // create blob + download link
+          const blob = new Blob([cleanedCsv], { type: "text/csv" });
+          const url  = URL.createObjectURL(blob);
+          downloadLink.href = url;
+          downloadLink.download = file.name.replace(".csv", "") + "_clean.csv";
+
+          resultMsg.textContent = `✅ Cleaned ${dataRows.length} rows → ${cleanedRows.length} unique rows.`;
+          outputBox.classList.remove("hidden");
+        };
+
+        reader.readAsText(file);
+      });
+    });
+  </script>
 </body>
 </html>
