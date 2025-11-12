@@ -23,8 +23,17 @@
   </script>
 
   <main class="tool-layout">
-    <aside class="ad-side"></aside>
+    <!-- 🧭 Left Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="1234567890"  <!-- TODO: replace with your real slot -->
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
 
+    <!-- 🎯 Center Tool -->
     <section class="tool-center">
       <div class="tool-card gradient-green">
         <h2>URL Shortener 🔗</h2>
@@ -52,7 +61,15 @@
       </div>
     </section>
 
-    <aside class="ad-side"></aside>
+    <!-- 🧭 Right Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="9876543210"  <!-- TODO: replace with your real slot -->
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
   </main>
 
   <!-- footer -->
@@ -63,7 +80,7 @@
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 
-  <!-- JS -->
+  <!-- JS: URL shortener -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const input = document.getElementById("urlInput");
@@ -110,6 +127,13 @@
         }
       });
     });
+  </script>
+
+  <!-- 💰 AdSense loader -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+          crossorigin="anonymous"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </body>
 </html>

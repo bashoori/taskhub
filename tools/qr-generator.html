@@ -6,6 +6,7 @@
   <title>QR Generator | Bita Digital Hub</title>
   <meta name="description" content="Generate custom QR codes instantly — perfect for links, campaigns, and products." />
 
+  <!-- 🌈 Unified Styles -->
   <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/theme.css" />
@@ -22,9 +23,19 @@
       .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
   </script>
 
+  <!-- 🧰 Tool Layout -->
   <main class="tool-layout">
-    <aside class="ad-side"></aside>
+    <!-- 🧭 Left Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="1234567890"  <!-- replace with your real slot -->
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
 
+    <!-- 🎯 Main Tool -->
     <section class="tool-center">
       <div class="tool-card gradient-yellow">
         <h2>QR Generator 🟨</h2>
@@ -52,7 +63,15 @@
       </div>
     </section>
 
-    <aside class="ad-side"></aside>
+    <!-- 🧭 Right Ad -->
+    <aside class="ad-side">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="9876543210"  <!-- replace with your real slot -->
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </aside>
   </main>
 
   <!-- footer -->
@@ -63,10 +82,10 @@
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 
-  <!-- QR library -->
+  <!-- 📦 QR Library -->
   <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 
-  <!-- working script -->
+  <!-- ⚙️ QR Generator Script -->
   <script>
     window.addEventListener("DOMContentLoaded", function () {
       const input = document.getElementById("qrText");
@@ -75,7 +94,7 @@
       const canvas = document.getElementById("qrCanvas");
       const downloadLink = document.getElementById("downloadLink");
 
-      // safety: check library
+      // ensure library is loaded
       if (typeof QRCode === "undefined") {
         console.error("QRCode library not loaded.");
         return;
@@ -92,6 +111,7 @@
         const ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        // generate QR
         QRCode.toCanvas(
           canvas,
           text,
@@ -108,14 +128,19 @@
             }
 
             outputBox.classList.remove("hidden");
-
-            // make download work
             const dataURL = canvas.toDataURL("image/png");
             downloadLink.href = dataURL;
           }
         );
       });
     });
+  </script>
+
+  <!-- 💰 AdSense Loader -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+          crossorigin="anonymous"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </body>
 </html>
