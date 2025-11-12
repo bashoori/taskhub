@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/responsive.css" />
 
   <!-- 🎨 Beautiful Persian Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=Estedad:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=Estedad:wght@500;700&display=swap" rel="stylesheet" />
 
   <!-- ⚙️ Scripts -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
@@ -39,7 +39,7 @@
       direction: ltr;
     }
 
-    /* RTL layout for content */
+    /* RTL layout for main content */
     main, section, h1, h2, h3, p, a, button {
       direction: rtl;
       text-align: center;
@@ -54,17 +54,20 @@
 
     .hero h1 {
       font-family: "Estedad", "Vazirmatn", sans-serif;
-      font-weight: 700;
-      font-size: 2.2rem;
+      font-weight: 800;
+      font-size: 3rem;
       color: #0f172a;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.4;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #475569;
       max-width: 720px;
       margin: 0 auto 2rem;
+      font-weight: 400;
+      line-height: 2;
     }
 
     .cta-buttons {
@@ -75,9 +78,9 @@
     }
 
     /* ---------- BUTTONS ---------- */
-    .btn.primary { background: #1e3a8a; color: #fff; font-weight: 600; }
+    .btn.primary { background: #1e3a8a; color: #fff; font-weight: 600; padding: 0.8rem 1.8rem; border-radius: 8px; }
     .btn.primary:hover { background: #2563eb; }
-    .btn.outline { border: 2px solid #1e3a8a; color: #1e3a8a; background: transparent; font-weight: 600; }
+    .btn.outline { border: 2px solid #1e3a8a; color: #1e3a8a; background: transparent; font-weight: 600; padding: 0.8rem 1.8rem; border-radius: 8px; }
     .btn.outline:hover { background: #1e3a8a; color: #fff; }
 
     /* ---------- GRID ---------- */
@@ -85,7 +88,7 @@
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 1.2rem;
       margin-top: 2rem;
     }
 
@@ -100,10 +103,11 @@
     /* ---------- CARDS ---------- */
     .card {
       border-radius: 16px;
-      padding: 2rem 1.5rem;
+      padding: 1.5rem 1.2rem;
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
       background: #fff;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      height: auto;
     }
 
     .card:hover {
@@ -114,20 +118,24 @@
     .card h3 {
       font-family: "Estedad", "Vazirmatn", sans-serif;
       font-weight: 600;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
       color: #0f172a;
     }
 
     .card p {
       font-family: "Vazirmatn", sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.6;
       color: #475569;
-      font-size: 0.95rem;
+      margin: 0 auto;
+      max-width: 90%;
     }
 
     .card-icon {
       display: flex;
       justify-content: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.6rem;
     }
 
     /* ---------- COLORS ---------- */
