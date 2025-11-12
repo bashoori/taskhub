@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>بیتا دیجیتال هاب | رشد، اتوماسیون و درآمد آنلاین</title>
-  <meta name="description" content="بیتا دیجیتال هاب با استفاده از داده، فضای ابری و هوش مصنوعی به افراد و کسب‌وکارها کمک می‌کند تا مسیر رشد و درآمد آنلاین خود را هوشمند و ساده کنند." />
+  <meta name="description" content="بیتا دیجیتال هاب با بهره‌گیری از داده، فضای ابری و هوش مصنوعی به افراد و کسب‌وکارها کمک می‌کند تا مسیر رشد دیجیتال خود را ساده و هوشمند کنند." />
+  <meta name="keywords" content="بیتا دیجیتال هاب, اتوماسیون, داده, هوش مصنوعی, کسب درآمد آنلاین, طراحی وب, دیجیتال مارکتینگ" />
 
   <!-- 🌈 Styles -->
   <link rel="stylesheet" href="css/style.css" />
@@ -42,15 +43,12 @@
     }
 
     .section.light { background: #f9fafb; }
-
-    .section + .section {
-      margin-top: 2rem;
-    }
+    .section + .section { margin-top: 2rem; }
 
     h2 {
       font-family: "Estedad", "Vazirmatn", sans-serif;
       font-weight: 700;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       margin-bottom: 1rem;
       color: #0f172a;
     }
@@ -58,13 +56,13 @@
     .section-sub {
       font-size: 1.1rem;
       color: #475569;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
     }
 
     /* ---------- Hero Section ---------- */
     .hero {
       text-align: center;
-      padding: 5rem 1rem 4rem;
+      padding: 5.5rem 1rem 4.5rem;
       background: #f8fafc;
     }
 
@@ -72,8 +70,8 @@
       font-family: "Estedad", sans-serif;
       font-weight: 800;
       font-size: 3rem;
-      line-height: 1.4;
-      margin-bottom: 1.2rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
       color: #0f172a;
     }
 
@@ -101,6 +99,7 @@
       padding: 0.8rem 1.8rem;
       border-radius: 8px;
       text-decoration: none;
+      transition: background 0.3s ease;
     }
 
     .btn.primary:hover { background: #2563eb; }
@@ -113,19 +112,16 @@
       padding: 0.8rem 1.8rem;
       border-radius: 8px;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
     .btn.outline:hover { background: #1e3a8a; color: #fff; }
 
     /* ---------- RTL Content ---------- */
     #header-placeholder, #footer-placeholder { direction: ltr; }
+    main, section, h1, h2, h3, p, a, button { direction: rtl; text-align: center; }
 
-    main, section, h1, h2, h3, p, a, button {
-      direction: rtl;
-      text-align: center;
-    }
-
-    /* ---------- Card Grid ---------- */
+    /* ---------- Cards Grid ---------- */
     .tools-grid, .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -218,19 +214,22 @@
 
 <body>
   <!-- 🧭 Header -->
-  <div id="header-placeholder"></div>
+  <div id="header-placeholder">در حال بارگذاری...</div>
   <script>
     fetch("components/header-fa.html")
-      .then(res => res.text())
+      .then(res => res.ok ? res.text() : Promise.reject("Header not found"))
       .then(html => document.getElementById("header-placeholder").innerHTML = html)
-      .catch(console.error);
+      .catch(err => {
+        console.error(err);
+        document.getElementById("header-placeholder").innerHTML = "<p style='text-align:center;color:#888'>⚠️ فایل هدر فارسی یافت نشد.</p>";
+      });
   </script>
 
   <main>
     <!-- 🌟 Hero -->
     <section id="home" class="section hero">
       <h1>بساز، رشد کن و از دنیای آنلاین درآمد داشته باش</h1>
-      <p>بیتا دیجیتال هاب به شما کمک می‌کند تا با استفاده از داده، فضای ابری و هوش مصنوعی، مسیر رشد خود را هوشمند کنید.</p>
+      <p>بیتا دیجیتال هاب به شما کمک می‌کند تا با داده، فضای ابری و هوش مصنوعی، مسیر رشد خود را هوشمند کنید.</p>
       <div class="cta-buttons">
         <a href="https://www.bitaashoori.com" target="_blank" rel="noopener noreferrer" class="btn primary">شروع کسب‌وکار آنلاین</a>
         <a href="#contact" class="btn outline">رزرو مشاوره</a>
@@ -240,7 +239,7 @@
     <!-- 💡 About -->
     <section id="about" class="section light">
       <h2>به بیتا دیجیتال هاب خوش آمدید</h2>
-      <p>در بیتا دیجیتال هاب، به قدرت فناوری برای خلق فرصت‌های نو باور داریم. هدف ما ساده‌سازی مسیر موفقیت دیجیتال است — از استراتژی هوشمند تا اتوماسیون کامل سیستم‌ها.</p>
+      <p>در بیتا دیجیتال هاب، ما به قدرت فناوری برای خلق فرصت‌های نو باور داریم. هدف ما ساده‌سازی مسیر موفقیت دیجیتال است — از استراتژی هوشمند تا اتوماسیون کامل سیستم‌ها.</p>
       <p>— بیتا عاشوری، بنیان‌گذار</p>
     </section>
 
@@ -308,13 +307,18 @@
   </main>
 
   <!-- 🦶 Footer -->
-  <div id="footer-placeholder"></div>
+  <div id="footer-placeholder">در حال بارگذاری...</div>
   <script>
     fetch("components/footer-fa.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html)
-      .then(() => lucide.createIcons())
-      .catch(console.error);
+      .then(res => res.ok ? res.text() : Promise.reject("Footer not found"))
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+        lucide.createIcons();
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("footer-placeholder").innerHTML = "<p style='text-align:center;color:#888'>⚠️ فایل فوتر فارسی یافت نشد.</p>";
+      });
   </script>
 
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
