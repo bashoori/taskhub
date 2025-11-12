@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="css/responsive.css" />
 
   <!-- ⚙️ Scripts -->
-  <script src="js/script.js" defer></script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/script.js" defer></script>
 
   <style>
     body {
@@ -40,7 +40,7 @@
     }
 
     .hero p {
-      max-width: 750px;
+      max-width: 720px;
       margin: 0 auto 2rem;
       color: #334155;
       line-height: 1.7;
@@ -54,7 +54,7 @@
       flex-wrap: wrap;
     }
 
-    /* ---------- SECTION BASE ---------- */
+    /* ---------- SECTION ---------- */
     .section {
       padding: 4rem 1rem;
       max-width: 1100px;
@@ -65,8 +65,8 @@
       text-align: center;
       font-size: 2rem;
       font-weight: 700;
+      margin-bottom: 0.5rem;
       color: #0f172a;
-      margin-bottom: 0.6rem;
     }
 
     .section-sub {
@@ -75,8 +75,9 @@
       margin-bottom: 2rem;
     }
 
-    /* ---------- TOOLS ---------- */
-    .tools-grid {
+    /* ---------- CARD GRID ---------- */
+    .tools-grid,
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
@@ -87,14 +88,15 @@
       border-radius: 16px;
       padding: 2rem 1.5rem;
       text-align: center;
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      color: #0f172a;
+      background: #fff;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     }
 
     .card-icon {
@@ -111,36 +113,25 @@
     .card h3 {
       margin-bottom: 0.5rem;
       font-size: 1.2rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .card p {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #f1f5f9;
+      color: #475569;
     }
 
-    /* ---------- LIGHT COLOR GRADIENTS (Soft Edition) ---------- */
-   
-    .gradient-blue { background: linear-gradient(145deg, #edf3ff, #f5f8ff); border-left: 5px solid #2563eb; }
-    .gradient-green { background: linear-gradient(145deg, #ecfdf5, #f6fff9); border-left: 5px solid #16a34a; }
-    .gradient-yellow { background: linear-gradient(145deg, #fff9eb, #fffdf5); border-left: 5px solid #f59e0b; }
-    .gradient-pink { background: linear-gradient(145deg, #fdf2f8, #fff5f9); border-left: 5px solid #db2777; }
-    .gradient-orange { background: linear-gradient(145deg, #fff7ed, #fffaf3); border-left: 5px solid #fb923c; }
-    .gradient-cyan { background: linear-gradient(145deg, #ecfeff, #f0f9ff); border-left: 5px solid #06b6d4; }
+    /* ---------- SOFT GRADIENTS ---------- */
+    .gradient-blue   { background: linear-gradient(145deg, #eef4ff, #f7f9ff); border-left: 5px solid #2563eb; }
+    .gradient-pink   { background: linear-gradient(145deg, #fff5f7, #fff8fb); border-left: 5px solid #db2777; }
+    .gradient-cyan   { background: linear-gradient(145deg, #ecfeff, #f0f9ff); border-left: 5px solid #06b6d4; }
     .gradient-purple { background: linear-gradient(145deg, #f5f3ff, #faf5ff); border-left: 5px solid #8b5cf6; }
-    .gradient-red { background: linear-gradient(145deg, #ffe4e6, #fff7f7); border-left: 5px solid #ef4444; }
-    .gradient-gray { background: linear-gradient(145deg, #f3f4f6, #ffffff); border-left: 5px solid #64748b; }
+    .gradient-green  { background: linear-gradient(145deg, #ecfdf5, #f6fff9); border-left: 5px solid #16a34a; }
+    .gradient-yellow { background: linear-gradient(145deg, #fffbea, #fffdf5); border-left: 5px solid #f59e0b; }
+    .gradient-gray   { background: linear-gradient(145deg, #f3f4f6, #ffffff); border-left: 5px solid #64748b; }
 
-    /* ---------- COURSES ---------- */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    /* ---------- CONTACT FORM ---------- */
+    /* ---------- CONTACT ---------- */
     .contact-form {
       max-width: 700px;
       margin: 2rem auto;
@@ -161,6 +152,7 @@
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       background: #f9fafb;
+      font-family: inherit;
     }
 
     textarea {
@@ -178,15 +170,25 @@
       transition: all 0.3s ease;
     }
 
-    .btn.primary { background: #1e3a8a; color: #fff; }
-    .btn.primary:hover { background: #2563eb; }
+    .btn.primary {
+      background: #1e3a8a;
+      color: #fff;
+    }
+
+    .btn.primary:hover {
+      background: #2563eb;
+    }
 
     .btn.outline {
       border: 2px solid #1e3a8a;
       color: #1e3a8a;
       background: transparent;
     }
-    .btn.outline:hover { background: #1e3a8a; color: #fff; }
+
+    .btn.outline:hover {
+      background: #1e3a8a;
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -200,43 +202,33 @@
       .catch(console.error);
   </script>
 
-  <!-- ================= HERO ================= -->
+  <!-- 🌟 HERO -->
   <section id="home" class="section hero">
-    <div class="hero-content">
-      <h1>Helping You Build, Automate & Earn Online</h1>
-      <p>
-        Bita Digital Hub empowers creators and businesses to automate, scale, and grow
-        using data, cloud, and AI-powered systems.
-      </p>
-      <div class="cta-buttons">
-        <a href="#courses" class="btn primary">Start Your Online Business</a>
-        <a href="#contact" class="btn outline">Book a Call</a>
-      </div>
+    <h1>Helping You Build, Automate & Earn Online</h1>
+    <p>
+      Bita Digital Hub empowers creators and businesses to automate, scale, and grow
+      using data, cloud, and AI-powered systems.
+    </p>
+    <div class="cta-buttons">
+      <a href="#courses" class="btn primary">Start Your Online Business</a>
+      <a href="#contact" class="btn outline">Book a Call</a>
     </div>
   </section>
 
-  <!-- ================= ABOUT ================= -->
+  <!-- 💡 ABOUT -->
   <section id="about" class="section about light">
-    <div class="about-grid">
-
-      <div>
-        <h2>Welcome to Bita Digital Hub</h2>
-        <h3>Leading digital transformation with data, AI, and automation</h3>
-        <p>
-          At Bita Digital Hub, we believe in the power of technology to create
-          new opportunities for individuals and businesses alike.
-        </p>
-        <p>
-          Our mission is to simplify the path to digital success from intelligent strategy
-          and system design to full-scale automation.
-        </p>
-        <p class="signature">— Bita Ashoori, CEO & Founder</p>
-      </div>
-      
-    </div>
+    <h2>Welcome to Bita Digital Hub</h2>
+    <p class="section-sub">Leading digital transformation with data, AI, and automation</p>
+    <p>
+      At Bita Digital Hub, we believe in the power of technology to create
+      new opportunities for individuals and businesses alike.
+      Our mission is to simplify the path to digital success — from intelligent
+      strategy and system design to full-scale automation.
+    </p>
+    <p>— Bita Ashoori, CEO & Founder</p>
   </section>
 
-  <!-- ================= TOOLS ================= -->
+  <!-- 🧰 TOOLS -->
   <section id="tools" class="section tools light">
     <h2>Free Tools</h2>
     <p class="section-sub">AI and automation tools to power your productivity</p>
@@ -286,7 +278,7 @@
     </div>
   </section>
 
-  <!-- ================= COURSES ================= -->
+  <!-- 🎓 COURSES -->
   <section id="courses" class="section light">
     <h2>Courses & Learning</h2>
     <p class="section-sub">Grow your skills and business in the digital economy</p>
@@ -309,15 +301,9 @@
         <p>Start your own business using our automation-ready digital franchise model.</p>
       </div>
     </div>
-
-    <div class="cta-buttons">
-        <a href="#contact" class="btn outline">Book a Call</a>
-    </div>
-
-   
   </section>
 
-  <!-- ================= SERVICES ================= -->
+  <!-- ⚙️ SERVICES -->
   <section id="services" class="section">
     <h2>Our Services</h2>
     <p class="section-sub">Complete solutions for your digital transformation</p>
@@ -346,51 +332,25 @@
         <p>Automate customer engagement, lead collection, and marketing with smart bots.</p>
       </div>
     </div>
-
-    
-    <div class="hero-content">
-      <p>
-      </p>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn outline">Book a Call</a>
-      </div>
-    </div>
-  
-
   </section>
 
-  <!-- ================= CONTACT FORM ================= -->
+  <!-- 💬 CONTACT -->
   <section id="contact" class="section contact light">
     <h2>Contact Us</h2>
     <p class="section-sub">Let’s build something amazing together</p>
 
     <form class="contact-form" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
       <div class="form-grid">
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" placeholder="Your full name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required />
-        </div>
+        <input type="text" name="name" placeholder="Full Name *" required />
+        <input type="email" name="email" placeholder="Email Address *" required />
       </div>
 
       <div class="form-grid">
-        <div class="form-group">
-          <label for="company">Company</label>
-          <input type="text" id="company" name="company" placeholder="Company name" />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="text" id="phone" name="phone" placeholder="+1 604 000 0000" />
-        </div>
+        <input type="text" name="company" placeholder="Company" />
+        <input type="text" name="phone" placeholder="Phone" />
       </div>
 
-      <div class="form-group">
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
-      </div>
+      <textarea name="message" placeholder="Tell us about your project..." required></textarea>
 
       <button type="submit" class="btn primary">Send Message</button>
     </form>
@@ -402,9 +362,8 @@
     fetch("components/footer.html")
       .then(res => res.text())
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
+      .then(() => lucide.createIcons())
       .catch(console.error);
-
-    document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
   </script>
 </body>
 </html>
