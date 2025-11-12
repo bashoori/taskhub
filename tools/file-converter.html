@@ -4,16 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>File Converter | Bita Digital Hub</title>
-  <meta name="description" content="Convert PDF, DOCX, and other files instantly — a simple and reliable file converter by Bita Digital Hub." />
+  <meta name="description" content="Convert documents, images, and PDFs easily — fast, reliable, and free." />
 
+  <!-- 🌈 Styles -->
   <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/responsive.css" />
+
+  <!-- 🧩 JS libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 </head>
 
 <body>
+  <!-- 🧭 Header -->
   <div id="header-placeholder"></div>
   <script>
     fetch("../components/header-tools.html")
@@ -21,19 +27,20 @@
       .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
   </script>
 
+  <!-- 🧰 Tool Layout -->
   <main class="tool-layout">
     <aside class="ad-side"></aside>
 
     <section class="tool-center">
       <div class="tool-card gradient-pink">
         <h2>File Converter 📄</h2>
-        <p>Convert documents, images, and PDFs easily — fast, reliable, and free.</p>
+        <p>Convert text files into PDF, DOCX, or TXT — quick, simple, and free.</p>
 
-        <form class="tool-form">
-          <label for="fileInput">Select file to convert:</label>
-          <input type="file" id="fileInput" class="file-input" />
+        <form class="tool-form" onsubmit="return false;">
+          <label for="fileInput">Select a file to convert:</label>
+          <input type="file" id="fileInput" class="file-input" accept=".txt,.csv,.json,.log" />
 
-          <label for="formatSelect">Output format:</label>
+          <label for="formatSelect">Choose output format:</label>
           <select id="formatSelect" class="select-input">
             <option value="pdf">PDF</option>
             <option value="docx">DOCX</option>
@@ -42,7 +49,7 @@
 
           <button type="button" id="convertBtn" class="primary-btn">Convert</button>
 
-          <div id="output" class="output-box hidden">
+          <div id="outputBox" class="output-box hidden">
             <p id="resultMsg"></p>
             <a id="downloadLink" href="#" class="btn outline" download>⬇️ Download</a>
           </div>
@@ -53,6 +60,7 @@
     <aside class="ad-side"></aside>
   </main>
 
+  <!-- 🦶 Footer -->
   <div id="footer-placeholder"></div>
   <script>
     fetch("../components/footer-tools.html")
@@ -60,6 +68,61 @@
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 
-  <script src="../js/converter-main.js" defer></script>
+  <!-- ⚙️ Converter Logic -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fileInput = document.querySelector("#fileInput");
+    const formatSelect = document.querySelector("#formatSelect");
+    const convertBtn = document.querySelector("#convertBtn");
+    const resultMsg = document.querySelector("#resultMsg");
+    const downloadLink = document.querySelector("#downloadLink");
+    const outputBox = document.querySelector("#outputBox");
+
+    async function convertFile() {
+      const file = fileInput.files[0];
+      const format = formatSelect.value;
+
+      if (!file) {
+        alert("Please select a file first.");
+        return;
+      }
+
+      const text = await file.text();
+      let blob, filename;
+
+      if (format === "txt") {
+        blob = new Blob([text], { type: "text/plain" });
+        filename = file.name.replace(/\.[^/.]+$/, "") + ".txt";
+      } 
+      else if (format === "docx") {
+        blob = new Blob(
+          [`<!DOCTYPE html><html><body><pre>${text}</pre></body></html>`],
+          { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" }
+        );
+        filename = file.name.replace(/\.[^/.]+$/, "") + ".docx";
+      } 
+      else if (format === "pdf") {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+        const lines = text.split("\n");
+        let y = 10;
+        lines.forEach(line => {
+          pdf.text(line, 10, y);
+          y += 10;
+        });
+        blob = pdf.output("blob");
+        filename = file.name.replace(/\.[^/.]+$/, "") + ".pdf";
+      }
+
+      const url = URL.createObjectURL(blob);
+      downloadLink.href = url;
+      downloadLink.download = filename;
+      resultMsg.textContent = `✅ File converted successfully! Download: ${filename}`;
+      outputBox.classList.remove("hidden");
+    }
+
+    convertBtn.addEventListener("click", convertFile);
+  });
+  </script>
 </body>
 </html>
