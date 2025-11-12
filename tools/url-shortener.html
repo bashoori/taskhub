@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <!-- header -->
   <div id="header-placeholder"></div>
   <script>
     fetch("../components/header-tools.html")
@@ -29,14 +30,23 @@
         <h2>URL Shortener 🔗</h2>
         <p>Paste any link to shorten it — manage campaigns and share easily.</p>
 
-        <form class="tool-form">
+        <form class="tool-form" onsubmit="return false;">
           <label for="urlInput">Enter your URL:</label>
-          <input type="url" id="urlInput" class="text-input" placeholder="https://example.com" />
+          <input 
+            type="url" 
+            id="urlInput" 
+            class="text-input" 
+            placeholder="https://example.com"
+            autocomplete="off"
+          />
 
-          <button type="button" id="shortenBtn" class="primary-btn">Shorten URL</button>
+          <button type="button" id="shortenBtn" class="primary-btn">
+            Shorten URL
+          </button>
 
           <div id="output" class="output-box hidden">
             <p id="resultMsg"></p>
+            <button type="button" id="copyBtn" class="secondary-btn hidden">Copy Link</button>
           </div>
         </form>
       </div>
@@ -45,6 +55,7 @@
     <aside class="ad-side"></aside>
   </main>
 
+  <!-- footer -->
   <div id="footer-placeholder"></div>
   <script>
     fetch("../components/footer-tools.html")
@@ -52,6 +63,53 @@
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 
-  <script src="../js/shortener-main.js" defer></script>
+  <!-- JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const input = document.getElementById("urlInput");
+      const btn = document.getElementById("shortenBtn");
+      const outputBox = document.getElementById("output");
+      const resultMsg = document.getElementById("resultMsg");
+      const copyBtn = document.getElementById("copyBtn");
+
+      btn.addEventListener("click", async function () {
+        const url = (input.value || "").trim();
+        if (!url) {
+          alert("Please enter a valid URL.");
+          input.focus();
+          return;
+        }
+
+        // UI feedback
+        resultMsg.textContent = "Shortening...";
+        outputBox.classList.remove("hidden");
+        copyBtn.classList.add("hidden");
+
+        try {
+          const res = await fetch(
+            `https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`
+          );
+          const shortUrl = await res.text();
+
+          if (!shortUrl.startsWith("http")) throw new Error("Invalid response");
+
+          resultMsg.innerHTML = `
+            <strong>Shortened URL:</strong>
+            <a href="${shortUrl}" target="_blank" rel="noopener noreferrer">${shortUrl}</a>
+          `;
+          copyBtn.classList.remove("hidden");
+
+          copyBtn.onclick = () => {
+            navigator.clipboard.writeText(shortUrl);
+            copyBtn.textContent = "Copied!";
+            setTimeout(() => (copyBtn.textContent = "Copy Link"), 2000);
+          };
+        } catch (error) {
+          console.error(error);
+          resultMsg.textContent = "Error: Could not shorten this URL.";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
