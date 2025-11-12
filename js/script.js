@@ -1,24 +1,35 @@
 /* =========================================================
-📜 Bita Digital Hub – Global Script (v7)
+📜 Bita Digital Hub – Global Script (v8, multilingual)
 Author: Bita Ashoori
+
 Handles:
-- Header/Footer auto-load (root + /tools/)
+- Auto-load header/footer (English + Farsi)
 - Breadcrumbs for /tools/ pages
 - Language dropdown
 - Mobile nav toggle
 - Smooth scrolling
-- Lucide icon initialization
+- Lucide icons
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
   const isToolPage = window.location.pathname.includes("/tools/");
   const basePath = isToolPage ? "../" : "";
+  const lang = document.documentElement.lang || "en"; // Detect page language
+
+  // Choose proper header/footer files
+  const headerFile = lang === "fa"
+    ? `${basePath}components/header-fa.html`
+    : `${basePath}components/header.html`;
+
+  const footerFile = lang === "fa"
+    ? `${basePath}components/footer-fa.html`
+    : `${basePath}components/footer.html`;
 
   /* ==========================
      🧭 HEADER LOADER
   ========================== */
-  fetch(`${basePath}components/header.html`)
-    .then(res => res.text())
+  fetch(headerFile)
+    .then(res => res.ok ? res.text() : Promise.reject("Header file not found"))
     .then(html => {
       const headerPlaceholder = document.getElementById("header-placeholder");
       if (!headerPlaceholder) return;
@@ -26,16 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       initNavbar();
 
-      // 🧩 Add breadcrumb if this is a tool page
-      if (isToolPage) createBreadcrumb();
+      // 🧩 Add breadcrumb only for /tools/ pages
+      if (isToolPage) createBreadcrumb(lang);
     })
     .catch(err => console.error("Header load error:", err));
 
   /* ==========================
      🦶 FOOTER LOADER
   ========================== */
-  fetch(`${basePath}components/footer.html`)
-    .then(res => res.text())
+  fetch(footerFile)
+    .then(res => res.ok ? res.text() : Promise.reject("Footer file not found"))
     .then(html => {
       const footerPlaceholder = document.getElementById("footer-placeholder");
       if (!footerPlaceholder) return;
@@ -110,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ---------- Breadcrumb Builder ----------
-  function createBreadcrumb() {
+  function createBreadcrumb(lang) {
     const pathParts = window.location.pathname.split("/");
     const fileName = pathParts[pathParts.length - 1].replace(".html", "");
     const prettyName = fileName
@@ -119,17 +130,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const breadcrumb = document.createElement("nav");
     breadcrumb.className = "breadcrumb-nav";
+
+    // Farsi or English labels
+    const homeText = lang === "fa" ? "خانه" : "Home";
+    const toolsText = lang === "fa" ? "ابزارها" : "Tools";
+
     breadcrumb.innerHTML = `
       <div class="breadcrumb">
-        <a href="${basePath}index.html">🏠 Home</a>
+        <a href="${basePath}${lang === "fa" ? "index-fa.html" : "index.html"}">🏠 ${homeText}</a>
         <span>›</span>
-        <a href="${basePath}#tools">Tools</a>
+        <a href="${basePath}#tools">${toolsText}</a>
         <span>›</span>
         <span class="current">${prettyName}</span>
       </div>
     `;
 
-    // Insert breadcrumb just after header
     const header = document.querySelector(".navbar");
     if (header && header.parentNode) {
       header.insertAdjacentElement("afterend", breadcrumb);
@@ -137,7 +152,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Smooth scroll for internal sections
+/* =========================================================
+🪶 Smooth Scroll for any in-page anchor
+========================================================= */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
@@ -150,4 +167,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
