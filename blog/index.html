@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-page="blog">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Blog | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="Articles and guides on online business, digital marketing, and AI tools to help you build, automate, and grow your online business in 2025." />
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <style>
+    body {
+      background: #f8fafc;
+    }
+
+    .blog-header {
+      max-width: 850px;
+      margin: 6rem auto 2rem;
+      padding: 0 1.5rem;
+    }
+
+    .blog-header h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .blog-header p {
+      color: #64748b;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .blog-grid {
+      max-width: 1100px;
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .blog-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      transition: transform 0.18s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 1.4rem 1.5rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      flex: 1;
+    }
+
+    .blog-card-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+    }
+
+    .blog-card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0.15rem 0;
+    }
+
+    .blog-card p {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0.35rem 0 0.8rem;
+      flex: 1;
+    }
+
+    .blog-card a.read-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .blog-card a.read-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header-tools.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
+  </script>
+
+  <!-- BLOG INTRO -->
+  <main>
+
+    <section class="blog-header">
+      <h1>Latest Articles</h1>
+      <p>
+        Explore practical guides on online business, AI automation, and digital marketing.
+        Each article is written to help you start, grow, and optimize your online business in 2025.
+      </p>
+    </section>
+
+    <!-- BLOG CARDS -->
+    <section class="blog-grid" aria-label="Blog articles">
+
+      <!-- CARD: AI Tools for Small Business -->
+      <article class="blog-card">
+        <img src="../assets/ai-business-tools.jpg" alt="AI tools for small businesses">
+        <div class="blog-card-content">
+          <span class="blog-card-category">Online Business · AI Tools</span>
+          <h2>Why AI Tools Are Essential for Small Businesses in 2025</h2>
+          <p>
+            Find out how AI automation, analytics, and smart assistants help small businesses save time,
+            reduce costs, and make better decisions.
+          </p>
+          <a class="read-link" href="ai-tools-small-business-2025.html">Read article →</a>
+        </div>
+      </article>
+
+      <!-- CARD: Start Online Business -->
+      <article class="blog-card">
+        <img src="../assets/start-online-business-hero.jpg" alt="Starting an online business">
+        <div class="blog-card-content">
+          <span class="blog-card-category">Online Business · Getting Started</span>
+          <h2>How to Start an Online Business in 2025</h2>
+          <p>
+            A beginner-friendly roadmap to launching your own online business using AI, automation,
+            and proven systems—without a big team or office.
+          </p>
+          <a class="read-link" href="start-online-business-2025.html">Read article →</a>
+        </div>
+      </article>
+
+      <!-- CARD: Marketing Strategies -->
+      <article class="blog-card">
+        <img src="../assets/digital-marketing-2025.jpg" alt="Digital marketing strategies 2025">
+        <div class="blog-card-content">
+          <span class="blog-card-category">Digital Marketing · Strategy</span>
+          <h2>The Best Digital Marketing Strategies for Beginners in 2025</h2>
+          <p>
+            Learn how to use social media, SEO, email, and AI tools to grow your audience—
+            even if you’re just getting started.
+          </p>
+          <a class="read-link" href="digital-marketing-strategies-2025.html">Read article →</a>
+        </div>
+      </article>
+
+      <!-- CARD: Marketing Skills -->
+      <article class="blog-card">
+        <img src="../assets/marketing-skills-2025.jpg" alt="Digital marketing skills 2025">
+        <div class="blog-card-content">
+          <span class="blog-card-category">Digital Marketing · Skills</span>
+          <h2>Essential Digital Marketing Skills You Need in 2025</h2>
+          <p>
+            The core skills—AI, SEO, analytics, email, and paid ads—that help you stay competitive
+            and build a future-proof online presence.
+          </p>
+          <a class="read-link" href="marketing-skills-2025.html">Read article →</a>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("../components/footer-tools.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
+  </script>
+
+</body>
+</html>
