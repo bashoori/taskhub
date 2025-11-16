@@ -122,36 +122,72 @@
       color: #475569;
     }
 
-    /* ---------- BLOG PREVIEW ---------- */
-    .article-preview {
-      background: #fff7e6;
-      border-left: 6px solid #f59e0b;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-top: 2rem;
+    /* ---------- SOFT GRADIENTS ---------- */
+    .gradient-blue   { background: linear-gradient(145deg, #eef4ff, #f7f9ff); border-left: 5px solid #2563eb; }
+    .gradient-pink   { background: linear-gradient(145deg, #fff5f7, #fff8fb); border-left: 5px solid #db2777; }
+    .gradient-cyan   { background: linear-gradient(145deg, #ecfeff, #f0f9ff); border-left: 5px solid #06b6d4; }
+    .gradient-purple { background: linear-gradient(145deg, #f5f3ff, #faf5ff); border-left: 5px solid #8b5cf6; }
+    .gradient-green  { background: linear-gradient(145deg, #ecfdf5, #f6fff9); border-left: 5px solid #16a34a; }
+    .gradient-yellow { background: linear-gradient(145deg, #fffbea, #fffdf5); border-left: 5px solid #f59e0b; }
+    .gradient-gray   { background: linear-gradient(145deg, #f3f4f6, #ffffff); border-left: 5px solid #64748b; }
+
+    /* ---------- CONTACT ---------- */
+    .contact-form {
+      max-width: 700px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    .article-preview h3 {
-      margin-top: 0;
-      font-size: 1.4rem;
-      color: #0f172a;
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
     }
 
-    .read-more-btn {
-      display: block;
-      width: fit-content;
-      margin: 2rem auto 0;
-      background: #1e3a8a;
-      color: #fff;
-      padding: 0.8rem 2rem;
+    input, select, textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid #e2e8f0;
       border-radius: 8px;
+      background: #f9fafb;
+      font-family: inherit;
+    }
+
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      display: inline-block;
+      border-radius: 8px;
+      padding: 0.8rem 1.6rem;
       font-weight: 600;
       text-decoration: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
     }
 
-    .read-more-btn:hover {
+    .btn.primary {
+      background: #1e3a8a;
+      color: #fff;
+    }
+
+    .btn.primary:hover {
       background: #2563eb;
+    }
+
+    .btn.outline {
+      border: 2px solid #1e3a8a;
+      color: #1e3a8a;
+      background: transparent;
+    }
+
+    .btn.outline:hover {
+      background: #1e3a8a;
+      color: #fff;
     }
   </style>
 </head>
@@ -170,20 +206,29 @@
   <section id="home" class="section hero">
     <h1>Helping You Build, Automate & Earn Online</h1>
     <p>
-      Bita Digital Hub empowers creators and businesses to automate, scale, and grow using data, cloud, and AI-powered systems.
+      Bita Digital Hub empowers creators and businesses to automate, scale, and grow
+      using data, cloud, and AI-powered systems.
     </p>
     <div class="cta-buttons">
-      <a href="https://www.bitaashoori.com" target="_blank" class="btn primary">Start Your Online Business</a>
+      <!-- Opens your main website in a new tab -->
+      <a href="https://www.bitaashoori.com" target="_blank" rel="noopener noreferrer" class="btn primary">
+        Start Your Online Business
+      </a>
+
+      <!-- Smooth scroll to contact section -->
       <a href="#contact" class="btn outline">Book a Call</a>
     </div>
   </section>
+
 
   <!-- 💡 ABOUT -->
   <section id="about" class="section about light">
     <h2>Welcome to Bita Digital Hub</h2>
     <p>
-      At Bita Digital Hub, we believe in technology’s potential to create new opportunities for individuals and businesses.
-      Our mission is to simplify the path to digital success through strategy, smart systems, and automation.
+      At Bita Digital Hub, we believe in the power of technology to create
+      new opportunities for individuals and businesses alike.
+      Our mission is to simplify the path to digital success from intelligent
+      strategy and system design to full-scale automation.
     </p>
     <p>— Bita Ashoori, CEO & Founder</p>
   </section>
@@ -197,164 +242,196 @@
       <a href="tools/password-generator.html" class="card gradient-blue">
         <div class="card-icon"><i data-lucide="shield"></i></div>
         <h3>Password Generator</h3>
-        <p>Create secure, custom passwords instantly.</p>
+        <p>Create secure, custom passwords instantly, designed to keep your digital world protected.</p>
       </a>
 
       <a href="tools/file-converter.html" class="card gradient-pink">
         <div class="card-icon"><i data-lucide="file"></i></div>
         <h3>File Converter</h3>
-        <p>Convert PDFs, documents, and more in one click.</p>
+        <p>Transform PDFs, documents, and data files with one click, seamless and efficient.</p>
       </a>
 
       <a href="tools/csv-cleaner.html" class="card gradient-cyan">
         <div class="card-icon"><i data-lucide="table"></i></div>
         <h3>CSV Cleaner</h3>
-        <p>Clean and format datasets quickly.</p>
+        <p>Automatically clean and format CSV files, remove duplicates and prepare them for analysis.</p>
       </a>
 
       <a href="tools/zip-unzip.html" class="card gradient-gray">
         <div class="card-icon"><i data-lucide="archive"></i></div>
         <h3>Zip / UnZip</h3>
-        <p>Compress and extract files instantly.</p>
+        <p>Compress and extract files instantly with fast, secure performance.</p>
       </a>
 
       <a href="tools/url-shortener.html" class="card gradient-green">
         <div class="card-icon"><i data-lucide="link-2"></i></div>
         <h3>URL Shortener</h3>
-        <p>Track and shorten your links.</p>
+        <p>Track, shorten, and manage your links for marketing and performance analysis.</p>
       </a>
 
       <a href="tools/qr-generator.html" class="card gradient-yellow">
         <div class="card-icon"><i data-lucide="qr-code"></i></div>
         <h3>QR Generator</h3>
-        <p>Create branded QR codes in seconds.</p>
+        <p>Create custom QR codes for campaigns, websites, or product tags in seconds.</p>
       </a>
 
       <a href="tools/audio-transcriber.html" class="card gradient-purple">
         <div class="card-icon"><i data-lucide="mic"></i></div>
         <h3>Audio Transcriber</h3>
-        <p>Convert audio recordings to text.</p>
+        <p>Transcribe audio and voice recordings into clean, editable text using AI recognition.</p>
       </a>
 
       <a href="tools/convert-to-mp3.html" class="card gradient-pink">
         <div class="card-icon">🎵</div>
         <h3>Convert Video / Voice to MP3</h3>
-        <p>Convert any video or audio file to MP3.</p>
+        <p>Transform any video or audio file into high-quality MP3 , fast, private, and runs fully in your browser.</p>
       </a>
+
+
     </div>
   </section>
 
   <!-- 🎓 COURSES -->
   <section id="courses" class="section light">
     <h2>Courses & Learning</h2>
-    <p class="section-sub">Grow your skills and digital knowledge</p>
+    <p class="section-sub">Grow your skills and business in the digital economy</p>
     <div class="cards">
       <div class="card gradient-green">
         <div class="card-icon"><i data-lucide="book-open"></i></div>
         <h3>Free Online Courses</h3>
-        <p>Beginner-friendly training on data, AI, and digital tools.</p>
+        <p>Access beginner-friendly courses on data, AI, and digital marketing.</p>
       </div>
 
       <div class="card gradient-blue">
         <div class="card-icon"><i data-lucide="megaphone"></i></div>
         <h3>Digital Marketing Mastery</h3>
-        <p>Learn essential marketing and growth skills.</p>
+        <p>Learn how to promote your brand and grow your online presence effectively.</p>
       </div>
 
       <div class="card gradient-pink">
         <div class="card-icon"><i data-lucide="briefcase"></i></div>
         <h3>Online Franchise System</h3>
-        <p>Start a structured online business with guided systems.</p>
+        <p>Start your own business using our automation-ready digital franchise model.</p>
       </div>
     </div>
 
     <div class="cta-buttons">
       <a href="#contact" class="btn primary">Make an Appointment</a>
     </div>
+
+
   </section>
 
   <!-- ⚙️ SERVICES -->
   <section id="services" class="section">
     <h2>Our Services</h2>
-    <p class="section-sub">Solutions to support your digital transformation</p>
-
+    <p class="section-sub">Complete solutions for your digital transformation</p>
     <div class="cards">
+
       <div class="card gradient-green">
         <div class="card-icon"><i data-lucide="layout-dashboard"></i></div>
         <h3>Website Creation</h3>
-        <p>Responsive, optimized websites designed for performance.</p>
+        <p>Responsive, optimized websites designed for performance and impact.</p>
       </div>
 
       <div class="card gradient-yellow">
         <div class="card-icon"><i data-lucide="bar-chart-3"></i></div>
         <h3>Data & Analytics</h3>
-        <p>Turn data into actionable insights.</p>
+        <p>Transform raw data into actionable insights with dashboards and reports.</p>
       </div>
 
       <div class="card gradient-pink">
         <div class="card-icon"><i data-lucide="bot"></i></div>
-        <h3>Telegram Automation</h3>
-        <p>Smart bots for communication and workflow automation.</p>
+        <h3>Telegram Robots</h3>
+        <p>Automate customer engagement, lead collection, and marketing with smart bots.</p>
       </div>
     </div>
 
-    <div class="cta-buttons">
+     <div class="cta-buttons">
       <a href="#contact" class="btn primary">Make an Appointment</a>
     </div>
+
   </section>
 
-  <!-- 📰 LATEST ARTICLES (Option A) -->
-  <section id="articles" class="section light">
-    <h2>Latest Articles</h2>
-    <p class="section-sub">Insights to help you start and grow your online presence</p>
+ <!-- 💬 CONTACT -->
+<section id="contact" class="section contact light">
+  <h2>Contact Us</h2>
+  <p class="section-sub">Let’s build something amazing together</p>
 
-    <div class="article-preview">
-      <h3>How to Start a Successful Online Business in 2025</h3>
-      <p>
-        Learn the essential steps for launching a sustainable online business — even if you're a beginner. 
-        From choosing a niche to setting up automated systems, this guide walks you through the process.
-      </p>
-      <a href="articles/start-online-business-2025.html" class="read-more-btn">Read Full Article</a>
+  <form class="contact-form" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+    <!-- 🔹 Basic Info -->
+    <div class="form-grid">
+      <input type="text" name="name" placeholder="Full Name *" required aria-label="Full Name" />
+      <input type="email" name="email" placeholder="Email Address *" required aria-label="Email Address" />
+    </div>
+
+    <!-- 🔹 Optional Fields -->
+    <div class="form-grid">
+      <input type="text" name="company" placeholder="Company (optional)" aria-label="Company" />
+      <input type="text" name="phone" placeholder="Phone" aria-label="Phone" />
+    </div>
+
+    <!-- 🔹 Message -->
+    <textarea name="message" placeholder="Tell us about your project..." required aria-label="Message"></textarea>
+
+    <!-- 🔹 Submit Button -->
+    <button type="submit" class="btn primary" id="contactSubmitBtn">Send Message</button>
+
+    <!-- ⚙️ Hidden FormSubmit Config -->
+    <input type="hidden" name="_subject" value="New Contact Form Submission - Bita Digital Hub">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html">
+    <input type="text" name="_honey" style="display:none">
+  </form>
+</section>
+
+<!-- 🧠 Optional: UX Enhancement -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector('form[action^="https://formsubmit.co/"]');
+    const btn = document.getElementById("contactSubmitBtn");
+    if (form && btn) {
+      form.addEventListener("submit", () => {
+        btn.disabled = true;
+        btn.textContent = "Sending...";
+      });
+    }
+  });
+</script>
+
+  <!-- 📝 BLOG SECTION -->
+  <section id="blog" class="section light">
+    <h2>Latest Articles</h2>
+    <p class="section-sub">Insights to help you start and grow your online business</p>
+
+    <div class="cards">
+      <a href="blog/start-online-business.html" class="card gradient-yellow" style="text-align:left;">
+        <div class="card-icon"><i data-lucide="rocket"></i></div>
+        <h3>How to Start a Successful Online Business in 2025</h3>
+        <p>
+          Learn the essential steps for launching a profitable online business — 
+          even if you're a complete beginner. From choosing a niche to creating 
+          automated systems, this guide walks you through everything.
+        </p>
+      </a>
+    </div>
+
+    <div class="cta-buttons" style="margin-top:2rem;">
+      <a href="blog/start-online-business.html" class="btn primary">Read Full Article</a>
     </div>
   </section>
 
-  <!-- 💬 CONTACT -->
-  <section id="contact" class="section contact light">
-    <h2>Contact Us</h2>
-    <p class="section-sub">Let’s build something meaningful together</p>
 
-    <form class="contact-form" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
-      <div class="form-grid">
-        <input type="text" name="name" placeholder="Full Name *" required />
-        <input type="email" name="email" placeholder="Email Address *" required />
-      </div>
-
-      <div class="form-grid">
-        <input type="text" name="company" placeholder="Company (optional)" />
-        <input type="text" name="phone" placeholder="Phone" />
-      </div>
-
-      <textarea name="message" placeholder="Tell us about your project..." required></textarea>
-
-      <button type="submit" class="btn primary" id="contactSubmitBtn">Send Message</button>
-
-      <input type="hidden" name="_subject" value="New Contact Form Submission - Bita Digital Hub">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html">
-      <input type="text" name="_honey" style="display:none">
-    </form>
-  </section>
-
+  
   <!-- 🦶 Footer -->
   <div id="footer-placeholder"></div>
   <script>
     fetch("components/footer.html")
       .then(res => res.text())
-      .then(html => {
-        document.getElementById("footer-placeholder").innerHTML = html;
-        lucide.createIcons();
-      });
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
+      .then(() => lucide.createIcons())
+      .catch(console.error);
   </script>
 </body>
 </html>
