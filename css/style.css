@@ -120,7 +120,7 @@ a {
 
 
 /* =========================================================
-🌐 LANGUAGE SWITCH (Updated, Clean)
+🌐 LANGUAGE SWITCH (Clean)
 ========================================================= */
 .lang-switch {
   position: relative;
@@ -153,22 +153,19 @@ a {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
   list-style: none;
   padding: 0.4rem 0;
-  z-index: 2000;
   min-width: 140px;
+  z-index: 2000;
 }
 
 .lang-menu li a {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
   padding: 0.6rem 1rem;
   color: #334155;
   font-size: 0.9rem;
-  text-decoration: none;
 }
 
 .lang-menu li a:hover {
@@ -180,7 +177,7 @@ a {
   display: block;
 }
 
-/* --- Primary Button --- */
+/* Primary Button */
 .btn-primary.get-started {
   background: var(--primary);
   color: var(--white);
@@ -200,8 +197,6 @@ a {
 ========================================================= */
 .navbar.simple {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   background: var(--white);
   box-shadow: var(--shadow-sm);
@@ -210,17 +205,10 @@ a {
 
 .navbar.simple .nav-inner {
   max-width: 1100px;
-  margin: 0 auto;
   padding: 0.8rem 1.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.navbar.simple .brand-link {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
 }
 
 .navbar.simple .brand-logo { width: 40px; }
@@ -232,9 +220,8 @@ a {
 }
 
 .btn-back-home {
-  background: #fff;
-  color: #1e3a8a !important;
   border: 2px solid #1e3a8a;
+  color: #1e3a8a !important;
   font-weight: 600;
 }
 
@@ -244,189 +231,58 @@ a {
 }
 
 /* =========================================================
-🌐 BRAND HEADER (TOOLS)
+✨ HERO (Main Page)
 ========================================================= */
-[data-page="tools"] .brand-header {
+.hero {
+  background: #f8fafc;
   text-align: center;
-  margin-top: 7rem;
-  margin-bottom: 2.5rem;
+  padding: 7rem 2rem 6rem;
 }
 
-[data-page="tools"] .brand-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
+.hero h1 {
+  font-family: "Estedad", "Vazirmatn", sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #0f172a;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
 }
 
-[data-page="tools"] .brand-logo {
-  width: 72px;
+.hero p {
+  font-size: 1.2rem;
+  color: #475569;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  line-height: 2;
 }
 
-[data-page="tools"] .brand-title {
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: var(--text-dark);
-}
-
-[data-page="tools"] .brand-subtitle {
-  color: var(--text-mid);
-  font-size: 1rem;
-}
-
-/* =========================================================
-🧰 TOOL PAGE LAYOUT
-========================================================= */
-[data-page="tools"] .tool-layout {
-  display: grid;
-  grid-template-columns: 1fr minmax(320px, 600px) 1fr;
-  gap: 2rem;
-  padding: 2rem 1.5rem 4rem;
-  align-items: start;
-}
-
-[data-page="tools"] .tool-center {
+.cta-buttons {
   display: flex;
   justify-content: center;
+  gap: 1rem;
 }
 
-[data-page="tools"] .tool-card {
-  background: var(--white);
-  border-radius: 14px;
-  box-shadow: var(--shadow-md);
-  padding: 2rem 1.6rem;
-  text-align: center;
-  max-width: 550px;
-  width: 100%;
-}
-
-[data-page="tools"] .tool-card h2 {
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-}
-
-[data-page="tools"] .tool-card p {
-  color: var(--text-mid);
-  font-size: 0.95rem;
-  margin-bottom: 1.4rem;
-}
-
-/* --- Language Buttons --- */
-[data-page="tools"] .lang-btns {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-[data-page="tools"] .lang-btns button {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.35rem 0.9rem;
-  font-size: 0.85rem;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-[data-page="tools"] .lang-btns button.active {
+.btn.primary {
   background: var(--primary);
   color: #fff;
-}
-
-/* --- Form --- */
-[data-page="tools"] .tool-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-[data-page="tools"] .tool-form select,
-[data-page="tools"] .tool-form input {
-  width: 90%;
-  max-width: 360px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.6rem 0.9rem;
-  background: #f9fafb;
-}
-
-[data-page="tools"] .primary-btn {
-  background: var(--primary);
-  color: var(--white);
-  border: none;
-  padding: 0.6rem 1.8rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 10px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  width: 200px;
+  transition: all 0.3s ease;
 }
 
-[data-page="tools"] .primary-btn:hover {
+.btn.primary:hover {
   background: var(--primary-hover);
   transform: translateY(-2px);
 }
 
-
 /* =========================================================
-🎯 TOOL CARD CENTERING FIX (ZIP & Unzip)
+✨ LATEST ARTICLES SPACING FIX
 ========================================================= */
-[data-page="tools"] .tool-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 140px); /* subtracts header & footer space */
-  padding: 2rem 1rem;
+#latest-articles {
+  margin-top: 5rem !important;
+  padding-top: 2rem;
 }
-
-[data-page="tools"] .tool-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-[data-page="tools"] .tool-card {
-  margin: 0 auto;
-  max-width: 520px;
-  width: 90%;
-}
-/* ---------- Fix tool layout alignment ---------- */
-.tool-layout {
-  display: grid;
-  grid-template-columns: 160px 1fr 160px; /* left ad, main tool, right ad */
-  align-items: start;
-  justify-content: center;
-  gap: 1rem;
-  padding: 3rem 1rem;
-  background: #f9fafb;
-}
-
-/* Center the tool card within the main column */
-.tool-center {
-  display: flex;
-  justify-content: center;
-}
-
-.tool-card {
-  max-width: 480px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* Hide side ads on smaller screens */
-@media (max-width: 1000px) {
-  .tool-layout {
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem;
-  }
-}
-
 
 /* =========================================================
 🦶 FOOTER
@@ -435,19 +291,18 @@ a {
   background: #0f172a;
   color: #cbd5e1;
   padding: 4rem 2rem 2rem;
-  font-size: 0.95rem;
 }
 
 .footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
   margin-top: 2rem;
   padding-top: 1rem;
   color: #94a3b8;
@@ -455,7 +310,7 @@ a {
 }
 
 /* =========================================================
-📱 RESPONSIVE
+📱 RESPONSIVE FIXES
 ========================================================= */
 @media (max-width: 900px) {
   .nav-actions { display: none; }
@@ -468,12 +323,10 @@ a {
     height: 18px;
     background: none;
     border: none;
-    cursor: pointer;
   }
 
   .menu-toggle span {
     height: 3px;
-    width: 100%;
     background: var(--text-dark);
     border-radius: 2px;
   }
@@ -486,127 +339,9 @@ a {
     position: absolute;
     top: 100%;
     left: 0;
-    box-shadow: var(--shadow-md);
-    border-top: 1px solid var(--border);
   }
 
   .nav-links.show { display: flex; }
-  .nav-links a { padding: 1rem 0; text-align: center; }
 
-  [data-page="tools"] .tool-layout { grid-template-columns: 1fr; padding: 2rem 1rem 3rem; }
-  [data-page="tools"] .brand-header { margin-top: 6rem; }
+  .hero h1 { font-size: 2.3rem; }
 }
-/* ---------- Hero Section ---------- */
-.hero {
-  background: #f8fafc;
-  text-align: center;
-  padding: 7rem 2rem 6rem;
-}
-
-.hero-content h1 {
-  font-size: 3.2rem; /* 🔥 Bigger title */
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1.2;
-  margin-bottom: 1.2rem;
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  color: #334155;
-  margin-bottom: 2.5rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero .btn {
-  font-size: 1.05rem;
-  padding: 0.9rem 2.2rem;
-  border-radius: 12px;
-}
-
-.btn.primary {
-  background: #1e3a8a;
-  color: #ffffff;
-}
-
-.btn.outline {
-  border: 2px solid #1e3a8a;
-  color: #1e3a8a;
-  background: transparent;
-}
-.cta-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.btn.primary {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.8rem 1.6rem;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn.primary:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-}
-/* =========================================================
-💰 ADSENSE SIDE AREAS (TOOLS)
-========================================================= */
-[data-page="tools"] .ad-side {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 2rem;
-}
-
-[data-page="tools"] .ad-side ins.adsbygoogle {
-  width: 160px;
-  height: 600px;
-  max-width: 100%;
-  background: transparent;
-}
-
-/* Hide ads on small screens */
-@media (max-width: 1000px) {
-  [data-page="tools"] .ad-side {
-    display: none;
-  }
-
-  [data-page="tools"] .tool-layout {
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem 3rem;
-  }
-}
-.hero h1 {
-  font-family: "Estedad", "Vazirmatn", sans-serif;
-  font-weight: 800;
-  font-size: 3rem;          /* Bigger title */
-  color: #0f172a;
-  margin-bottom: 1.2rem;
-  line-height: 1.4;         /* Balanced spacing for Persian text */
-}
-.hero p {
-  font-size: 1.2rem;
-  color: #475569;
-  max-width: 720px;
-  margin: 0 auto 2rem;
-  font-weight: 400;
-  line-height: 2;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.3rem;      /* Scales nicely on phones */
-  }
-}
-
