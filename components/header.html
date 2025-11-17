@@ -1,225 +1,557 @@
-<!-- =========================================================
-🧭 Bita Digital Hub – Modern Responsive Header (v7 Final)
-Clean, SEO-Friendly, Global Navigation + Mobile Menu
-========================================================= -->
+<!DOCTYPE html>
+<html lang="en" data-page="home">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<nav class="navbar modern" role="navigation" aria-label="Main Navigation">
-  <div class="nav-inner">
+  <title>Bita Digital Hub | Build • Automate • Earn Online</title>
+  <meta name="description"
+        content="Empowering creators and businesses with automation, AI systems, and data-driven growth. Discover free digital tools, online courses, and transformation services." />
 
-    <!-- 🔹 Brand -->
-    <a href="pages/index.html/#home" class="brand-link">
-      <img src="/assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
-      <div class="brand-info">
-        <span class="brand-title">Bita Digital Hub</span>
-        <span class="brand-tagline">Learn. Build. Automate. Succeed.</span>
-      </div>
-    </a>
+  <!-- 🌈 Unified Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
 
-    <!-- 🔹 Navigation -->
-    <div class="nav-links" id="nav-links">
-      <a href="/#home">Home</a>
-      <a href="/#about">About</a>
-      <a href="/#tools">Tools</a>
-      <a href="/#services">Services</a>
-      <a href="/#courses">Courses</a>
-      <a href="/pages/blog/index-blog.html">Blog</a>
-      <a href="/#contact">Contact</a>
+  <!-- ⚙️ Scripts -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="/js/script.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding-top: 80px; /* offset for fixed header */
+      font-family: "Poppins", sans-serif;
+      background: #f9fafb;
+      color: #0f172a;
+    }
+
+    /* ---------- Generic Section Layout ---------- */
+    .section {
+      padding: 4rem 1.5rem;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section.light {
+      background: #f9fafb;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      color: #0f172a;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #64748b;
+      font-size: 1.02rem;
+      max-width: 720px;
+      margin: 0 auto 2.4rem;
+      line-height: 1.6;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      background: #f8fafc;
+      text-align: center;
+      padding: 6rem 1.5rem 5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      color: #334155;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      border-radius: 8px;
+      padding: 0.8rem 1.6rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: #1e3a8a;
+      color: #ffffff;
+    }
+
+    .btn.primary:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .btn.outline {
+      border: 2px solid #1e3a8a;
+      color: #1e3a8a;
+      background: transparent;
+    }
+
+    .btn.outline:hover {
+      background: #1e3a8a;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about p {
+      max-width: 720px;
+      margin: 0.5rem auto;
+      text-align: center;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       UNIFIED CARD SYSTEM (Articles / Tools / Courses / Services)
+    ========================================================== */
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 992px) {
+      .content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .content-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.4rem 1.3rem;
+      border-radius: 16px;
+      background: #ffffff;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      border: 1px solid #e2e8f0;
+    }
+
+    .content-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+      border-color: #cbd5f5;
+    }
+
+    .content-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eef2ff;
+      color: #1d4ed8;
+      font-size: 1.3rem;
+    }
+
+    .content-icon i {
+      width: 22px;
+      height: 22px;
+    }
+
+    .content-text h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+
+    .content-text p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* Accent color variations */
+    .accent-blue  .content-icon { background: #eff6ff; color: #1d4ed8; }
+    .accent-pink  .content-icon { background: #fdf2f8; color: #be185d; }
+    .accent-cyan  .content-icon { background: #ecfeff; color: #0e7490; }
+    .accent-green .content-icon { background: #ecfdf5; color: #15803d; }
+    .accent-yellow .content-icon { background: #fefce8; color: #b45309; }
+    .accent-purple .content-icon { background: #f5f3ff; color: #6d28d9; }
+    .accent-gray  .content-icon { background: #f3f4f6; color: #374151; }
+
+    /* Articles section spacing tweak */
+    .latest-articles {
+      padding-top: 1rem;
+    }
+
+    .latest-articles .section-sub {
+      margin-bottom: 2rem;
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #f9fafb;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🧭 HEADER -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; })
+      .catch(console.error);
+  </script>
+
+  <!-- 🌟 HERO -->
+  <section id="home" class="section hero">
+    <h1>Helping You Build, Automate & Earn Online</h1>
+    <p>
+      Bita Digital Hub empowers creators and businesses to automate, scale, and grow
+      using data, cloud, and AI-powered systems.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="https://www.bitaashoori.com" target="_blank" rel="noopener noreferrer" class="btn primary">
+        Start Your Online Business
+      </a>
+      <a href="#contact" class="btn outline">Book a Call</a>
+    </div>
+  </section>
+
+  <!-- 💡 ABOUT -->
+  <section id="about" class="section about light">
+    <h2>Welcome to Bita Digital Hub</h2>
+    <p>
+      At Bita Digital Hub, we believe in the power of technology to create
+      new opportunities for individuals and businesses alike.
+    </p>
+    <p>— Bita Ashoori, CEO &amp; Founder</p>
+  </section>
+
+  <!-- 📝 LATEST ARTICLES (3 Small Icon Cards) -->
+  <section class="section latest-articles">
+    <h2 class="section-title">Latest Articles</h2>
+    <p class="section-sub">
+      Insights to help you start and grow your online business.
+    </p>
+
+    <div class="content-grid">
+
+      <!-- Article 1 -->
+      <a href="/pages/blog/start-online-business.html" class="content-card accent-blue">
+        <div class="content-icon">
+          <i data-lucide="rocket"></i>
+        </div>
+        <div class="content-text">
+          <h3>How to Start a Successful Online Business in 2025</h3>
+          <p>Learn the essential steps for launching a profitable online business — even if you're a beginner.</p>
+        </div>
+      </a>
+
+      <!-- Article 2 -->
+      <a href="/pages/blog/ai-automation-solopreneurs-2025.html" class="content-card accent-purple">
+        <div class="content-icon">
+          <i data-lucide="settings"></i>
+        </div>
+        <div class="content-text">
+          <h3>The Rise of AI Automation for Solopreneurs in 2025</h3>
+          <p>Discover how AI is transforming workflows and helping creators scale faster.</p>
+        </div>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="/pages/blog/ai-business-tools.html" class="content-card accent-cyan">
+        <div class="content-icon">
+          <i data-lucide="cpu"></i>
+        </div>
+        <div class="content-text">
+          <h3>Top AI Tools Small Business Owners Should Use in 2025</h3>
+          <p>The essential AI tools every business owner needs to improve operations and grow faster.</p>
+        </div>
+      </a>
+
     </div>
 
-    <!-- 🔹 Language -->
-    <div class="nav-actions">
-      <div class="lang-switch">
-        <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
-           English ▾
-        </button>
-        <ul class="lang-menu" id="lang-menu" role="listbox">
-          <li><a href="/pages/index.html">English</a></li>
-          <li><a href="/pages/index-fa.html"> فارسی</a></li>
-        </ul>
+    <div class="cta-buttons" style="margin-top:2rem;">
+      <a href="/blog/index-blog.html" class="btn primary">View All Articles</a>
+    </div>
+  </section>
+
+  <!-- 🧰 TOOLS (Same Card Style) -->
+  <section id="tools" class="section tools light">
+    <h2>Free Tools</h2>
+    <p class="section-sub">AI and automation tools to power your productivity.</p>
+
+    <div class="content-grid">
+
+      <a href="/tools/password-generator.html" class="content-card accent-blue">
+        <div class="content-icon">
+          <i data-lucide="shield"></i>
+        </div>
+        <div class="content-text">
+          <h3>Password Generator</h3>
+          <p>Create secure, custom passwords instantly.</p>
+        </div>
+      </a>
+
+      <a href="/tools/file-converter.html" class="content-card accent-pink">
+        <div class="content-icon">
+          <i data-lucide="file"></i>
+        </div>
+        <div class="content-text">
+          <h3>File Converter</h3>
+          <p>Transform PDFs, documents, and data files effortlessly.</p>
+        </div>
+      </a>
+
+      <a href="/tools/csv-cleaner.html" class="content-card accent-cyan">
+        <div class="content-icon">
+          <i data-lucide="table"></i>
+        </div>
+        <div class="content-text">
+          <h3>CSV Cleaner</h3>
+          <p>Automatically clean and format CSV files.</p>
+        </div>
+      </a>
+
+      <a href="/tools/zip-unzip.html" class="content-card accent-gray">
+        <div class="content-icon">
+          <i data-lucide="archive"></i>
+        </div>
+        <div class="content-text">
+          <h3>Zip / UnZip</h3>
+          <p>Compress and extract files instantly.</p>
+        </div>
+      </a>
+
+      <a href="/tools/url-shortener.html" class="content-card accent-green">
+        <div class="content-icon">
+          <i data-lucide="link-2"></i>
+        </div>
+        <div class="content-text">
+          <h3>URL Shortener</h3>
+          <p>Manage and track your links with ease.</p>
+        </div>
+      </a>
+
+      <a href="/tools/qr-generator.html" class="content-card accent-yellow">
+        <div class="content-icon">
+          <i data-lucide="qr-code"></i>
+        </div>
+        <div class="content-text">
+          <h3>QR Generator</h3>
+          <p>Create custom QR codes in seconds.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 🎓 COURSES -->
+  <section id="courses" class="section light">
+    <h2>Courses &amp; Learning</h2>
+    <p class="section-sub">Grow your skills and business in the digital economy.</p>
+
+    <div class="content-grid">
+
+      <div class="content-card accent-green">
+        <div class="content-icon">
+          <i data-lucide="book-open"></i>
+        </div>
+        <div class="content-text">
+          <h3>Free Online Courses</h3>
+          <p>Access beginner-friendly courses on data, AI, and digital marketing.</p>
+        </div>
       </div>
+
+      <div class="content-card accent-blue">
+        <div class="content-icon">
+          <i data-lucide="megaphone"></i>
+        </div>
+        <div class="content-text">
+          <h3>Digital Marketing Mastery</h3>
+          <p>Learn how to promote your brand and grow your online presence.</p>
+        </div>
+      </div>
+
+      <div class="content-card accent-pink">
+        <div class="content-icon">
+          <i data-lucide="briefcase"></i>
+        </div>
+        <div class="content-text">
+          <h3>Online Franchise System</h3>
+          <p>Start your own business with our automation-ready franchise model.</p>
+        </div>
+      </div>
+
     </div>
 
-    <!-- ☰ Mobile Toggle -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="cta-buttons" style="margin-top:2rem;">
+      <a href="#contact" class="btn primary">Make an Appointment</a>
+    </div>
+  </section>
 
-  </div>
-</nav>
+  <!-- ⚙️ SERVICES -->
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <p class="section-sub">Complete solutions for your digital transformation.</p>
 
-<!-- =========================================================
-🔧 Header Behavior Script
-========================================================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+    <div class="content-grid">
 
-  /* 🌍 Language Dropdown */
-  const langBtn = document.getElementById("lang-btn");
-  const langMenu = document.getElementById("lang-menu");
+      <div class="content-card accent-green">
+        <div class="content-icon">
+          <i data-lucide="layout-dashboard"></i>
+        </div>
+        <div class="content-text">
+          <h3>Website Creation</h3>
+          <p>Responsive, optimized websites for performance and clarity.</p>
+        </div>
+      </div>
 
-  langBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    langMenu.classList.toggle("show");
-    langBtn.setAttribute("aria-expanded", langMenu.classList.contains("show"));
-  });
+      <div class="content-card accent-yellow">
+        <div class="content-icon">
+          <i data-lucide="bar-chart-3"></i>
+        </div>
+        <div class="content-text">
+          <h3>Data &amp; Analytics</h3>
+          <p>Turn raw data into actionable insights.</p>
+        </div>
+      </div>
 
-  document.addEventListener("click", () => {
-    langMenu.classList.remove("show");
-    langBtn.setAttribute("aria-expanded", "false");
-  });
+      <div class="content-card accent-pink">
+        <div class="content-icon">
+          <i data-lucide="bot"></i>
+        </div>
+        <div class="content-text">
+          <h3>Telegram Robots</h3>
+          <p>Automate customer engagement, data collection, and marketing.</p>
+        </div>
+      </div>
 
-  /* 📱 Mobile Menu Toggle */
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
+    </div>
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-    menuToggle.classList.toggle("open");
-  });
+    <div class="cta-buttons" style="margin-top:2rem;">
+      <a href="#contact" class="btn primary">Make an Appointment</a>
+    </div>
+  </section>
 
-});
-</script>
+  <!-- 💬 CONTACT -->
+  <section id="contact" class="section contact light">
+    <h2>Contact Us</h2>
+    <p class="section-sub">Let’s build something amazing together.</p>
 
-<!-- =========================================================
-🎨 Header CSS (Drop into your main style.css or components.css)
-========================================================= -->
-<style>
-/* ---------- Header Layout ---------- */
-.navbar.modern {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  z-index: 2000;
-}
+    <form class="contact-form" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+      <div class="form-grid">
+        <input type="text" name="name" placeholder="Full Name *" required />
+        <input type="email" name="email" placeholder="Email Address *" required />
+      </div>
 
-.nav-inner {
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 0.9rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+      <div class="form-grid">
+        <input type="text" name="company" placeholder="Company (optional)" />
+        <input type="text" name="phone" placeholder="Phone" />
+      </div>
 
-/* ---------- Brand ---------- */
-.brand-link {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
+      <textarea name="message" placeholder="Tell us about your project..." required></textarea>
 
-.brand-logo {
-  width: 40px;
-}
+      <button type="submit" class="btn primary" id="contactSubmitBtn">Send Message</button>
 
-.brand-info {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
+      <input type="hidden" name="_subject" value="New Contact Form Submission - Bita Digital Hub">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html">
+      <input type="text" name="_honey" style="display:none">
+    </form>
+  </section>
 
-.brand-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1e3a8a;
-}
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector('form[action^="https://formsubmit.co/"]');
+      const btn = document.getElementById("contactSubmitBtn");
+      if (form && btn) {
+        form.addEventListener("submit", () => {
+          btn.disabled = true;
+          btn.textContent = "Sending...";
+        });
+      }
+    });
+  </script>
 
-.brand-tagline {
-  font-size: 0.82rem;
-  color: #475569;
-}
+  <!-- 🦶 FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
+      .then(() => {
+        if (window.lucide) lucide.createIcons();
+      })
+      .catch(console.error);
+  </script>
 
-/* ---------- Navigation ---------- */
-.nav-links {
-  display: flex;
-  gap: 1.8rem;
-}
-
-.nav-links a {
-  color: #0f172a;
-  font-weight: 500;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: #1e3a8a;
-}
-
-/* ---------- Language Switch ---------- */
-.lang-switch {
-  position: relative;
-}
-
-.lang-toggle {
-  background: #f1f5f9;
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
-  font-weight: 500;
-}
-
-.lang-menu {
-  position: absolute;
-  right: 0; top: 120%;
-  background: white;
-  border-radius: 8px;
-  display: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.lang-menu.show { display: block; }
-
-/* ---------- Mobile Menu ---------- */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: #0f172a;
-  transition: 0.3s;
-}
-
-.menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* ---------- Mobile Responsive ---------- */
-@media (max-width: 900px) {
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
-    background: #ffffff;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 0;
-    display: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-
-  .nav-links.show { display: flex; }
-
-  .menu-toggle { display: flex; }
-
-  .brand-tagline { display: none; }
-}
-</style>
+</body>
+</html>
