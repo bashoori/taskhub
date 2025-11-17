@@ -1,135 +1,205 @@
-/* =======================
-   HOME.CSS
-======================= */
+/* ============================================================
+   HOME.CSS — Clean Hero + Articles + Tools + Sections Layout
+   Professional • Minimal • Google-Friendly • 2025 UI System
+============================================================ */
 
-/* HERO */
+
+/* ------------------------------------------------------------
+   HERO SECTION
+------------------------------------------------------------ */
 .hero {
   background: #f8fafc;
   text-align: center;
-  padding: 7rem 2rem 6rem;
+  padding: 5.5rem 2rem 5rem; /* balanced with fixed navbar */
 }
 
 .hero h1 {
   font-size: 3rem;
   font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .hero p {
   max-width: 720px;
-  margin: auto;
-}
-
-/* HOME BLOG PREVIEW */
-.home-blog-preview {
-  padding: 4rem 1rem;
-  background: #f8fafc;
-}
-
-.blog-container {
-  max-width: 1250px;
-  margin: auto;
-}
-
-.blog-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.blog-preview-card {
-  border-radius: 18px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: var(--shadow-md);
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #475569;
 }
 
 
-/* ==============================
-   LATEST ARTICLES (BIG CARDS)
-============================== */
-
-.latest-articles {
-  margin-top: 4rem;
-  text-align: center;
+/* ------------------------------------------------------------
+   SECTION BASE
+------------------------------------------------------------ */
+.section {
+  padding: 4rem 1.5rem;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
-.section-title {
-  font-size: 2.4rem;
+.section.light {
+  background: #f9fafb;
+}
+
+.section h2 {
+  font-size: 2.2rem;
   font-weight: 800;
-  margin-bottom: 0.8rem;
   color: #0f172a;
+  text-align: center;
+  margin-bottom: 0.6rem;
 }
 
 .section-sub {
-  color: #475569;
-  font-size: 1.05rem;
-  max-width: 760px;
-  margin: 0 auto 2.5rem;
-}
-
-.latest-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.latest-card {
-  display: block;
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.latest-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-.latest-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  background: #eef2f7;
-}
-
-.latest-card .text {
-  padding: 1.4rem 1.3rem 1.8rem;
-  text-align: left;
-}
-
-.latest-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: .6rem;
-  color: #0f172a;
-  line-height: 1.4;
-}
-
-.latest-card p {
-  color: #475569;
+  max-width: 720px;
+  margin: 0.2rem auto 2.4rem;
+  color: #64748b;
+  text-align: center;
+  font-size: 1.02rem;
   line-height: 1.6;
-  font-size: .95rem;
 }
 
-/* RESPONSIVE */
+
+/* ------------------------------------------------------------
+   ABOUT SECTION
+------------------------------------------------------------ */
+.about p {
+  max-width: 720px;
+  margin: 0.5rem auto;
+  text-align: center;
+  color: #475569;
+  line-height: 1.7;
+}
+
+
+/* ------------------------------------------------------------
+   LATEST ARTICLES (ICON CARDS)
+   Uses the NEW content-card system from components.css
+------------------------------------------------------------ */
+.latest-articles {
+  padding-top: 1rem;
+}
+
+.latest-articles .section-sub {
+  margin-bottom: 2rem;
+}
+
+
+/* ------------------------------------------------------------
+   CONTENT GRID (Universal for Tools, Services, Courses)
+------------------------------------------------------------ */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
 @media (max-width: 992px) {
-  .latest-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .content-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
-  .latest-grid {
+  .content-grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .latest-card img {
-    height: 180px;
+
+/* ------------------------------------------------------------
+   CONTENT CARDS (Unified globally)
+   This section is intentionally minimal because the full styles
+   exist in components.css — this only adds page-level tweaks.
+------------------------------------------------------------ */
+.content-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 1.3rem 1.4rem;
+  border-radius: 16px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border-color: #cbd5f5;
+}
+
+.content-text h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.content-text p {
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+
+/* ------------------------------------------------------------
+   CONTACT SECTION
+------------------------------------------------------------ */
+.contact-form {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+
+/* ------------------------------------------------------------
+   SPACING FIXES (Page polish)
+------------------------------------------------------------ */
+.section + .section {
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2.3rem;
   }
 }
