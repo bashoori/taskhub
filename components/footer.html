@@ -1,25 +1,27 @@
 <!-- =========================================================
-🦶 Footer Component – Bita Digital Hub (Dark Edition, v2)
-Refined structure, better alignment, and accessibility
+🦶 Bita Digital Hub – Global Footer (v4 Final, Professional)
+Clean Structure • SEO Friendly • Works in All Pages
 ========================================================= -->
 
 <footer class="footer dark">
   <div class="footer-container">
-    <!-- 🔹 Brand & Mission -->
+
+    <!-- 🔹 Brand -->
     <div class="footer-col brand">
       <div class="footer-logo">
-        <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="40" height="40" />
+        <img src="/assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="40" height="40" />
         <div>
           <h3>Bita Digital Hub</h3>
           <p>Digital Transformation</p>
         </div>
       </div>
+
       <p class="footer-desc">
         Empowering creators and businesses through data, AI, and automation —
         helping them build systems that grow smarter every day.
       </p>
 
-      <!-- 🌐 Social Media -->
+      <!-- 🔹 Social -->
       <div class="social-icons">
         <a href="https://linkedin.com/in/bitaashoori" target="_blank" rel="noopener" aria-label="LinkedIn">
           <i class="fab fa-linkedin-in"></i>
@@ -37,11 +39,12 @@ Refined structure, better alignment, and accessibility
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/index.html#home">Home</a></li>
+        <li><a href="/index.html#about">About</a></li>
+        <li><a href="/index.html#services">Services</a></li>
+        <li><a href="/index.html#courses">Courses</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/blog/index-blog.html">Blog</a></li>
       </ul>
     </div>
 
@@ -57,7 +60,7 @@ Refined structure, better alignment, and accessibility
       </ul>
     </div>
 
-    <!-- 🔹 Contact Info -->
+    <!-- 🔹 Contact -->
     <div class="footer-col">
       <h4>Contact Info</h4>
       <ul class="contact-info">
@@ -65,33 +68,19 @@ Refined structure, better alignment, and accessibility
         <li><i class="fas fa-map-marker-alt"></i> Vancouver, Canada</li>
       </ul>
     </div>
+
   </div>
 
-  <!-- 🔹 Footer Bottom (Aligned with Grid) -->
   <div class="footer-bottom">
     <div class="footer-bottom-inner">
       <span>© 2025 Bita Digital Hub. All rights reserved.</span>
       <div class="footer-links">
-        <a href="#privacy">Privacy Policy</a>
-        <a href="#terms">Terms of Service</a>
-        <a href="#cookies">Cookie Policy</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/cookies.html">Cookie Policy</a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- =========================================================
-📦 Dependencies
-========================================================= -->
 <script src="https://kit.fontawesome.com/4c45a6b4c1.js" crossorigin="anonymous"></script>
-
-<script>
-  // Smooth scroll for internal footer links
-  document.addEventListener('click', (e) => {
-    if (e.target.matches('.footer a[href^="#"]')) {
-      e.preventDefault();
-      const target = document.querySelector(e.target.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-</script>
