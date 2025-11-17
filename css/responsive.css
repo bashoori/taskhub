@@ -11,3 +11,21 @@
     grid-template-columns: 1fr;
   }
 }
+/* MOBILE FIXES */
+@media (max-width: 480px) {
+  .latest-card {
+    border-radius: 14px;
+  }
+
+  .latest-card img {
+    height: 160px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero p {
+    padding: 0 1rem;
+  }
+}
