@@ -1,14 +1,25 @@
-/* -------------------------------------
-   TOOLS.CSS — ONLY FOR TOOLS PAGE
--------------------------------------- */
+/* =======================
+   TOOLS.CSS
+======================= */
 
-[data-page="tools"] .tool-layout {
-  display: grid;
-  grid-template-columns: 160px 1fr 160px;
-  gap: 2rem;
+.tool-wrapper {
+  max-width: 900px;
+  margin: 7rem auto 4rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
 }
 
-[data-page="tools"] .tool-card {
-  max-width: 520px;
-  margin: auto;
+.tool-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.tool-description {
+  text-align: center;
+  color: var(--text-mid);
+  margin-bottom: 2rem;
 }
