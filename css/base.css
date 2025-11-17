@@ -1,0 +1,32 @@
+/* -------------------------------------
+   BASE.CSS — GLOBAL RESET & VARIABLES
+-------------------------------------- */
+
+:root {
+  --primary: #1e3a8a;
+  --primary-hover: #2563eb;
+  --text-dark: #0f172a;
+  --text-mid: #475569;
+  --text-light: #94a3b8;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --radius: 14px;
+  --shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-dark);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
