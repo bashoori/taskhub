@@ -1,0 +1,15 @@
+/* -------------------------------------
+   BLOG.CSS — BLOG LIST PAGE ONLY
+-------------------------------------- */
+
+[data-page="blog"] .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+[data-page="blog"] .blog-card img {
+  height: 190px;
+  object-fit: cover;
+}
