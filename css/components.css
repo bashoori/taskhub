@@ -1,113 +1,112 @@
-/* =======================================
-   COMPONENTS.CSS — Modern Global Styles
-======================================= */
+/* ============================================
+   COMPONENTS.CSS — Modern Global UI System
+   Clean • Minimal • Professional • SEO Friendly
+============================================ */
 
-/* -----------------------------
-   GLOBAL NAVBAR
------------------------------ */
-.navbar.modern {
+/* -------------------------------------------
+   GLOBAL NAVBAR (Desktop + Mobile)
+-------------------------------------------- */
+.main-header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--white);
-  box-shadow: var(--shadow-sm);
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
   z-index: 1000;
 }
 
 .nav-inner {
-  max-width: 1280px;
-  margin: auto;
-  padding: 0.9rem 2rem;
+  max-width: 1200px;
+  height: 72px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-/* ----- Brand ----- */
-.brand-link,
-.nav-left {
+/* Brand */
+.brand-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   text-decoration: none;
 }
 
 .brand-logo {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
 }
 
-.brand-info .brand {
-  color: var(--primary);
-  font-size: 1.35rem;
+.brand-name {
+  font-size: 1.25rem;
   font-weight: 700;
+  color: #0f172a;
 }
 
-.brand-info .tagline {
-  color: var(--text-mid);
-  font-size: 0.82rem;
-  white-space: nowrap;
-}
-
-/* ----- Nav Links ----- */
+/* Desktop Navigation */
 .nav-links {
   display: flex;
-  gap: 1.8rem;
   align-items: center;
+  gap: 2rem;
 }
 
 .nav-links a {
-  color: var(--text-dark);
+  color: #475569;
   font-weight: 500;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: color .25s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--primary);
+.nav-links a:hover {
+  color: #1e3a8a;
 }
 
-/* ----- Mobile Menu Toggle ----- */
+/* Contact Button */
+.nav-links .contact-btn {
+  padding: 0.55rem 1.1rem;
+  background: #1e3a8a;
+  color: #fff !important;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.nav-links .contact-btn:hover {
+  background: #2563eb;
+}
+
+/* Mobile Toggle */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  flex-direction: column;
-  gap: 4px;
   cursor: pointer;
 }
 
-.menu-toggle span {
-  width: 24px;
-  height: 2px;
-  background: #0f172a;
-  transition: 0.3s;
+.menu-toggle i {
+  width: 26px;
+  height: 26px;
+  color: #0f172a;
 }
 
-.menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 6px);
-}
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -6px);
-}
-
-/* Responsive Navbar */
+/* Mobile Navigation */
 @media (max-width: 900px) {
   .nav-links {
     position: absolute;
+    top: 72px;
     right: 0;
-    top: 100%;
-    background: #ffffff;
-    padding: 1rem;
-    display: none;
+    width: 220px;
     flex-direction: column;
-    width: 200px;
-    box-shadow: var(--shadow-md);
+    align-items: flex-start;
+    padding: 1.2rem;
     border-radius: 12px;
+    background: #ffffff;
+    gap: 1rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    display: none;
   }
 
   .nav-links.show {
@@ -115,58 +114,13 @@
   }
 
   .menu-toggle {
-    display: flex;
-  }
-
-  .brand-info .tagline {
-    display: none;
+    display: block;
   }
 }
 
-/* -----------------------------
-   LANGUAGE SWITCHER
------------------------------ */
-.lang-switch {
-  position: relative;
-}
-
-.lang-toggle {
-  padding: 0.5rem 0.8rem;
-  border-radius: 10px;
-  background: #f1f5f9;
-  cursor: pointer;
-}
-
-.lang-menu {
-  display: none;
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  position: absolute;
-  top: 110%;
-  right: 0;
-  min-width: 130px;
-  box-shadow: var(--shadow-md);
-}
-
-.lang-menu.show {
-  display: block;
-}
-
-.lang-menu a {
-  display: block;
-  padding: 0.7rem 1rem;
-  color: var(--text-dark);
-  text-decoration: none;
-}
-
-.lang-menu a:hover {
-  background: #f8fafc;
-}
-
-/* -----------------------------
-   BUTTONS
------------------------------ */
+/* -------------------------------------------
+   BUTTONS (Universal)
+-------------------------------------------- */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -177,43 +131,30 @@
   transition: all .25s ease;
 }
 
-/* Primary Button */
 .btn.primary {
-  background: var(--primary);
-  color: #fff;
+  background: #1e3a8a;
+  color: #ffffff;
 }
 
 .btn.primary:hover {
-  background: var(--primary-hover);
+  background: #2563eb;
+  transform: translateY(-2px);
 }
 
-/* Outline Button */
 .btn.outline {
-  border: 2px solid var(--primary);
-  color: var(--primary);
   background: transparent;
+  border: 2px solid #1e3a8a;
+  color: #1e3a8a;
 }
 
 .btn.outline:hover {
-  background: var(--primary);
-  color: #fff;
+  background: #1e3a8a;
+  color: #ffffff;
 }
 
-/* “Back to Home” button */
-.btn-back-home {
-  border: 2px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-back-home:hover {
-  background: var(--primary);
-  color: white;
-}
-
-
-/* -----------------------------
-   FOOTER
------------------------------ */
+/* -------------------------------------------
+   FOOTER (Global Dark Footer)
+-------------------------------------------- */
 .footer.dark {
   background: #0f172a;
   color: #cbd5e1;
@@ -223,30 +164,34 @@
 
 .footer-container {
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+/* Footer Titles */
 .footer-container h4 {
   margin-bottom: 1rem;
-  color: #fff;
+  color: #ffffff;
 }
 
+/* Footer Links */
 .footer-container a {
   color: #cbd5e1;
   text-decoration: none;
+  transition: color .25s ease;
 }
 
 .footer-container a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Footer Bottom */
 .footer-bottom {
-  text-align: center;
-  padding-top: 1.5rem;
   border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  text-align: center;
   font-size: 0.9rem;
 }
