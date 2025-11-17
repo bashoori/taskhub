@@ -1,0 +1,14 @@
+/* -------------------------------------
+   HOME.CSS — ONLY FOR HOME PAGE
+-------------------------------------- */
+
+[data-page="home"] .articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+[data-page="home"] .article-card img {
+  height: 180px;
+  object-fit: cover;
+}
