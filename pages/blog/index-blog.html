@@ -1,100 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" data-page="blog">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Blog | Bita Digital Hub</title>
-  <meta name="description"
-        content="Explore expert articles on online business, AI automation, marketing, and digital tools to help you grow your business in 2025." />
+  <meta name="description" content="Explore the latest articles on AI, digital marketing, automation, solopreneurship, and online business growth." />
 
-  <!-- Global Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/blog.css" />
   <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/cards.css" />
+  <link rel="stylesheet" href="/css/blog.css" />
   <link rel="stylesheet" href="/css/responsive.css" />
 
-  <style>
-    body { padding-top: 110px; }
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="/js/script.js" defer></script>
 
+  <style>
+    body {
+      margin: 0;
+      background: #f8fafc;
+      font-family: "Poppins", sans-serif;
+      color: #0f172a;
+      padding-top: 80px; /* Header offset */
+    }
     .blog-header {
       text-align: center;
-      margin-bottom: 3rem;
-      padding: 0 1rem;
+      margin-bottom: 2rem;
     }
-
     .blog-header h1 {
       font-size: 2.6rem;
       font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 0.6rem;
+      color: #1e293b;
     }
-
     .blog-header p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #475569;
-      max-width: 760px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* GRID */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 1250px;
-      margin: 0 auto 4rem;
-      padding: 0 1.5rem;
-    }
-
-    @media (max-width: 992px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px) { .blog-grid { grid-template-columns: 1fr; } }
-
-    /* CARD */
-    .blog-card {
-      background: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      display: block;
-      text-decoration: none;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      transition: 0.25s ease;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.10);
-    }
-
-    .blog-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      background: #eef2f7;
-    }
-
-    .card-body {
-      padding: 1.3rem 1.2rem 1.7rem;
-    }
-
-    .card-body h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-      color: #0f172a;
-    }
-
-    .card-body p {
-      color: #475569;
-      font-size: 0.95rem;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .center-btn {
-      text-align: center;
-      margin: 3rem 0;
+      max-width: 680px;
+      margin: 0.8rem auto 0;
     }
   </style>
 </head>
@@ -103,76 +46,46 @@
 
 <!-- HEADER -->
 <div id="header-placeholder"></div>
-<script>
-  fetch("/components/header-blog.html")
-    .then(res => res.text())
-    .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
-</script>
 
+<section class="section">
+  <div class="blog-header">
+    <h1>Articles & Insights</h1>
+    <p>AI, digital marketing, automation, and online business strategies for 2025</p>
+  </div>
 
-<!-- BLOG TITLE -->
-<section class="blog-header">
-  <h1>Articles</h1>
-  <p>Insights, tools, and strategies to help you grow your online business in 2025.</p>
+  <!-- BLOG GRID (Same as home page) -->
+  <div class="latest-grid">
+
+    <a href="/pages/blog/start-online-business.html" class="latest-card">
+      <img src="/pages/blog/image/how-to-start-online-biz.jpg" alt="Start Online Business">
+      <div class="text">
+        <h3>How to Start a Successful Online Business in 2025</h3>
+        <p>Learn the essential steps for launching a profitable online business — even if you're a beginner.</p>
+      </div>
+    </a>
+
+    <a href="/pages/blog/ai-automation-solopreneurs-2025.html" class="latest-card">
+      <img src="/pages/blog/image/the-rise-of-AI.jpg" alt="AI Automation">
+      <div class="text">
+        <h3>The Rise of AI Automation for Solopreneurs in 2025</h3>
+        <p>How AI is transforming workflows and helping creators scale faster.</p>
+      </div>
+    </a>
+
+    <a href="/pages/blog/digital-marketing-strategies-2025.html" class="latest-card">
+      <img src="/pages/blog/image/best-digital-marketing-strategies.jpg" alt="Digital Marketing 2025">
+      <div class="text">
+        <h3>The Best Digital Marketing Strategies for Beginners in 2025</h3>
+        <p>Beginner-friendly strategies for growing your presence and audience online.</p>
+      </div>
+    </a>
+
+    <!-- Add More Posts Here -->
+  </div>
 </section>
-
-
-<!-- BLOG GRID -->
-<div class="blog-grid">
-
-  <!-- Article 1 -->
-  <a href="start-online-business.html" class="blog-card">
-    <img src="image/start-online-business.jpg" alt="Guide to starting an online business in 2025">
-    <div class="card-body">
-      <h3>How to Start a Successful Online Business in 2025</h3>
-      <p>Essential steps for launching a profitable online business — even as a complete beginner.</p>
-    </div>
-  </a>
-
-  <!-- Article 2 -->
-  <a href="ai-automation-solopreneurs-2025.html" class="blog-card">
-    <img src="image/the-rise-of-AI.svg" alt="AI automation for solopreneurs">
-    <div class="card-body">
-      <h3>The Rise of AI Automation for Solopreneurs in 2025</h3>
-      <p>How AI is transforming online work, automating tasks, and helping creators scale faster.</p>
-    </div>
-  </a>
-
-
-  <!-- Article 4 -->
-  <a href="digital-marketing-strategies-2025.html" class="blog-card">
-    <img src="image/best-digital-marketing-strategies.svg" alt="Digital marketing strategies for beginners">
-    <div class="card-body">
-      <h3>The Best Digital Marketing Strategies for Beginners in 2025</h3>
-      <p>Beginner-friendly strategies for building online presence and visibility.</p>
-    </div>
-  </a>
-
-  <!-- Article 5 -->
-  <a href="marketing-skills-2025.html" class="blog-card">
-    <img src="image/essential-digital-marketing-skills.svg" alt="Digital marketing skills for 2025">
-    <div class="card-body">
-      <h3>Essential Digital Marketing Skills You Need in 2025</h3>
-      <p>The most important marketing skills every creator and entrepreneur should master.</p>
-    </div>
-  </a>
-
-</div>
-
-
-<!-- BACK -->
-<div class="center-btn">
-  <a class="btn primary" href="/index.html">Back to Home</a>
-</div>
-
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer-tools.html")
-    .then(res => res.text())
-    .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
-</script>
 
 </body>
 </html>
