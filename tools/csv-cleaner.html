@@ -1,179 +1,110 @@
 <!DOCTYPE html>
-<html lang="en" data-page="tools">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CSV Cleaner | Bita Digital Hub</title>
-  <meta name="description" content="Automatically clean and format CSV files — remove duplicates, fix structure, and prepare for analysis." />
 
-  <!-- 🌈 Styles -->
-  <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
+  <meta name="description"
+        content="Clean and fix CSV files instantly — remove empty rows, whitespace, and formatting issues. Free online CSV cleanup tool." />
 
-  <style>
-    /* 🧩 Ad Styling */
-    [data-page="tools"] .ad-side {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 2rem;
-    }
-
-    [data-page="tools"] .ad-side ins.adsbygoogle {
-      width: 160px;
-      height: 600px;
-      max-width: 100%;
-      background: transparent;
-    }
-
-    @media (max-width: 1000px) {
-      [data-page="tools"] .ad-side { display: none; }
-      [data-page="tools"] .tool-layout {
-        grid-template-columns: 1fr;
-        padding: 2rem 1rem 3rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/tools.css">
 </head>
 
-<body>
-  <!-- 🧭 Header -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("../components/header-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
-  </script>
+<body class="tools-page">
 
-  <!-- 🧰 Tool Layout -->
-  <main class="tool-layout">
-    <!-- 🧭 Left Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="1234567890"   <!-- replace with your AdSense slot -->
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    </aside>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../../components/header-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
-    <!-- 🎯 Tool Center -->
-    <section class="tool-center">
-      <div class="tool-card gradient-cyan">
-        <h2>CSV Cleaner 🧹</h2>
-        <p>Clean your CSV files — remove duplicates, fix simple formatting, and export in seconds.</p>
+<main class="tool-layout">
 
-        <form class="tool-form" onsubmit="return false;">
-          <label for="csvFile">Upload CSV file:</label>
-          <input type="file" id="csvFile" accept=".csv" class="file-input" />
+  <!-- LEFT AD -->
+  <aside class="ad-side">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="1111111111"
+         data-ad-format="vertical"></ins>
+  </aside>
 
-          <button type="button" id="cleanBtn" class="primary-btn">Clean File</button>
+  <!-- TOOL WRAPPER -->
+  <section class="tool-wrapper">
 
-          <div id="outputBox" class="output-box hidden">
-            <p id="resultMsg"></p>
-            <a id="downloadLink" href="#" class="btn outline" download>⬇️ Download Clean File</a>
-          </div>
-        </form>
-      </div>
+    <h2 class="tool-title">CSV Cleaner</h2>
+    <p class="tool-description">
+      Fix broken CSV files automatically — remove empty lines, trim spaces,
+      and clean formatting issues instantly.
+    </p>
 
-      <!-- 📱 Optional Mobile Ad -->
-      <div class="mobile-ad" style="margin-top:2rem; text-align:center;">
-        <ins class="adsbygoogle"
-          style="display:block"
+    <label class="tool-label">Upload CSV file:</label>
+    <input id="csvFile" type="file" accept=".csv" class="tool-input" />
+
+    <button class="tool-btn" onclick="cleanCSV()">Clean CSV</button>
+
+    <div id="resultBox" class="output-box" style="display:none;">
+      <p><strong>Cleaned CSV Ready:</strong></p>
+      <a id="downloadLink" class="tool-btn" download="cleaned.csv">Download Cleaned File</a>
+    </div>
+
+    <div class="ad-in-content">
+      <ins class="adsbygoogle" style="display:block"
           data-ad-client="ca-pub-3215014361489762"
-          data-ad-slot="5555555555"   <!-- optional AdSense mobile slot -->
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-      </div>
-    </section>
+          data-ad-slot="2222222222"
+          data-ad-format="auto"></ins>
+    </div>
 
-    <!-- 🧭 Right Ad -->
-    <aside class="ad-side">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3215014361489762"
-        data-ad-slot="9876543210"   <!-- replace with your AdSense slot -->
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    </aside>
-  </main>
+  </section>
 
-  <!-- 🦶 Footer -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("../components/footer-tools.html")
-      .then(res => res.text())
-      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
-  </script>
+  <!-- RIGHT AD -->
+  <aside class="ad-side">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="3333333333"
+         data-ad-format="vertical"></ins>
+  </aside>
 
-  <!-- ⚙️ CSV Cleaner Logic -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const fileInput   = document.getElementById("csvFile");
-      const cleanBtn    = document.getElementById("cleanBtn");
-      const outputBox   = document.getElementById("outputBox");
-      const resultMsg   = document.getElementById("resultMsg");
-      const downloadLink= document.getElementById("downloadLink");
+</main>
 
-      cleanBtn.addEventListener("click", () => {
-        const file = fileInput.files[0];
-        if (!file) {
-          alert("Please select a CSV file first.");
-          return;
-        }
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("../../components/footer-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
 
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const raw = e.target.result;
+<script>
+function cleanCSV() {
+  const fileInput = document.getElementById("csvFile");
+  if (!fileInput.files.length) return;
 
-          // Split lines (handle \r\n or \n)
-          const rows = raw.split(/\r?\n/).filter(line => line.trim().length > 0);
-          if (rows.length === 0) {
-            alert("This CSV seems empty.");
-            return;
-          }
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    let lines = e.target.result.split("\n");
 
-          // Separate header and data
-          const header = rows[0];
-          const dataRows = rows.slice(1);
+    let cleaned = lines
+      .map(x => x.trim())
+      .filter(x => x !== "")
+      .join("\n");
 
-          // Remove duplicate rows
-          const seen = new Set();
-          const cleanedRows = [];
-          dataRows.forEach(row => {
-            const trimmed = row.trim();
-            if (!seen.has(trimmed)) {
-              seen.add(trimmed);
-              cleanedRows.push(trimmed);
-            }
-          });
+    let blob = new Blob([cleaned], { type: "text/csv" });
+    let url = URL.createObjectURL(blob);
 
-          // Combine back to CSV
-          const cleanedCsv = [header, ...cleanedRows].join("\n");
+    document.getElementById("downloadLink").href = url;
+    document.getElementById("resultBox").style.display = "block";
+  };
 
-          // Create blob and download
-          const blob = new Blob([cleanedCsv], { type: "text/csv" });
-          const url  = URL.createObjectURL(blob);
-          downloadLink.href = url;
-          downloadLink.download = file.name.replace(".csv", "") + "_clean.csv";
+  reader.readAsText(fileInput.files[0]);
+}
+</script>
 
-          resultMsg.textContent = `✅ Cleaned ${dataRows.length} rows → ${cleanedRows.length} unique rows.`;
-          outputBox.classList.remove("hidden");
-        };
-
-        reader.readAsText(file);
-      });
-    });
-  </script>
-
-  <!-- 💰 Google AdSense Loader -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+crossorigin="anonymous"></script>
 </body>
 </html>
