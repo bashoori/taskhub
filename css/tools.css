@@ -1,6 +1,6 @@
 /* =========================================================
-   TOOLS.CSS – Bita Digital Hub (Production v5.0)
-   Fixes large top gap under header for ALL tools pages.
+   TOOLS.CSS – Bita Digital Hub v6.0
+   Fix: Remove extra top/bottom space on all Tools pages
 ========================================================= */
 
 /* -------------------------
@@ -9,8 +9,9 @@
 
 .tools-page {
   background: #f8fafc;
-  padding-top: 4.5rem !important;   /* FIX: reduces space under header */
-  min-height: auto !important;       /* prevents giant white space */
+  padding-top: 4rem !important;   /* Reduced gap under header */
+  padding-bottom: 2rem !important; /* Prevent huge bottom space */
+  min-height: auto !important;
 }
 
 
@@ -19,9 +20,9 @@
 ------------------------- */
 
 .tool-wrapper {
-  max-width: 900px;
-  margin: 2rem auto 4rem;     /* reduced margin to remove large gap */
-  padding: 2.2rem;
+  max-width: 850px;
+  margin: 1.5rem auto 2.5rem;   /* FIX: reduce top & bottom space */
+  padding: 2rem;
   background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.08);
@@ -39,18 +40,18 @@
 
 .tool-title {
   text-align: center;
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   color: #0f172a;
 }
 
 .tool-description {
   text-align: center;
-  font-size: 1.05rem;
+  font-size: 1.03rem;
   color: #475569;
-  margin-bottom: 2.2rem;
-  max-width: 720px;
+  margin-bottom: 1.8rem;   /* smaller */
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -63,14 +64,14 @@
 .tool-label {
   font-weight: 600;
   color: #0f172a;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.4rem;
   display: block;
 }
 
 .tool-input,
 .tool-select {
   width: 100%;
-  padding: 0.65rem 0.9rem;
+  padding: 0.6rem 0.9rem;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
   font-size: 1rem;
@@ -87,7 +88,7 @@
 }
 
 
-/* Checkbox rows */
+/* Checkbox */
 .checkbox-row {
   display: flex;
   align-items: center;
@@ -107,7 +108,7 @@
 
 .tool-btn {
   width: 100%;
-  padding: 0.8rem 1.2rem;
+  padding: 0.75rem 1.2rem;
   background: #1e3a8a;
   color: #ffffff;
   font-size: 1.05rem;
@@ -129,11 +130,11 @@
 ------------------------- */
 
 .output-box {
-  margin-top: 1.8rem;
+  margin-top: 1.5rem;
   padding: 1rem 1.2rem;
   background: #f1f5f9;
   border-radius: 12px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #0f172a;
   border: 1px solid #e2e8f0;
   word-break: break-all;
@@ -148,7 +149,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 .ad-side ins.adsbygoogle {
@@ -163,32 +164,32 @@
 }
 
 .ad-in-content {
-  margin: 2.2rem auto 0;
+  margin: 1.8rem auto 0; /* smaller */
   text-align: center;
 }
 
 
 /* -------------------------
-   MOBILE RESPONSIVE
+   MOBILE
 ------------------------- */
 
 @media (max-width: 768px) {
 
   .tools-page {
-    padding-top: 4rem !important;
+    padding-top: 3.5rem !important;
   }
 
   .tool-wrapper {
-    margin-top: 2.2rem;
-    padding: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.8rem;
   }
 
   .tool-title {
-    font-size: 1.85rem;
+    font-size: 1.7rem;
   }
 
   .tool-description {
-    font-size: 0.96rem;
-    margin-bottom: 1.9rem;
+    margin-bottom: 1.6rem;
   }
 }
