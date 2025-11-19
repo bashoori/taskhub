@@ -11,6 +11,14 @@ h1, h2 { color:#0f172a; }
 </head>
 <body>
 
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../../components/header-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
+
 <h1>Cookie Policy</h1>
 <p>Last updated: February 2025</p>
 
