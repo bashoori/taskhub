@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="stylesheet" href="../css/tools-directory.css" /> <!-- New directory style -->
+  <link rel="stylesheet" href="../css/tools-directory.css" />
 
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
 
@@ -27,10 +27,10 @@
       font-family: "Poppins", sans-serif;
       background: #f8fafc;
       color: #0f172a;
+      padding-top: 80px; /* same offset as blog */
     }
 
     .tools-header {
-      padding-top: 7rem;
       text-align: center;
       max-width: 800px;
       margin: 0 auto 3rem;
@@ -91,16 +91,6 @@
       max-width: 700px;
     }
 
-    .share-section h2 {
-      font-size: 1.8rem;
-      font-weight: 800;
-    }
-
-    .share-section p {
-      color: #475569;
-      margin-bottom: 1.2rem;
-    }
-
     .share-buttons a {
       display: inline-block;
       margin: 0.4rem;
@@ -120,9 +110,9 @@
     }
 
     .contact-cta {
+      background: #eef2ff;
       text-align: center;
       padding: 3rem 1rem 4rem;
-      background: #eef2ff;
       margin-top: 3rem;
     }
 
@@ -147,29 +137,24 @@
       font-weight: 600;
       font-size: 1rem;
       text-decoration: none;
-      transition: 0.2s;
-    }
-
-    .contact-cta a:hover {
-      background: #2563eb;
     }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- GLOBAL HEADER (same as index + blog + services) -->
 <div id="header-placeholder"></div>
 <script>
-fetch("../components/header-tools.html")
+fetch("/components/header.html")
   .then(r => r.text())
   .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
-<!-- TOOLS PAGE HEADER -->
+<!-- PAGE HEADER -->
 <section class="tools-header">
   <h1>Free Tools for Digital Creators</h1>
-  <p>Simplify your work with powerful online tools — from QR generation and file conversion to spreadsheets and automation helpers.</p>
+  <p>Simplify your work with powerful online tools — from QR generation to file conversion and automation helpers.</p>
 </section>
 
 <!-- TOOLS GRID -->
@@ -218,9 +203,9 @@ fetch("../components/header-tools.html")
     <a href="https://twitter.com/intent/tweet?url=https://bitadigitalhub.com/tools&text=Try%20these%20free%20digital%20tools!" target="_blank">Share on X</a>
   </div>
 
-   <div class="cta-buttons" style="margin-top:2rem; text-align:center;">
-    <a href="./index.html" class="btn primary">back to Home</a>
-   </div>
+  <div class="cta-buttons" style="text-align:center; margin-top:2rem;">
+    <a href="/index.html" class="btn primary">Back to Home</a>
+  </div>
 </section>
 
 <!-- CTA -->
@@ -233,7 +218,7 @@ fetch("../components/header-tools.html")
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-fetch("../components/footer-tools.html")
+fetch("/components/footer.html")
   .then(r => r.text())
   .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
