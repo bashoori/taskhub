@@ -1,293 +1,110 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>کوچینگ کسب‌وکار آنلاین | بیتا</title>
-  <meta name="description" content="کوچینگ تخصصی برای ساخت کسب‌وکار آنلاین قدرتمند، درآمد پایدار و برندسازی شخصی. مسیر روشن برای رشد فردی و مالی.">
+<section class="hero" style="text-align:center; padding:6rem 1rem; max-width:900px; margin:auto;">
+  <h1 style="font-size:2.8rem; font-weight:900; color:#0A1A2F; line-height:1.3;">
+    ساخت یک بیزنس آنلاین باکلاس و درآمدزا، از همین امروز شروع می‌شود
+  </h1>
 
-  <!-- FONT -->
-  <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.0/fonts/web/Vazirmatn.css" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Vazirmatn", sans-serif;
-      background: #FDFDFD;
-      color: #0A1A2F;
-    }
-
-    /* HEADER */
-    header {
-      width: 100%;
-      padding: 1.3rem 2rem;
-      background: #0A1A2F;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      box-shadow: 0 4px 12px rgba(0,0,0,.1);
-    }
-
-    .header-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #D4AF37;
-    }
-
-    /* HERO */
-    .hero {
-      padding: 6rem 1rem 4rem;
-      text-align: center;
-      background: linear-gradient(
-        to bottom,
-        rgba(10, 26, 47, 0.95),
-        rgba(10, 26, 47, 0.85)
-      ),
-      url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress') center/cover;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 2.7rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-      line-height: 1.4;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 650px;
-      margin: 0 auto 2rem;
-      line-height: 2.1;
-      opacity: 0.95;
-    }
-
-    .cta-btn {
-      padding: 1rem 2.7rem;
-      background: #D4AF37;
-      color: #0A1A2F;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 800;
-      text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 4px 10px rgba(212,175,55,.4);
-      transition: .3s;
-    }
-    .cta-btn:hover {
-      background: #b8942f;
-      transform: translateY(-3px);
-    }
-
-    /* FEATURES */
-    .features {
-      padding: 5rem 1rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .features-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .feature-box {
-      background: white;
-      border-radius: 20px;
-      padding: 2.2rem;
-      border: 1px solid #ececec;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.06);
-      text-align: center;
-      transition: .3s;
-    }
-
-    .feature-box:hover {
-      transform: translateY(-8px);
-    }
-
-    .feature-icon {
-      font-size: 3rem;
-      color: #D4AF37;
-      margin-bottom: 1rem;
-    }
-
-    .feature-box h3 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #0A1A2F;
-      margin-bottom: 0.8rem;
-    }
-
-    /* ABOUT SECTION */
-    .about {
-      padding: 5rem 1rem 6rem;
-      background: #F8F9FB;
-    }
-
-    .about-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .about img {
-      width: 360px;
-      border-radius: 22px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-    }
-
-    .about-text h2 {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: #0A1A2F;
-      margin-bottom: 1rem;
-    }
-
-    .about-text p {
-      font-size: 1.15rem;
-      line-height: 2;
-      color: #3c4b5f;
-      margin-bottom: 1.5rem;
-    }
-
-    /* CONTACT SECTION */
-    .contact {
-      padding: 5rem 1rem;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: #0A1A2F;
-      margin-bottom: 1rem;
-    }
-
-    .contact p {
-      font-size: 1.1rem;
-      color: #475569;
-      margin-bottom: 2rem;
-    }
-
-    .contact form {
-      max-width: 420px;
-      margin: 0 auto;
-    }
-
-    .contact input {
-      width: 100%;
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid #d4d4d4;
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-      background: white;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #0A1A2F;
-      color: #D4AF37;
-      font-weight: 600;
-      margin-top: 3rem;
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header>
-  <div class="header-wrapper">
-    <div class="logo">Bita Coaching</div>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>نسخه قدرتمندترِ تو اینجاست</h1>
-  <p>
-    اگر آماده‌ای درآمدت، هویتت، و مسیر آینده‌ات را ارتقا بدهی…  
-    اینجا همان جایی است که یک کوچ کنارت می‌ایستد، تا حرفه‌ای بسازی، رشد کنی و نتیجه ببینی.
+  <p style="font-size:1.2rem; margin:1.6rem 0 2.4rem; color:#475569; line-height:1.8;">
+    اگر می‌خواهی درآمد دلاری، آزادی زمانی و استقلال واقعی را تجربه کنی،
+    اما نمی‌دانی از کجا شروع کنی، اینجا همان جایی است که باید باشی.
+    هر روز صدها نفر وارد دنیای بیزنس آنلاین می‌شوند—
+    اما فقط کسانی که <strong>سیستم، مربی و استراتژی درست</strong> دارند موفق می‌شوند.
   </p>
-  <a href="#contact" class="cta-btn">می‌خواهم تغییر کنم</a>
+
+  <a href="#video" style="
+    padding:1rem 2rem; font-size:1.1rem; background:#0A1A2F; color:white;
+    border-radius:12px; text-decoration:none; font-weight:700;">
+    تماشا کردن ویدیو معرفی
+  </a>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="features-grid">
 
-    <div class="feature-box">
-      <div class="feature-icon">✨</div>
-      <h3>کوچینگ اختصاصی</h3>
-      <p>برنامه‌ای طراحی می‌کنم که مخصوص خودت باشد؛ نه تکراری، نه عمومی.</p>
-    </div>
+<!-- VIDEO SECTION (TEASER) -->
+<section id="video" style="padding:4rem 1rem; text-align:center;">
+  <h2 style="font-size:2rem; font-weight:900; color:#0A1A2F; margin-bottom:1rem;">
+    این ویدیو را ببین… مسیرت روشن‌تر می‌شود
+  </h2>
 
-    <div class="feature-box">
-      <div class="feature-icon">🚀</div>
-      <h3>ساخت درآمد پایدار</h3>
-      <p>با روش‌هایی که امتحان‌شده و واقعی هستند، نه تئوری‌های خسته‌کننده.</p>
-    </div>
-
-    <div class="feature-box">
-      <div class="feature-icon">🎯</div>
-      <h3>تمرکز روی رشد فردی + مالی</h3>
-      <p>موفقیت فقط پول نیست. تو باید رشد کنی تا نتیجه‌ات رشد کند.</p>
-    </div>
-
+  <div style="max-width:720px; margin:0 auto;">
+    <iframe width="100%" height="405"
+      src="https://www.youtube.com/embed/CV9l3BhjsAw"
+      title="YouTube video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
   </div>
+
+  <p style="color:#475569; font-size:1rem; margin-top:1.5rem; line-height:1.8;">
+    این فقط مقدمه است.  
+    ویدیوی کامل + نقشه راه ۶ مرحله‌ای،  
+    فقط برای افرادی ارسال می‌شود که واقعاً می‌خواهند مسیرشان را شروع کنند.
+  </p>
 </section>
 
-<!-- ABOUT -->
-<section class="about">
-  <div class="about-inner">
 
-    <img src="https://bitadigitalhub.com/assets/bita-profile.jpg" alt="Bita">
+<!-- EMAIL FORM SECTION -->
+<section style="padding:4rem 1rem; background:#F9FAFB; text-align:center;">
+  <h2 style="font-size:2rem; font-weight:900; color:#0A1A2F; margin-bottom:1rem;">
+    دریافت ویدیوی کامل + نقشه راه اختصاصی
+  </h2>
 
-    <div class="about-text">
-      <h2>من بیتا هستم؛ کوچ رشد کسب‌وکار آنلاین</h2>
-      <p>
-        سال‌هاست با افراد مختلف کار می‌کنم تا مسیر حرفه‌ای خودشان را بسازند.
-        اینجا خبری از شعار نیست؛ برنامه‌ریزی هوشمند، سیستم‌سازی،  
-        ساخت درآمد واقعی و رشد ذهنیت… این‌ها پایهٔ کار ماست.
-      </p>
-      <a href="#contact" class="cta-btn">برای کوچینگ اقدام کن</a>
-    </div>
+  <p style="max-width:600px; margin:0 auto 2rem; font-size:1.05rem; color:#475569; line-height:1.7;">
+    ویدیوی کامل شامل آموزش مرحله‌به‌مرحله، استراتژی‌های High-Ticket،
+    و توضیح کامل سیستم همکاری با تیم ماست.
+    ایمیلت را وارد کن تا همین الان برایت ارسال شود.
+  </p>
 
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>اولین قدم را بردار</h2>
-  <p>ایمیلت را وارد کن تا یک قدم به نسخه حرفه‌ای‌تر خودت نزدیک‌تر شوی.</p>
-
-  <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
-    <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html">
-    <input type="email" name="email" placeholder="ایمیل شما..." required>
-    <button type="submit" class="cta-btn" style="width:100%;">ارسال</button>
+  <form style="max-width:450px; margin:0 auto; text-align:center;">
+    <input type="email" placeholder="ایمیل خود را وارد کنید" required
+      style="width:100%; padding:1rem; border-radius:12px; border:1px solid #CBD5E1;
+      font-size:1rem; margin-bottom:1rem;">
+    
+    <button type="submit"
+      style="width:100%; background:#0A1A2F; color:white; padding:1rem;
+      border:none; border-radius:12px; font-size:1.1rem; font-weight:700;">
+      دریافت لینک ویدیو + PDF
+    </button>
   </form>
 </section>
 
-<footer>
-  ساخت توسط بیتا دیجیتال هاب © 2025
-</footer>
 
-</body>
-</html>
+<!-- FEATURES SECTION -->
+<section class="features" style="padding:5rem 1rem; max-width:1100px; margin:auto;">
+  <h2 style="text-align:center; font-size:2.3rem; font-weight:900; color:#0A1A2F; margin-bottom:3rem;">
+    چرا این سیستم با همه چیزهایی که دیدی فرق دارد؟
+  </h2>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+    <div style="background:white; padding:2rem; border-radius:14px; box-shadow:0 8px 25px rgba(0,0,0,0.06);">
+      <h3 style="font-size:1.3rem; font-weight:800; color:#0A1A2F;">ساخت سیستم درآمدی High-Ticket</h3>
+      <p style="color:#475569; line-height:1.7;">
+        سیستم‌هایی که درآمدهای واقعی و پایدار می‌سازند، محصول ۱۰ دلاری نمی‌فروشند—
+        روی محصولات و سرویس‌های با ارزش کار می‌کنند. این یعنی درآمد کمتر اما با کیفیت بالاتر.
+      </p>
+    </div>
+
+    <div style="background:white; padding:2rem; border-radius:14px; box-shadow:0 8px 25px rgba(0,0,0,0.06);">
+      <h3 style="font-size:1.3rem; font-weight:800; color:#0A1A2F;">مربی‌گری هوشمند + همراهی واقعی</h3>
+      <p style="color:#475569; line-height:1.7;">
+        در این مسیر تنها نیستی. قدم‌به‌قدم کنار تو هستیم تا سریع‌تر و بدون سردرگمی رشد کنی.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section style="padding:5rem 1rem; text-align:center;">
+  <h2 style="font-size:2.2rem; font-weight:900; color:#0A1A2F; margin-bottom:1rem;">
+    اگر آماده‌ای مسیرت را متحول کنی…
+  </h2>
+  <p style="max-width:600px; margin:0 auto 2.5rem; color:#475569; line-height:1.7;">
+    ایمیلت را وارد کن تا ویدیوی کامل + PDF مسیر شروع بیزنس آنلاین را دریافت کنی.
+  </p>
+
+  <a href="#video" style="
+    padding:1rem 2rem; font-size:1.1rem; background:#0A1A2F; color:white;
+    border-radius:12px; text-decoration:none; font-weight:700;">
+    بازگشت به ویدیو
+  </a>
+</section>
