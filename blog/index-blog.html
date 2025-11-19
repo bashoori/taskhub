@@ -22,22 +22,110 @@
       background: #f8fafc;
       font-family: "Poppins", sans-serif;
       color: #0f172a;
-      padding-top: 80px; /* Header offset */
+      padding-top: 80px; 
     }
+
     .blog-header {
       text-align: center;
       margin-bottom: 2rem;
     }
+
     .blog-header h1 {
       font-size: 2.6rem;
       font-weight: 800;
       color: #1e293b;
     }
+
     .blog-header p {
       font-size: 1.05rem;
       color: #475569;
       max-width: 680px;
       margin: 0.8rem auto 0;
+    }
+
+    /* Share Section */
+    .share-section {
+      text-align: center;
+      margin: 4rem auto;
+      padding: 2rem 1rem;
+      max-width: 700px;
+    }
+
+    .share-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .share-section p {
+      color: #475569;
+      margin-bottom: 1.2rem;
+    }
+
+    .share-buttons a {
+      display: inline-block;
+      margin: 0.4rem;
+      padding: 0.7rem 1.3rem;
+      border-radius: 10px;
+      border: 1px solid #1e3a8a;
+      color: #1e3a8a;
+      background: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .share-buttons a:hover {
+      background: #1e3a8a;
+      color: #fff;
+    }
+
+    /* CTA section */
+    .contact-cta {
+      background: #eef2ff;
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      margin-top: 3rem;
+    }
+
+    .contact-cta h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-cta p {
+      color: #475569;
+      max-width: 600px;
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    .contact-cta a {
+      display: inline-block;
+      padding: 0.9rem 1.6rem;
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .contact-cta a:hover {
+      background: #2563eb;
+    }
+
+    /* Back to home button */
+    .cta-buttons a {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.8rem 1.4rem;
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -53,7 +141,7 @@
     <p>AI, digital marketing, automation, and online business strategies for 2025</p>
   </div>
 
-  <!-- BLOG GRID (Same as home page) -->
+  <!-- BLOG GRID -->
   <div class="latest-grid">
 
     <a href="/blog/start-online-business.html" class="latest-card">
@@ -80,7 +168,8 @@
       </div>
     </a>
 
-     <a href="/blog/start-online-business.html" class="latest-card">
+    <!-- Duplicate posts kept as-is -->
+    <a href="/blog/start-online-business.html" class="latest-card">
       <img src="/blog/image/how-to-start-online-biz.jpg" alt="Start Online Business">
       <div class="text">
         <h3>How to Start a Successful Online Business in 2025</h3>
@@ -104,16 +193,10 @@
       </div>
     </a>
 
-    <!-- Add More Posts Here -->
   </div>
-
-   <div class="cta-buttons" style="margin-top:2rem; text-align:center;">
-    <a href="index.html" class="btn primary">back to Home</a>
-   </div>
-  
 </section>
 
-  <!-- SHARE SECTION -->
+<!-- SHARE SECTION -->
 <section class="share-section">
   <h2>Share These Tools</h2>
   <p>Help other creators discover free tools that support productivity and business growth.</p>
@@ -124,18 +207,17 @@
     <a href="https://twitter.com/intent/tweet?url=https://bitadigitalhub.com/tools&text=Try%20these%20free%20digital%20tools!" target="_blank">Share on X</a>
   </div>
 
-   <div class="cta-buttons" style="margin-top:2rem; text-align:center;">
-    <a href="./index.html" class="btn primary">back to Home</a>
-   </div>
+  <div class="cta-buttons" style="text-align:center;">
+    <a href="/index.html">Back to Home</a>
+  </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA SECTION -->
 <section class="contact-cta">
   <h2>Need a Custom Automation Tool?</h2>
   <p>We build dashboards, bots, and automation workflows for creators, solopreneurs, and online businesses.</p>
-  <a href="../pages/contact.html">Request a Custom Build</a>
+  <a href="/pages/contact.html">Request a Custom Build</a>
 </section>
-
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
