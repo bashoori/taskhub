@@ -41,7 +41,11 @@
       height: 600px;
     }
 
-    #qrBox img {
+    /* The QR display box */
+    #qrBox {
+      text-align: center;
+    }
+    #qrBox img, #qrBox canvas {
       width: 220px;
       height: 220px;
       border-radius: 8px;
@@ -86,8 +90,8 @@
 <div id="header-placeholder"></div>
 <script>
 fetch("../../components/header-tools.html")
-.then(res => res.text())
-.then(html => document.getElementById("header-placeholder").innerHTML = html);
+  .then(res => res.text())
+  .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
 <!-- MAIN LAYOUT -->
@@ -116,7 +120,7 @@ fetch("../../components/header-tools.html")
 
     <button class="tool-btn" onclick="generateQR()">Generate QR</button>
 
-    <div id="qrBox" class="output-box" style="display:none; text-align:center;">
+    <div id="qrBox" class="output-box" style="display:none;">
       <!-- QR result appears here -->
     </div>
 
@@ -129,7 +133,7 @@ fetch("../../components/header-tools.html")
            data-ad-format="auto"></ins>
     </div>
 
-    <!-- 🔵 NEW CONTENT SECTION FOR ADSENSE -->
+    <!-- 🔵 CONTENT SECTION FOR ADSENSE -->
     <section class="content-section">
       <h2>What Is a QR Code?</h2>
       <p>
@@ -201,9 +205,12 @@ fetch("../../components/header-tools.html")
 <div id="footer-placeholder"></div>
 <script>
 fetch("../../components/footer-tools.html")
-.then(res => res.text())
-.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  .then(res => res.text())
+  .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
+
+<!-- QR LIBRARY (client-side generator) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <!-- QR LOGIC -->
 <script>
@@ -211,17 +218,29 @@ function generateQR() {
   const text = document.getElementById("qrInput").value.trim();
   if (!text) return;
 
-  const qrURL =
-    `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(text)}`;
-
   const qrBox = document.getElementById("qrBox");
   qrBox.style.display = "block";
+  qrBox.innerHTML = ""; // clear old content
 
-  qrBox.innerHTML = `
-    <img src="${qrURL}" alt="QR Code">
-    <br><br>
-    <p style="font-size:0.9rem;color:#475569;">${text}</p>
-  `;
+  // Container for QR
+  const qrContainer = document.createElement("div");
+  qrBox.appendChild(qrContainer);
+
+  // Generate QR in the browser
+  new QRCode(qrContainer, {
+    text: text,
+    width: 220,
+    height: 220,
+    correctLevel: QRCode.CorrectLevel.H
+  });
+
+  // Caption
+  const caption = document.createElement("p");
+  caption.style.fontSize = "0.9rem";
+  caption.style.color = "#475569";
+  caption.style.marginTop = "0.75rem";
+  caption.textContent = text;
+  qrBox.appendChild(caption);
 }
 </script>
 
