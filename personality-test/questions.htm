@@ -1,34 +1,42 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>سؤالات تست شخصیت کسب‌وکار</title>
+  <title>سؤالات تست شخصیت کسب‌وکار | Bita Digital Hub</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/tools.css" />
 
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
+    /* فاصله زیر هدر */
+    .tools-page {
+      padding-top: 5rem;
       background: #f8fafc;
-      margin: 0;
-      color: #0f172a;
-      text-align: center;
-      direction: rtl;
     }
 
+    /* Container */
     .container {
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
+      max-width: 750px;
+      margin: 2rem auto 4rem;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+      text-align: center;
     }
 
+    /* Progress bar */
     .progress-bar {
       width: 100%;
       height: 10px;
       background: #e2e8f0;
-      margin-bottom: 2rem;
       border-radius: 10px;
       overflow: hidden;
+      margin-bottom: 2rem;
     }
     .progress {
       height: 100%;
@@ -38,11 +46,14 @@
     }
 
     h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.9;
+      font-size: 1.45rem;
+      line-height: 2.1rem;
+      margin-bottom: 1.8rem;
+      color: #0f172a;
+      font-weight: 700;
     }
 
+    /* ANSWERS */
     .answers {
       display: flex;
       flex-direction: column;
@@ -51,40 +62,54 @@
     }
 
     .answer-option {
-      background: white;
+      background: #ffffff;
       padding: 1rem 1.2rem;
-      border: 1px solid #cbd5e1;
       border-radius: 12px;
+      border: 1px solid #cbd5e1;
       cursor: pointer;
-      transition: .2s;
+      transition: 0.2s;
+      font-size: 1.05rem;
+      text-align: center;
     }
     .answer-option:hover {
       background: #f1f5f9;
       transform: translateY(-2px);
     }
 
+    /* NEXT BUTTON */
     .btn-next {
-      background: #1e3a8a;
-      color: white;
-      padding: 1rem;
+      margin-top: 2rem;
       width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      background: #1e3a8a;
+      color: #fff;
       border: none;
       border-radius: 12px;
-      font-size: 1.1rem;
-      margin-top: 2rem;
       cursor: pointer;
       display: none;
-      transition: 0.2s;
+      transition: 0.3s;
+      font-weight: 600;
     }
     .btn-next:hover {
       background: #2563eb;
       transform: translateY(-2px);
     }
+
   </style>
 </head>
 
-<body>
+<body class="tools-page">
 
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../components/header-tools.html")
+.then(res => res.text())
+.then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
   <div class="progress-bar">
@@ -92,47 +117,53 @@
   </div>
 
   <h2 id="question-text"></h2>
-
   <div class="answers" id="answers"></div>
 
   <button id="next-btn" class="btn-next" onclick="nextQuestion()">سؤال بعدی</button>
 
 </div>
 
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
 <script>
-  
+fetch("../components/footer-tools.html")
+.then(res => res.text())
+.then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+</script>
+
+<script>
   const questions = [
-  "وقتی یک کار جدید می‌بینی، بیشتر هیجان‌زده می‌شی یا می‌ترسی؟",
-  "دوست داری خودت ایده بسازی یا از روی نمونه انجام بدی؟",
-  "با آدم‌های جدید راحتی یا سخت؟",
-  "وقتی مشکلی پیش میاد، سریع دنبال راه‌حل می‌گردی یا صبر می‌کنی؟",
-  "دوست داری چیزی بسازی یا چیزی را معرفی کنی؟",
-  "در تصمیم‌گیری بیشتر به احساسات اعتماد می‌کنی یا منطق؟",
-  "چقدر از یاد گرفتن چیزهای جدید لذت می‌بری؟",
-  "ترجیح می‌دی تنهایی کار کنی یا با دیگران؟",
-  "چقدر راحت می‌تونی چیزی را برای بقیه توضیح بدی؟",
-  "وقتی کاری را شروع می‌کنی، سریع شروع می‌کنی یا اول زیاد فکر می‌کنی؟",
-  "از کمک کردن به دیگران خوشحال می‌شی یا خسته؟",
-  "حرف زدن جلوی دوربین برات راحته یا سخت؟",
-  "در کارهای تکراری زود خسته می‌شی؟",
-  "وقتی یک هدف داری، جدی دنبالش می‌کنی یا نصفه رها می‌کنی؟",
-  "زیر فشار بهتر کار می‌کنی یا بدتر؟",
-  "آزادی را بیشتر دوست داری یا نظم را؟",
-  "اگر ایده جدید داشته باشی، فوری شروع می‌کنی یا اول تحقیق می‌کنی؟",
-  "از حل کردن مشکلات لذت می‌بری؟",
-  "دوست داری برای خودت برنامه‌ریزی کنی یا همه‌چیز را به جریان بسپاری؟",
-  "از صحبت با آدم‌های جدید لذت می‌بری؟",
-  "وقتی خسته می‌شی، زود ناامید می‌شی یا ادامه می‌دی؟",
-  "دوست داری آموزش بدی یا محصول بسازی؟",
-  "به کارهای دقیق علاقه داری؟",
-  "در روزهای آزاد بیشتر استراحت می‌کنی یا یادگیری؟",
-  "وقتی برای یک کار هدف می‌گذاری، چقدر پایبند می‌مونی؟",
-  "برای حل مشکل دنبال راه خلاقانه می‌گردی یا راه منطقی؟",
-  "دوست داری محصول یا خدمات را به بقیه بفروشی؟",
-  "وقتی با چالش سخت روبه‌رو می‌شی، سریع جا می‌زنی؟",
-  "بیشتر احساسی هستی یا منطقی؟",
-  "بزرگ‌ترین انگیزه‌ات در زندگی چیه؟ آزادی؟ درآمد؟ کمک به دیگران؟"
-];
+    "وقتی یک کار جدید می‌بینی، بیشتر هیجان‌زده می‌شی یا می‌ترسی؟",
+    "دوست داری خودت ایده بسازی یا از روی نمونه انجام بدی؟",
+    "با آدم‌های جدید راحتی یا سخت؟",
+    "وقتی مشکلی پیش میاد، سریع دنبال راه‌حل می‌گردی یا صبر می‌کنی؟",
+    "دوست داری چیزی بسازی یا چیزی را معرفی کنی؟",
+    "در تصمیم‌گیری بیشتر به احساسات اعتماد می‌کنی یا منطق؟",
+    "چقدر از یاد گرفتن چیزهای جدید لذت می‌بری؟",
+    "ترجیح می‌دی تنهایی کار کنی یا با دیگران؟",
+    "چقدر راحت می‌تونی چیزی را برای بقیه توضیح بدی؟",
+    "وقتی کاری را شروع می‌کنی، سریع شروع می‌کنی یا اول زیاد فکر می‌کنی؟",
+    "از کمک کردن به دیگران خوشحال می‌شی یا خسته؟",
+    "حرف زدن جلوی دوربین برات راحته یا سخت؟",
+    "در کارهای تکراری زود خسته می‌شی؟",
+    "وقتی یک هدف داری، جدی دنبالش می‌کنی یا نصفه رها می‌کنی؟",
+    "زیر فشار بهتر کار می‌کنی یا بدتر؟",
+    "آزادی را بیشتر دوست داری یا نظم را؟",
+    "اگر ایده جدید داشته باشی، فوری شروع می‌کنی یا اول تحقیق می‌کنی؟",
+    "از حل کردن مشکلات لذت می‌بری؟",
+    "دوست داری برای خودت برنامه‌ریزی کنی یا همه‌چیز را به جریان بسپاری؟",
+    "از صحبت با آدم‌های جدید لذت می‌بری؟",
+    "وقتی خسته می‌شی، زود ناامید می‌شی یا ادامه می‌دی؟",
+    "دوست داری آموزش بدی یا محصول بسازی؟",
+    "به کارهای دقیق علاقه داری؟",
+    "در روزهای آزاد بیشتر استراحت می‌کنی یا یادگیری؟",
+    "وقتی برای یک کار هدف می‌گذاری، چقدر پایبند می‌مونی؟",
+    "برای حل مشکل دنبال راه خلاقانه می‌گردی یا راه منطقی؟",
+    "دوست داری محصول یا خدمات را به بقیه بفروشی؟",
+    "وقتی با چالش سخت روبه‌رو می‌شی، سریع جا می‌زنی؟",
+    "بیشتر احساسی هستی یا منطقی؟",
+    "بزرگ‌ترین انگیزه‌ات در زندگی چیه؟ آزادی؟ درآمد؟ کمک به دیگران؟"
+  ];
 
   const answers = [
     "کاملاً موافقم",
@@ -144,13 +175,14 @@
 
   let index = 0;
   const userAnswers = [];
+  let selected = false;
 
   function loadQuestion() {
     document.getElementById("question-text").innerText = questions[index];
 
     let html = "";
-    answers.forEach((a, i) => {
-      html += `<div class="answer-option" onclick="selectAnswer(${i}, this)">${a}</div>`;
+    answers.forEach((txt, i) => {
+      html += `<div class="answer-option" onclick="selectAnswer(${i}, this)">${txt}</div>`;
     });
 
     document.getElementById("answers").innerHTML = html;
@@ -159,20 +191,17 @@
       ((index + 1) / questions.length) * 100 + "%";
   }
 
-  let selected = false;
-
-  function selectAnswer(answerIndex, el) {
+  function selectAnswer(aIndex, element) {
     selected = true;
-
-    userAnswers[index] = answerIndex;
+    userAnswers[index] = aIndex;
 
     document.querySelectorAll(".answer-option").forEach(o => {
       o.style.background = "#fff";
       o.style.borderColor = "#cbd5e1";
     });
 
-    el.style.background = "#dbeafe";
-    el.style.borderColor = "#1e3a8a";
+    element.style.background = "#dbeafe";
+    element.style.borderColor = "#1e3a8a";
 
     document.getElementById("next-btn").style.display = "block";
   }
