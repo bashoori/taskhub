@@ -202,3 +202,17 @@
 .section-title {
   text-align: center !important;
 }
+
+/* Fix textarea alignment with input fields */
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+
