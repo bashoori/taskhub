@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-page="tools">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap | Bita Digital Hub</title>
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/tools.css" />
+
+  <style>
+    .roadmap-wrapper {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-block {
+      margin-top: 3rem;
+    }
+
+    .quarter {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quarter h3 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+  </style>
+</head>
+
+<body class="tools-page">
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../../components/header-tools.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("header-placeholder").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+
+<div class="roadmap-wrapper">
+
+  <!-- HERO -->
+  <h1>Roadmap</h1>
+  <p class="intro">
+    A transparent view of where Bita Digital Hub is going — how the platform grows, improves, and
+    expands over time. This roadmap reflects our mission to build an AI-powered toolkit that helps
+    entrepreneurs and creators launch, optimize, and scale their online businesses.
+  </p>
+
+  <!-- Q1 -->
+  <section class="section-block">
+    <div class="quarter">
+      <h3>Q1 — Foundation & AI Integration</h3>
+      <ul>
+        <li>Launch About, Product, and Roadmap pages</li>
+        <li>Upgrade all tools to new unified UI framework</li>
+        <li>Add AI-assisted content rewriting (SEO + text tools)</li>
+        <li>Implement AI scoring for SEO tools and website analyzers</li>
+        <li>Build internal analytics system for tool usage</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Q2 -->
+  <section class="section-block">
+    <div class="quarter">
+      <h3>Q2 — User Accounts & Saved Workflows</h3>
+      <ul>
+        <li>User authentication (email + magic link)</li>
+        <li>Saved tool settings and repeat workflows</li>
+        <li>AI-recommended next steps after each tool</li>
+        <li>Performance dashboard for creators and small businesses</li>
+        <li>Beta release of Pro version (invite-only)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Q3 -->
+  <section class="section-block">
+    <div class="quarter">
+      <h3>Q3 — Automation & Pro Features</h3>
+      <ul>
+        <li>Automated content pipelines</li>
+        <li>AI business advisor for content, SEO, funnels, and optimizations</li>
+        <li>Advanced batch-processing tools (file conversions, cleanup, metadata)</li>
+        <li>Priority processing for Pro users</li>
+        <li>Cloud storage integrations (Google Drive, Dropbox)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Q4 -->
+  <section class="section-block">
+    <div class="quarter">
+      <h3>Q4 — API, Integrations & Ecosystem</h3>
+      <ul>
+        <li>Public API for developers, agencies, and automation systems</li>
+        <li>AI plugin marketplace for custom tool extensions</li>
+        <li>Partnerships with agencies and digital creators</li>
+        <li>Enterprise-grade features for small business teams</li>
+        <li>Internationalization (Farsi + English UI)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="section-block">
+    <h2>Long-Term Vision</h2>
+    <p>
+      Bita Digital Hub will evolve into a fully AI-guided business assistant. Instead of searching 
+      for tools, the platform analyzes your goals, suggests the right workflows, and automates 
+      repetitive tasks — helping you build a real online business with clarity and speed.
+    </p>
+  </section>
+
+</div>
+
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("../../components/footer-tools.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("footer-placeholder").innerHTML = html;
+  })
+  .catch(err => console.error("Footer load error:", err));
+</script>
+
+</body>
+</html>
