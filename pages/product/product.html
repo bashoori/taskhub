@@ -3,17 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Product | Bita Digital Hub</title>
 
-  <!-- Styles -->
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/system.css" />
 
-  <meta
-    name="description"
-    content="Explore the Bita Digital Hub AI-first platform — smart tools, automated workflows, and a unified system for building and growing your online business."
-  />
+  <meta name="description"
+        content="Explore the Bita Digital Hub AI-first platform — smart tools, automated workflows, and a unified system for building and growing your online business." />
+
+  <style>
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      line-height: 1.75;
+      color: #0f172a;
+    }
+
+    h1, h2, h3 {
+      color: #0f172a;
+      margin-bottom: .75rem;
+    }
+
+    .intro, .section-intro {
+      max-width: 750px;
+      margin: 0 auto 2rem;
+      color: #334155;
+      text-align: center;
+    }
+
+    .card-block {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .center-img {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .center-img img {
+      max-width: 550px;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .feature-list {
+      padding-left: 1.2rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -26,150 +73,128 @@
       .then(html => (document.getElementById('header-placeholder').innerHTML = html));
   </script>
 
-  <main class="page-wrapper mt-xl">
+  <main class="wrapper">
 
     <!-- HERO -->
-    <section class="section text-center">
-      <h1 class="page-title">AI-First Tools for Modern Online Businesses</h1>
-      <p class="tagline max-700 center">
+    <section>
+      <h1 class="text-center">AI-First Tools for Modern Online Businesses</h1>
+
+      <p class="intro">
         A unified platform designed to help entrepreneurs, freelancers, and creators automate manual work,
         improve decision-making, and scale their online growth.
       </p>
 
-      <img
-        src="../../assets/images/product/hero-abstract-ai.png"
-        class="hero-illustration"
-        alt="AI Workflow Illustration"
-      />
+      <div class="center-img">
+        <img src="../../assets/images/product/hero-abstract-ai.png" alt="AI Workflow Illustration" />
+      </div>
 
-      <div class="mt-lg">
+      <div class="cta">
         <a href="../signup/signup.html" class="btn primary">Get Started</a>
       </div>
     </section>
 
     <!-- VALUE PROPOSITION -->
-    <section class="section">
-      <h2 class="section-title">A Smarter Way to Build Your Online Business</h2>
+    <section class="section-block">
+      <h2 class="text-center">A Smarter Way to Build Your Online Business</h2>
 
-      <p class="text-base max-700 center">
-        The digital world moves fast — but most tools slow you down. Bita Digital Hub combines
-        AI-assisted workflows, automation, and smart insights to help you work faster, reduce complexity,
-        and stay focused on opportunities that matter.
+      <p class="section-intro">
+        The digital world moves fast — but most tools slow you down.
+        Bita Digital Hub combines AI workflows, automation, and intelligent insights
+        so you can work faster and focus on what matters.
       </p>
 
-      <div class="three-cols mt-xl">
+      <div class="card-block">
+        <h3>Automation Built In</h3>
+        <p>
+          Remove repetitive tasks from your workflow. Let AI handle formatting, decision support,
+          content structuring, and more.
+        </p>
+      </div>
 
-        <div class="feature-card-lg">
-          <img src="../../assets/images/product/icon-automation.png" class="icon-lg" />
-          <h3>Automation Built In</h3>
-          <p>
-            Remove repetitive tasks from your workflow. Let AI handle formatting, decision support,
-            content structuring, and more.
-          </p>
-        </div>
+      <div class="card-block">
+        <h3>Instant Insights</h3>
+        <p>
+          Turn scattered numbers into clear business signals — without dashboards or complexity.
+        </p>
+      </div>
 
-        <div class="feature-card-lg">
-          <img src="../../assets/images/product/icon-insights.png" class="icon-lg" />
-          <h3>Instant Insights</h3>
-          <p>
-            Turn scattered numbers into clear business signals. No dashboards. No tech headaches.
-            Just answers.
-          </p>
-        </div>
-
-        <div class="feature-card-lg">
-          <img src="../../assets/images/product/icon-tools.png" class="icon-lg" />
-          <h3>Smart Integrated Tools</h3>
-          <p>
-            File converters, SEO helpers, business intelligence utilities — all in one simple platform.
-          </p>
-        </div>
-
+      <div class="card-block">
+        <h3>Smart Integrated Tools</h3>
+        <p>
+          File converters, SEO helpers, business intelligence utilities — all in one streamlined platform.
+        </p>
       </div>
     </section>
 
-    <!-- FEATURE BLOCKS WITH ILLUSTRATIONS -->
-    <section class="section">
-      <h2 class="section-title">Powerful Tools — Unified Experience</h2>
+    <!-- FEATURE BLOCKS -->
+    <section class="section-block">
+      <h2 class="text-center">Powerful Tools — Unified Experience</h2>
 
-      <div class="feature-block">
-        <div class="feature-text">
-          <h3>AI-Enhanced File & Content Tools</h3>
-          <p>
-            Convert, clean, rewrite, or analyze content with high accuracy. Everything runs fast,
-            lightweight, and inside your browser or cloud — depending on the tool.
-          </p>
+      <div class="card-block">
+        <h3>AI-Enhanced File & Content Tools</h3>
+        <p>
+          Convert, clean, rewrite, or analyze content quickly. Everything runs fast,
+          inside your browser or cloud.
+        </p>
+
+        <div class="center-img">
+          <img src="../../assets/images/product/illustration-file-tools.png" alt="File Tools" />
         </div>
-
-        <img
-          src="../../assets/images/product/illustration-file-tools.png"
-          class="feature-illustration"
-          alt="File Tools Illustration"
-        />
       </div>
 
-      <div class="feature-block reverse">
-        <div class="feature-text">
-          <h3>SEO & Website Optimization Tools</h3>
-          <p>
-            Improve rankings, structure your content, and automate fixes that normally take hours.
-            Ideal for freelancers and small businesses.
-          </p>
-        </div>
+      <div class="card-block">
+        <h3>SEO & Website Optimization</h3>
+        <p>
+          Improve rankings, structure content, and automate fixes — perfect for freelancers and small businesses.
+        </p>
 
-        <img
-          src="../../assets/images/product/illustration-seo.png"
-          class="feature-illustration"
-          alt="SEO Tools Illustration"
-        />
+        <div class="center-img">
+          <img src="../../assets/images/product/illustration-seo.png" alt="SEO Tools" />
+        </div>
       </div>
 
-      <div class="feature-block">
-        <div class="feature-text">
-          <h3>Decision Tools for Entrepreneurs</h3>
-          <p>
-            Validate ideas, test assumptions, and plan your business operations with AI-driven support.
-          </p>
-        </div>
+      <div class="card-block">
+        <h3>Decision Tools for Entrepreneurs</h3>
+        <p>
+          Validate ideas, test assumptions, and plan operations using AI-guided support.
+        </p>
 
-        <img
-          src="../../assets/images/product/illustration-decisions.png"
-          class="feature-illustration"
-          alt="Decision Tools Illustration"
-        />
+        <div class="center-img">
+          <img src="../../assets/images/product/illustration-decisions.png" alt="Decision Tools" />
+        </div>
       </div>
     </section>
 
-    <!-- AI WORKFLOW (Abstract Illustration Section) -->
-    <section class="section">
-      <h2 class="section-title">How the AI Workflow Works</h2>
+    <!-- AI WORKFLOW -->
+    <section class="section-block">
+      <h2 class="text-center">How the AI Workflow Works</h2>
 
-      <p class="text-base max-700 center">
-        Every tool is connected by a lightweight AI layer that understands your goals and adapts to your workflow.
+      <p class="section-intro">
+        Every tool is connected by a lightweight AI layer that adapts to your goals and workflow.
       </p>
 
-      <img
-        src="../../assets/images/product/ai-flow-abstract.png"
-        class="workflow-illustration"
-        alt="AI Workflow Diagram"
-      />
+      <div class="center-img">
+        <img src="../../assets/images/product/ai-flow-abstract.png" alt="AI Workflow" />
+      </div>
 
-      <ul class="feature-list mt-lg">
-        <li class="feature-card">AI understands your task and context.</li>
-        <li class="feature-card">It automates formatting, structure, and early decisions.</li>
-        <li class="feature-card">You stay focused on strategy, creativity, and growth.</li>
-      </ul>
+      <div class="card-block">
+        <ul class="feature-list">
+          <li>AI understands your task and context.</li>
+          <li>Automates formatting, structure, and early decisions.</li>
+          <li>You stay focused on strategy, creativity, and growth.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- CTA -->
-    <section class="section text-center">
-      <h2 class="section-title">Ready to Build Smarter?</h2>
-      <p class="text-base max-700 center">
-        Join thousands of entrepreneurs who save hours every week with AI-powered business tools.
+    <div class="cta">
+      <h2>Ready to Build Smarter?</h2>
+      <p class="section-intro">
+        Join thousands of entrepreneurs saving hours every week with AI-powered tools.
       </p>
 
-      <a href="../signup/signup.html" class="btn primary mt-md">Create Your Free Account</a>
-    </section>
+      <a href="../signup/signup.html" class="btn primary">Create Your Free Account</a>
+    </div>
 
   </main>
 
