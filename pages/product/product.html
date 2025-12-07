@@ -1,42 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="product">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product | Bita Digital Hub</title>
 
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/system.css" />
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
 
   <meta name="description"
-        content="Explore the Bita Digital Hub AI-first platform — smart tools, automated workflows, and a unified system for building and growing your online business." />
+        content="Explore the Bita Digital Hub AI-first platform — automation tools, workflows, and unified systems for building and growing your online business." />
 
   <style>
-    /* GLOBAL PAGE WRAPPER SPACING (fix for fixed header) */
-    main.wrapper {
-      padding-top: 7rem; /* ensures space below header */
+    body {
+      margin: 0;
+      background: #f8fafc;
+      padding-top: 120px; /* Matches Tools + About layout */
+      font-family: "Poppins", sans-serif;
+      color: #0f172a;
     }
 
-    .wrapper {
+    main.wrapper {
       max-width: 1100px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
       line-height: 1.75;
-      color: #0f172a;
     }
 
     h1, h2, h3 {
-      color: #0f172a;
-      margin-bottom: .75rem;
       text-align: center;
+      font-weight: 800;
+      margin-bottom: 1rem;
     }
 
     .intro,
     .section-intro {
       max-width: 750px;
       margin: 0 auto 2rem;
-      color: #334155;
       text-align: center;
+      color: #334155;
     }
 
     .section-block {
@@ -44,7 +48,7 @@
     }
 
     .card-block {
-      background: #f8fafc;
+      background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: 2rem;
@@ -54,7 +58,7 @@
     .center-img {
       display: flex;
       justify-content: center;
-      margin: 2rem 0;
+      margin: 2.5rem 0;
     }
 
     .center-img img {
@@ -64,158 +68,172 @@
     }
 
     .feature-list {
-      padding-left: 1.2rem;
+      padding-left: 1.3rem;
     }
 
     .cta {
       text-align: center;
       margin-top: 3rem;
     }
+
+    .btn.primary {
+      display: inline-block;
+      padding: 0.9rem 1.6rem;
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary:hover {
+      background: #162d6b;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <div id="header-placeholder"></div>
+<!-- GLOBAL HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("/components/header.html")
+  .then(res => res.text())
+  .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
 
-  <script>
-    fetch("../../components/header-tools.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("header-placeholder").innerHTML = html;
-      });
-  </script>
+<!-- MAIN CONTENT -->
+<main class="wrapper">
 
-  <!-- MAIN CONTENT -->
-  <main class="wrapper">
+  <!-- HERO -->
+  <section>
+    <h1>AI-First Tools for Modern Online Businesses</h1>
 
-    <!-- HERO -->
-    <section>
-      <h1>AI-First Tools for Modern Online Businesses</h1>
+    <p class="intro">
+      A unified platform designed to help entrepreneurs, freelancers, and creators automate manual work,
+      improve decision-making, and scale their online growth.
+    </p>
 
-      <p class="intro">
-        A unified platform designed to help entrepreneurs, freelancers, and creators automate manual work,
-        improve decision-making, and scale their online growth.
-      </p>
-
-      <div class="center-img">
-        <img src="../../assets/images/product/hero-abstract-ai.png" alt="AI Workflow Illustration" />
-      </div>
-
-      <div class="cta">
-        <a href="../signup/signup.html" class="btn primary">Get Started</a>
-      </div>
-    </section>
-
-    <!-- VALUE PROPOSITION -->
-    <section class="section-block">
-      <h2>A Smarter Way to Build Your Online Business</h2>
-
-      <p class="section-intro">
-        The digital world moves fast — but most tools slow you down.
-        Bita Digital Hub combines AI workflows, automation, and intelligent insights
-        so you can work faster and focus on what matters.
-      </p>
-
-      <div class="card-block">
-        <h3>Automation Built In</h3>
-        <p>
-          Remove repetitive tasks from your workflow. Let AI handle formatting, decision support,
-          content structuring, and more.
-        </p>
-      </div>
-
-      <div class="card-block">
-        <h3>Instant Insights</h3>
-        <p>
-          Turn scattered numbers into clear business signals — without dashboards or complexity.
-        </p>
-      </div>
-
-      <div class="card-block">
-        <h3>Smart Integrated Tools</h3>
-        <p>
-          File converters, SEO helpers, business intelligence utilities — all in one streamlined platform.
-        </p>
-      </div>
-    </section>
-
-    <!-- FEATURE BLOCKS -->
-    <section class="section-block">
-      <h2>Powerful Tools — Unified Experience</h2>
-
-      <div class="card-block">
-        <h3>AI-Enhanced File & Content Tools</h3>
-        <p>
-          Convert, clean, rewrite, or analyze content quickly. Everything runs fast,
-          inside your browser or cloud.
-        </p>
-        <div class="center-img">
-          <img src="../../assets/images/product/illustration-file-tools.png" alt="File Tools" />
-        </div>
-      </div>
-
-      <div class="card-block">
-        <h3>SEO & Website Optimization</h3>
-        <p>
-          Improve rankings, structure content, and automate fixes — perfect for freelancers and small businesses.
-        </p>
-        <div class="center-img">
-          <img src="../../assets/images/product/illustration-seo.png" alt="SEO Tools" />
-        </div>
-      </div>
-
-      <div class="card-block">
-        <h3>Decision Tools for Entrepreneurs</h3>
-        <p>
-          Validate ideas, test assumptions, and plan operations using AI-guided support.
-        </p>
-        <div class="center-img">
-          <img src="../../assets/images/product/illustration-decisions.png" alt="Decision Tools" />
-        </div>
-      </div>
-    </section>
-
-    <!-- AI WORKFLOW -->
-    <section class="section-block">
-      <h2>How the AI Workflow Works</h2>
-
-      <p class="section-intro">
-        Every tool is connected by a lightweight AI layer that adapts to your goals and workflow.
-      </p>
-
-      <div class="center-img">
-        <img src="../../assets/images/product/ai-flow-abstract.png" alt="AI Workflow" />
-      </div>
-
-      <div class="card-block">
-        <ul class="feature-list">
-          <li>AI understands your task and context.</li>
-          <li>Automates formatting, structure, and early decisions.</li>
-          <li>You stay focused on strategy, creativity, and growth.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <div class="cta">
-      <h2>Ready to Build Smarter?</h2>
-      <p class="section-intro">
-        Join thousands of entrepreneurs saving hours every week with AI-powered tools.
-      </p>
-      <a href="../signup/signup.html" class="btn primary">Create Your Free Account</a>
+    <div class="center-img">
+      <img src="/assets/images/product/hero-abstract-ai.png" alt="AI Workflow Illustration" />
     </div>
 
-  </main>
+    <div class="cta">
+      <a href="/pages/signup/signup.html" class="btn primary">Get Started</a>
+    </div>
+  </section>
 
-  <!-- FOOTER -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("../../components/footer.html")
-      .then(res => res.text())
-      .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
-  </script>
+  <!-- VALUE PROPOSITION -->
+  <section class="section-block">
+    <h2>A Smarter Way to Build Your Online Business</h2>
+
+    <p class="section-intro">
+      The digital world moves fast — but most tools slow you down.
+      Bita Digital Hub combines AI workflows, automation, and intelligent insights
+      so you can work faster and focus on what matters.
+    </p>
+
+    <div class="card-block">
+      <h3>Automation Built In</h3>
+      <p>
+        Remove repetitive tasks from your workflow. Let AI handle formatting, decision support,
+        content structuring, and more.
+      </p>
+    </div>
+
+    <div class="card-block">
+      <h3>Instant Insights</h3>
+      <p>
+        Turn scattered numbers into clear business signals — without dashboards or complexity.
+      </p>
+    </div>
+
+    <div class="card-block">
+      <h3>Smart Integrated Tools</h3>
+      <p>
+        File converters, SEO helpers, business intelligence utilities — all in one streamlined platform.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURE BLOCKS -->
+  <section class="section-block">
+    <h2>Powerful Tools — Unified Experience</h2>
+
+    <div class="card-block">
+      <h3>AI-Enhanced File & Content Tools</h3>
+      <p>
+        Convert, clean, rewrite, or analyze content quickly. Everything runs fast, inside your browser or cloud.
+      </p>
+
+      <div class="center-img">
+        <img src="/assets/images/product/illustration-file-tools.png" alt="File Tools" />
+      </div>
+    </div>
+
+    <div class="card-block">
+      <h3>SEO & Website Optimization</h3>
+      <p>
+        Improve rankings, optimize content, and automate fixes — perfect for freelancers and small businesses.
+      </p>
+
+      <div class="center-img">
+        <img src="/assets/images/product/illustration-seo.png" alt="SEO Tools" />
+      </div>
+    </div>
+
+    <div class="card-block">
+      <h3>Decision Tools for Entrepreneurs</h3>
+      <p>
+        Validate ideas, test assumptions, and plan operations using AI-guided support.
+      </p>
+
+      <div class="center-img">
+        <img src="/assets/images/product/illustration-decisions.png" alt="Decision Tools" />
+      </div>
+    </div>
+  </section>
+
+  <!-- AI WORKFLOW -->
+  <section class="section-block">
+    <h2>How the AI Workflow Works</h2>
+
+    <p class="section-intro">
+      Every tool is connected by a lightweight AI layer that adapts to your goals and workflow.
+    </p>
+
+    <div class="center-img">
+      <img src="/assets/images/product/ai-flow-abstract.png" alt="AI Workflow" />
+    </div>
+
+    <div class="card-block">
+      <ul class="feature-list">
+        <li>AI understands your task and context.</li>
+        <li>Automates formatting, structure, and early decisions.</li>
+        <li>You stay focused on strategy, creativity, and growth.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Ready to Build Smarter?</h2>
+    <p class="section-intro">
+      Join entrepreneurs saving hours every week with AI-powered tools.
+    </p>
+    <a href="/pages/signup/signup.html" class="btn primary">Create Your Free Account</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("/components/footer.html")
+  .then(res => res.text())
+  .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+</script>
 
 </body>
 </html>
