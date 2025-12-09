@@ -243,3 +243,14 @@
   font-size: 0.88rem;
   margin-top: 2rem;
 }
+
+.section.cta-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+
+  padding: 6rem 1rem; /* makes it breathing and centered */
+}
