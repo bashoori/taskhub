@@ -2,150 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Services & Digital Products | Bita Digital Hub</title>
+  <title>Services | Bita Digital Hub</title>
 
-  <meta name="description"
-        content="Affordable digital services: website building, AI automation, data dashboards, online business setup, and content workflows. Designed for solopreneurs, creators, and small businesses." />
-
+  <meta name="description" content="Affordable digital services including website creation, landing pages, AI integration and automations." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/services.css" />
   <link rel="stylesheet" href="/css/cards.css" />
-
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/js/core/script.js" defer></script>
 </head>
 
-<body class="service-page">
+<body class="tools-page">
 
-<!-- ============================
-     HEADER
-============================ -->
+<!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
     .then(r => r.text())
-    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+    .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
-
-
-<!-- ============================
-     HERO
-============================ -->
-<section class="service-hero">
+<section class="section text-center">
   <div class="container">
-    <img src="/assets/images/trans-web.png" alt="Digital services illustration" class="service-hero-img">
-
-    <h1>Smart Digital Services for Your Online Growth</h1>
-
-    <p class="subtitle">
-      From website templates to AI workflows and automation tools,
-      we help creators and small businesses launch faster, grow easier,
-      and automate more with minimal cost.
-    </p>
-
-    <a href="/contact/" class="btn-primary">Start Your Project</a>
-  </div>
-</section>
-
-
-
-<!-- ============================
-     OVERVIEW
-============================ -->
-<section class="service-overview">
-  <div class="container">
-    <h2>What We Offer</h2>
-    <p>
-      A curated set of services designed to help you launch and scale your digital presence.
-      Each service is optimized for speed, simplicity, and affordability.
+    <h1 class="tool-title">Services</h1>
+    <p class="tool-description">
+      Budget-friendly digital services to grow your online presence.
     </p>
   </div>
 </section>
 
-
-
-<!-- ============================
-     SERVICES GRID
-============================ -->
 <section class="section">
   <div class="container">
 
-    <div class="services-grid">
+    <div class="card-grid">
 
-      <!-- Website Templates -->
-      <div class="service-card">
-        <img src="/assets/images/service-web.jpg" alt="Website Template">
-        <h3>Website Templates</h3>
-        <p>
-          Ready-made modern websites for cafés, small businesses, solopreneurs,
-          or personal brands — customizable and mobile-optimized.
-        </p>
-      </div>
+      <a class="card" href="#">
+        <div class="tool-icon"><span>💼</span></div>
+        <div class="content">
+          <h3>Website Creation</h3>
+          <p>Fast, modern websites built for small businesses & solopreneurs.</p>
+        </div>
+      </a>
 
-      <!-- AI Automation -->
-      <div class="service-card">
-        <img src="/assets/images/service-ai.jpg" alt="AI Automation">
-        <h3>AI Automation Workflows</h3>
-        <p>
-          Streamline repetitive tasks using AI and automation with tools like
-          Make.com, n8n, Zapier, and custom scripts.
-        </p>
-      </div>
+      <a class="card" href="#">
+        <div class="tool-icon"><span>⚙️</span></div>
+        <div class="content">
+          <h3>Automation & AI Setup</h3>
+          <p>Reduce workload with AI assistants, workflows, and automations.</p>
+        </div>
+      </a>
 
-      <!-- Data & Dashboard -->
-      <div class="service-card">
-        <img src="/assets/images/service-data.jpg" alt="Dashboard Service">
-        <h3>Data Dashboards</h3>
-        <p>
-          Transform raw data into useful dashboards for tracking metrics,
-          sales, social media analytics, and business decisions.
-        </p>
-      </div>
-
-      <!-- Online Business Setup -->
-      <div class="service-card">
-        <img src="/assets/images/service-business.jpg" alt="Online Business Service">
-        <h3>Online Business Setup</h3>
-        <p>
-          Build your digital foundation: domain setup, hosting configuration,
-          email automation, funnels, and monetization strategy.
-        </p>
-      </div>
+      <a class="card" href="#">
+        <div class="tool-icon"><span>📈</span></div>
+        <div class="content">
+          <h3>Funnels & Lead Pages</h3>
+          <p>High-converting landing pages to capture more customers.</p>
+        </div>
+      </a>
 
     </div>
 
   </div>
 </section>
 
-
-
-<!-- ============================
-     CTA
-============================ -->
-<section class="cta">
-  <div class="container">
-    <h2>Ready to Build Something Great?</h2>
-    <p>
-      Whether you're launching a project or improving what you already have,
-      we’ll help you grow with tools and systems designed for your success.
-    </p>
-    <a href="/contact/" class="btn-primary">Contact Us</a>
-  </div>
-</section>
-
-
-
-<!-- ============================
-     FOOTER
-============================ -->
+<!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
     .then(r => r.text())
-    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
 </body>
