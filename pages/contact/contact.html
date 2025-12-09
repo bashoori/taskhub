@@ -2,101 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact Us | Bita Digital Hub</title>
-
-  <meta name="description"
-        content="Get in touch with Bita Digital Hub for services, project help, collaborations or questions about free tools and AI utilities." />
+  <title>Contact | Bita Digital Hub</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/cards.css" />
-  <link rel="stylesheet" href="/css/contact.css" />
-
   <script src="/js/core/script.js" defer></script>
 </head>
 
-<body>
+<body class="tools-page">
 
-<!-- ============================
-     HEADER
-============================ -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
     .then(r => r.text())
-    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+    .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
-
-
-<!-- ============================
-     CONTACT HERO
-============================ -->
-<section class="contact-hero">
-  <div class="container">
-    <h1>Contact Us</h1>
-    <p>
-      Have a question? Need help with a project?  
-      Reach out and we’ll get back to you as soon as possible.
-    </p>
-  </div>
-</section>
-
-
-
-<!-- ============================
-     CONTACT FORM
-============================ -->
-<section class="contact-section">
-  <div class="contact-container">
-
-    <form class="contact-form" 
-          action="https://formspree.io/f/mzzbdlpr"
-          method="POST">
-
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-      </div>
-
-      <input type="text" name="subject" placeholder="Subject" required />
-
-      <textarea name="message" class="form-control" 
-                placeholder="Write your message here..." required></textarea>
-
-      <button class="btn-submit" type="submit">Send Message</button>
-    </form>
-
-  </div>
-</section>
-
-
-
-<!-- ============================
-     CTA (OPTIONAL)
-============================ -->
 <section class="section text-center">
   <div class="container">
-    <h2>Need a faster response?</h2>
-    <p>Reach out on Instagram for quick questions or project discussions.</p>
-    <a class="btn outline" href="https://instagram.com/bitadigitalhub" target="_blank">
-      Contact on Instagram
-    </a>
+    <h1 class="tool-title">Contact</h1>
+    <p class="tool-description">Reach out for collaborations, support or business inquiries.</p>
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
 
+    <div class="tool-wrapper" style="max-width:680px; margin:auto;">
+      <form class="contact-form">
+        <label class="tool-label">Your Name</label>
+        <input class="tool-input" type="text">
 
-<!-- ============================
-     FOOTER
-============================ -->
+        <label class="tool-label">Email</label>
+        <input class="tool-input" type="email">
+
+        <label class="tool-label">Message</label>
+        <textarea class="tool-input" rows="6"></textarea>
+
+        <button class="tool-btn">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
     .then(r => r.text())
-    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
 </body>
