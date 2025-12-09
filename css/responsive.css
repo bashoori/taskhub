@@ -6,8 +6,9 @@
    GLOBAL BREAKPOINTS
 ============================ */
 
-/* Medium screens */
+/* Medium screens (≤900px) */
 @media (max-width: 900px) {
+
   .nav-actions {
     display: none;
   }
@@ -18,7 +19,7 @@
   }
 }
 
-/* Mobile layout */
+/* Mobile layout (≤640px) */
 @media (max-width: 640px) {
 
   /* HERO */
@@ -35,10 +36,16 @@
   .hero p {
     padding: 0 var(--space-s);
   }
+
+  /* Small mobile spacing */
+  .contact-section {
+    padding-top: var(--space-xxl);
+  }
 }
 
-/* Extra-small screens */
+/* Extra-small screens (≤480px) */
 @media (max-width: 480px) {
+
   .latest-card {
     border-radius: var(--radius-l);
   }
@@ -136,16 +143,47 @@
   background: var(--brand-secondary);
 }
 
-/* Mobile form handling */
+/* Form mobile handling (≤768px) */
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
   }
 }
 
-/* Small mobile spacing */
-@media (max-width: 640px) {
-  .contact-section {
-    padding-top: var(--space-xxl);
+/* ==================================================
+   HEADER — Mobile fixed layout adjustments
+================================================== */
+
+@media (max-width: 768px) {
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    padding: 10px 16px; /* actual mobile header height */
+  }
+
+  /* Push page content down so it does NOT hide under the header */
+  body {
+    padding-top: 70px !important;
+  }
+}
+
+/* ==================================================
+   Mobile Spacing Fixes — Ensure hero/title never hides
+================================================== */
+
+@media (max-width: 768px) {
+
+  .hero,
+  .hero-section,
+  .page-hero,
+  .tools-hero,
+  .main-title {
+    margin-top: 0 !important;
+    padding-top: 12px !important;
   }
 }
