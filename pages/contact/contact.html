@@ -2,115 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Bita Digital Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Contact Us | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="Get in touch with Bita Digital Hub. Whether you have questions, need support, or want to collaborate, we’re here to help." />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/responsive.css" />
 
   <style>
-    body {
-      background: #f8fafc;
-      padding-top: 120px;
-      font-family: "Poppins", sans-serif;
+    /* Layout spacing below sticky header */
+    .page-wrapper {
+      padding-top: 140px;
+      padding-bottom: 80px;
     }
 
     .contact-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 2rem 1.5rem;
       text-align: center;
+      padding: 0 1.5rem;
     }
 
-    .contact-container h1 {
-      font-size: 2.4rem;
+    .contact-title {
+      font-size: 2.6rem;
       font-weight: 800;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
+      color: #0f172a;
+      margin-bottom: 12px;
     }
 
-    .contact-container p {
+    .contact-subtitle {
       max-width: 650px;
-      color: var(--text-soft);
-      margin: 0 auto 2.5rem;
-      font-size: 1.1rem;
-      line-height: 1.65;
+      font-size: 1.15rem;
+      color: #475569;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
     }
 
-    /* FORM CARD */
+    /* Contact Card */
     .contact-card {
       background: #ffffff;
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-light);
+      padding: 2.8rem;
+      border-radius: 18px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.08);
       max-width: 700px;
       margin: 0 auto;
       text-align: left;
+      animation: fadeUp 0.45s ease-out;
     }
 
+    /* Form fields */
     .form-group {
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.5rem;
     }
 
     label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
       color: #0f172a;
+      font-size: 1.05rem;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
-      padding: 0.9rem 1rem;
-      border-radius: 10px;
-      border: 1px solid var(--border-light);
-      background: #f9fafb;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
       font-size: 1rem;
-      transition: .2s ease;
+      font-family: inherit;
+      transition: border-color 0.25s, box-shadow 0.25s;
     }
 
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus {
       outline: none;
-      border-color: var(--primary);
-      background: #fff;
-      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+      border-color: #2563eb;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
     }
 
     textarea {
-      height: 160px;
       resize: vertical;
+      min-height: 150px;
     }
 
     /* Button */
     .contact-btn {
       width: 100%;
-      background: var(--primary);
-      color: #fff;
-      border: none;
       padding: 1rem;
       font-size: 1.1rem;
+      font-weight: 600;
+      background: #1e3a8a;
+      color: #ffffff;
+      border: none;
       border-radius: 12px;
       cursor: pointer;
       margin-top: 1rem;
-      font-weight: 600;
-      transition: .25s ease;
+      transition: 0.25s ease;
     }
 
     .contact-btn:hover {
-      background: var(--primary-light);
+      background: #2563eb;
       transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
     }
 
-    /* Responsive */
+    /* Animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 480px) {
       .contact-card {
-        padding: 1.8rem;
+        padding: 2rem;
       }
-      h1 {
-        font-size: 2rem;
+      .contact-title {
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -126,39 +142,43 @@
     .then(html => (document.getElementById("header-placeholder").innerHTML = html));
 </script>
 
-<div class="contact-container">
+<!-- MAIN -->
+<main class="page-wrapper">
 
-  <h1>Contact Us</h1>
-  <p>
-    Have a question, a suggestion, or need help with one of the tools?
-    Send a message and we’ll get back to you as soon as possible.
-  </p>
+  <div class="contact-container">
 
-  <!-- FORM CARD -->
-  <div class="contact-card">
-    <form action="#" method="POST">
-      
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input id="name" type="text" placeholder="Enter your name" required />
-      </div>
+    <h1 class="contact-title">Contact Us</h1>
+    <p class="contact-subtitle">
+      Have a question, a suggestion, or need help with one of our tools?
+      Send us a message and we’ll respond as soon as possible.
+    </p>
 
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input id="email" type="email" placeholder="your@email.com" required />
-      </div>
+    <div class="contact-card">
+      <form action="#" method="POST" class="contact-form">
 
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" placeholder="Write your message..." required></textarea>
-      </div>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input id="name" type="text" placeholder="Enter your name" required />
+        </div>
 
-      <button class="contact-btn">Send Message</button>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" placeholder="your@email.com" required />
+        </div>
 
-    </form>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Write your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="contact-btn">Send Message</button>
+
+      </form>
+    </div>
+
   </div>
 
-</div>
+</main>
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
