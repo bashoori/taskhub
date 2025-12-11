@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Bita Digital Hub – Free Online Tools & AI Utilities</title>
+  <title>Bita Digital Hub — Simple Tools to Build Your Online Presence</title>
 
   <meta name="description"
-    content="Free online tools including URL shortener, file converter, password generator, CSV cleaner, QR generator and more. Fast, private, no login required." />
+    content="Free tools and simple guides to help you build your online presence. QR generator, URL shortener, SEO meta tools, and step-by-step tutorials to launch your website fast." />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/home.css" />
@@ -19,9 +19,7 @@
 
 <body>
 
-<!-- ============================
-     GLOBAL HEADER
-============================ -->
+<!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
@@ -29,26 +27,27 @@
     .then(html => (document.getElementById("header-placeholder").innerHTML = html));
 </script>
 
-
-
 <!-- ============================================================
-     CLEAN SAAS HERO (3 MINI FEATURE CARDS)
+     HERO — Clean, minimal, focused
 ============================================================ -->
 <section class="hero clean-hero">
   <div class="container hero-container">
 
-    <!-- Left Text -->
     <div class="hero-text">
-      <h1 class="hero-title">Powerful Free Tools for Your Daily Work</h1>
+      <h1 class="hero-title">
+        Start and Grow Your Digital Presence — With Smart Tools and Simple Guides
+      </h1>
 
       <p class="hero-sub">
-        Instantly generate QR codes, clean CSV files, convert images, 
-        shorten URLs, create strong passwords and more; all in one clean workspace.
+        Free tools, website-building tutorials, and practical resources to help beginners 
+        create and grow their online presence quickly and without complexity.
       </p>
 
       <div class="hero-buttons">
-        <a href="/pages/tools/tools.html" class="btn primary">Explore Tools</a>
-        <a href="/pages/product/product.html" class="btn outline">View Services</a>
+        <a href="/pages/learn/build-website.html" class="btn primary">
+          Build Your Website in 30 Minutes (Free Guide)
+        </a>
+        <a href="/pages/tools/tools.html" class="btn outline">Browse Tools</a>
       </div>
     </div>
 
@@ -57,7 +56,7 @@
 
 
 <!-- ============================================================
-     POPULAR TOOLS
+     3 CORE TOOLS — High visibility + SEO value
 ============================================================ -->
 <section class="section">
   <div class="container">
@@ -69,23 +68,23 @@
         <div class="tool-icon"><span>🔗</span></div>
         <div class="content">
           <h3>URL Shortener</h3>
-          <p>Create clean, fast, trackable links instantly.</p>
+          <p>Shorten long URLs into clean, fast, shareable links.</p>
         </div>
       </a>
 
       <a href="/pages/tools/generators/qr-generator/" class="card">
         <div class="tool-icon"><span>📱</span></div>
         <div class="content">
-          <h3>QR Generator</h3>
-          <p>Create QR codes for menus, profiles, campaigns and more.</p>
+          <h3>QR Code Generator</h3>
+          <p>Create custom QR codes for menus, profiles, and campaigns in seconds.</p>
         </div>
       </a>
 
       <a href="/pages/tools/generators/seo-meta-generator/" class="card">
-        <div class="tool-icon"><span>🧹</span></div>
+        <div class="tool-icon"><span>📝</span></div>
         <div class="content">
           <h3>SEO Meta Description + Title Generator</h3>
-          <p>Create high-converting meta titles and descriptions instantly.</p>
+          <p>Generate SEO-ready titles and descriptions that help your pages rank.</p>
         </div>
       </a>
 
@@ -94,30 +93,25 @@
 </section>
 
 
-
 <!-- ============================================================
-     CTA SECTION
+     VALUE SECTION — SEO-friendly paragraph for Google
 ============================================================ -->
 <section class="section cta-center">
   <div class="container text-center">
   
-    <h2>
-      Everything you need, in one clean workspace
-    </h2>
+    <h2>Your Online Toolkit — Simple, Fast, Free</h2>
     <p>
-      Fast, simple, private. No login. No tracking. Built for creators,
-      marketers, small businesses, students and developers.
+      Bitadigitalhub gives creators, small businesses, students, and beginners the tools 
+      and guidance they need to build online with confidence. No login, no tracking, 
+      just clean and efficient tools designed to save you time and help you grow.
     </p>
 
-    <a href="/pages/tools/tools.html" class="btn outline">Browse All Tools</a>
+    <a href="/pages/tools/tools.html" class="btn outline">Explore All Tools</a>
   </div>
 </section>
 
 
-
-<!-- ============================================================
-     FOOTER
-============================================================ -->
+<!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")

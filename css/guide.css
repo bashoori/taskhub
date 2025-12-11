@@ -1,0 +1,166 @@
+/* ============================================================
+   GUIDE.CSS — Build Your Website in 30 Minutes
+   Clean, Modern, Minimal, Mobile-First
+============================================================ */
+
+/* -------------------------------
+   PAGE HERO
+-------------------------------- */
+.guide-hero {
+  background: var(--bg-soft);
+  text-align: center;
+  padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem;
+}
+
+@media (max-width: 768px) {
+  .guide-hero {
+    padding-top: calc(var(--mobile-nav-height) + 2rem);
+  }
+}
+
+.guide-hero h1 {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.guide-hero .hero-sub {
+  max-width: 660px;
+  margin: 0 auto 2rem;
+  color: var(--text-soft);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  margin-bottom: 2.5rem;
+}
+
+.guide-hero-img {
+  max-width: 600px;
+  width: 100%;
+  display: block;
+  margin: 2rem auto 0;
+  opacity: 0.95;
+}
+
+
+/* -------------------------------
+   SECTION BASE
+-------------------------------- */
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section.alt {
+  background: #f9fafb;
+}
+
+.section .container.narrow {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.section p {
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+
+/* -------------------------------
+   BULLET POINTS
+-------------------------------- */
+.bullet-points {
+  margin: 1rem 0 2rem;
+  padding-left: 1.2rem;
+}
+
+.bullet-points li {
+  margin-bottom: 0.7rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+
+/* -------------------------------
+   IMAGES
+-------------------------------- */
+.guide-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 1.5rem 0 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* -------------------------------
+   FINAL CTA SECTION
+-------------------------------- */
+.final-cta {
+  text-align: center;
+  padding: 5rem 1.5rem 5rem;
+  background: var(--bg-soft);
+}
+
+.final-cta h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.final-cta p {
+  max-width: 540px;
+  margin: 0 auto 2rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.final-cta .btn.big {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+
+
+/* -------------------------------
+   RESPONSIVE — MOBILE
+-------------------------------- */
+
+@media (max-width: 768px) {
+  .guide-hero h1 {
+    font-size: 2.2rem;
+  }
+  .guide-hero .hero-sub {
+    font-size: 1rem;
+  }
+  .section h2 {
+    font-size: 1.7rem;
+  }
+  .section p {
+    font-size: 1rem;
+  }
+  .bullet-points li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-hero h1 {
+    font-size: 1.9rem;
+  }
+  .guide-hero-img {
+    max-width: 92%;
+  }
+}
