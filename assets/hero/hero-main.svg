@@ -1,0 +1,36 @@
+<svg width="620" height="420" viewBox="0 0 620 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background Soft Shapes -->
+  <circle cx="500" cy="80" r="120" fill="#EEF2FF"/>
+  <circle cx="140" cy="340" r="140" fill="#F0F9FF"/>
+
+  <!-- Browser Window -->
+  <rect x="80" y="90" width="460" height="250" rx="18" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Window Top Bar -->
+  <rect x="80" y="90" width="460" height="38" rx="18" fill="#F8FAFC" stroke="#E2E8F033"/>
+
+  <!-- Window Dots -->
+  <circle cx="110" cy="109" r="6" fill="#94A3B8"/>
+  <circle cx="130" cy="109" r="6" fill="#94A3B8"/>
+  <circle cx="150" cy="109" r="6" fill="#94A3B8"/>
+
+  <!-- Tool Icons Inside Window -->
+  <rect x="140" y="155" width="100" height="80" rx="12" fill="#EEF2FF"/>
+  <rect x="260" y="155" width="100" height="80" rx="12" fill="#ECEFFF"/>
+  <rect x="380" y="155" width="100" height="80" rx="12" fill="#E8F3FF"/>
+
+  <!-- QR Icon -->
+  <text x="170" y="205" font-size="44">📱</text>
+
+  <!-- Link Icon -->
+  <text x="290" y="205" font-size="44">🔗</text>
+
+  <!-- SEO Icon -->
+  <text x="410" y="205" font-size="44">📝</text>
+
+  <!-- Bottom Bars -->
+  <rect x="140" y="265" width="340" height="14" rx="7" fill="#E2E8F0"/>
+  <rect x="140" y="290" width="260" height="14" rx="7" fill="#E2E8F0"/>
+
+</svg>

@@ -1,6 +1,6 @@
 /* ============================================================
-   HOME.CSS — Palette 2 Brand Edition (Optimized)
-   Clean, Modern Hero + Solid Tool Cards
+   HOME.CSS — Clean, Modern, Ultra-Responsive Edition
+   For Bitadigitalhub.com — Hero + Core Tools
 ============================================================ */
 
 /* -------------------------------
@@ -14,11 +14,11 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: calc(var(--mobile-nav-height) + 3rem);
+    padding-top: calc(var(--mobile-nav-height) + 2.5rem);
   }
 }
 
-.hero h1 {
+.hero-title {
   font-size: 2.8rem;
   font-weight: 800;
   color: var(--text-main);
@@ -26,33 +26,27 @@
   line-height: 1.2;
 }
 
-.hero p {
-  max-width: 760px;
-  margin: 0 auto 2.2rem;
+.hero-sub {
+  max-width: 680px;
+  margin: 0 auto 2rem;
   color: var(--text-soft);
-  line-height: 1.7;
+  line-height: 1.65;
   font-size: 1.15rem;
 }
 
-.hero-image {
-  max-width: 680px;
-  margin: 2.5rem auto 0;
-  display: block;
-  opacity: 0.96;
-  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-
-/* -------------------------------
-   CTA BUTTONS
--------------------------------- */
 .btn.primary {
   background: var(--primary);
   color: #fff;
-  padding: 0.85rem 1.8rem;
-  font-weight: 600;
+  padding: 0.9rem 1.8rem;
   border-radius: 10px;
-  display: inline-block;
+  font-weight: 600;
   transition: 0.25s ease;
 }
 
@@ -61,13 +55,27 @@
   transform: translateY(-3px);
 }
 
+.btn.outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn.outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
 
 /* ============================================================
-   SECTION HEADERS
+   SECTION TITLES
 ============================================================ */
 
 .section-title {
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0.6rem;
   color: var(--text-main);
@@ -77,19 +85,19 @@
 .section-sub {
   color: var(--text-soft);
   font-size: 1rem;
-  max-width: 760px;
-  margin: 0.4rem auto 2.4rem;
+  max-width: 720px;
+  margin: 0.4rem auto 2rem;
   line-height: 1.6;
   text-align: center;
 }
 
 
 /* ============================================================
-   CARD GRID — Homepage Featured Tools
+   CARD GRID (Popular Tools)
 ============================================================ */
 
 .card-grid {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: grid;
@@ -111,14 +119,14 @@
 
 
 /* ============================================================
-   CARD BASE (Shared)
+   CARD STYLE
 ============================================================ */
 
 .card {
   display: block;
-  background: #ffffff;
+  background: #fff;
   border-radius: 18px;
-  padding-bottom: 1rem;
+  padding-bottom: 1.2rem;
   overflow: hidden;
   text-decoration: none;
   border: 1px solid #e2e8f0;
@@ -130,11 +138,6 @@
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
-
-
-/* ============================================================
-   TOOL CARDS WITH EMOJI ICON
-============================================================ */
 
 .tool-icon {
   width: 60px;
@@ -149,14 +152,14 @@
 }
 
 .card .content {
-  padding: 0 1.4rem 1.4rem;
+  padding: 0 1.4rem 1.2rem;
 }
 
 .card h3 {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.45rem;
 }
 
 .card p {
@@ -167,156 +170,82 @@
 
 
 /* ============================================================
-   MOBILE FIXES
+   CTA SECTION
 ============================================================ */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2.1rem;
-  }
-  .hero-image {
-    max-width: 90%;
-  }
-}
 
-
-
-/* ==========================================
-   NEON HERO (Three Glowing Cards)
-========================================== */
-
-.neon-hero {
-  background: linear-gradient(180deg, #0a0f27, #0c1133);
-  padding: 6rem 1.5rem 5rem;
+.cta-center {
   text-align: center;
-  color: #fff;
+  padding: 4rem 1.5rem;
 }
 
-.neon-title {
-  font-size: 2.9rem;
+.cta-center h2 {
+  font-size: 1.9rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
-.neon-subtitle {
-  max-width: 740px;
-  margin: 0 auto 3rem;
-  color: #cbd5e1;
-  font-size: 1.15rem;
-  line-height: 1.7;
+.cta-center p {
+  max-width: 700px;
+  margin: 0 auto 1.8rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+  font-size: 1rem;
 }
 
-.hero-feature-row {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2.8rem;
-  flex-wrap: wrap;
-}
-
-.hero-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  padding: 2.3rem 3rem;
-  width: 280px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  transition: 0.25s ease;
-  text-decoration: none;
-  color: #fff;
-  box-shadow: 0 0 25px rgba(80, 120, 255, 0.15);
-}
-
-.hero-card-center {
-  background: rgba(100, 80, 255, 0.15);
-  border-color: rgba(140, 120, 255, 0.4);
-  box-shadow: 0 0 35px rgba(120, 90, 255, 0.45);
-}
-
-.hero-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 40px rgba(120, 120, 255, 0.4);
-}
-
-.hero-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-card h3 {
-  font-size: 1.25rem;
-  margin: 0;
-  font-weight: 600;
-}
-
-/* CTA Buttons */
-.hero-buttons {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
 
 /* ============================================================
-   CLEAN SAAS HERO (Option A)
+   RESPONSIVE — MOBILE FIRST
 ============================================================ */
 
-.clean-hero {
-  background: #ffffff;
-  padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem;
-}
-
 @media (max-width: 768px) {
-  .clean-hero {
-    padding-top: calc(var(--mobile-nav-height) + 2rem);
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    padding: 0 .5rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .btn.primary,
+  .btn.outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card {
+    padding-bottom: 1rem;
   }
 }
 
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
 
-.hero-text {
-  flex: 1;
-  min-width: 320px;
-}
+/* Extra Small Devices */
+@media (max-width: 480px) {
 
-.hero-title {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: var(--text-main);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
+  .hero-title {
+    font-size: 1.85rem;
+  }
 
-.hero-sub {
-  color: var(--text-soft);
-  font-size: 1.15rem;
-  max-width: 550px;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
+  .hero-sub {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+  .tool-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.7rem;
+  }
 
-.hero-image-box {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-image {
-  max-width: 520px;
-  width: 100%;
-  border-radius: 14px;
+  .card h3 {
+    font-size: 1.15rem;
+  }
 }

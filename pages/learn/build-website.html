@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Build Your Website in 30 Minutes | Bita Digital Hub</title>
+
+  <meta name="description"
+    content="Launch your professional website in just 30 minutes. Simple step-by-step guide for beginners. No coding, no experience needed — start with affordable hosting and publish your site today." />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/guide.css" />
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
+
+
+
+<!-- ============================================================
+     HERO SECTION
+============================================================ -->
+<section class="hero guide-hero">
+  <div class="container">
+    <h1>Build Your Website in 30 Minutes</h1>
+    <p class="hero-sub">
+      You don’t need coding. You don’t need experience.  
+      Follow this simple guide and launch a clean, professional website today.
+    </p>
+
+    <a href="YOUR_HOSTINGER_LINK" class="btn primary hero-cta">
+      Start Now — Get Hosting
+    </a>
+
+    <img src="/assets/hero/hero-main.svg" alt="Website Builder Illustration" class="guide-hero-img" />
+  </div>
+</section>
+
+
+
+<!-- ============================================================
+     STEP 1 — GET HOSTING
+============================================================ -->
+<section class="section step">
+  <div class="container narrow">
+
+    <h2>Step 1 — Get Your Hosting & Domain (2 minutes)</h2>
+    <p>
+      Your website needs a home. Hosting is where your files live,  
+      and the domain is your address on the internet.  
+      Hostinger is the best option for beginners because it’s fast, affordable, and easy to set up.
+    </p>
+
+    <ul class="bullet-points">
+      <li>One-click WordPress install</li>
+      <li>Free domain on most plans</li>
+      <li>Fast loading & secure</li>
+      <li>Perfect for beginners</li>
+    </ul>
+
+    <a href="YOUR_HOSTINGER_LINK" class="btn primary">
+      Get Hosting & Domain
+    </a>
+
+  </div>
+</section>
+
+
+
+
+<!-- ============================================================
+     STEP 2 — INSTALL WORDPRESS
+============================================================ -->
+<section class="section step alt">
+  <div class="container narrow">
+
+    <h2>Step 2 — Install WordPress (1 click)</h2>
+    <p>
+      Hostinger will automatically install WordPress for you.  
+      No technical setup, no manual installation.  
+      Just click “Auto Install” — and you're ready to build.
+    </p>
+
+    <img src="/assets/guide/wp-auto-install.png" class="guide-img" alt="WordPress Install Screenshot">
+
+    <a href="YOUR_HOSTINGER_LINK" class="btn outline">
+      Open WordPress Installer
+    </a>
+  </div>
+</section>
+
+
+
+
+<!-- ============================================================
+     STEP 3 — CHOOSE A TEMPLATE
+============================================================ -->
+<section class="section step">
+  <div class="container narrow">
+
+    <h2>Step 3 — Choose a Template (5 minutes)</h2>
+
+    <p>
+      Your design is already done — just choose a clean, modern template.
+      These free themes are perfect for beginners:
+    </p>
+
+    <ul class="bullet-points">
+      <li>Astra</li>
+      <li>Kadence</li>
+      <li>Blocksy</li>
+    </ul>
+
+    <p>
+      Install a template, replace the text with your own,  
+      and your website is ready to publish.
+    </p>
+
+    <a href="YOUR_HOSTINGER_LINK" class="btn primary">
+      Launch Your Website
+    </a>
+
+  </div>
+</section>
+
+
+
+
+<!-- ============================================================
+     BONUS SECTION — FREE RESOURCES
+============================================================ -->
+<section class="section bonus">
+  <div class="container narrow">
+
+    <h2>Bonus — Free Tools to Make Your Website Better</h2>
+
+    <ul class="bullet-points">
+      <li>SEO Meta Generator → Write perfect titles & descriptions</li>
+      <li>URL Shortener → Share clean, trackable links</li>
+      <li>QR Generator → Create instant QR codes for menus & profiles</li>
+    </ul>
+
+  </div>
+</section>
+
+
+
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section class="section final-cta">
+  <div class="container text-center">
+
+    <h2>You’re 30 Minutes Away from Your Website</h2>
+    <p>
+      Start today. Your future website can be live before your coffee gets cold.
+    </p>
+
+    <a href="YOUR_HOSTINGER_LINK" class="btn primary big">
+      Start Building Now
+    </a>
+
+  </div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+</script>
+
+</body>
+</html>
