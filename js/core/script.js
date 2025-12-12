@@ -1,54 +1,53 @@
 /* ============================================
-   CORE SCRIPT — Mobile Navigation Controller
+   Mobile Navigation Controller
 ============================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const openBtn = document.getElementById("openMenu");
-  const closeBtn = document.getElementById("closeMenu");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const menuLinks = document.querySelectorAll(".mobile-nav a");
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const mobileNav = document.querySelector(".mobile-nav");
 
-  if (!openBtn || !closeBtn || !mobileMenu) return;
+  if (!toggleBtn || !mobileNav) return;
 
   const openMenu = () => {
-    mobileMenu.classList.add("active");
-    document.body.classList.add("menu-open");
+    mobileNav.classList.add("open");
+    document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
-    mobileMenu.classList.remove("active");
-    document.body.classList.remove("menu-open");
+    mobileNav.classList.remove("open");
+    document.body.style.overflow = "";
   };
 
-  openBtn.addEventListener("click", (e) => {
+  // Toggle button click
+  toggleBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    openMenu();
+
+    if (mobileNav.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
-  closeBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    closeMenu();
-  });
-
-  // Close when clicking a nav link
-  menuLinks.forEach(link => {
+  // Close when clicking a menu link
+  mobileNav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  // Close when clicking outside menu
+  // Close when clicking outside
   document.addEventListener("click", (e) => {
     if (
-      mobileMenu.classList.contains("active") &&
-      !mobileMenu.contains(e.target) &&
-      !openBtn.contains(e.target)
+      mobileNav.classList.contains("open") &&
+      !mobileNav.contains(e.target) &&
+      !toggleBtn.contains(e.target)
     ) {
       closeMenu();
     }
   });
 
-  // Optional: Close on ESC key
+  // Close on ESC key
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
+    if (e.key === "Escape" && mobileNav.classList.contains("open")) {
       closeMenu();
     }
   });
