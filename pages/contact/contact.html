@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Contact | Bita Digital Hub</title>
-
-  <meta name="description"
-        content="Get in touch with Bita Digital Hub for support, collaboration, partnership opportunities, or questions about our digital tools." />
+  <meta
+    name="description"
+    content="Get in touch with Bita Digital Hub for support, collaboration, partnership opportunities, or questions about our digital tools."
+  />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
@@ -23,7 +24,7 @@
 <script>
   fetch("/components/header.html")
     .then(res => res.text())
-    .then(html => { 
+    .then(html => {
       document.getElementById("header-placeholder").innerHTML = html;
     });
 </script>
@@ -32,7 +33,7 @@
 <section class="contact-hero">
   <h1>Contact Us</h1>
   <p>
-    Have a question, need support, or want to collaborate?  
+    Have a question, need support, or want to collaborate?
     Send us a message — we usually reply within 24 hours.
   </p>
 </section>
@@ -41,16 +42,17 @@
 <section class="contact-section">
   <div class="contact-container">
 
-    <form class="contact-form" 
-          action="/pages/contact/contact-success.html" 
-          method="POST" 
-          autocomplete="on">
+    <form
+      class="contact-form"
+      action="/pages/contact/contact-success.html"
+      method="POST"
+      autocomplete="on"
+    >
 
       <!-- NAME + EMAIL -->
       <div class="form-row">
-
         <label for="name" class="sr-only">Your Name</label>
-        <input 
+        <input
           id="name"
           name="name"
           type="text"
@@ -60,7 +62,7 @@
         />
 
         <label for="email" class="sr-only">Email Address</label>
-        <input 
+        <input
           id="email"
           name="email"
           type="email"
@@ -83,7 +85,9 @@
 
       <!-- BUTTON -->
       <div class="form-actions">
-        <button type="submit" class="btn-submit">Send Message</button>
+        <button type="submit" class="btn-submit">
+          Send Message
+        </button>
       </div>
 
     </form>
@@ -96,7 +100,7 @@
 <script>
   fetch("/components/footer.html")
     .then(res => res.text())
-    .then(html => { 
+    .then(html => {
       document.getElementById("footer-placeholder").innerHTML = html;
     });
 </script>

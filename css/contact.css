@@ -25,7 +25,7 @@
 
 /* CONTACT SECTION */
 .contact-section {
-  padding: 4rem 1.5rem;
+  padding: 3rem 1.5rem 5rem;
   display: flex;
   justify-content: center;
 }
@@ -37,11 +37,11 @@
 
 /* FORM CARD */
 .contact-form {
-  background: #fff;
-  padding: 2.4rem;
+  background: #ffffff;
+  padding: 2.5rem;
   border-radius: 16px;
   border: 1px solid var(--border-light);
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -67,12 +67,12 @@
   border: 1px solid #d1d5db;
   background: #f9fafb;
   font-size: 1rem;
-  transition: 0.25s ease;
+  transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  background: #fff;
+  background: #ffffff;
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
   outline: none;
@@ -83,29 +83,40 @@
   resize: vertical;
 }
 
+/* FORM ACTIONS */
+.form-actions {
+  margin-top: 0.5rem;
+}
+
 /* SUBMIT BUTTON */
 .btn-submit {
+  width: 100%;
   padding: 1rem;
-  background: #1e3a8a;
-  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
   font-size: 1.05rem;
   font-weight: 600;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn-submit:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
 }
 
 /* ANIMATION */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* RESPONSIVE */
@@ -126,13 +137,7 @@
   }
 }
 
-.contact-container {
-  max-width: 480px;
-}
-
-
-
-/* Fully hide labels for screen readers only */
+/* ACCESSIBILITY — Screen-reader only */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
