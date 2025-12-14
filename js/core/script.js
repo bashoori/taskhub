@@ -1,54 +1,63 @@
 /* ============================================
    Mobile Navigation Controller
+   Predictable, accessible, injection-safe
 ============================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initMobileNav() {
   const toggleBtn = document.querySelector(".menu-toggle");
   const mobileNav = document.querySelector(".mobile-nav");
 
   if (!toggleBtn || !mobileNav) return;
 
+  let isOpen = false;
+
   const openMenu = () => {
+    isOpen = true;
     mobileNav.classList.add("open");
-    document.body.style.overflow = "hidden";
+    toggleBtn.classList.add("active");
+    document.body.classList.add("nav-open");
   };
 
   const closeMenu = () => {
+    isOpen = false;
     mobileNav.classList.remove("open");
-    document.body.style.overflow = "";
+    toggleBtn.classList.remove("active");
+    document.body.classList.remove("nav-open");
   };
 
-  // Toggle button click
-  toggleBtn.addEventListener("click", (e) => {
+  const toggleMenu = (e) => {
     e.stopPropagation();
+    isOpen ? closeMenu() : openMenu();
+  };
 
-    if (mobileNav.classList.contains("open")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
+  /* Toggle button */
+  toggleBtn.addEventListener("click", toggleMenu);
 
-  // Close when clicking a menu link
+  /* Close when clicking a link */
   mobileNav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  // Close when clicking outside
+  /* Close on outside click */
   document.addEventListener("click", (e) => {
-    if (
-      mobileNav.classList.contains("open") &&
-      !mobileNav.contains(e.target) &&
-      !toggleBtn.contains(e.target)
-    ) {
+    if (isOpen && !mobileNav.contains(e.target) && !toggleBtn.contains(e.target)) {
       closeMenu();
     }
   });
 
-  // Close on ESC key
+  /* Close on ESC */
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && mobileNav.classList.contains("open")) {
+    if (e.key === "Escape" && isOpen) {
       closeMenu();
     }
   });
+}
+
+
+/* ============================================
+   Init after DOM + injected header
+============================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  initMobileNav();
 });
