@@ -7,18 +7,20 @@
   <title>Contact | Bita Digital Hub</title>
   <meta
     name="description"
-    content="Contact Bita Digital Hub for support, questions, or collaboration."
+    content="Contact Bita Digital Hub for support, questions, or collaboration. We usually reply within 24 hours."
   />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
   <link rel="stylesheet" href="/css/contact.css" />
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
   <div id="header-placeholder"></div>
   <script>
     fetch("/components/header.html")
@@ -29,78 +31,85 @@
   </script>
 
   <!-- =========================
-        CONTACT CARD
+       CONTACT
   ========================== -->
-  <main class="auth-page">
+  <main class="contact-page">
 
-    <section class="auth-card contact-card">
+    <section class="contact-section">
+      <div class="container">
 
-      <!-- Illustration placeholder -->
-      <div class="auth-illustration">
-        <!-- optional SVG or icon later -->
+        <div class="contact-card">
+
+          <h1 class="contact-title">Contact Us</h1>
+
+          <p class="contact-subtitle">
+            Have a question, need support, or want to collaborate?
+            Send us a message and we’ll reply within 24 hours.
+          </p>
+
+          <form
+            class="contact-form auth-form"
+            method="POST"
+            action="https://script.google.com/macros/s/AKfycbyZXDE3xUjdhFlGJFhXeASDngvgrkjDAAx_VadSqa3Rp_nH3_ndGGmnkEkFl9RwQXhr8A/exec"
+          >
+
+            <!-- Honeypot (spam protection) -->
+            <input
+              type="text"
+              name="company"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+              style="display:none"
+            />
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              aria-label="Full Name"
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              aria-label="Email Address"
+              required
+            />
+
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your message"
+              aria-label="Your message"
+              required
+            ></textarea>
+
+            <button type="submit" class="btn primary auth-btn">
+              Send Message
+            </button>
+
+          </form>
+
+          <p class="auth-footer-text">
+            Prefer email?
+            <a href="mailto:contact@bitadigitalhub.com">
+              contact@bitadigitalhub.com
+            </a>
+          </p>
+
+        </div>
+
       </div>
-
-      <h1 class="auth-title">Contact Us</h1>
-
-      <p class="auth-subtitle">
-        Have a question, need support, or want to collaborate?
-        Send us a message and we’ll reply within 24 hours.
-      </p>
-
-      <form
-        class="auth-form"
-        method="POST"
-        action="https://script.google.com/macros/s/AKfycbyZXDE3xUjdhFlGJFhXeASDngvgrkjDAAx_VadSqa3Rp_nH3_ndGGmnkEkFl9RwQXhr8A/exec"
-      >
-
-        <!-- Honeypot -->
-        <input
-          type="text"
-          name="company"
-          tabindex="-1"
-          autocomplete="off"
-          style="display:none"
-        />
-
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          required
-        />
-
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          required
-        />
-
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Your message"
-          required
-        ></textarea>
-
-        <button type="submit" class="btn primary auth-btn">
-          Send Message
-        </button>
-
-      </form>
-
-      <p class="auth-footer-text">
-        Prefer email?
-        <a href="mailto:contact@bitadigitalhub.com">
-          contact@bitadigitalhub.com
-        </a>
-      </p>
-
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <div id="footer-placeholder"></div>
   <script>
     fetch("/components/footer.html")
