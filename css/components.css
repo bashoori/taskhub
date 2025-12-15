@@ -313,3 +313,74 @@
     padding: 2.2rem 1.2rem 1.6rem;
   }
 }
+
+/* ============================================================
+   TOOL ICON SYSTEM
+   Used across cards, tools, homepage, generators
+============================================================ */
+
+.tool-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--icon-bg, #f1f5f9);
+  color: var(--icon-color, #4f46e5);
+
+  margin-bottom: 1rem;
+}
+
+.tool-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.8;
+}
+
+
+/* ============================================================
+   ICON COLOR THEMES
+============================================================ */
+
+.icon-blue {
+  --icon-bg: #eef2ff;
+  --icon-color: #4f46e5;
+}
+
+.icon-purple {
+  --icon-bg: #f5f3ff;
+  --icon-color: #7c3aed;
+}
+
+.icon-green {
+  --icon-bg: #ecfdf5;
+  --icon-color: #059669;
+}
+
+.icon-orange {
+  --icon-bg: #fff7ed;
+  --icon-color: #ea580c;
+}
+
+.icon-pink {
+  --icon-bg: #fdf2f8;
+  --icon-color: #db2777;
+}
+
+
+/* ============================================================
+   PRIMARY CARD EMPHASIS
+============================================================ */
+
+.card.primary .tool-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.card.primary .tool-icon svg {
+  width: 32px;
+  height: 32px;
+}
