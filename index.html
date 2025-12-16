@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Bita Digital Hub | Simple Digital Tools</title>
+  <title>Bita Digital Hub | Free Practical Digital Tools</title>
 
   <meta
     name="description"
-    content="Free, fast, and practical tools to get everyday digital work done. Built for creators, freelancers, and small businesses."
+    content="Free, fast, and practical digital tools built for creators, freelancers, and small businesses. Use them instantly or learn how to turn them into income."
   />
 
   <!-- Styles -->
@@ -23,118 +23,141 @@
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("header-placeholder").innerHTML = html;
-        lucide.createIcons();
-      });
-  </script>
+<!-- =========================
+     HEADER
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+      lucide.createIcons();
+    });
+</script>
 
-  <!-- =========================
-       HERO
-  ========================== -->
-  <section class="hero clean-hero section">
-    <div class="container text-center">
+<!-- =========================
+     HERO
+========================== -->
+<section class="hero clean-hero section">
+  <div class="container text-center">
 
-      <h1 class="hero-title">
-        Simple tools to get everyday digital work done
-      </h1>
+    <h1 class="hero-title">
+      Simple digital tools that help you get real work done
+    </h1>
 
-      <p class="hero-sub">
-        Free, practical tools for creators, freelancers,
-        and small businesses.
+    <p class="hero-sub">
+      Free, practical tools built for creators, freelancers,
+      and small businesses who want clarity — not complexity.
+    </p>
+
+    <div class="hero-actions center">
+      <a href="/pages/tools/tools.html" class="btn primary">
+        Explore free tools
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     TOOLS
+========================== -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <h2 class="section-title">
+        Tools you can use right now
+      </h2>
+
+      <p class="section-subtitle">
+        Each tool solves a small, specific problem — without setup or learning curves.
       </p>
+    </div>
 
-      <div class="hero-actions center">
-        <a href="/pages/tools/tools.html" class="btn primary">
-          Explore free tools
-        </a>
-      </div>
+    <div class="card-grid">
+
+      <!-- SEO Tool -->
+      <a href="/pages/tools/generators/seo-meta-generator/"
+         class="card tool-card">
+
+        <img
+          src="/assets/images/tools/seo-meta-generator.png"
+          alt="SEO Title and Meta Description Generator"
+          class="tool-image"
+        />
+
+        <div class="tool-icon">
+          <i data-lucide="search"></i>
+        </div>
+
+        <h3>SEO Title & Description Generator</h3>
+        <p>Write clear titles and descriptions for search engines and humans.</p>
+      </a>
+
+      <!-- Instagram Bio Tool -->
+      <a href="/pages/tools/generators/instagram-bio-generator/"
+         class="card tool-card">
+
+        <img
+          src="/assets/images/tools/instagram-bio-generator.png"
+          alt="Instagram Bio and Description Generator"
+          class="tool-image"
+        />
+
+        <div class="tool-icon">
+          <i data-lucide="instagram"></i>
+        </div>
+
+        <h3>Instagram Bio & Description Generator</h3>
+        <p>Explain what you do in one clear, confident bio.</p>
+      </a>
+
+      <!-- Instagram Caption Tool -->
+      <a href="/pages/tools/instagram-caption-generator/"
+         class="card tool-card">
+
+        <img
+          src="/assets/images/tools/instagram-caption-generator.png"
+          alt="Instagram Caption Generator"
+          class="tool-image"
+        />
+
+        <div class="tool-icon">
+          <i data-lucide="edit-3"></i>
+        </div>
+
+        <h3>Instagram Caption Generator</h3>
+        <p>Write captions people actually read and understand.</p>
+      </a>
 
     </div>
-  </section>
 
-  <!-- =========================
-       TOOLS
-  ========================== -->
-  <section class="section">
-    <div class="container">
+  </div>
+</section>
 
-      <div class="section-head">
-        <h2 class="section-title">
-          Tools you can use right now
-        </h2>
-
-        <p class="section-subtitle">
-          Simple tools that help people understand what you do
-          on search and on social.
-        </p>
-      </div>
-
-      <div class="card-grid">
-
-        <!-- SEO Tool -->
-        <a href="/pages/tools/generators/seo-meta-generator/"
-           class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="search"></i>
-          </div>
-          <h3>SEO Title & Description Generator</h3>
-          <p>Explain your page clearly to Google and real people.</p>
-        </a>
-
-        <!-- Instagram Bio Tool -->
-        <a href="/pages/tools/generators/instagram-bio-generator/"
-           class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="instagram"></i>
-          </div>
-          <h3>Instagram Bio & Description Generator</h3>
-          <p>Tell people what you do in seconds.</p>
-        </a>
-
-        <!-- Instagram Caption Tool -->
-        <a href="/pages/tools/instagram-caption-generator/"
-           class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="edit-3"></i>
-          </div>
-          <h3>Instagram Caption Generator</h3>
-          <p>Write captions people actually read.</p>
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================
-       GUIDE CTA
-  ========================== -->
-  <section class="section">
+<!-- =========================
+     GUIDE CTA
+========================== -->
+<section class="section">
   <div class="container">
 
     <div class="cta-surface text-center">
 
       <h2>
-        Get the step-by-step guide to make money with these tools
+        Want to turn these tools into income?
       </h2>
 
       <p class="value-text">
-        Learn practical ways to turn simple tools into useful services
-        and small income streams.
+        Learn how people use simple tools like these to offer small services
+        and build honest income streams — step by step.
       </p>
 
       <div class="cta-actions">
         <a href="/pages/guides/make-money-with-tools.html"
            class="btn primary">
-          Get the guide
+          View the guide
         </a>
       </div>
 
@@ -143,21 +166,18 @@
   </div>
 </section>
 
-
-  
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("footer-placeholder").innerHTML = html;
-        lucide.createIcons();
-      });
-  </script>
+<!-- =========================
+     FOOTER
+========================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+      lucide.createIcons();
+    });
+</script>
 
 </body>
 </html>
