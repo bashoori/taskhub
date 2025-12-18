@@ -1,6 +1,7 @@
 /* ============================================================
-   HOME.CSS — Clear, Calm, Intentional
-   Homepage only (hero, tools, CTA)
+   HOME.CSS
+   Scope: homepage only
+   Responsibility: base structure + visual intent
 ============================================================ */
 
 
@@ -8,11 +9,10 @@
    HERO — BASE
 ============================================================ */
 
-
 .hero {
   background: var(--bg-soft);
   text-align: center;
-  padding: calc(var(--nav-height) + 5rem) 1.5rem 4.5rem;
+  padding: 6rem 1.5rem 4.5rem; /* no nav math here */
 }
 
 .hero-eyebrow {
@@ -48,24 +48,26 @@
 
 
 /* ============================================================
-   HERO SURFACE (visual containment)
+   HERO SURFACE
 ============================================================ */
 
 .hero-surface {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+
   background: linear-gradient(
     180deg,
     rgba(59, 130, 246, 0.08),
     rgba(99, 102, 241, 0.05)
   );
+
   border-radius: 28px;
-  padding: 3.5rem 2.5rem;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
 
 /* ============================================================
-   SECTION STRUCTURE
+   SECTIONS
 ============================================================ */
 
 .section {
@@ -107,7 +109,7 @@
 }
 
 .card {
-  background: #ffffff;
+  background: #fff;
   border-radius: 18px;
   padding: 1.6rem;
   text-decoration: none;
@@ -130,14 +132,14 @@
 .card-icon {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
-  background: rgba(59, 130, 246, 0.12);
+  margin-bottom: 0.9rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 0.9rem;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.12);
 }
 
 .card-icon svg {
@@ -146,14 +148,14 @@
   color: var(--primary);
 }
 
-.card .content h3 {
+.card h3 {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.4rem;
 }
 
-.card .content p {
+.card p {
   font-size: 0.95rem;
   line-height: 1.55;
   color: var(--text-soft);
@@ -176,15 +178,17 @@
 }
 
 .cta-surface {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3.2rem 2rem;
+
   background: linear-gradient(
     180deg,
     rgba(99, 102, 241, 0.08),
     rgba(59, 130, 246, 0.05)
   );
+
   border-radius: 26px;
-  padding: 3.2rem 2rem;
-  max-width: 880px;
-  margin: 0 auto;
 }
 
 .cta-center h2 {
@@ -203,7 +207,7 @@
 
 
 /* ============================================================
-   DESKTOP CONSTRAINTS (≥1024px)
+   DESKTOP ENHANCEMENTS (≥1024px)
 ============================================================ */
 
 @media (min-width: 1024px) {
@@ -216,65 +220,5 @@
 
   .hero-sub {
     max-width: 720px;
-  }
-}
-
-
-/* ============================================================
-   TABLET & MOBILE
-============================================================ */
-
-@media (max-width: 768px) {
-
-  .hero {
-    padding-top: calc(var(--mobile-nav-height) + 2.5rem);
-  }
-
-  .hero-surface {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-surface {
-    padding: 2.2rem 1.5rem;
-  }
-}
-
-
-/* ============================================================
-   SMALL MOBILE
-============================================================ */
-
-@media (max-width: 480px) {
-
-  .hero {
-    padding-bottom: 2.5rem;
-  }
-
-  .hero-title {
-    font-size: 1.9rem;
-    line-height: 1.25;
-  }
-
-  .hero-sub {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-surface {
-    padding: 2rem 1.4rem;
-    border-radius: 22px;
   }
 }
