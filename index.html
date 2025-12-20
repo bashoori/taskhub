@@ -11,10 +11,27 @@
     content="Collect leads, clean data, automate workflows, and receive clear weekly reports. Start free with no setup or commitment."
   />
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/landing.css" />
+
+  <!-- Scripts -->
+  <script src="/js/core/script.js" defer></script>
 </head>
 
 <body>
+
+<!-- =========================
+     HEADER / MENU
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
 
 <main>
 
