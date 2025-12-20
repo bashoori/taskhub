@@ -4,36 +4,76 @@
 
 :root {
   --bg: #f8fafc;
+  --surface: #ffffff;
   --text: #0f172a;
   --muted: #475569;
   --primary: #0ea5a4;
   --border: #e2e8f0;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
 }
 
+/* =================================================
+   BUTTONS (shared)
+================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.ghost {
+  color: var(--primary);
+}
+
+.btn.link {
+  padding: 0;
+  color: var(--primary);
+}
 
 /* =================================================
    HEADER
 ================================================= */
 
 .site-header {
-  background-color: #ffffff;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
 
@@ -56,17 +96,15 @@ body {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  display: block;
 }
 
 .brand-name {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  white-space: nowrap;
 }
 
-/* Normalize brand link states */
+/* Normalize link behavior */
 .brand,
 .brand:hover,
 .brand:focus,
@@ -80,40 +118,155 @@ body {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
-.site-header .btn {
-  line-height: 1;
-  white-space: nowrap;
+/* =================================================
+   HERO
+================================================= */
+
+.hero {
+  padding: 4rem 0 3.5rem;
 }
 
-/* Social links */
-.social-link {
-  font-size: 0.9rem;
-  color: var(--muted);
-  text-decoration: none;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-.social-link:hover {
+.hero-text h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 span {
   color: var(--primary);
 }
 
+.hero-text p {
+  max-width: 520px;
+  color: var(--muted);
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-note {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 
 /* =================================================
-   HERO / SECTIONS / BUTTONS
-   (بخش‌های فعلی لندینگت اینجا می‌آیند)
+   SECTIONS
 ================================================= */
 
-/* … hero, sections, buttons, plans, etc … */
+.section {
+  padding: 3.5rem 0;
+}
 
+.section.muted {
+  background: var(--surface);
+}
+
+.section.highlight {
+  background: #ecfeff;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+/* =================================================
+   CHECKLIST
+================================================= */
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* =================================================
+   STEPS
+================================================= */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.step h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* =================================================
+   PLANS
+================================================= */
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.plan {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.plan ul {
+  padding-left: 1.2rem;
+}
+
+.plan-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.plan-info .small {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 
 /* =================================================
    FOOTER
 ================================================= */
 
 .site-footer {
-  background-color: #ffffff;
+  background: var(--surface);
   border-top: 1px solid var(--border);
   padding: 2rem 0;
 }
@@ -126,19 +279,17 @@ body {
 
 .site-footer p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
-/* Footer social */
 .footer-social {
   display: flex;
-  align-items: center;
   gap: 1rem;
 }
 
 .footer-social a {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--muted);
   text-decoration: none;
 }
@@ -147,22 +298,50 @@ body {
   color: var(--primary);
 }
 
-
 /* =================================================
-   RESPONSIVE
+   MOBILE (≤ 768px)
 ================================================= */
 
 @media (max-width: 768px) {
+
+  /* Header */
   .brand-name {
     display: none;
   }
 
-  .header-actions {
-    gap: 0.8rem;
+  .site-header .container {
+    height: 56px;
   }
 
+  /* Hero */
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Steps */
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  /* Plans */
+  .plan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
   .site-footer .container {
     flex-direction: column;
     gap: 0.75rem;
+    text-align: center;
   }
 }
