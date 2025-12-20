@@ -22,18 +22,18 @@
 <header class="site-header">
   <div class="container">
 
-    <a href="/" class="brand">
+    <a href="/" class="brand" aria-label="Bita Digital Hub">
       <img
         src="/assets/icons/taskhub-logo.svg"
-        alt="Bita Digital Hub"
+        alt=""
         class="brand-logo"
       />
       <span class="brand-name">BitaDigitalHub</span>
     </a>
 
-    <div class="header-actions">
+    <nav class="header-actions" aria-label="Primary">
       <a href="#free" class="btn ghost">Start free</a>
-    </div>
+    </nav>
 
   </div>
 </header>
@@ -46,6 +46,7 @@
 <section class="hero">
   <div class="container hero-grid">
 
+    <!-- Text always first for mobile -->
     <div class="hero-text">
       <h1>
         See your leads in one clean weekly report.
@@ -59,7 +60,7 @@
 
       <div class="hero-actions">
         <a href="#free" class="btn primary">Start free</a>
-        <a href="#system" class="btn link">See how it works →</a>
+        <a href="#system" class="btn link">See how it works</a>
       </div>
 
       <p class="hero-note">
@@ -67,10 +68,11 @@
       </p>
     </div>
 
-    <div class="hero-visual">
+    <!-- Visual safely collapses below text on mobile -->
+    <div class="hero-visual" aria-hidden="true">
       <img
         src="/assets/images/reports.png"
-        alt="Automated weekly lead report preview"
+        alt="Preview of an automated weekly lead report"
         loading="lazy"
       />
     </div>
@@ -106,25 +108,25 @@
 
     <div class="steps">
 
-      <div class="step">
+      <article class="step">
         <h3>Collect</h3>
         <p>Forms, CSV files, emails, CRM, WhatsApp</p>
-      </div>
+      </article>
 
-      <div class="step">
+      <article class="step">
         <h3>Clean</h3>
         <p>Standardized, structured, ready-to-use data</p>
-      </div>
+      </article>
 
-      <div class="step">
+      <article class="step">
         <h3>Automate</h3>
         <p>Remove manual copy-paste and follow-ups</p>
-      </div>
+      </article>
 
-      <div class="step">
+      <article class="step">
         <h3>Report</h3>
         <p>Weekly reports and dashboards you can trust</p>
-      </div>
+      </article>
 
     </div>
 
@@ -166,7 +168,7 @@
       </ul>
 
       <p class="small">
-        This system is not designed for hobby projects or free-only tools.
+        Not designed for hobby projects or free-only tools.
       </p>
     </div>
 
