@@ -1,5 +1,5 @@
 /* =================================================
-   VARIABLES & BASE
+   DESIGN TOKENS
 ================================================= */
 
 :root {
@@ -9,7 +9,14 @@
   --muted: #475569;
   --primary: #0ea5a4;
   --border: #e2e8f0;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
 }
+
+/* =================================================
+   RESET & BASE
+================================================= */
 
 *,
 *::before,
@@ -17,27 +24,40 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
+a {
+  color: inherit;
 }
 
 /* =================================================
-   BUTTONS (shared)
+   LAYOUT
+================================================= */
+
+.container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* =================================================
+   BUTTONS
 ================================================= */
 
 .btn {
@@ -45,7 +65,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.6rem 1.2rem;
+  padding: 0.65rem 1.25rem;
   font-size: 0.9rem;
   font-weight: 500;
   border-radius: 999px;
@@ -55,8 +75,8 @@ img {
 }
 
 .btn.primary {
-  background: var(--primary);
-  color: #fff;
+  background-color: var(--primary);
+  color: #ffffff;
 }
 
 .btn.ghost {
@@ -73,7 +93,7 @@ img {
 ================================================= */
 
 .site-header {
-  background: var(--surface);
+  background-color: var(--surface);
   border-bottom: 1px solid var(--border);
 }
 
@@ -86,7 +106,7 @@ img {
 
 /* Brand */
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
@@ -95,30 +115,18 @@ img {
 .brand-logo {
   width: 36px;
   height: 36px;
-  object-fit: contain;
 }
 
 .brand-name {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text);
-}
-
-/* Normalize link behavior */
-.brand,
-.brand:hover,
-.brand:focus,
-.brand:active,
-.brand:visited {
-  color: inherit;
-  text-decoration: none;
+  line-height: 1;
 }
 
 /* Header actions */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 /* =================================================
@@ -126,7 +134,7 @@ img {
 ================================================= */
 
 .hero {
-  padding: 4rem 0 3.5rem;
+  padding-block: 4rem 3.5rem;
 }
 
 .hero-grid {
@@ -139,7 +147,7 @@ img {
 .hero-text h1 {
   font-size: clamp(2rem, 4vw, 2.6rem);
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
 
 .hero-text h1 span {
@@ -168,15 +176,15 @@ img {
 ================================================= */
 
 .section {
-  padding: 3.5rem 0;
+  padding-block: 3.5rem;
 }
 
 .section.muted {
-  background: var(--surface);
+  background-color: var(--surface);
 }
 
 .section.highlight {
-  background: #ecfeff;
+  background-color: #ecfeff;
 }
 
 .section h2 {
@@ -204,6 +212,7 @@ img {
   content: "✓";
   position: absolute;
   left: 0;
+  top: 0;
   color: var(--primary);
   font-weight: 600;
 }
@@ -219,19 +228,18 @@ img {
 }
 
 .step {
-  background: var(--surface);
+  background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   padding: 1.5rem;
 }
 
 .step h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
 }
 
 /* =================================================
-   PLANS
+   PRICING / PLANS
 ================================================= */
 
 .plan-grid {
@@ -241,9 +249,9 @@ img {
 }
 
 .plan {
-  background: var(--surface);
+  background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 2rem;
 }
 
@@ -251,11 +259,7 @@ img {
   padding-left: 1.2rem;
 }
 
-.plan-note {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
+.plan-note,
 .plan-info .small {
   font-size: 0.85rem;
   color: var(--muted);
@@ -266,9 +270,9 @@ img {
 ================================================= */
 
 .site-footer {
-  background: var(--surface);
+  background-color: var(--surface);
   border-top: 1px solid var(--border);
-  padding: 2rem 0;
+  padding-block: 2rem;
 }
 
 .site-footer .container {
@@ -290,8 +294,8 @@ img {
 
 .footer-social a {
   font-size: 0.85rem;
-  color: var(--muted);
   text-decoration: none;
+  color: var(--muted);
 }
 
 .footer-social a:hover {
@@ -305,17 +309,17 @@ img {
 @media (max-width: 768px) {
 
   /* Header */
-  .brand-name {
-    display: none;
-  }
-
   .site-header .container {
     height: 56px;
   }
 
+  .brand-name {
+    display: none;
+  }
+
   /* Hero */
   .hero {
-    padding: 3rem 0;
+    padding-block: 3rem;
   }
 
   .hero-grid {
