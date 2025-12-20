@@ -1,13 +1,43 @@
-/* =========================
-   HEADER FIX
-========================== */
+/* =================================================
+   VARIABLES & BASE
+================================================= */
+
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #0ea5a4;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+/* =================================================
+   HEADER
+================================================= */
 
 .site-header {
-  background: #ffffff;
+  background-color: #ffffff;
   border-bottom: 1px solid var(--border);
 }
 
-.header-flex {
+.site-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +46,7 @@
 
 /* Brand */
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
@@ -25,6 +55,7 @@
 .brand-logo {
   width: 36px;
   height: 36px;
+  object-fit: contain;
   display: block;
 }
 
@@ -32,16 +63,106 @@
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
+  white-space: nowrap;
 }
 
-/* Remove default link styles */
-.brand:visited,
+/* Normalize brand link states */
+.brand,
 .brand:hover,
-.brand:active {
+.brand:focus,
+.brand:active,
+.brand:visited {
   color: inherit;
+  text-decoration: none;
 }
 
-/* Header button alignment */
+/* Header actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
 .site-header .btn {
   line-height: 1;
+  white-space: nowrap;
+}
+
+/* Social links */
+.social-link {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: var(--primary);
+}
+
+
+/* =================================================
+   HERO / SECTIONS / BUTTONS
+   (بخش‌های فعلی لندینگت اینجا می‌آیند)
+================================================= */
+
+/* … hero, sections, buttons, plans, etc … */
+
+
+/* =================================================
+   FOOTER
+================================================= */
+
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Footer social */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-social a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: var(--primary);
+}
+
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 768px) {
+  .brand-name {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.8rem;
+  }
+
+  .site-footer .container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
