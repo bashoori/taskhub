@@ -11,161 +11,159 @@
     content="Collect leads, clean data, automate workflows, and receive clear weekly reports. Start free with no setup or commitment."
   />
 
-  <!-- Base styles -->
-  <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/landing.css" />
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================== -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById("header-placeholder").innerHTML = html;
-    });
-</script>
-
 <main>
 
-<!-- =========================
-     TITLE (HERO — TEXT ONLY)
-========================== -->
-<section class="hero hero-title-only">
-  <div class="container text-center">
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="hero">
+    <div class="container hero-grid">
 
-    <h1>
-      See your leads in one clean weekly report.
-      <span>Automatically.</span>
-    </h1>
+      <!-- Text -->
+      <div class="hero-text">
+        <h1>
+          See your leads in one clean weekly report.
+          <span>Automatically.</span>
+        </h1>
 
-    <p class="hero-sub">
-      Connect one lead source and receive a simple weekly snapshot.
-      No setup. No commitment.
-    </p>
+        <p>
+          Connect one lead source and receive a simple weekly snapshot.
+          No setup. No commitment.
+        </p>
 
-    <div class="hero-actions">
-      <a href="#free" class="btn primary">Start free</a>
-      <a href="#system" class="btn link">See how it works</a>
-    </div>
+        <div class="hero-actions">
+          <a href="#free" class="btn primary">Start free</a>
+          <a href="#system" class="btn link">See how it works</a>
+        </div>
 
-    <p class="hero-note">
-      Free plan includes up to 50 leads per month.
-    </p>
+        <p class="hero-note">
+          Free plan includes up to 50 leads per month.
+        </p>
+      </div>
 
-  </div>
-</section>
-
-<!-- =========================
-     PAIN
-========================== -->
-<section class="section muted">
-  <div class="container pain-grid">
-
-    <!-- Left: Visual -->
-    <div class="pain-visual">
-      <img
-        src="/assets/images/report3.png"
-        alt="Messy workflows and manual reporting"
-        loading="lazy"
-      />
-    </div>
-
-    <!-- Right: Content -->
-    <div class="pain-content">
-      <h2>Does this sound familiar?</h2>
-
-      <ul class="checklist">
-        <li>Leads arrive from forms, emails, or WhatsApp</li>
-        <li>Data lives in spreadsheets</li>
-        <li>Reports are built manually or skipped</li>
-        <li>Everything depends on one busy person</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     SYSTEM
-========================== -->
-<section id="system" class="section">
-  <div class="container">
-
-    <h2>A simple system that works end to end</h2>
-
-    <div class="steps">
-
-      <article class="step">
-        <h3>Collect</h3>
-        <p>Forms, CSV files, emails, CRM, WhatsApp</p>
-      </article>
-
-      <article class="step">
-        <h3>Clean</h3>
-        <p>Standardized, structured, ready-to-use data</p>
-      </article>
-
-      <article class="step">
-        <h3>Automate</h3>
-        <p>Remove manual copy-paste and follow-ups</p>
-      </article>
-
-      <article class="step">
-        <h3>Report</h3>
-        <p>Weekly reports and dashboards you can trust</p>
-      </article>
+      <!-- Visual -->
+      <div class="hero-visual" aria-hidden="true">
+        <img
+          src="/assets/images/reports.png"
+          alt="Preview of an automated weekly lead report"
+          loading="lazy"
+        />
+      </div>
 
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- =========================
+       PAIN
+  ========================== -->
+  <section class="section muted">
+    <div class="container pain-grid">
 
-<!-- =========================
-     FREE PLAN
-========================== -->
-<section id="free" class="section highlight">
-  <div class="container plan-grid">
+      <!-- Visual -->
+      <div class="pain-visual">
+        <img
+          src="/assets/images/report3.png"
+          alt="Messy workflows and manual reporting"
+          loading="lazy"
+        />
+      </div>
 
-    <div class="plan">
-      <h3>Free Plan</h3>
+      <!-- Content -->
+      <div class="pain-content">
+        <h2>Does this sound familiar?</h2>
 
-      <ul>
-        <li>1 lead source</li>
-        <li>Up to 50 leads per month</li>
-        <li>Stored in Google Sheets</li>
-        <li>Weekly snapshot report</li>
-      </ul>
+        <ul class="checklist">
+          <li>Leads arrive from forms, emails, or WhatsApp</li>
+          <li>Data lives in spreadsheets</li>
+          <li>Reports are built manually or skipped</li>
+          <li>Everything depends on one busy person</li>
+        </ul>
+      </div>
 
-      <p class="plan-note">
-        No automation, customization, or support.
-      </p>
-
-      <a href="/pages/landing/start-free.html" class="btn primary">
-        Start free
-      </a>
     </div>
+  </section>
 
-    <div class="plan-info">
-      <h3>This is for you if:</h3>
+  <!-- =========================
+       SYSTEM
+  ========================== -->
+  <section id="system" class="section">
+    <div class="container">
 
-      <ul class="checklist">
-        <li>You receive leads regularly</li>
-        <li>You still manage data manually</li>
-        <li>You want clarity instead of chaos</li>
-      </ul>
+      <h2>A simple system that works end to end</h2>
 
-      <p class="small">
-        Not designed for hobby projects or free-only tools.
-      </p>
+      <div class="steps">
+
+        <article class="step">
+          <h3>Collect</h3>
+          <p>Forms, CSV files, emails, CRM, WhatsApp</p>
+        </article>
+
+        <article class="step">
+          <h3>Clean</h3>
+          <p>Standardized, structured, ready-to-use data</p>
+        </article>
+
+        <article class="step">
+          <h3>Automate</h3>
+          <p>Remove manual copy-paste and follow-ups</p>
+        </article>
+
+        <article class="step">
+          <h3>Report</h3>
+          <p>Weekly reports and dashboards you can trust</p>
+        </article>
+
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- =========================
+       FREE PLAN
+  ========================== -->
+  <section id="free" class="section highlight">
+    <div class="container plan-grid">
+
+      <div class="plan">
+        <h3>Free Plan</h3>
+
+        <ul>
+          <li>1 lead source</li>
+          <li>Up to 50 leads per month</li>
+          <li>Stored in Google Sheets</li>
+          <li>Weekly snapshot report</li>
+        </ul>
+
+        <p class="plan-note">
+          No automation, customization, or support.
+        </p>
+
+        <a href="/pages/landing/start-free.html" class="btn primary">
+          Start free
+        </a>
+      </div>
+
+      <div class="plan-info">
+        <h3>This is for you if:</h3>
+
+        <ul class="checklist">
+          <li>You receive leads regularly</li>
+          <li>You still manage data manually</li>
+          <li>You want clarity instead of chaos</li>
+        </ul>
+
+        <p class="small">
+          Not designed for hobby projects or free-only tools.
+        </p>
+      </div>
+
+    </div>
+  </section>
 
 </main>
 
