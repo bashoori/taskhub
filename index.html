@@ -18,7 +18,47 @@
 
 <body>
 
+<!-- =========================
+     HEADER
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
+
 <main>
+
+<!-- =========================
+     TITLE (HERO — TEXT ONLY)
+========================== -->
+<section class="hero hero-title-only">
+  <div class="container text-center">
+
+    <h1>
+      See your leads in one clean weekly report.
+      <span>Automatically.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Connect one lead source and receive a simple weekly snapshot.
+      No setup. No commitment.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#free" class="btn primary">Start free</a>
+      <a href="#system" class="btn link">See how it works</a>
+    </div>
+
+    <p class="hero-note">
+      Free plan includes up to 50 leads per month.
+    </p>
+
+  </div>
+</section>
 
 <!-- =========================
      PAIN
@@ -45,46 +85,6 @@
         <li>Reports are built manually or skipped</li>
         <li>Everything depends on one busy person</li>
       </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     HERO
-========================== -->
-<section class="hero">
-  <div class="container hero-grid">
-
-    <!-- Text first (mobile-safe) -->
-    <div class="hero-text">
-      <h1>
-        See your leads in one clean weekly report.
-        <span>Automatically.</span>
-      </h1>
-
-      <p>
-        Connect one lead source and receive a simple weekly snapshot.
-        No setup. No commitment.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#free" class="btn primary">Start free</a>
-        <a href="#system" class="btn link">See how it works</a>
-      </div>
-
-      <p class="hero-note">
-        Free plan includes up to 50 leads per month.
-      </p>
-    </div>
-
-    <!-- Visual -->
-    <div class="hero-visual" aria-hidden="true">
-      <img
-        src="/assets/images/reports.png"
-        alt="Preview of an automated weekly lead report"
-        loading="lazy"
-      />
     </div>
 
   </div>
