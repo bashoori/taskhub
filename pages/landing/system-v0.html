@@ -38,7 +38,6 @@
 <section class="hero hero-title-only">
   <div class="container hero-stack text-center">
 
-    <!-- Text -->
     <div class="hero-copy">
       <h1>
         Get a clean weekly lead report.
@@ -54,7 +53,6 @@
       </p>
     </div>
 
-    <!-- Illustration -->
     <div class="hero-illustration">
       <img
         src="/assets/images/system-v0.png"
@@ -86,36 +84,49 @@
 </section>
 
 <!-- =========================
-     INPUT
+     INPUT (Google Form backend)
 ========================== -->
 <section class="section highlight">
   <div class="container">
 
     <h2>Upload your leads</h2>
 
-    <form class="lead-form">
+    <form
+      class="lead-form"
+      action="https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+      method="POST"
+      target="_blank"
+      enctype="multipart/form-data"
+    >
 
       <div class="form-group">
-        <label for="email">Your email</label>
+        <label>Your email</label>
         <input
           type="email"
-          id="email"
-          name="email"
+          name="entry.1234567890"
           placeholder="you@example.com"
           required
         />
       </div>
 
       <div class="form-group">
-        <label for="file">Leads file (CSV)</label>
+        <label>Leads file (CSV)</label>
         <input
           type="file"
-          id="file"
-          name="file"
+          name="entry.0987654321"
           accept=".csv"
           required
         />
         <small>One file. One source. Up to 50 leads.</small>
+      </div>
+
+      <div class="form-group">
+        <label>Notes (optional)</label>
+        <textarea
+          name="entry.1112131415"
+          rows="3"
+          placeholder="Anything we should know?"
+        ></textarea>
       </div>
 
       <button type="submit" class="btn primary">
@@ -125,7 +136,7 @@
     </form>
 
     <p class="form-note">
-      Your file is processed for reporting only.
+      Submissions are reviewed manually during the beta.
       No tracking. No reuse.
     </p>
 
@@ -179,7 +190,7 @@
 ========================== -->
 <footer class="site-footer">
   <div class="container">
-    <p>©2025 Bita Digital Hub </p>
+    <p>© 2025 Bita Digital Hub</p>
   </div>
 </footer>
 
