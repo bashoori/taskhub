@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How It Works | From Messy Data to Clear Weekly Reports</title>
+
+  <meta
+    name="description"
+    content="See step by step what we collect from you and exactly what you receive: clean data, a clear weekly report, and actionable next steps."
+  />
+
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0ea5a4;
+      --border: #e2e8f0;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(14,165,164,0.1);
+      color: #0f766e;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .hero h1 {
+      margin: 1rem 0 0.75rem;
+      font-size: 2.2rem;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .section {
+      margin-top: 2.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin: 0.75rem 0 0;
+    }
+
+    li {
+      margin: 0.4rem 0;
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 1rem;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.25rem;
+    }
+
+    .final {
+      margin-top: 3rem;
+      background: rgba(14,165,164,0.08);
+      border: 1px solid rgba(14,165,164,0.2);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <span class="kicker">From messy data → to clear weekly reports</span>
+        <h1>Skip complex dashboards. Get a weekly report you can actually use.</h1>
+        <p class="sub">
+          You send your data.  
+          We clean it, organize it, and deliver a clear weekly report that helps you understand what’s happening and what to do next.
+        </p>
+
+        <div class="buttons">
+          <a href="#process" class="btn primary">See how it works</a>
+          <a href="#deliverables" class="btn">What will I receive?</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Weekly Report Preview</h3>
+        <p class="sub">
+          Simple metrics, clear trends, and practical next steps.  
+          Delivered as PDF + Excel.
+        </p>
+      </div>
+    </section>
+
+    <!-- INPUT / OUTPUT -->
+    <section class="section grid-3" id="deliverables">
+      <div class="card">
+        <h2>What we collect from you</h2>
+        <ul>
+          <li>Your existing files (Excel, CSV, CRM export, Google Sheet)</li>
+          <li>A simple goal for the report</li>
+          <li>Basic rules about your data</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>What we do</h2>
+        <ul>
+          <li>Clean messy and duplicate data</li>
+          <li>Standardize formats and values</li>
+          <li>Build a clear reporting structure</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>What you receive</h2>
+        <ul>
+          <li>Weekly PDF report (shareable)</li>
+          <li>Clean Excel / CSV dataset</li>
+          <li>3 actionable next-step recommendations</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="card">
+        <h2>Step-by-step process</h2>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Send your files</h3>
+              <p>Upload your current data files. That’s it.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Quick clarification</h3>
+              <p>We ask a few short questions to fully understand your goals.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Data cleaning</h3>
+              <p>Duplicates removed. Formats fixed. Data standardized.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>
+              <h3>Weekly report creation</h3>
+              <p>Key metrics, trends, and comparisons are prepared.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">5</div>
+            <div>
+              <h3>Final delivery</h3>
+              <p>You receive the report, clean files, and next steps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="final">
+      <h2>Final outcome</h2>
+      <p class="sub">
+        A simple, repeatable weekly package that actually helps you make decisions.
+      </p>
+      <ul>
+        <li>Clear weekly PDF report</li>
+        <li>Clean and reusable Excel/CSV data</li>
+        <li>3 concrete recommendations for next week</li>
+      </ul>
+
+      <div class="buttons">
+        <a href="#process" class="btn primary">Start from step 1</a>
+        <a href="/contact.html" class="btn">Contact / Order</a>
+      </div>
+    </section>
+
+    <footer>
+      © Bita Digital Hub — Simple. Clear. Actionable.
+    </footer>
+
+  </div>
+</body>
+</html>
