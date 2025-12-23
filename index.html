@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="We help service businesses turn messy data into automated systems and clear weekly reports—without manual work or complex dashboards."
+    content="We help service businesses replace manual data work with automated systems and clear weekly reports."
   />
 
   <!-- Core Styles -->
@@ -29,7 +29,7 @@
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
-    .then(res => res.text())
+    .then(r => r.text())
     .then(html => {
       document.getElementById("header-placeholder").innerHTML = html;
     });
@@ -43,7 +43,7 @@
   <section class="section hero soft-bg">
     <div class="container split-grid">
 
-      <!-- Left: Text -->
+      <!-- Copy -->
       <div class="hero-text">
         <h1>
           Turn messy data into
@@ -52,8 +52,8 @@
         </h1>
 
         <p class="hero-sub">
-          We help service businesses collect their data, remove manual work,
-          and receive clear weekly reports—without spreadsheets,
+          We help service businesses collect data, remove manual work,
+          and receive clear weekly reports — without spreadsheets,
           dashboards, or guesswork.
         </p>
 
@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <!-- Right: Image -->
+      <!-- Visual -->
       <div class="hero-image">
         <img
           src="/assets/images/report2.png"
@@ -85,19 +85,17 @@
   <section class="section">
     <div class="container split-grid soft-card">
 
-      <!-- Left: Problem -->
       <div class="pain-content">
         <h2>Does this sound familiar?</h2>
 
         <ul class="checklist">
-          <li>Leads arrive from forms, email, or WhatsApp</li>
-          <li>Data is scattered across spreadsheets</li>
-          <li>Reports are built manually—or skipped</li>
-          <li>Everything slows down when one person is busy</li>
+          <li>Leads come from forms, email, or WhatsApp</li>
+          <li>Data lives in spreadsheets</li>
+          <li>Reports are built manually or skipped</li>
+          <li>Everything depends on one busy person</li>
         </ul>
       </div>
 
-      <!-- Right: Image -->
       <div class="pain-image">
         <img
           src="/assets/images/report3.png"
@@ -134,7 +132,7 @@
 
         <article class="step">
           <h3>Automate</h3>
-          <p>No copy-paste, no chasing updates</p>
+          <p>No copy-paste. No chasing updates.</p>
         </article>
 
         <article class="step">
@@ -153,7 +151,6 @@
   <section class="section">
     <div class="container split-grid soft-card">
 
-      <!-- Left -->
       <div>
         <h2>What we actually do</h2>
 
@@ -164,7 +161,6 @@
         </ul>
       </div>
 
-      <!-- Right -->
       <div>
         <h2>This is a good fit if</h2>
 
@@ -206,7 +202,7 @@
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
-    .then(res => res.text())
+    .then(r => r.text())
     .then(html => {
       document.getElementById("footer-placeholder").innerHTML = html;
     });
