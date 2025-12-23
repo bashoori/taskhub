@@ -395,3 +395,31 @@ a {
   }
 }
 
+.step-block {
+  text-align: center;
+}
+
+.step-number {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-title {
+  margin-bottom: 0.5rem;
+}
+
+.step-text {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.step-arrow {
+  text-align: center;
+  font-size: 1.4rem;
+  opacity: 0.5;
+  margin-top: 1rem;
+}
+
+
