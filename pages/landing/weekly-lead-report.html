@@ -18,184 +18,198 @@
 
 <body>
 
-<!-- =========================
-     HEADER
-========================== -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById("header-placeholder").innerHTML = html;
-    });
-</script>
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <div id="header-placeholder"></div>
 
-<main>
+  <main>
 
-<!-- =========================
-     HERO
-========================== -->
-<section class="hero hero-title-only">
-  <div class="container hero-stack text-center">
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero hero-title-only">
+      <div class="container hero-stack text-center">
 
-    <div class="hero-copy">
-      <h1>
-        Get a clean weekly lead report.
-        <span>No dashboards.</span>
-      </h1>
+        <div class="hero-copy">
+          <h1>
+            Get a clean weekly lead report.
+            <span>No dashboards.</span>
+          </h1>
 
-      <p class="hero-sub">
-        Upload leads once. Receive a simple weekly summary.
-      </p>
+          <p class="hero-sub">
+            Upload leads once. Receive a simple weekly summary.
+          </p>
 
-      <p class="hero-note">
-        Free · No signup · One source only
-      </p>
-    </div>
+          <p class="hero-note">
+            Free · No signup · One source only
+          </p>
+        </div>
 
-    <div class="hero-illustration">
-      <img
-        src="/assets/images/system-v0.png"
-        alt="CSV upload to clean weekly report process"
-        loading="lazy"
-      />
-    </div>
+        <div class="hero-illustration">
+          <img
+            src="/assets/images/system-v0.png"
+            alt="CSV upload transformed into a clean weekly lead report"
+            loading="lazy"
+          />
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
 
-<!-- =========================
-     HOW IT WORKS
-========================== -->
-<section class="section">
-  <div class="container how-grid">
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
+    <section class="section">
+      <div class="container how-grid">
 
-    <div class="how-content">
-      <h2>How this works</h2>
+        <div class="how-content">
+          <h2>How this works</h2>
 
-      <ol class="steps-simple">
-        <li>Upload a CSV file with your leads</li>
-        <li>We clean and normalize the data</li>
-        <li>You receive a weekly summary report</li>
-      </ol>
-    </div>
+          <ol class="steps-simple">
+            <li>Upload a CSV file with your leads</li>
+            <li>We clean and normalize the data</li>
+            <li>You receive a weekly summary report</li>
+          </ol>
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
 
-<!-- =========================
-     INPUT (File-safe backend)
-========================== -->
-<section class="section highlight">
-  <div class="container">
+    <!-- =========================
+         INPUT (File-safe backend)
+    ========================== -->
+    <section class="section highlight">
+      <div class="container">
 
-    <h2>Upload your leads</h2>
+        <h2>Upload your leads</h2>
 
-    <form
-      class="lead-form"
-      method="POST"
-      action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
-      enctype="multipart/form-data"
-    >
+        <!-- Replace YOUR_SCRIPT_ID when backend is ready -->
+        <form
+          class="lead-form"
+          method="POST"
+          action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+          enctype="multipart/form-data"
+        >
 
-      <div class="form-group">
-        <label for="email">Your email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          placeholder="you@example.com"
-          required
+          <div class="form-group">
+            <label for="email">Your email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="file">Leads file (CSV)</label>
+            <input
+              id="file"
+              type="file"
+              name="file"
+              accept=".csv"
+              required
+            />
+            <small>One CSV file. One source. Up to 50 leads.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes (optional)</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="3"
+              placeholder="Anything we should know?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn primary">
+            Start free
+          </button>
+
+        </form>
+
+        <p class="form-note">
+          Submissions are reviewed manually during the beta.
+          No tracking. No reuse.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         OUTPUT
+    ========================== -->
+    <section class="section muted">
+      <div class="container">
+
+        <h2>What you’ll receive</h2>
+
+        <ul class="checklist">
+          <li>Total leads this week</li>
+          <li>Change compared to last week</li>
+          <li>Top source</li>
+          <li>Clean table preview</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         LIMITS
+    ========================== -->
+    <section class="section">
+      <div class="container small">
+
+        <h2>Free plan limits</h2>
+
+        <ul>
+          <li>1 CSV source</li>
+          <li>Up to 50 leads per month</li>
+          <li>Weekly summary only</li>
+        </ul>
+
+        <p class="small muted">
+          This system is for clarity and reporting —
+          not lead optimization or marketing performance.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/index.html" class="footer-brand" aria-label="Bita Digital Hub home">
+        <img
+          src="/assets/icons/taskhub-logo.svg"
+          alt="Bita Digital Hub logo"
+          class="footer-logo"
         />
-      </div>
+        <span>Bita Digital Hub</span>
+      </a>
+      <p class="footer-copy">
+        © Bita Digital Hub — Simple. Clear. Actionable.
+      </p>
+    </div>
+  </footer>
 
-      <div class="form-group">
-        <label for="file">Leads file (CSV)</label>
-        <input
-          id="file"
-          type="file"
-          name="file"
-          accept=".csv"
-          required
-        />
-        <small>One CSV file. One source. Up to 50 leads.</small>
-      </div>
-
-      <div class="form-group">
-        <label for="notes">Notes (optional)</label>
-        <textarea
-          id="notes"
-          name="notes"
-          rows="3"
-          placeholder="Anything we should know?"
-        ></textarea>
-      </div>
-
-      <button type="submit" class="btn primary">
-        Start free
-      </button>
-
-    </form>
-
-    <p class="form-note">
-      Submissions are reviewed manually during the beta.
-      No tracking. No reuse.
-    </p>
-
-  </div>
-</section>
-
-
-<!-- =========================
-     OUTPUT
-========================== -->
-<section class="section muted">
-  <div class="container">
-
-    <h2>What you’ll receive</h2>
-
-    <ul class="checklist">
-      <li>Total leads this week</li>
-      <li>Change compared to last week</li>
-      <li>Top source</li>
-      <li>Clean table preview</li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- =========================
-     LIMITS
-========================== -->
-<section class="section">
-  <div class="container small">
-
-    <h2>Free plan limits</h2>
-
-    <ul>
-      <li>1 CSV source</li>
-      <li>Up to 50 leads per month</li>
-      <li>Weekly summary only</li>
-    </ul>
-
-    <p class="small muted">
-      This system is for clarity and reporting —
-      not lead optimization or marketing performance.
-    </p>
-
-  </div>
-</section>
-
-</main>
-
-<!-- =========================
-     FOOTER
-========================== -->
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2025 Bita Digital Hub</p>
-  </div>
-</footer>
+  <!-- =========================
+       HEADER LOAD SCRIPT
+  ========================== -->
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+      });
+  </script>
 
 </body>
 </html>
