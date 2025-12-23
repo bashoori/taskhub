@@ -3,42 +3,52 @@
 =============================================== -->
 
 <header class="main-header">
+
   <div class="nav-inner">
 
     <!-- Brand -->
-    <a href="/index.html" class="brand-link">
+    <a href="/index.html" class="brand-link" aria-label="Bita Digital Hub home">
       <img
         src="/assets/icons/taskhub-logo.svg"
-        alt="Bita Digital Hub Logo"
+        alt="Bita Digital Hub"
         class="brand-logo"
       />
       <span class="brand-name">Bita Digital Hub</span>
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Primary navigation">
       <a href="/index.html">Home</a>
       <a href="/pages/tools/tools.html">Free Tools</a>
       <a href="/pages/blog/blog.html">Blog</a>
-      <a href="/pages/about/about.html">About us</a>
-      <a href="/pages/contact/contact.html">Contact us</a>
+      <a href="/pages/about/about.html">About</a>
+      <a href="/pages/contact/contact.html">Contact</a>
     </nav>
 
-    <!-- Mobile Toggle -->
-    <button class="menu-toggle" aria-label="Open menu">
+    <!-- Mobile Menu Button -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+    >
       ☰
     </button>
 
   </div>
 
-  <!-- Mobile Navigation Drawer -->
-  <nav class="mobile-nav">
+  <!-- Mobile Navigation -->
+  <nav
+    id="mobile-navigation"
+    class="mobile-nav"
+    aria-label="Mobile navigation"
+  >
     <a href="/index.html">Home</a>
     <a href="/pages/tools/tools.html">Free Tools</a>
     <a href="/pages/blog/blog.html">Blog</a>
-    <a href="/pages/about/about.html">About us</a>
-    <a href="/pages/contact/contact.html">Contact us</a>
+    <a href="/pages/about/about.html">About</a>
+    <a href="/pages/contact/contact.html">Contact</a>
   </nav>
+
 </header>
-
-
