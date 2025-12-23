@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Bita Digital Hub | Automated Systems & Weekly Reports</title>
+  <title>Bita Digital Hub | Turn Messy Data Into Clear Reports</title>
 
   <meta
     name="description"
-    content="Turn messy lead data into automated systems and clear weekly reports. No dashboards. No manual work."
+    content="We help service businesses collect data, automate repetitive work, and receive clean weekly reports without manual effort."
   />
 
   <!-- Core Styles -->
@@ -17,185 +17,197 @@
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/responsive.css" />
 
+  <!-- Scripts -->
   <script src="/js/core/script.js" defer></script>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================== -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("header-placeholder").innerHTML = html);
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
 </script>
 
 <main>
 
-<!-- =========================
-     HERO
-========================== -->
-<section class="section hero soft-bg">
-  <div class="container hero-grid">
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="section hero soft-bg">
+    <div class="container split-grid">
 
-    <div class="hero-text">
-      <h1>
-        Turn messy data into
-        <br />
-        automated systems and clear reports.
-      </h1>
+      <!-- LEFT: COPY -->
+      <div class="hero-text">
+        <h1>
+          Turn messy data into
+          <br />
+          automated systems and clear reports.
+        </h1>
 
-      <p class="hero-sub">
-        We help service businesses collect their data, automate repetitive work,
-        and receive clean weekly reports — <strong>without manual effort</strong>.
-      </p>
+        <p class="hero-sub">
+          We help service businesses collect their data, automate repetitive work,
+          and receive clean weekly reports —
+          <strong>without manual effort</strong>.
+        </p>
 
-      <div class="hero-actions">
-        <a href="/pages/landing/start-free.html" class="btn primary">
-          Get a free system audit →
-        </a>
-        <a href="/pages/landing/how-it-works.html" class="btn link">
-          See a real example →
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <img
-        src="/assets/images/hero-system.png"
-        alt="Automated reporting system illustration"
-        loading="lazy"
-      />
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     PAIN CARD
-========================== -->
-<section class="section">
-  <div class="container">
-
-    <div class="card wide-card">
-
-      <div class="card-grid">
-
-        <div>
-          <h2>Does this sound familiar?</h2>
-          <ul class="checklist">
-            <li>Leads come from forms, email, WhatsApp</li>
-            <li>Data lives in spreadsheets</li>
-            <li>Reports are built manually (or not at all)</li>
-            <li>Things break when one person is busy</li>
-          </ul>
+        <div class="hero-actions">
+          <a href="/pages/landing/start-free.html" class="btn primary">
+            Get a free system audit →
+          </a>
+          <a href="/pages/landing/how-it-works.html" class="btn link">
+            See a real example →
+          </a>
         </div>
+      </div>
 
-        <div class="card-visual">
-          <img
-            src="/assets/images/problem-report.png"
-            alt="Manual reporting problems"
-            loading="lazy"
-          />
-        </div>
+      <!-- RIGHT: IMAGE -->
+      <div class="hero-image">
+        <img
+          src="/assets/images/report2.png"
+          alt="Automated reporting system illustration"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       PROBLEM
+  ========================== -->
+  <section class="section">
+    <div class="container split-grid soft-card">
+
+      <!-- LEFT: TEXT -->
+      <div class="pain-content">
+        <h2>Does this sound familiar?</h2>
+
+        <ul class="checklist">
+          <li>Leads come from forms, emails, or WhatsApp</li>
+          <li>Data lives in spreadsheets</li>
+          <li>Reports are built manually (or not at all)</li>
+          <li>Things break when one person is busy</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: IMAGE -->
+      <div class="pain-image">
+        <img
+          src="/assets/images/report.png"
+          alt="Manual reporting chaos illustration"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       SYSTEM
+  ========================== -->
+  <section class="section soft-bg">
+    <div class="container">
+
+      <header class="section-head">
+        <h2>We build simple systems that work like this</h2>
+      </header>
+
+      <div class="steps">
+
+        <article class="step">
+          <h3>Collect</h3>
+          <p>Forms, CSV files, email, CRM, WhatsApp</p>
+        </article>
+
+        <article class="step">
+          <h3>Clean</h3>
+          <p>Standardized, structured, ready-to-use data</p>
+        </article>
+
+        <article class="step">
+          <h3>Automate</h3>
+          <p>No more manual copy-paste or follow-ups</p>
+        </article>
+
+        <article class="step">
+          <h3>Report</h3>
+          <p>Weekly reports and dashboards you can trust</p>
+        </article>
 
       </div>
 
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- =========================
+       WHAT WE DO
+  ========================== -->
+  <section class="section">
+    <div class="container split-grid soft-card">
 
-<!-- =========================
-     SYSTEM STEPS
-========================== -->
-<section class="section soft-bg">
-  <div class="container">
+      <div>
+        <h2>What we actually do</h2>
 
-    <h2 class="text-center">We build simple systems that work like this</h2>
-
-    <div class="steps-grid">
-
-      <div class="step-card">
-        <h3>Collect</h3>
-        <p>Forms, CSV files, email, CRM, WhatsApp</p>
+        <ul class="checklist">
+          <li>Free audit (30 minutes)</li>
+          <li>We map your data flow</li>
+          <li>We build and test the system</li>
+        </ul>
       </div>
 
-      <div class="step-card">
-        <h3>Clean</h3>
-        <p>Standardized, structured, ready-to-use data</p>
-      </div>
+      <div>
+        <h2>This is for you if</h2>
 
-      <div class="step-card">
-        <h3>Automate</h3>
-        <p>No more copy-paste or manual follow-ups</p>
-      </div>
+        <ul class="checklist">
+          <li>You receive leads regularly</li>
+          <li>You manage data manually</li>
+          <li>You want visibility, not chaos</li>
+        </ul>
 
-      <div class="step-card">
-        <h3>Report</h3>
-        <p>Weekly reports you can actually trust</p>
+        <p class="small">
+          This is not for hobby projects or free tools only.
+        </p>
       </div>
 
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- =========================
+       FINAL CTA
+  ========================== -->
+  <section class="section hero soft-bg text-center">
+    <div class="container">
 
-<!-- =========================
-     WHAT WE DO
-========================== -->
-<section class="section">
-  <div class="container two-col">
+      <h2>Stop managing data manually.</h2>
+      <p>Let your system do the work.</p>
 
-    <div class="card">
-      <h3>What we actually do</h3>
-      <ul class="checklist">
-        <li><strong>Free audit</strong> (30 minutes)</li>
-        <li>Map your data flow</li>
-        <li>Build and test the system</li>
-      </ul>
+      <a href="/pages/landing/start-free.html" class="btn primary">
+        Get a free system audit →
+      </a>
+
     </div>
-
-    <div class="card">
-      <h3>This is for you if:</h3>
-      <ul class="checklist">
-        <li>You receive leads regularly</li>
-        <li>You manage data manually</li>
-        <li>You want visibility, not chaos</li>
-      </ul>
-
-      <p class="small muted">
-        This is not for hobby projects or free-only tools.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     FINAL CTA
-========================== -->
-<section class="section text-center soft-bg">
-  <div class="container">
-
-    <h2>Stop managing data manually.</h2>
-    <p>Let your system do the work.</p>
-
-    <a href="/pages/landing/start-free.html" class="btn primary large">
-      Get a free system audit →
-    </a>
-
-  </div>
-</section>
+  </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <span>© 2025 Bita Digital Hub</span>
-  </div>
-</footer>
+<!-- =========================
+     FOOTER
+========================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
 
 </body>
 </html>
