@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>How It Works | Weekly Lead Report</title>
+  <meta
+    name="description"
+    content="See how the weekly lead report works. Upload one CSV lead source, we review and summarize it, and you receive a clean weekly snapshot. No setup. No dashboards."
+  />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
+
+<!-- =========================
+     HOW IT WORKS PAGE
+========================== -->
+<main class="tools-page">
+
+  <!-- INTRO -->
+  <section class="section text-center">
+    <div class="container">
+      <h1 class="tool-title">How it works</h1>
+      <p class="tool-description">
+        A simple process designed to give you visibility into your leads
+        without dashboards, setup, or long-term commitment.
+      </p>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section">
+    <div class="container">
+
+      <div class="card-grid">
+
+        <!-- STEP 1 -->
+        <div class="card">
+          <div class="tool-icon icon-blue">
+            <span>1</span>
+          </div>
+          <div class="content">
+            <h3>Upload your leads</h3>
+            <p>
+              Upload one CSV file containing up to 50 leads.
+              This can come from a form, spreadsheet, CRM export,
+              or any single lead source.
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="card">
+          <div class="tool-icon icon-purple">
+            <span>2</span>
+          </div>
+          <div class="content">
+            <h3>We review and summarize</h3>
+            <p>
+              Your submission is reviewed manually during the beta.
+              Leads are cleaned, grouped, and summarized into a clear structure.
+              No tracking and no reuse of your data.
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="card">
+          <div class="tool-icon icon-green">
+            <span>3</span>
+          </div>
+          <div class="content">
+            <h3>You receive a weekly report</h3>
+            <p>
+              You receive a simple weekly snapshot by email.
+              One view showing new leads, totals, and changes
+              from the previous week.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section section-sm">
+    <div class="container text-center">
+      <h2 class="tool-title">What you get</h2>
+      <p class="tool-description">
+        A calm, readable report that helps you understand what’s happening
+        with your leads at a glance.
+      </p>
+
+      <p class="tool-description">
+        No dashboards. No integrations. No configuration.
+      </p>
+    </div>
+  </section>
+
+  <!-- LIMITS & TRANSPARENCY -->
+  <section class="section section-sm">
+    <div class="container text-center">
+      <h2 class="tool-title">Limits & transparency</h2>
+
+      <p class="tool-description">
+        Free plan includes up to <strong>50 leads per month</strong>.
+      </p>
+
+      <p class="tool-description">
+        One lead source at a time. Manual review during beta.
+      </p>
+
+      <p class="tool-description">
+        No tracking. No resale. Your data is used only to generate your report.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="container">
+      <a href="/start-free.html" class="btn primary">
+        Start free
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
+
+</body>
+</html>
