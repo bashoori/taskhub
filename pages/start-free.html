@@ -46,8 +46,8 @@
         </p>
 
         <p class="contact-subtitle">
-          This free plan includes up to <strong>50 leads per month</strong>
-          and is reviewed manually during the beta.
+          Free plan includes up to <strong>50 leads per month</strong>.
+          Submissions are reviewed manually during the beta.
         </p>
 
         <!-- =========================
@@ -60,7 +60,7 @@
           enctype="multipart/form-data"
         >
 
-          <!-- Honeypot -->
+          <!-- Honeypot (spam protection) -->
           <input
             type="text"
             name="company"
@@ -70,28 +70,38 @@
             style="display:none"
           />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email"
-            aria-label="Your email"
-            required
-          />
+          <div class="form-group">
+            <label for="email">Your email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
 
-          <input
-            type="file"
-            name="file"
-            accept=".csv"
-            aria-label="Upload CSV file"
-            required
-          />
+          <div class="form-group">
+            <label for="file">Leads file (CSV)</label>
+            <input
+              id="file"
+              type="file"
+              name="file"
+              accept=".csv"
+              required
+            />
+            <small>One CSV file. One source. Up to 50 leads.</small>
+          </div>
 
-          <textarea
-            name="notes"
-            rows="4"
-            placeholder="Anything we should know? (optional)"
-            aria-label="Notes"
-          ></textarea>
+          <div class="form-group">
+            <label for="notes">Notes (optional)</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="Anything we should know?"
+            ></textarea>
+          </div>
 
           <button type="submit" class="btn primary auth-btn">
             Start free
@@ -102,10 +112,6 @@
         <!-- =========================
              TRUST NOTES
         ========================== -->
-        <p class="auth-footer-text">
-          One file. One source. Up to 50 leads.
-        </p>
-
         <p class="auth-footer-text">
           No tracking. No resale. Files are used only to generate your report.
         </p>
