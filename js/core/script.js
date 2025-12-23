@@ -1,11 +1,11 @@
 /* ============================================
    Mobile Navigation Controller
-   Predictable, accessible, injection-safe
+   Accessible, predictable, single source of truth
 ============================================ */
 
 function initMobileNav() {
   const toggleBtn = document.querySelector(".menu-toggle");
-  const mobileNav = document.querySelector(".mobile-nav");
+  const mobileNav = document.getElementById("mobile-nav");
 
   if (!toggleBtn || !mobileNav) return;
 
@@ -14,15 +14,15 @@ function initMobileNav() {
   const openMenu = () => {
     isOpen = true;
     mobileNav.classList.add("open");
-    toggleBtn.classList.add("active");
     document.body.classList.add("nav-open");
+    toggleBtn.setAttribute("aria-expanded", "true");
   };
 
   const closeMenu = () => {
     isOpen = false;
     mobileNav.classList.remove("open");
-    toggleBtn.classList.remove("active");
     document.body.classList.remove("nav-open");
+    toggleBtn.setAttribute("aria-expanded", "false");
   };
 
   const toggleMenu = (e) => {
@@ -33,14 +33,18 @@ function initMobileNav() {
   /* Toggle button */
   toggleBtn.addEventListener("click", toggleMenu);
 
-  /* Close when clicking a link */
+  /* Close when clicking a nav link */
   mobileNav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  /* Close on outside click */
+  /* Close when clicking outside */
   document.addEventListener("click", (e) => {
-    if (isOpen && !mobileNav.contains(e.target) && !toggleBtn.contains(e.target)) {
+    if (
+      isOpen &&
+      !mobileNav.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
       closeMenu();
     }
   });
@@ -53,11 +57,8 @@ function initMobileNav() {
   });
 }
 
-
 /* ============================================
-   Init after DOM + injected header
+   Init after DOM is ready
 ============================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
-  initMobileNav();
-});
+document.addEventListener("DOMContentLoaded", initMobileNav);
