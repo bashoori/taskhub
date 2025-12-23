@@ -1,1 +1,184 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Step 1 – Upload Your Data | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Step 1 of our process. Learn exactly what data to send, which formats are accepted, and why messy data is completely okay."
+  />
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.7;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+
+    h1, h2 {
+      line-height:1.3;
+      letter-spacing:-0.02em;
+    }
+
+    .card {
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom:1.5rem;
+    }
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background: rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    p {
+      color: var(--muted);
+      margin:.5rem 0;
+    }
+
+    ul {
+      margin:.75rem 0 0;
+      padding-left:1.1rem;
+    }
+
+    li {
+      margin:.4rem 0;
+      color: var(--muted);
+    }
+
+    .highlight {
+      background: rgba(14,165,164,.08);
+      border:1px solid rgba(14,165,164,.2);
+      border-radius: 12px;
+      padding:1rem;
+      margin-top:1rem;
+      color:#0f172a;
+      font-weight:600;
+    }
+
+    .btns {
+      display:flex;
+      gap:.75rem;
+      margin-top:1.5rem;
+      flex-wrap:wrap;
+    }
+
+    .btn {
+      padding:.75rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:700;
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color:#fff;
+    }
+
+    footer {
+      margin-top:3rem;
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <span class="kicker">Step 1</span>
+    <h1>Upload your data</h1>
+
+    <p>
+      This step is intentionally simple.
+      You don’t need to prepare anything perfectly.
+      Just send what you already have.
+    </p>
+
+    <div class="card">
+      <h2>What you can send</h2>
+      <ul>
+        <li>Excel files (.xlsx)</li>
+        <li>CSV files (.csv)</li>
+        <li>Google Sheets</li>
+        <li>CRM exports (HubSpot, Salesforce, etc.)</li>
+      </ul>
+
+      <div class="highlight">
+        If you’re not sure which file is “right”, send all of them.
+        We’ll figure it out.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>What’s okay (and expected)</h2>
+      <ul>
+        <li>Messy columns</li>
+        <li>Duplicate rows</li>
+        <li>Missing values</li>
+        <li>Inconsistent formats</li>
+      </ul>
+
+      <p>
+        Cleaning data is our job.
+        You are not expected to fix anything before sending it.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>What we do after you upload</h2>
+      <ul>
+        <li>Review the structure of your data</li>
+        <li>Identify issues and gaps</li>
+        <li>Prepare it for cleaning and reporting</li>
+      </ul>
+    </div>
+
+    <div class="btns">
+      <a href="/how-it-works.html" class="btn">Back to overview</a>
+      <a href="/weekly-report.html" class="btn primary">See the final report →</a>
+    </div>
+
+    <footer>
+      © Bita Digital Hub — Simple. Clear. Actionable.
+    </footer>
+
+  </div>
+</body>
+</html>
