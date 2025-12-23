@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>How It Works | From Messy Data to Clear Weekly Reports</title>
+
+  <meta
+    name="description"
+    content="See step by step what we collect from you and exactly what you receive: clean data, a clear weekly report, and actionable next steps."
+  />
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a { color:inherit; text-decoration:none; }
+
+    /* ================= HEADER ================= */
+
+    .site-header {
+      border-bottom:1px solid var(--border);
+      background:var(--bg);
+    }
+
+    .header-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner {
+        flex-direction:column;
+      }
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+      max-width:1100px;
+      margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+
+    h1, h2, h3 {
+      line-height:1.3;
+      letter-spacing:-0.02em;
+      margin:.4rem 0;
+    }
+
+    p { margin:.5rem 0; color:var(--muted); }
+
+    .hero {
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:1.5rem;
+      margin-bottom:3rem;
+    }
+
+    @media (max-width:900px) {
+      .hero { grid-template-columns:1fr; }
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.6rem;
+      box-shadow:var(--shadow);
+    }
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .sub {
+      font-size:1.05rem;
+      color:var(--muted);
+    }
+
+    .buttons {
+      display:flex;
+      gap:.75rem;
+      margin-top:1.25rem;
+      flex-wrap:wrap;
+    }
+
+    .btn {
+      padding:.75rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:700;
+    }
+
+    .btn.primary {
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
+    }
+
+    .preview-image {
+      margin-top:.75rem;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#f8fafc;
+    }
+
+    .preview-image img {
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* ================= STEPS ================= */
+
+    .section { margin-top:3rem; }
+
+    .steps {
+      display:grid;
+      gap:1rem;
+      margin-top:1.25rem;
+    }
+
+    .step {
+      display:grid;
+      grid-template-columns:60px 1fr;
+      gap:1rem;
+      align-items:center;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1rem 1.25rem;
+      box-shadow:var(--shadow);
+    }
+
+    .step-number {
+      width:60px;
+      height:60px;
+      border-radius:14px;
+      background:var(--primary);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      font-size:1.25rem;
+    }
+
+    .step-link {
+      display:block;
+      color:inherit;
+    }
+
+    .step-link:hover .step {
+      transform:translateY(-2px);
+      box-shadow:0 14px 30px rgba(2,6,23,.12);
+      border-color:var(--primary);
+    }
+
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background:var(--bg);
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+    }
+
+    .footer-logo {
+      width:26px;
+      height:26px;
+    }
+
+    .footer-copy {
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="brand-link" aria-label="Bita Digital Hub home">
+        <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
+        <span>Bita Digital Hub</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/pages/landing/how-it-works-weekly-report.html">How it works</a>
+        <a href="/pages/landing/weekly-report.html">Weekly report</a>
+        <a href="/pages/contact/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <span class="kicker">Messy data → clear decisions</span>
+        <h1>Skip complex dashboards. Get a weekly report you can actually use.</h1>
+        <p class="sub">
+          You send your data. We clean it, organize it, and deliver a clear weekly report
+          that helps you understand what’s happening and what to do next.
+        </p>
+
+        <div class="buttons">
+          <a href="#process" class="btn primary">See how it works</a>
+          <a href="/pages/landing/weekly-report.html" class="btn">See the report</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Weekly Report Preview</h3>
+        <div class="preview-image">
+          <img
+            src="/assets/images/weekly-report-preview.png"
+            alt="Weekly report preview showing simple metrics, trends, and next actions"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="card">
+        <h2>Step-by-step process</h2>
+
+        <div class="steps">
+
+          <a href="/pages/landing/upload-your-data.html" class="step-link">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <h3>Upload your data</h3>
+                <p>Send the files you already have. Messy data is completely fine.</p>
+              </div>
+            </div>
+          </a>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Quick clarification</h3>
+              <p>We ask a few short questions to understand what matters to you.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Data cleaning & preparation</h3>
+              <p>Duplicates removed. Formats fixed. Data made report-ready.</p>
+            </div>
+          </div>
+
+          <a href="/pages/landing/weekly-report.html" class="step-link">
+            <div class="step">
+              <div class="step-number">4</div>
+              <div>
+                <h3>Weekly report creation</h3>
+                <p>Clean data turned into a clear, human-readable weekly report.</p>
+              </div>
+            </div>
+          </a>
+
+          <div class="step">
+            <div class="step-number">5</div>
+            <div>
+              <h3>Delivery & next actions</h3>
+              <p>You receive the report, clean files, and clear next steps.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/index.html" class="footer-brand" aria-label="Bita Digital Hub home">
+        <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="footer-logo" />
+        <span>Bita Digital Hub</span>
+      </a>
+      <p class="footer-copy">© Bita Digital Hub — Simple. Clear. Actionable.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
