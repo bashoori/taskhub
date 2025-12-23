@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Submission received | Weekly Lead Report</title>
+  <meta
+    name="description"
+    content="Your leads were received successfully. Your weekly lead report will be prepared shortly."
+  />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
+
+<!-- =========================
+     SUCCESS PAGE
+========================== -->
+<main class="contact-page">
+
+  <section class="contact-section">
+    <div class="container">
+
+      <div class="contact-card text-center">
+
+        <h1 class="contact-title">We’ve received your file</h1>
+
+        <p class="contact-subtitle">
+          Thanks for submitting your leads.
+          Your file was received successfully.
+        </p>
+
+        <p class="contact-subtitle">
+          During the beta, submissions are reviewed manually.
+          Your first weekly report will be prepared and sent to the email
+          address you provided.
+        </p>
+
+        <p class="contact-subtitle">
+          There’s nothing else you need to do.
+        </p>
+
+        <hr style="margin: 2rem 0; opacity: 0.3;" />
+
+        <p class="auth-footer-text">
+          If you have questions or need to make a correction,
+          you can reach us at
+          <a href="mailto:contact@bitadigitalhub.com">
+            contact@bitadigitalhub.com
+          </a>
+        </p>
+
+        <p class="auth-footer-text">
+          <a href="/landing/weekly-lead-report.html">
+            ← Back to overview
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
+
+</body>
+</html>
