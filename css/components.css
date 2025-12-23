@@ -1,187 +1,23 @@
-/* =========================================================
-   COMPONENTS.CSS
-   Header · Navigation · Buttons · CTA · Footer · Icons
-   Palette: Blue / Cyan — Bita Digital Hub
-========================================================= */
+/* ============================================================
+   COMPONENTS.CSS — UI Building Blocks
+============================================================ */
 
-
-/* =========================
-   ROOT TOKENS
-========================= */
-
-:root {
-  --primary: #1e3a8a;
-  --primary-hover: #2563eb;
-  --accent: #38bdf8;
-
-  --text-dark: #0f172a;
-  --text-mid: #475569;
-  --text-light: #94a3b8;
-
-  --white: #ffffff;
-  --border: #e2e8f0;
-
-  --radius-md: 12px;
-  --radius-lg: 18px;
-
-  --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
-  --shadow-md: 0 8px 22px rgba(0,0,0,0.08);
-
-  --header-height: 70px;
-  --mobile-nav-height: 320px;
-}
-
-
-/* =========================
-   HEADER / NAVBAR
-========================= */
-
-.main-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: var(--header-height);
-  background: var(--white);
-  border-bottom: 1px solid #f1f5f9;
-  box-shadow: var(--shadow-sm);
-  z-index: 1000;
-}
-
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-  padding: 0 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Brand */
-
-.brand-link {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-}
-
-.brand-logo {
-  width: 30px;
-  height: 30px;
-}
-
-.brand-name {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-
-/* =========================
-   DESKTOP NAVIGATION
-========================= */
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-}
-
-.nav-links a {
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--text-mid);
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--primary);
-}
-
-
-/* =========================
-   MOBILE NAV
-========================= */
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.mobile-nav {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .nav-links {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .mobile-nav {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    background: var(--white);
-    box-shadow: var(--shadow-md);
-    display: flex;
-    flex-direction: column;
-    padding: 0 1.4rem;
-    transition: height 0.28s ease;
-    z-index: 999;
-  }
-
-  .mobile-nav.open {
-    height: var(--mobile-nav-height);
-  }
-
-  .mobile-nav a {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border);
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-  }
-
-  .mobile-nav a:last-child {
-    margin-top: 0.8rem;
-    background: var(--primary);
-    color: #fff;
-    text-align: center;
-    border-radius: var(--radius-md);
-    padding: 0.75rem;
-  }
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
+/* ---------- Buttons ---------- */
 
 .btn {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .7rem 1.4rem;
+  border-radius: 999px;
   font-weight: 600;
-  text-decoration: none;
   cursor: pointer;
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition: transform .2s ease, background .2s ease;
 }
 
 .btn.primary {
   background: var(--primary);
-  color: #ffffff;
+  color: #fff;
 }
 
 .btn.primary:hover {
@@ -189,183 +25,78 @@
   transform: translateY(-2px);
 }
 
-
-/* =========================
-   CTA SECTION
-========================= */
-
-.cta-section {
-  max-width: 900px;
-  margin: 2.5rem auto 3rem;
-  padding: 3rem 2rem;
-  background: #f1f5ff;
-  border-radius: 22px;
-  text-align: center;
+.btn.center {
+  margin-inline: auto;
 }
 
-.tools-page .cta-section {
-  margin-top: 2.2rem;
+/* ---------- Header ---------- */
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 
-.cta-section h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 0.6rem;
-}
-
-.cta-section p {
-  max-width: 680px;
-  margin: 0 auto 2rem;
-  font-size: 1.05rem;
-  color: var(--text-mid);
-  line-height: 1.65;
-}
-
-.cta-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-  background: #0f172a;
-  color: #cbd5e1;
-  padding: 2.6rem 1.5rem 1.8rem;
-}
-
-.footer-container {
-  max-width: 960px;
-  margin: 0 auto;
-  display: grid;
-  gap: 1.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.footer h4 {
-  color: #ffffff;
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
-}
-
-.footer a {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: 0.4rem;
-  color: #cbd5e1;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: #ffffff;
-}
-
-.footer-bottom {
-  margin-top: 1.6rem;
-  padding-top: 0.8rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-light);
-}
-
-
-/* =========================
-   TOOL ICON SYSTEM (FINAL)
-========================= */
-
-.tool-icon {
-  width: 64px;
+.site-header .container {
   height: 64px;
-  border-radius: 16px;
-
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  background: var(--icon-bg, #f1f5f9);
-  color: var(--icon-color, #4f46e5);
-
-  margin: 0 auto 1.25rem; /* centered */
+  justify-content: space-between;
 }
 
-.tool-icon svg {
+/* ---------- Cards ---------- */
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* ---------- Step Cards ---------- */
+
+.step-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .75rem;
+}
+
+.step-badge {
   width: 32px;
   height: 32px;
-  stroke-width: 1.8;
-}
-
-
-/* =========================
-   ICON COLOR THEMES
-========================= */
-
-.icon-blue {
-  --icon-bg: #eef2ff;
-  --icon-color: #4f46e5;
-}
-
-.icon-purple {
-  --icon-bg: #f5f3ff;
-  --icon-color: #7c3aed;
-}
-
-.icon-green {
-  --icon-bg: #ecfdf5;
-  --icon-color: #059669;
-}
-
-.icon-orange {
-  --icon-bg: #fff7ed;
-  --icon-color: #ea580c;
-}
-
-.icon-pink {
-  --icon-bg: #fdf2f8;
-  --icon-color: #db2777;
-}
-
-
-/* =========================
-   PRIMARY CARD EMPHASIS
-========================= */
-
-.card.primary .tool-icon {
-  width: 72px;
-  height: 72px;
-}
-
-.card.primary .tool-icon svg {
-  width: 36px;
-  height: 36px;
-}
-
-
-/* =========================
-   MOBILE TWEAKS
-========================= */
-
-@media (max-width: 640px) {
-  .cta-section {
-    padding: 2.6rem 1.4rem;
-  }
-
-  .cta-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .footer {
-    padding: 2.2rem 1.2rem 1.6rem;
-  }
-}
-.cta-actions {
-  margin-top: 1.5rem;
+  border-radius: 999px;
+  background: rgba(14,165,164,.12);
+  color: var(--accent);
+  font-weight: 700;
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.step-note {
+  font-size: .9rem;
+  color: var(--text-soft);
+}
+
+/* ---------- CTA ---------- */
+
+.cta-surface {
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
 }
