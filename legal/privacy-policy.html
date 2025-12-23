@@ -1,33 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" data-page="tools">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Privacy Policy | Bita Digital Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Privacy Policy | Bita Digital Hub</title>
   <meta
     name="description"
-    content="Privacy Policy for Bita Digital Hub. Learn how we collect, use, and protect your information."
+    content="Privacy Policy for Bita Digital Hub — a personal tech studio by Bita Ashoori. Learn what data is collected, how it’s used, and your choices."
   />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/tools.css" />
+  <link rel="stylesheet" href="/css/cards.css" />
 
-  <style>
-    .legal-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-      line-height: 1.7;
-      color: #0f172a;
-    }
-
-    .legal-wrapper h1,
-    .legal-wrapper h2 {
-      color: #0f172a;
-    }
-  </style>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="/js/core/script.js" defer></script>
 </head>
 
 <body class="tools-page">
@@ -38,96 +26,135 @@
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("header-placeholder").innerHTML = html;
-    })
-    .catch(err => console.error("Header load error:", err));
+    .then(r => r.text())
+    .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
+<!-- =========================
+     PAGE INTRO
+========================== -->
+<section class="section text-center">
+  <div class="container">
+    <h1 class="tool-title">Privacy Policy</h1>
+    <p class="tool-description">
+      This policy explains what information Bita Digital Hub collects, how it is used,
+      and the choices you have.
+    </p>
+    <p class="tool-description" style="margin-top: 0.75rem;">
+      <strong>Last updated:</strong> December 2025
+    </p>
+  </div>
+</section>
 
 <!-- =========================
-     LEGAL CONTENT
+     PRIVACY POLICY CONTENT
 ========================== -->
-<main class="legal-wrapper">
+<section class="section">
+  <div class="container">
 
-  <h1>Privacy Policy</h1>
-  <p>Last updated: February 2025</p>
+    <div class="card" style="max-width: 900px; margin: 0 auto;">
+      <div class="content">
 
-  <p>
-    Bita Digital Hub (“we”, “our”, “us”) operates a collection of free online tools
-    and resources. Your privacy is important to us. This Privacy Policy explains
-    how we collect, use, and protect your information when you use our website.
-  </p>
+        <h3>1. Who We Are</h3>
+        <p>
+          Bita Digital Hub is a personal tech studio operated by <strong>Bita Ashoori</strong>,
+          a data engineer based in Vancouver, Canada. The website provides digital tools,
+          educational content, and technical resources related to data, cloud technologies,
+          and automation.
+        </p>
 
-  <h2>1. Information We Collect</h2>
-  <p>We may collect the following types of information:</p>
-  <ul>
-    <li>
-      <strong>Voluntary Input:</strong>
-      Any text, URLs, or files you enter into tools are processed locally in your browser and not stored.
-    </li>
-    <li>
-      <strong>Log Data:</strong>
-      Anonymous analytics data such as device type, browser, country, and pages visited.
-    </li>
-    <li>
-      <strong>Cookies & Tracking:</strong>
-      Google Analytics, Google AdSense, and similar platforms may use cookies.
-    </li>
-  </ul>
+        <h3>2. Information We Collect</h3>
+        <p>We collect only the information necessary to operate the site and improve its content.</p>
 
-  <h2>2. How We Use Your Information</h2>
-  <ul>
-    <li>Operate and improve our tools</li>
-    <li>Analyze traffic and website performance</li>
-    <li>Serve personalized or non-personalized advertising</li>
-    <li>Prevent abuse and maintain website security</li>
-  </ul>
+        <p><strong>Information you may provide directly</strong></p>
+        <ul>
+          <li>Email address, if you contact us by email or through a contact form</li>
+          <li>Any information you choose to include in your message</li>
+        </ul>
 
-  <h2>3. How Your Data Is Protected</h2>
-  <p>
-    We do not store files, passwords, or tool-generated content.
-    Whenever possible, data is handled locally in your browser.
-  </p>
+        <p><strong>Information collected automatically</strong></p>
+        <ul>
+          <li>Basic usage data such as pages visited, browser type, and device type</li>
+          <li>This data may be collected through standard analytics tools and does not personally identify you</li>
+        </ul>
 
-  <h2>4. Third-Party Services</h2>
-  <ul>
-    <li>Google Analytics</li>
-    <li>Google AdSense</li>
-    <li>Cloudflare</li>
-  </ul>
+        <p>We do not require account creation to use most of the site.</p>
 
-  <h2>5. Cookies</h2>
-  <p>
-    Cookies are used to improve your experience. You may disable cookies in your browser settings.
-  </p>
+        <h3>3. How Information Is Used</h3>
+        <p>Information is used to:</p>
+        <ul>
+          <li>Respond to messages or inquiries</li>
+          <li>Improve site functionality and content</li>
+          <li>Understand how visitors use the site at an aggregate level</li>
+        </ul>
+        <p>We do not sell personal information.</p>
 
-  <h2>6. GDPR & CCPA Rights</h2>
-  <p>You may have the right to:</p>
-  <ul>
-    <li>Access your personal data</li>
-    <li>Request deletion</li>
-    <li>Opt out of tracking</li>
-    <li>Request correction</li>
-  </ul>
+        <h3>4. Cookies and Analytics</h3>
+        <p>
+          Bita Digital Hub may use cookies or similar technologies to understand general traffic patterns
+          and improve performance and usability.
+        </p>
+        <p>
+          Cookies do not give us access to your computer or personal data beyond what you choose to share.
+          You can disable cookies through your browser settings at any time.
+        </p>
 
-  <h2>7. Links to Third-Party Sites</h2>
-  <p>
-    We are not responsible for the content or privacy practices of external sites linked from this website.
-  </p>
+        <h3>5. Third-Party Services</h3>
+        <p>
+          The site may use trusted third-party services such as website analytics tools, hosting,
+          or content delivery services. These services may collect limited technical information
+          according to their own privacy policies.
+        </p>
+        <p>
+          Bita Digital Hub does not control how third parties use collected data.
+        </p>
 
-  <h2>8. Updates to This Policy</h2>
-  <p>
-    We may update this Privacy Policy occasionally.
-    Continued use of the website means you accept the changes.
-  </p>
+        <h3>6. Data Sharing</h3>
+        <p>
+          We do not share, rent, or sell personal data to third parties.
+          Information may only be shared if required by law.
+        </p>
 
-  <h2>9. Contact Us</h2>
-  <p>Email: <strong>info@bitadigitalhub.com</strong></p>
+        <h3>7. Data Security</h3>
+        <p>
+          Reasonable measures are taken to protect information from unauthorized access, disclosure,
+          or misuse. However, no method of transmission over the internet is 100% secure.
+        </p>
 
-</main>
+        <h3>8. External Links</h3>
+        <p>
+          This site may contain links to external websites. We are not responsible for the privacy
+          practices or content of those sites.
+        </p>
 
+        <h3>9. Children’s Information</h3>
+        <p>
+          Bita Digital Hub does not knowingly collect personal information from children under 13.
+          If you believe such information has been collected, please contact us so it can be removed.
+        </p>
+
+        <h3>10. Changes to This Policy</h3>
+        <p>
+          This privacy policy may be updated as the site evolves. Updates will be posted on this page
+          with a revised date.
+        </p>
+
+        <h3>11. Contact</h3>
+        <p>
+          If you have questions about this privacy policy or how data is handled, you can contact:
+        </p>
+        <p style="margin-bottom: 0.25rem;">
+          <strong>Email:</strong> contact@bitadigitalhub.com
+        </p>
+        <p style="margin-top: 0;">
+          <strong>Location:</strong> Greater Vancouver, Canada
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- =========================
      FOOTER
@@ -135,11 +162,14 @@
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("footer-placeholder").innerHTML = html;
-    })
-    .catch(err => console.error("Footer load error:", err));
+    .then(r => r.text())
+    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+  });
 </script>
 
 </body>
