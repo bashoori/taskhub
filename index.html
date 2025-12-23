@@ -4,209 +4,266 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Bita Digital Hub | Turn Messy Data Into Clear Reports</title>
+  <title>Bita Digital Hub | Clear Weekly Reports from Messy Data</title>
 
   <meta
     name="description"
-    content="See your leads in one clean weekly report, Automatically."
+    content="Turn messy spreadsheets and exports into clear weekly reports. No dashboards. No tools to learn. Just actionable insights."
   />
 
-  <!-- Core Styles -->
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/layout.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/responsive.css" />
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
 
-  <!-- Scripts -->
-  <script src="/js/core/script.js" defer></script>
+    * { box-sizing: border-box; }
+
+    body {
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+
+    h1, h2, h3 {
+      line-height:1.25;
+      letter-spacing:-0.02em;
+      margin: .4rem 0;
+    }
+
+    p { margin:.5rem 0; color: var(--muted); }
+
+    /* NAV */
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:3rem;
+    }
+
+    .logo {
+      font-weight:900;
+      font-size:1.1rem;
+      letter-spacing:-.02em;
+    }
+
+    nav {
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    nav a {
+      font-weight:700;
+      color: var(--muted);
+    }
+
+    nav a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:1.5rem;
+      margin-bottom:3rem;
+    }
+
+    @media (max-width:900px) {
+      .hero { grid-template-columns:1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background: rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .hero h1 {
+      margin-top:1rem;
+      font-size:2.4rem;
+    }
+
+    .buttons {
+      display:flex;
+      gap:.75rem;
+      margin-top:1.25rem;
+      flex-wrap:wrap;
+    }
+
+    .btn {
+      padding:.8rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color:#fff;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top:3rem;
+    }
+
+    .grid-3 {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.25rem;
+    }
+
+    @media (max-width:900px) {
+      .grid-3 { grid-template-columns:1fr; }
+    }
+
+    ul {
+      padding-left:1.1rem;
+      margin-top:.75rem;
+    }
+
+    li {
+      margin:.4rem 0;
+      color: var(--muted);
+    }
+
+    /* CTA */
+    .cta {
+      margin-top:3.5rem;
+      background: rgba(14,165,164,.08);
+      border:1px solid rgba(14,165,164,.2);
+      border-radius: var(--radius);
+      padding:2rem;
+      text-align:center;
+    }
+
+    footer {
+      margin-top:4rem;
+      text-align:center;
+      font-size:.95rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<!-- =========================
-     HEADER
-========================== -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById("header-placeholder").innerHTML = html;
-    });
-</script>
+    <!-- NAV -->
+    <header>
+      <div class="logo">Bita Digital Hub</div>
+      <nav>
+        <a href="/how-it-works.html">How it works</a>
+        <a href="/weekly-report.html">Weekly report</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </header>
 
-<main>
-
-  <!-- =========================
-       HERO
-  ========================== -->
-  <section class="section hero soft-bg">
-    <div class="container split-grid">
-
-      <!-- Copy -->
-      <div class="hero-text">
-        <h1>
-          
-          <br />
-          See your leads in one clean weekly report, Automatically.
-        </h1>
-
-        <p class="hero-sub">
-          We help service businesses collect data, remove manual work,
-          and receive clear weekly reports — without spreadsheets,
-          dashboards, or guesswork.
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <span class="kicker">Messy data → clear decisions</span>
+        <h1>Clear weekly reports from the data you already have.</h1>
+        <p>
+          You don’t need another dashboard.
+          You need to understand what’s happening and what to do next.
+        </p>
+        <p>
+          We turn spreadsheets, exports, and messy files
+          into clear weekly reports you can actually use.
         </p>
 
-        <div class="hero-actions">
-          <a href="/pages/landing/start-free.html" class="btn primary">
-            Get a free system audit →
-          </a>
-          <a href="/pages/landing/how-it-works-weekly-report.html" class="btn link">
-            See how it works →
-          </a>
+        <div class="buttons">
+          <a href="/how-it-works.html" class="btn primary">See how it works</a>
+          <a href="/contact.html" class="btn">Start a report</a>
         </div>
       </div>
 
-      <!-- Visual -->
-      <div class="hero-image">
-        <img
-          src="/assets/images/report2.png"
-          alt="Automated reporting system preview"
-          loading="lazy"
-        />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================
-       PROBLEM
-  ========================== -->
-  <section class="section">
-    <div class="container split-grid soft-card">
-
-      <div class="pain-content">
-        <h2>Does this sound familiar?</h2>
-
-        <ul class="checklist">
-          <li>Leads come from forms, email, or WhatsApp</li>
-          <li>Data lives in spreadsheets</li>
-          <li>Reports are built manually or skipped</li>
-          <li>Everything depends on one busy person</li>
+      <div class="card">
+        <h3>What you get</h3>
+        <ul>
+          <li>Weekly PDF report (easy to read and share)</li>
+          <li>Clean Excel / CSV data</li>
+          <li>Clear next-step recommendations</li>
         </ul>
       </div>
+    </section>
 
-      <div class="pain-image">
-        <img
-          src="/assets/images/report3.png"
-          alt="Manual reporting chaos"
-          loading="lazy"
-        />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================
-       SYSTEM
-  ========================== -->
-  <section class="section soft-bg">
-    <div class="container">
-
-      <header class="section-head">
-        <h2>A simple system that replaces manual work</h2>
-        <p>Clear steps. Predictable results.</p>
-      </header>
-
-      <div class="steps">
-
-        <article class="step">
-          <h3>Collect</h3>
-          <p>Forms, CSV files, email, CRM, and messaging apps</p>
-        </article>
-
-        <article class="step">
-          <h3>Clean</h3>
-          <p>Structured, standardized, reliable data</p>
-        </article>
-
-        <article class="step">
-          <h3>Automate</h3>
-          <p>No copy-paste. No chasing updates.</p>
-        </article>
-
-        <article class="step">
-          <h3>Report</h3>
-          <p>Weekly reports you can actually trust</p>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================
-       WHAT WE DO
-  ========================== -->
-  <section class="section">
-    <div class="container split-grid soft-card">
-
-      <div>
-        <h2>What we actually do</h2>
-
-        <ul class="checklist">
-          <li>Free 30-minute system audit</li>
-          <li>Map how your data really flows</li>
-          <li>Build and test a working solution</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2>This is a good fit if</h2>
-
-        <ul class="checklist">
-          <li>You receive leads consistently</li>
-          <li>Manual work is slowing you down</li>
-          <li>You want clarity instead of chaos</li>
-        </ul>
-
-        <p class="small">
-          Not designed for hobby projects or one-off experiments.
+    <!-- WHY -->
+    <section class="section grid-3">
+      <div class="card">
+        <h3>No tools to learn</h3>
+        <p>
+          You send files. We handle the rest.
+          No logins, no dashboards, no training.
         </p>
       </div>
 
-    </div>
-  </section>
+      <div class="card">
+        <h3>Designed for decisions</h3>
+        <p>
+          Reports focus on trends, changes, and actions —
+          not charts for the sake of charts.
+        </p>
+      </div>
 
-  <!-- =========================
-       FINAL CTA
-  ========================== -->
-  <section class="section hero soft-bg text-center">
-    <div class="container">
+      <div class="card">
+        <h3>Repeatable every week</h3>
+        <p>
+          Same structure. Same clarity.
+          A weekly rhythm you can rely on.
+        </p>
+      </div>
+    </section>
 
-      <h2>Stop managing data by hand.</h2>
-      <p>Build a system that works every week.</p>
+    <!-- CTA -->
+    <section class="cta">
+      <h2>Ready to turn your data into clarity?</h2>
+      <p>
+        Start with the files you already have.
+        We’ll guide you from there.
+      </p>
 
-      <a href="/pages/landing/start-free.html" class="btn primary">
-        Get a free system audit →
-      </a>
+      <div class="buttons" style="justify-content:center;">
+        <a href="/upload-your-data.html" class="btn">Upload your data</a>
+        <a href="/contact.html" class="btn primary">Contact</a>
+      </div>
+    </section>
 
-    </div>
-  </section>
+    <footer>
+      © Bita Digital Hub — Simple. Clear. Actionable.
+    </footer>
 
-</main>
-
-<!-- =========================
-     FOOTER
-========================== -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById("footer-placeholder").innerHTML = html;
-    });
-</script>
-
+  </div>
 </body>
 </html>
