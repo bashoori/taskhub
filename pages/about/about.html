@@ -2,272 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>About | Bita Digital Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta
     name="description"
-    content="Bita Digital Hub is a personal tech studio by Bita Ashoori, a Vancouver-based data engineer, focused on data engineering, cloud technologies, automation, and practical learning tools."
+    content="Learn about Bita Digital Hub, the thinking behind it, and the person building clear weekly reports from messy data."
   />
 
- 
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="/js/core/script.js" defer></script>
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
 </head>
 
-<body class="tools-page">
+<body>
 
 <!-- =========================
      HEADER
 ========================== -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("header-placeholder").innerHTML = html);
-</script>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="brand-link" aria-label="Bita Digital Hub home">
+      <img
+        src="/assets/icons/taskhub-logo.svg"
+        alt="Bita Digital Hub logo"
+        class="brand-logo"
+      />
+      <span class="brand-name">Bita Digital Hub</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/pages/landing/process.html">How it works</a>
+      <a href="/pages/landing/weekly-report.html">Weekly report</a>
+      <a href="/pages/contact/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
 
 <!-- =========================
      PAGE INTRO
 ========================== -->
 <section class="section text-center">
   <div class="container">
-    <h1 class="tool-title">About Bita Digital Hub</h1>
-    <p class="tool-description">
-      Bita Digital Hub is a personal tech studio created and run by
-      <strong>Bita Ashoori</strong>, a data engineer based in Vancouver, Canada.
-      The focus is on building practical digital tools, data solutions,
-      and clear educational resources around data, cloud, and automation.
+    <h1>About Bita Digital Hub</h1>
+    <p class="sub">
+      Clear thinking, honest data, and reports that actually help you decide what to do next.
     </p>
   </div>
 </section>
 
 <!-- =========================
-     WHAT IT IS
+     ABOUT CONTENT
 ========================== -->
 <section class="section">
   <div class="container">
-    <h3 class="section-title">What Bita Digital Hub Is</h3>
+    <div class="card" style="max-width: 900px; margin: 0 auto;">
 
-    <div class="card-grid">
+      <h2>Why this exists</h2>
+      <p>
+        Most businesses don’t have a data problem.
+        They have a <strong>clarity problem</strong>.
+      </p>
+      <p>
+        Dashboards are everywhere.
+        Charts are endless.
+        But clear answers are rare.
+      </p>
+      <p>
+        Bita Digital Hub was created to solve that gap —
+        turning messy spreadsheets, exports, and raw data
+        into simple weekly reports that make sense to humans.
+      </p>
 
-      <div class="card">
-        <div class="tool-icon icon-blue">
-          <i data-lucide="layers"></i>
-        </div>
-        <div class="content">
-          <h3>Personal Tech Studio</h3>
-          <p>
-            This is not an agency or a marketplace.
-            It is a hands-on workspace where real-world data engineering,
-            automation, and tooling are designed, tested, and shared.
-          </p>
-        </div>
-      </div>
+      <h2>What we believe</h2>
+      <ul>
+        <li>Data should support decisions, not distract from them</li>
+        <li>You don’t need more tools — you need better explanations</li>
+        <li>Consistency beats complexity</li>
+        <li>A good report should take minutes to read, not hours to learn</li>
+      </ul>
 
-      <div class="card">
-        <div class="tool-icon icon-purple">
-          <i data-lucide="database"></i>
-        </div>
-        <div class="content">
-          <h3>Practical Engineering</h3>
-          <p>
-            The work here focuses on real implementations:
-            data pipelines, SQL, Python workflows,
-            cloud platforms such as AWS, Azure, and GCP,
-            and lightweight automation systems.
-          </p>
-        </div>
-      </div>
+      <h2>What Bita Digital Hub does</h2>
+      <p>
+        We help individuals and small teams:
+      </p>
+      <ul>
+        <li>Clean and structure messy data</li>
+        <li>Understand weekly changes and trends</li>
+        <li>Receive clear, repeatable reports (PDF + Excel)</li>
+        <li>Know what matters and what to ignore</li>
+      </ul>
 
-      <div class="card">
-        <div class="tool-icon icon-green">
-          <i data-lucide="book-open"></i>
-        </div>
-        <div class="content">
-          <h3>Clear Learning Resources</h3>
-          <p>
-            Educational content is example-driven and practical,
-            designed to reduce confusion and help people understand
-            how systems actually work.
-          </p>
-        </div>
+      <p>
+        No dashboards.
+        No logins.
+        No learning curve.
+      </p>
+
+      <h2>Who’s behind this</h2>
+      <p>
+        Bita Digital Hub is built and operated by
+        <strong>Bita Ashoori</strong>,
+        a data engineer based in Greater Vancouver, Canada.
+      </p>
+      <p>
+        With a background in data engineering, analytics, and automation,
+        the focus is not on flashy visuals —
+        but on accuracy, clarity, and usefulness.
+      </p>
+      <p>
+        Every report is designed with one question in mind:
+        <em>“What should the reader do next?”</em>
+      </p>
+
+      <h2>Who this is for</h2>
+      <ul>
+        <li>Founders who want weekly clarity without dashboards</li>
+        <li>Teams drowning in spreadsheets</li>
+        <li>Anyone who wants answers, not tools</li>
+      </ul>
+
+      <h2>What this is not</h2>
+      <ul>
+        <li>Not a BI platform</li>
+        <li>Not real-time monitoring</li>
+        <li>Not automated chart spam</li>
+      </ul>
+
+      <p>
+        This is about calm, reliable insight — delivered every week.
+      </p>
+
+      <div class="section text-center">
+        <a href="/pages/landing/free-first-report.html" class="btn primary">
+          Try a free first report
+        </a>
+        <br /><br />
+        <a href="/pages/contact/contact.html" class="btn">
+          Contact
+        </a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- =========================
-     WHO IT’S FOR
-========================== -->
-<section class="section">
-  <div class="container">
-    <h3 class="section-title">Who It’s For</h3>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <div class="tool-icon icon-blue">
-          <i data-lucide="user"></i>
-        </div>
-        <div class="content">
-          <h3>Learners & Beginners</h3>
-          <p>
-            People learning data engineering, cloud, or automation
-            who want clear explanations instead of buzzwords.
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="tool-icon icon-orange">
-          <i data-lucide="briefcase"></i>
-        </div>
-        <div class="content">
-          <h3>Professionals</h3>
-          <p>
-            Engineers and analysts who want practical tools,
-            reference implementations, and simplified workflows.
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="tool-icon icon-purple">
-          <i data-lucide="users"></i>
-        </div>
-        <div class="content">
-          <h3>Small Teams & Individuals</h3>
-          <p>
-            People who need useful digital tools and automations
-            without complex platforms or heavy setup.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================
-     ABOUT THE FOUNDER
-========================== -->
-<section class="section">
-  <div class="container">
-    <h3 class="section-title">About the Founder</h3>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <div class="tool-icon icon-green">
-          <i data-lucide="person-standing"></i>
-        </div>
-        <div class="content">
-          <h3>Bita Ashoori</h3>
-          <p>
-            Bita Ashoori is a data engineer with experience in
-            SQL Server, ETL pipelines, Python-based workflows,
-            cloud platforms, and automation.
-            A background in teaching and mentoring strongly
-            influences how tools and content are designed:
-            structured, clear, and practical.
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="tool-icon icon-blue">
-          <i data-lucide="map-pin"></i>
-        </div>
-        <div class="content">
-          <h3>Location</h3>
-          <p>
-            Bita Digital Hub is based in the
-            Greater Vancouver area in Canada
-            and operates fully online.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================
-     DIRECTION
-========================== -->
-<section class="section">
-  <div class="container">
-    <h3 class="section-title">Direction & Focus</h3>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <div class="tool-icon icon-purple">
-          <i data-lucide="settings"></i>
-        </div>
-        <div class="content">
-          <h3>Useful Tools</h3>
-          <p>
-            Simple digital tools that solve real problems
-            without unnecessary complexity.
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="tool-icon icon-blue">
-          <i data-lucide="repeat"></i>
-        </div>
-        <div class="content">
-          <h3>Automation</h3>
-          <p>
-            Automations that remove repetitive work
-            and make systems easier to maintain.
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="tool-icon icon-green">
-          <i data-lucide="compass"></i>
-        </div>
-        <div class="content">
-          <h3>Long-Term Knowledge</h3>
-          <p>
-            A growing library of tools and explanations
-            built for long-term usefulness, not trends.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+</main>
 
 <!-- =========================
      FOOTER
 ========================== -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-</script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index.html" class="footer-brand">
+      <img
+        src="/assets/icons/taskhub-logo.svg"
+        alt="Bita Digital Hub logo"
+        class="footer-logo"
+      />
+      <span>Bita Digital Hub</span>
+    </a>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    lucide.createIcons();
-  });
-</script>
+    <p class="footer-copy">
+      © Bita Digital Hub — Simple. Clear. Actionable.<br />
+      Email:
+      <a href="mailto:contact@bitadigitalhub.com">
+        contact@bitadigitalhub.com
+      </a><br />
+      <a href="/legal/privacy-policy.html">Privacy Policy</a> ·
+      <a href="/legal/terms.html">Terms of Service</a>
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>
