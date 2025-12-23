@@ -23,45 +23,40 @@
       --shadow:0 10px 30px rgba(2,6,23,.08);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing:border-box; }
 
     body {
       margin:0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
       line-height:1.7;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color:inherit; text-decoration:none; }
 
     h1, h2, h3 {
       line-height:1.25;
       letter-spacing:-0.02em;
-      margin: .4rem 0;
+      margin:.4rem 0;
     }
 
     p {
       margin:.5rem 0;
-      color: var(--muted);
+      color:var(--muted);
     }
 
-    /* =====================
-       HEADER
-    ===================== */
+    /* ================= HEADER ================= */
 
     .site-header {
       border-bottom:1px solid var(--border);
-      background: var(--bg);
+      background:var(--bg);
     }
 
     .header-inner {
       max-width:1100px;
       margin:0 auto;
-      padding:1.25rem 1.25rem;
+      padding:1.25rem;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -93,11 +88,11 @@
 
     .site-nav a {
       font-weight:700;
-      color: var(--muted);
+      color:var(--muted);
     }
 
     .site-nav a:hover {
-      color: var(--text);
+      color:var(--text);
     }
 
     @media (max-width:700px) {
@@ -106,9 +101,7 @@
       }
     }
 
-    /* =====================
-       MAIN CONTENT
-    ===================== */
+    /* ================= MAIN ================= */
 
     .container {
       max-width:1100px;
@@ -124,9 +117,7 @@
     }
 
     @media (max-width:900px) {
-      .hero {
-        grid-template-columns:1fr;
-      }
+      .hero { grid-template-columns:1fr; }
     }
 
     .card {
@@ -173,6 +164,24 @@
       color:#fff;
     }
 
+    /* Preview image */
+
+    .preview-image {
+      margin-top:.75rem;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#f8fafc;
+    }
+
+    .preview-image img {
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* ================= SECTIONS ================= */
+
     .section {
       margin-top:3rem;
     }
@@ -184,9 +193,7 @@
     }
 
     @media (max-width:900px) {
-      .grid-3 {
-        grid-template-columns:1fr;
-      }
+      .grid-3 { grid-template-columns:1fr; }
     }
 
     ul {
@@ -208,9 +215,7 @@
       text-align:center;
     }
 
-    /* =====================
-       FOOTER
-    ===================== */
+    /* ================= FOOTER ================= */
 
     .site-footer {
       border-top:1px solid var(--border);
@@ -281,13 +286,17 @@
 
     <!-- HERO -->
     <section class="hero">
+
+      <!-- LEFT -->
       <div class="card">
         <span class="kicker">Messy data → clear decisions</span>
         <h1>Clear weekly reports from the data you already have.</h1>
+
         <p>
           You don’t need another dashboard.
           You need to understand what’s happening and what to do next.
         </p>
+
         <p>
           We turn spreadsheets, exports, and messy files
           into clear weekly reports you can actually use.
@@ -299,14 +308,24 @@
         </div>
       </div>
 
+      <!-- RIGHT -->
       <div class="card">
-        <h3>What you get</h3>
+        <div class="preview-image">
+          <img
+            src="/assets/images/clear-weekly-report.png"
+            alt="Clean weekly report preview"
+            loading="lazy"
+          />
+        </div>
+
+        <h3 style="margin-top:1rem;">What you get</h3>
         <ul>
           <li>Weekly PDF report (easy to read and share)</li>
           <li>Clean Excel / CSV data</li>
           <li>Clear next-step recommendations</li>
         </ul>
       </div>
+
     </section>
 
     <!-- WHY -->
