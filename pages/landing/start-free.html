@@ -2,23 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Start Free | Bita Digital Hub</title>
-
+  <title>Start free | Weekly Lead Report</title>
   <meta
     name="description"
-    content="Start free with practical tools that help you finish real work. No signup required. No tracking."
+    content="Start free and receive a clean weekly lead report. Upload one CSV lead source and get a simple snapshot. No setup. No commitment."
   />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/cards.css" />
-  <link rel="stylesheet" href="/css/home.css" />
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="/js/core/script.js" defer></script>
+  <link rel="stylesheet" href="/css/contact.css" />
 </head>
 
 <body>
@@ -30,130 +23,98 @@
     .then(r => r.text())
     .then(html => {
       document.getElementById("header-placeholder").innerHTML = html;
-      lucide.createIcons();
     });
 </script>
 
-<main>
+<!-- START FREE -->
+<main class="contact-page">
 
-  <!-- HERO -->
-  <section class="hero clean-hero section">
-    <div class="container text-center">
-
-      <h1 class="hero-title">
-        Start free. Finish the task.
-      </h1>
-
-      <p class="hero-sub">
-        Use one tool, produce a clear output, and move on with your work.
-      </p>
-
-      <div class="hero-actions center">
-        <a href="#start" class="btn primary">Choose a tool</a>
-        <a href="/pages/tools/tools.html" class="btn">Browse all tools</a>
-      </div>
-
-      <p class="hero-trust">
-        No signup required · Free to use · No tracking
-      </p>
-
-    </div>
-  </section>
-
-  <!-- START FREE PATH -->
-  <section class="section" id="start">
+  <section class="contact-section">
     <div class="container">
 
-      <div class="section-head">
-        <h2 class="section-title">Tools that help you finish work</h2>
-        <p class="section-subtitle">
-          Each tool creates a file, summary, or clean result you can actually use.
-        </p>
-      </div>
+      <div class="contact-card">
 
-      <div class="card-grid">
+        <h1 class="contact-title">Start free</h1>
 
-        <!-- Clear explanation -->
-        <a href="/pages/tools/generators/instagram-bio-generator/" class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="file-text"></i>
-          </div>
-          <h3>Write a clear description</h3>
-          <p>Turn what you do into a short, usable explanation.</p>
-          <span class="card-link">Open Bio Generator →</span>
-        </a>
-
-        <!-- Metadata / preview -->
-        <a href="/pages/tools/generators/seo-meta-generator/" class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="search"></i>
-          </div>
-          <h3>Generate page metadata</h3>
-          <p>Create titles and descriptions you can copy or export.</p>
-          <span class="card-link">Open SEO Generator →</span>
-        </a>
-
-        <!-- Structured writing -->
-        <a href="/pages/tools/generators/instagram-caption-generator/" class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="align-left"></i>
-          </div>
-          <h3>Turn ideas into structured text</h3>
-          <p>Produce readable text instead of staring at a blank screen.</p>
-          <span class="card-link">Open Caption Generator →</span>
-        </a>
-
-        <!-- Link utility -->
-        <a href="/pages/tools/url-shortener/" class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="link"></i>
-          </div>
-          <h3>Create clean links</h3>
-          <p>Shorten long URLs for documents, emails, or sharing.</p>
-          <span class="card-link">Open URL Shortener →</span>
-        </a>
-
-        <!-- Data cleanup -->
-        <a href="/pages/tools/csv-cleaner/" class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="table"></i>
-          </div>
-          <h3>Clean a CSV file</h3>
-          <p>Fix formatting issues and prepare data for use or upload.</p>
-          <span class="card-link">Open CSV Cleaner →</span>
-        </a>
-
-        <!-- Calendar artifact -->
-        <a href="/pages/tools/appointment-builder/" class="card tool-card">
-          <div class="tool-icon">
-            <i data-lucide="calendar"></i>
-          </div>
-          <h3>Create a calendar file</h3>
-          <p>Generate calendar-ready links and downloadable ICS files.</p>
-          <span class="card-link">Open Appointment Builder →</span>
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- OPTIONAL NEXT STEP -->
-  <section class="section">
-    <div class="container">
-
-      <div class="cta-surface text-center">
-        <h2>Need more than a basic result?</h2>
-        <p class="value-text">
-          When you’re ready, use smarter tools and guides to improve quality or speed —
-          only if it helps your work.
+        <p class="contact-subtitle">
+          Upload one lead source and receive a clean weekly summary.
+          No dashboards. No setup. No long-term commitment.
         </p>
 
-        <div class="cta-actions">
-          <a href="/pages/tools/tools.html" class="btn">
-            Explore all tools
+        <p class="contact-subtitle">
+          Free plan includes up to <strong>50 leads per month</strong>.
+          Submissions are reviewed manually during the beta.
+        </p>
+
+        <!-- FORM -->
+        <form
+          class="contact-form auth-form"
+          method="POST"
+          action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+          enctype="multipart/form-data"
+        >
+
+          <!-- Honeypot -->
+          <input
+            type="text"
+            name="company"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="display:none"
+          />
+
+          <div class="form-group">
+            <label for="email">Your email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="file">Leads file (CSV)</label>
+            <input
+              id="file"
+              type="file"
+              name="file"
+              accept=".csv"
+              required
+            />
+            <small>One CSV file. One source. Up to 50 leads.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes (optional)</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="Anything we should know?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn primary auth-btn">
+            Start free
+          </button>
+
+        </form>
+
+        <!-- TRUST -->
+        <p class="auth-footer-text">
+          No tracking. No resale. Files are used only to generate your report.
+        </p>
+
+        <p class="auth-footer-text">
+          Questions?
+          <a href="mailto:contact@bitadigitalhub.com">
+            contact@bitadigitalhub.com
           </a>
-        </div>
+        </p>
+
       </div>
 
     </div>
@@ -168,7 +129,6 @@
     .then(r => r.text())
     .then(html => {
       document.getElementById("footer-placeholder").innerHTML = html;
-      lucide.createIcons();
     });
 </script>
 
