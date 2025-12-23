@@ -1,24 +1,46 @@
 /* ============================================================
-   LAYOUT.CSS — Structure & Spacing
+   LAYOUT.CSS — Page Structure & Spacing
+   Purpose: containers, sections, alignment
 ============================================================ */
 
+/* ------------------------------------------------------------
+   CONTAINERS
+------------------------------------------------------------ */
+
 .container {
+  width: 100%;
   max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
 }
 
-.container.small {
+/* Narrow content (blog posts, forms, text-heavy pages) */
+.container--narrow {
   max-width: var(--content-width);
 }
 
+
+/* ------------------------------------------------------------
+   SECTIONS
+------------------------------------------------------------ */
+
 .section {
-  padding: 4rem 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
-.section-sm {
-  padding: 2.5rem 0;
+.section--sm {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
+
+
+/* ------------------------------------------------------------
+   ALIGNMENT UTILITIES
+------------------------------------------------------------ */
 
 .text-center {
   text-align: center;
