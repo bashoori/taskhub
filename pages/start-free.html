@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Start Free | Weekly Lead Report</title>
+  <meta
+    name="description"
+    content="Start free and receive a clean weekly lead report. Upload one CSV lead source and get a simple snapshot. No setup. No commitment."
+  />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
+
+<!-- =========================
+     START FREE PAGE
+========================== -->
+<main class="contact-page">
+
+  <section class="contact-section">
+    <div class="container">
+
+      <div class="contact-card">
+
+        <h1 class="contact-title">Start free</h1>
+
+        <p class="contact-subtitle">
+          Upload one lead source and receive a clean weekly summary.
+          No dashboards. No setup. No long-term commitment.
+        </p>
+
+        <p class="contact-subtitle">
+          This free plan includes up to <strong>50 leads per month</strong>
+          and is reviewed manually during the beta.
+        </p>
+
+        <!-- =========================
+             FORM
+        ========================== -->
+        <form
+          class="contact-form auth-form"
+          method="POST"
+          action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+          enctype="multipart/form-data"
+        >
+
+          <!-- Honeypot -->
+          <input
+            type="text"
+            name="company"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="display:none"
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            aria-label="Your email"
+            required
+          />
+
+          <input
+            type="file"
+            name="file"
+            accept=".csv"
+            aria-label="Upload CSV file"
+            required
+          />
+
+          <textarea
+            name="notes"
+            rows="4"
+            placeholder="Anything we should know? (optional)"
+            aria-label="Notes"
+          ></textarea>
+
+          <button type="submit" class="btn primary auth-btn">
+            Start free
+          </button>
+
+        </form>
+
+        <!-- =========================
+             TRUST NOTES
+        ========================== -->
+        <p class="auth-footer-text">
+          One file. One source. Up to 50 leads.
+        </p>
+
+        <p class="auth-footer-text">
+          No tracking. No resale. Files are used only to generate your report.
+        </p>
+
+        <p class="auth-footer-text">
+          Questions?
+          <a href="mailto:contact@bitadigitalhub.com">
+            contact@bitadigitalhub.com
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
+
+</body>
+</html>
