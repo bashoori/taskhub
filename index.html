@@ -11,12 +11,11 @@
     content="Collect leads, clean data, and receive clear weekly reports. A simple system for understanding your leads without dashboards or setup."
   />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
 
   <!-- Scripts -->
   <script src="/js/core/script.js" defer></script>
@@ -25,12 +24,12 @@
 <body>
 
 <!-- =========================
-     HEADER / MENU
+     HEADER
 ========================== -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
-    .then(r => r.text())
+    .then(res => res.text())
     .then(html => {
       document.getElementById("header-placeholder").innerHTML = html;
     });
@@ -44,7 +43,7 @@
   <section class="hero">
     <div class="container hero-grid">
 
-      <!-- Text -->
+      <!-- Copy -->
       <div class="hero-text">
         <h1>
           See your leads in one clean weekly report.
@@ -57,10 +56,10 @@
         </p>
 
         <div class="hero-actions">
-          <a href="pages/landing/weekly-lead-report.html" class="btn primary">
+          <a href="/pages/landing/weekly-lead-report.html" class="btn primary">
             Weekly Lead Report
           </a>
-          <a href="pages/landing/how-it-works.html" class="btn link">
+          <a href="/pages/landing/how-it-works.html" class="btn">
             See how it works
           </a>
         </div>
@@ -88,7 +87,6 @@
   <section class="section muted">
     <div class="container pain-grid">
 
-      <!-- Visual -->
       <div class="pain-visual">
         <img
           src="/assets/images/report3.png"
@@ -97,7 +95,6 @@
         />
       </div>
 
-      <!-- Content -->
       <div class="pain-content">
         <h2>Does this sound familiar?</h2>
 
@@ -118,7 +115,9 @@
   <section id="system" class="section">
     <div class="container">
 
-      <h2>A simple system from leads to reports</h2>
+      <h2 class="text-center">
+        A simple system from leads to reports
+      </h2>
 
       <div class="steps">
 
@@ -152,7 +151,7 @@
         <h3>Free plan</h3>
 
         <ul>
-          <li>1 lead source</li>
+          <li>One lead source</li>
           <li>Up to 50 leads per month</li>
           <li>Stored in Google Sheets</li>
           <li>Weekly summary report</li>
@@ -162,7 +161,7 @@
           Manual review during beta. No automation or customization.
         </p>
 
-        <a href="pages/landing/start-free.html" class="btn primary">
+        <a href="/pages/landing/start-free.html" class="btn primary">
           Start free
         </a>
       </div>
