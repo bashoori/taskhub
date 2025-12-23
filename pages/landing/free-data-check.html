@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Send one data file and get a free clarity check. See what’s usable, what’s broken, and what your weekly report would include."
+    content="Send one data file and get a free clarity check. See what’s usable, what needs fixing, and what your weekly report would include."
   />
 
   <style>
@@ -35,13 +35,64 @@
 
     a { color:inherit; text-decoration:none; }
 
+    /* ================= HEADER ================= */
+
+    .site-header {
+      border-bottom:1px solid var(--border);
+      background:var(--bg);
+    }
+
+    .header-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner {
+        flex-direction:column;
+      }
+    }
+
+    /* ================= MAIN ================= */
+
     main {
       max-width:900px;
       margin:0 auto;
       padding:3rem 1.25rem 4rem;
     }
 
-    h1, h2, h3 {
+    h1, h2 {
       line-height:1.3;
       letter-spacing:-0.02em;
       margin:.4rem 0;
@@ -111,17 +162,69 @@
       color:#fff;
     }
 
-    footer {
-      margin-top:3rem;
-      text-align:center;
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background:var(--bg);
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+    }
+
+    .footer-logo {
+      width:26px;
+      height:26px;
+    }
+
+    .footer-copy {
       font-size:.95rem;
       color:var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="brand-link" aria-label="Bita Digital Hub home">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
+      <span>Bita Digital Hub</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/pages/landing/process.html">How it works</a>
+      <a href="/pages/landing/weekly-report.html">Weekly report</a>
+      <a href="/pages/landing/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
 <main>
 
   <span class="kicker">Free data check</span>
@@ -151,9 +254,9 @@
   <div class="card">
     <h2>What this is not</h2>
     <ul>
-      <li>✘ Not a full weekly report</li>
-      <li>✘ Not ongoing reporting</li>
-      <li>✘ Not data cleaning or automation</li>
+      <li>Not a full weekly report</li>
+      <li>Not ongoing reporting</li>
+      <li>Not data cleaning or automation</li>
     </ul>
   </div>
 
@@ -167,19 +270,26 @@
   </div>
 
   <div class="btns">
-    <a href="/pages/contact/contact.html" class="btn primary">
+    <a href="/pages/landing/contact.html" class="btn primary">
       Request free data check
     </a>
-    <a href="/pages/landing/how-it-works-weekly-report.html" class="btn">
+    <a href="/pages/landing/process.html" class="btn">
       How it works
     </a>
   </div>
 
-  <footer>
-    © Bita Digital Hub — Simple. Clear. Actionable.
-  </footer>
-
 </main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index.html" class="footer-brand" aria-label="Bita Digital Hub home">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="footer-logo" />
+      <span>Bita Digital Hub</span>
+    </a>
+    <p class="footer-copy">© Bita Digital Hub — Simple. Clear. Actionable.</p>
+  </div>
+</footer>
 
 </body>
 </html>
