@@ -3,18 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>About | Bita Digital Hub</title>
+  <title>Contact | Bita Digital Hub</title>
 
   <meta
     name="description"
-    content="Learn about Bita Digital Hub, the thinking behind it, and the person building clear weekly reports from messy data."
+    content="Contact Bita Digital Hub to start your weekly reporting workflow. Send your files, tell us your goal, and we’ll handle the rest."
   />
 
-  <!-- GLOBAL STYLES -->
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/layout.css" />
-  <link rel="stylesheet" href="/css/components.css" />
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a { color:inherit; text-decoration:none; }
+
+    /* ================= HEADER ================= */
+
+    .site-header {
+      border-bottom:1px solid var(--border);
+      background:var(--bg);
+    }
+
+    .header-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner {
+        flex-direction:column;
+      }
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+      max-width:1000px;
+      margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+
+    h1, h2, h3 {
+      line-height:1.25;
+      letter-spacing:-0.02em;
+      margin:.4rem 0;
+    }
+
+    p { margin:.6rem 0; color:var(--muted); }
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:1.25rem;
+      margin-top:1.25rem;
+    }
+
+    @media (max-width:900px) {
+      .grid { grid-template-columns:1fr; }
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.6rem;
+      box-shadow:var(--shadow);
+    }
+
+    form {
+      margin-top:1rem;
+      display:grid;
+      gap:.9rem;
+    }
+
+    label {
+      font-weight:700;
+      font-size:.95rem;
+      margin-bottom:.35rem;
+      display:block;
+    }
+
+    input, textarea {
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:.85rem .9rem;
+      font:inherit;
+      background:#fff;
+    }
+
+    textarea {
+      min-height:140px;
+      resize:vertical;
+    }
+
+    .row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:.9rem;
+    }
+
+    @media (max-width:650px) {
+      .row { grid-template-columns:1fr; }
+    }
+
+    .buttons {
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      margin-top:.5rem;
+    }
+
+    .btn {
+      padding:.8rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+      min-width:160px;
+      text-align:center;
+      cursor:pointer;
+    }
+
+    .btn.primary {
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
+    }
+
+    .list {
+      margin:.75rem 0 0;
+      padding-left:1.1rem;
+    }
+
+    .list li { margin:.45rem 0; }
+
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background:var(--bg);
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+    }
+
+    .footer-logo {
+      width:26px;
+      height:26px;
+    }
+
+    .footer-copy {
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+  </style>
 </head>
 
 <body>
