@@ -7,7 +7,7 @@
   <title>Contact | Bita Digital Hub</title>
   <meta
     name="description"
-    content="Contact Bita Digital Hub for support, questions, or collaboration. We usually reply within 24 hours."
+    content="Contact Bita Digital Hub — a personal tech studio by Bita Ashoori. Reach out with questions about tools, data engineering, automation, or collaboration."
   />
 
   <!-- Styles -->
@@ -17,106 +17,112 @@
 
 <body>
 
-  <!-- =========================
-       HEADER (Loaded Once)
-  ========================== -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("header-placeholder").innerHTML = html;
-      });
-  </script>
+<!-- =========================
+     HEADER
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
 
-  <!-- =========================
-       CONTACT PAGE
-  ========================== -->
-  <main class="contact-page">
+<!-- =========================
+     CONTACT PAGE
+========================== -->
+<main class="contact-page">
 
-    <section class="contact-section">
-      <div class="container">
+  <section class="contact-section">
+    <div class="container">
 
-        <div class="contact-card">
+      <div class="contact-card">
 
-          <h1 class="contact-title">Contact Us</h1>
+        <h1 class="contact-title">Contact</h1>
 
-          <p class="contact-subtitle">
-            Have a question, need support, or want to collaborate?
-            Send us a message and we’ll reply within 24 hours.
-          </p>
+        <p class="contact-subtitle">
+          Bita Digital Hub is a personal tech studio run by
+          <strong>Bita Ashoori</strong>, a data engineer based in Vancouver, Canada.
+          This is the best way to get in touch.
+        </p>
 
-          <form
-            class="contact-form auth-form"
-            method="POST"
-            action="https://script.google.com/macros/s/AKfycbyZXDE3xUjdhFlGJFhXeASDngvgrkjDAAx_VadSqa3Rp_nH3_ndGGmnkEkFl9RwQXhr8A/exec"
-          >
+        <p class="contact-subtitle">
+          Use the form below for questions about tools, data engineering topics,
+          automation workflows, or thoughtful collaboration ideas.
+        </p>
 
-            <!-- Honeypot (spam protection) -->
-            <input
-              type="text"
-              name="company"
-              tabindex="-1"
-              autocomplete="off"
-              aria-hidden="true"
-              style="display:none"
-            />
+        <form
+          class="contact-form auth-form"
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbyZXDE3xUjdhFlGJFhXeASDngvgrkjDAAx_VadSqa3Rp_nH3_ndGGmnkEkFl9RwQXhr8A/exec"
+        >
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              aria-label="Full Name"
-              required
-            />
+          <!-- Honeypot (spam protection) -->
+          <input
+            type="text"
+            name="company"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="display:none"
+          />
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              aria-label="Email Address"
-              required
-            />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            aria-label="Your name"
+            required
+          />
 
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your message"
-              aria-label="Your message"
-              required
-            ></textarea>
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            aria-label="Your email"
+            required
+          />
 
-            <button type="submit" class="btn primary auth-btn">
-              Send Message
-            </button>
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your message"
+            aria-label="Your message"
+            required
+          ></textarea>
 
-          </form>
+          <button type="submit" class="btn primary auth-btn">
+            Send message
+          </button>
 
-          <p class="auth-footer-text">
-            Prefer email?
-            <a href="mailto:contact@bitadigitalhub.com">
-              contact@bitadigitalhub.com
-            </a>
-          </p>
+        </form>
 
-        </div>
+        <p class="auth-footer-text">
+          Prefer email?
+          <a href="mailto:contact@bitadigitalhub.com">
+            contact@bitadigitalhub.com
+          </a>
+        </p>
 
       </div>
-    </section>
 
-  </main>
+    </div>
+  </section>
 
-  <!-- =========================
-       FOOTER (Loaded Once)
-  ========================== -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("footer-placeholder").innerHTML = html;
-      });
-  </script>
+</main>
+
+<!-- =========================
+     FOOTER
+========================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
 
 </body>
 </html>
