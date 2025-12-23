@@ -1,5 +1,5 @@
 <!-- ============================================
-     FOOTER — Minimal SaaS Footer
+     FOOTER — Minimal SaaS Footer (Responsive)
 =============================================== -->
 
 <footer class="site-footer">
@@ -7,22 +7,27 @@
   <div class="container footer-inner">
 
     <!-- Brand -->
-    <a
-      href="/index.html"
-      class="footer-brand"
-      aria-label="Bita Digital Hub home"
-    >
-      <img
-        src="/assets/icons/taskhub-logo.svg"
-        alt="Bita Digital Hub"
-        class="footer-logo"
-        loading="lazy"
-      />
-      <span class="footer-name">Bita Digital Hub</span>
-    </a>
+    <div class="footer-col footer-brand-col">
+      <a
+        href="/index.html"
+        class="footer-brand"
+        aria-label="Bita Digital Hub home"
+      >
+        <img
+          src="/assets/icons/taskhub-logo.svg"
+          alt="Bita Digital Hub"
+          class="footer-logo"
+          loading="lazy"
+        />
+        <span class="footer-name">Bita Digital Hub</span>
+      </a>
+    </div>
 
     <!-- Navigation -->
-    <nav class="footer-nav" aria-label="Footer navigation">
+    <nav
+      class="footer-col footer-nav"
+      aria-label="Footer navigation"
+    >
       <a href="/pages/tools/tools.html">Tools</a>
       <a href="/pages/blog/blog.html">Blog</a>
       <a href="/pages/about/about.html">About</a>
@@ -30,13 +35,17 @@
     </nav>
 
     <!-- Legal -->
-    <nav class="footer-legal" aria-label="Legal links">
+    <nav
+      class="footer-col footer-legal"
+      aria-label="Legal links"
+    >
       <a href="/legal/privacy-policy.html">Privacy</a>
       <a href="/legal/terms-of-service.html">Terms</a>
     </nav>
 
   </div>
 
+  <!-- Bottom line -->
   <div class="footer-bottom">
     © 2025 Bita Digital Hub
   </div>
