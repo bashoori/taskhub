@@ -82,3 +82,19 @@ html[dir="rtl"] .site-nav {
   direction: rtl;
 }
 
+/* =========================
+   RTL HEADER FIX
+========================= */
+
+html[dir="rtl"] .header-inner {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .site-nav {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .site-nav a {
+  text-align: right;
+}
+
