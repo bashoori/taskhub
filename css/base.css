@@ -1,40 +1,47 @@
 /* ============================================================
-   BASE.CSS — Global Tokens & Typography
+   BASE.CSS — Design Tokens, Reset, Typography
 ============================================================ */
+
+/* =========================
+   Design Tokens
+========================= */
 
 :root {
   /* Brand */
-  --primary: #1e3a8a;        /* blue */
-  --primary-hover: #2563eb;
-  --accent: #0ea5a4;         /* green */
+  --color-primary: #1e3a8a;
+  --color-primary-hover: #2563eb;
+  --color-accent: #0ea5a4;
 
   /* Text */
-  --text-dark: #0f172a;
-  --text-mid: #475569;
-  --text-soft: #64748b;
-  --text-light: #94a3b8;
+  --text-strong: #0f172a;
+  --text-normal: #475569;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
 
   /* Backgrounds */
-  --bg-main: #f9fafb;
+  --bg-page: #f9fafb;
   --bg-soft: #f1f5f9;
-  --white: #ffffff;
+  --bg-white: #ffffff;
 
   /* Borders & Radius */
-  --border: #e2e8f0;
+  --border-color: #e2e8f0;
   --radius-sm: 8px;
-  --radius: 12px;
+  --radius-md: 12px;
   --radius-lg: 18px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 6px rgba(15,23,42,.05);
-  --shadow-md: 0 6px 14px rgba(15,23,42,.08);
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 6px 14px rgba(15, 23, 42, 0.08);
 
   /* Layout */
   --max-width: 1280px;
   --content-width: 820px;
 }
 
-/* Reset */
+/* =========================
+   Reset & Base
+========================= */
+
 *,
 *::before,
 *::after {
@@ -48,8 +55,8 @@ html {
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg-main);
-  color: var(--text-dark);
+  background: var(--bg-page);
+  color: var(--text-strong);
   line-height: 1.65;
 }
 
@@ -63,29 +70,29 @@ a {
   text-decoration: none;
 }
 
+/* =========================
+   Typography
+========================= */
+
 h1, h2, h3, h4 {
-  margin: 0 0 .6rem;
+  margin: 0 0 0.6rem;
   font-weight: 700;
 }
 
 p {
   margin: 0 0 1rem;
-  color: var(--text-mid);
+  color: var(--text-normal);
 }
 
+/* =========================
+   RTL Support
+========================= */
 
 html[dir="rtl"] {
   direction: rtl;
 }
 
-html[dir="rtl"] .site-nav {
-  direction: rtl;
-}
-
-/* =========================
-   RTL HEADER FIX
-========================= */
-
+/* Header + Navigation RTL behavior */
 html[dir="rtl"] .header-inner {
   flex-direction: row-reverse;
 }
@@ -97,4 +104,3 @@ html[dir="rtl"] .site-nav {
 html[dir="rtl"] .site-nav a {
   text-align: right;
 }
-
