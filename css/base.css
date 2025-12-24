@@ -72,3 +72,13 @@ p {
   margin: 0 0 1rem;
   color: var(--text-mid);
 }
+
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] .site-nav {
+  direction: rtl;
+}
+
