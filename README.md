@@ -1,24 +1,128 @@
-# ⚙️ TaskHub
+# Bita Digital Hub
 
-**TaskHub** is a collection of simple, fast, and useful **online tools** — all in one place.  
-Built to save time, improve productivity, and make everyday tasks easier.
+**Clear weekly reports from messy data.**
 
-🌐 **Live site:** [https://bashoori.github.io/TaskHub/](https://bashoori.github.io/TaskHub/)
+Bita Digital Hub is a personal tech studio focused on turning spreadsheets, exports, and raw data into **clear, human-readable weekly reports**.  
+No dashboards. No tools to learn. Just clarity.
+
+🌐 Website: https://bitadigitalhub.com  
+📍 Based in Greater Vancouver, Canada
 
 ---
 
-## 🚀 Features
-- 🧾 **File Converter** — Convert between PDF, Word, Excel, JPG, PNG, and TXT  
-- 📦 **ZIP / Unzip Online** — Compress or extract files right in your browser  
-- 📊 **CSV Cleaner & Merger** — Clean, merge, or deduplicate CSV/Excel data  
-- 🔐 **Password Generator** — Create and test strong passwords  
-- 🌐 **URL Shortener & QR Generator** — Shorten links and generate instant QR codes  
+## What This Is
 
-All tools are:
-- ✅ Browser-based (no installation)
-- ✅ Free to use
-- ✅ Built with HTML, CSS, and JavaScript
-- ✅ Mobile-friendly and fast-loading
+Most teams don’t need more charts.  
+They need **answers**.
 
+Bita Digital Hub helps individuals and small teams:
+- Understand what changed this week
+- See trends without noise
+- Know what to do next
 
-pip install -r requirements.txt
+Everything is delivered as:
+- **Weekly PDF reports**
+- **Clean Excel / CSV files**
+
+---
+
+## What This Is Not
+
+- ❌ Not a BI platform  
+- ❌ Not real-time dashboards  
+- ❌ Not automated chart spam  
+- ❌ Not a SaaS with logins
+
+This is a **calm, repeatable reporting workflow**.
+
+---
+
+## Core Pages
+
+- **Home**  
+  https://bitadigitalhub.com/
+
+- **How It Works**  
+  Step-by-step process from data upload to report delivery  
+  `/pages/landing/process.html`
+
+- **Weekly Report**  
+  What the report includes and how it’s structured  
+  `/pages/landing/weekly-report.html`
+
+- **Free First Report**  
+  Try one real report using your own data  
+  `/pages/landing/free-first-report.html`
+
+- **Contact**  
+  Start the workflow or ask questions  
+  `/pages/contact/contact.html`
+
+- **Legal**  
+  - Privacy Policy: `/legal/privacy-policy.html`  
+  - Terms of Service: `/legal/terms.html`
+
+---
+
+## Free First Report
+
+New users can request:
+- One real weekly report
+- Cleaned data files
+- Clear explanations and next steps
+
+No obligation to continue.
+
+This exists to remove uncertainty and build trust.
+
+---
+
+## Who Built This
+
+Bita Digital Hub is built and operated by **Bita Ashoori**,  
+a data engineer with a background in:
+- Data engineering
+- Analytics
+- Automation
+
+The focus is not visual polish — it’s **accuracy, clarity, and usefulness**.
+
+Every report answers one question:
+
+> *What should the reader do next?*
+
+---
+
+## Tech Stack
+
+- Static HTML + CSS
+- No framework dependency
+- No tracking-heavy scripts
+- Optimized for clarity and speed
+
+SEO essentials:
+- `robots.txt`
+- `sitemap.xml`
+- Semantic HTML
+- Human-first copy
+
+---
+
+## Philosophy
+
+- Clarity beats complexity  
+- Consistency beats cleverness  
+- Reports are for humans, not machines  
+
+If you can’t understand it in five minutes, it’s not done.
+
+---
+
+## Contact
+
+📧 Email: contact@bitadigitalhub.com  
+🌍 Location: Greater Vancouver, Canada
+
+---
+
+© Bita Digital Hub — Simple. Clear. Actionable.
