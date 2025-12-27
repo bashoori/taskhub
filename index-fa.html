@@ -4,102 +4,308 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>بیتا دیجیتال هاب | گزارش‌های هفتگی شفاف از داده‌های نامنظم</title>
+  <title>بیتا دیجیتال هاب | گزارش‌های هفتگی شفاف از داده‌های نامرتب</title>
 
   <meta
     name="description"
-    content="تبدیل فایل‌های اکسل و داده‌های نامنظم به گزارش‌های هفتگی شفاف و قابل اقدام. بدون داشبورد، بدون ابزار اضافی."
+    content="تبدیل فایل‌های اکسل و داده‌های نامرتب به گزارش‌های هفتگی شفاف و قابل تصمیم‌گیری. بدون داشبورد. بدون ابزار پیچیده."
   />
 
-  <!-- GLOBAL STYLES -->
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/layout.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-
   <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+
+    * { box-sizing:border-box; }
+
     body {
-      overflow-x: hidden;
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.8;
+      text-align:right;
     }
 
-    /* RTL header fix */
-    html[dir="rtl"] .header-inner {
-      flex-direction: row;
+    a { color:inherit; text-decoration:none; }
+
+    h1, h2, h3 {
+      line-height:1.3;
+      letter-spacing:-0.01em;
+      margin:.4rem 0;
     }
 
-    html[dir="rtl"] .brand-link {
-      margin-left: auto;
+    p {
+      margin:.6rem 0;
+      color:var(--muted);
     }
 
-    html[dir="rtl"] .site-nav {
-      flex-direction: row;
-      gap: 1.5rem;
+    /* ================= HEADER ================= */
+
+    .site-header {
+      border-bottom:1px solid var(--border);
+      background:var(--bg);
     }
 
-    main,
+    .header-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-direction:row-reverse;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .brand-name {
+      font-size:1.05rem;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner {
+        flex-direction:column;
+      }
+    }
+
+    /* ================= MAIN ================= */
+
     .container {
-      min-height: auto;
+      max-width:1100px;
+      margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+
+    .hero {
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:1.5rem;
+      margin-bottom:3rem;
+    }
+
+    @media (max-width:900px) {
+      .hero { grid-template-columns:1fr; }
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.75rem;
+      box-shadow:var(--shadow);
+    }
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .hero h1 {
+      margin-top:1rem;
+      font-size:2.3rem;
+    }
+
+    .buttons {
+      display:flex;
+      gap:.75rem;
+      margin-top:1.25rem;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+    }
+
+    .btn {
+      padding:.8rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+    }
+
+    .btn.primary {
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
+    }
+
+    .preview-image {
+      margin-top:.75rem;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#f8fafc;
+    }
+
+    .preview-image img {
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    .section {
+      margin-top:3rem;
+    }
+
+    .grid-3 {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.25rem;
+    }
+
+    @media (max-width:900px) {
+      .grid-3 { grid-template-columns:1fr; }
+    }
+
+    ul {
+      padding-right:1.1rem;
+      margin-top:.75rem;
+    }
+
+    li {
+      margin:.4rem 0;
+      color:var(--muted);
+    }
+
+    .cta {
+      margin-top:3.5rem;
+      background:rgba(14,165,164,.08);
+      border:1px solid rgba(14,165,164,.2);
+      border-radius:var(--radius);
+      padding:2rem;
+      text-align:center;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background:var(--bg);
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-direction:row-reverse;
+      text-align:right;
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+    }
+
+    .footer-logo {
+      width:26px;
+      height:26px;
+    }
+
+    .footer-copy {
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <a href="/index-fa.html" class="brand-link" aria-label="خانه بیتا دیجیتال هاب">
-      <img
-        src="/assets/icons/taskhub-logo.svg"
-        alt="Bita Digital Hub"
-        class="brand-logo"
-      />
-      <span class="brand-name">Bita Digital Hub</span>
+      <img src="/assets/icons/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" class="brand-logo" />
+      <span class="brand-name">بیتا دیجیتال هاب</span>
     </a>
 
-    <nav class="site-nav" aria-label="ناوبری اصلی">
-      <a href="/pages/landing/process-fa.html">روند کار</a>
-      <a href="/pages/landing/weekly-report-fa.html">گزارش هفتگی</a>
-      <a href="/pages/about/about-fa.html">درباره ما</a>
-      <a href="/pages/landing/contact-fa.html">تماس</a>
+    <nav class="site-nav" aria-label="منوی اصلی">
+      <a href="/pages/landing/process.html">نحوه کار</a>
+      <a href="/pages/landing/weekly-report.html">گزارش هفتگی</a>
+      <a href="/pages/about/about.html">درباره ما</a>
+      <a href="/pages/contact/contact.html">تماس</a>
     </nav>
   </div>
 </header>
 
-<!-- ================= MAIN ================= -->
+<!-- MAIN -->
 <main class="container">
 
   <!-- HERO -->
   <section class="hero">
 
-    <!-- TEXT -->
     <div class="card">
-      <span class="kicker">داده‌های نامنظم → تصمیم‌های شفاف</span>
-
-      <h1>
-        گزارش‌های هفتگی شفاف از داده‌هایی که همین حالا دارید
-      </h1>
+      <span class="kicker">داده‌های نامرتب → تصمیم‌های شفاف</span>
+      <h1>گزارش‌های هفتگی شفاف از داده‌هایی که همین حالا دارید</h1>
 
       <p>
         شما به یک داشبورد دیگر نیاز ندارید.
-        آنچه نیاز دارید، درک روشن از وضعیت فعلی و دانستن قدم بعدی است.
+        شما باید بفهمید چه اتفاقی در داده‌هایتان می‌افتد و قدم بعدی چیست.
       </p>
 
       <p>
-        ما فایل‌های اکسل، خروجی‌ها و داده‌های پراکنده را
-        به گزارش‌های هفتگی ساده، قابل فهم و قابل استفاده تبدیل می‌کنیم.
+        ما فایل‌های اکسل، خروجی‌ها و داده‌های نامرتب را
+        به گزارش‌های هفتگی قابل استفاده تبدیل می‌کنیم.
       </p>
 
       <div class="buttons">
-        <a href="/pages/landing/process-fa.html" class="btn primary">
-          مشاهده روند کار
-        </a>
-        <a href="/pages/landing/free-first-report-fa.html" class="btn">
-          دریافت گزارش اول رایگان
-        </a>
+        <a href="/pages/landing/process.html" class="btn primary">نحوه کار</a>
+        <a href="/pages/landing/free-first-report.html" class="btn">دریافت گزارش نمونه</a>
       </div>
     </div>
 
-    <!-- PREVIEW -->
     <div class="card">
       <div class="preview-image">
         <img
@@ -109,72 +315,57 @@
         />
       </div>
 
-      <h3 style="margin-top:1rem;">آنچه دریافت می‌کنید</h3>
+      <h3 style="margin-top:1rem;">چه چیزی دریافت می‌کنید</h3>
       <ul>
-        <li>گزارش هفتگی PDF (خوانا و مناسب اشتراک‌گذاری)</li>
-        <li>داده‌های تمیز و ساخت‌یافته (Excel / CSV)</li>
-        <li>پیشنهادهای شفاف برای اقدام بعدی</li>
+        <li>گزارش PDF هفتگی (ساده و قابل اشتراک)</li>
+        <li>داده تمیز شده (Excel / CSV)</li>
+        <li>پیشنهادهای شفاف برای قدم بعدی</li>
       </ul>
     </div>
 
   </section>
 
-  <!-- FEATURES -->
+  <!-- WHY -->
   <section class="section grid-3">
-
     <div class="card">
-      <h3>بدون ابزار جدید</h3>
-      <p>
-        شما فقط فایل‌ها را ارسال می‌کنید.
-        بقیه‌ی مسیر را ما مدیریت می‌کنیم.
-      </p>
+      <h3>بدون یادگیری ابزار جدید</h3>
+      <p>فایل‌ها را ارسال می‌کنید، ما بقیه کار را انجام می‌دهیم.</p>
     </div>
 
     <div class="card">
-      <h3>متمرکز بر تصمیم‌گیری</h3>
-      <p>
-        تمرکز روی تغییرات مهم، روندها و نکاتی که واقعاً اهمیت دارند.
-      </p>
+      <h3>طراحی‌شده برای تصمیم‌گیری</h3>
+      <p>تمرکز روی روندها، تغییرات و اقدام بعدی.</p>
     </div>
 
     <div class="card">
       <h3>قابل تکرار هر هفته</h3>
-      <p>
-        یک روال منظم و قابل اعتماد که می‌توانید به آن تکیه کنید.
-      </p>
+      <p>یک ریتم مشخص و قابل اعتماد.</p>
     </div>
-
   </section>
 
   <!-- CTA -->
   <section class="cta">
-    <h2>آماده‌اید داده‌هایتان را به شفافیت تبدیل کنید؟</h2>
-    <p>
-      با همان فایل‌هایی که همین حالا دارید شروع کنید.
-    </p>
+    <h2>آماده‌اید داده‌هایتان شفاف شود؟</h2>
+    <p>با همان فایل‌هایی که دارید شروع کنید.</p>
 
     <div class="buttons" style="justify-content:center;">
-      <a href="/pages/landing/free-first-report-fa.html" class="btn">
-        درخواست گزارش اول رایگان
-      </a>
-      <a href="/pages/landing/contact-fa.html" class="btn primary">
-        تماس
-      </a>
+      <a href="/pages/landing/free-first-report.html" class="btn">درخواست گزارش نمونه</a>
+      <a href="/pages/contact/contact.html" class="btn primary">تماس</a>
     </div>
   </section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <a href="/index-fa.html" class="footer-brand">
+    <a href="/index-fa.html" class="footer-brand" aria-label="خانه بیتا دیجیتال هاب">
       <img
         src="/assets/icons/taskhub-logo.svg"
-        alt="Bita Digital Hub"
+        alt="لوگوی بیتا دیجیتال هاب"
         class="footer-logo"
       />
-      <span>Bita Digital Hub</span>
+      <span>بیتا دیجیتال هاب</span>
     </a>
 
     <p class="footer-copy">
@@ -185,9 +376,9 @@
         contact@bitadigitalhub.com
       </a>
       <br />
-      <a href="/pages/landing/pricing-fa.html">قیمت‌گذاری</a> ·
-      <a href="/legal/privacy-policy-fa.html">حریم خصوصی</a> ·
-      <a href="/legal/terms-fa.html">شرایط استفاده</a>
+      <a href="/pages/landing/pricing.html">قیمت‌گذاری</a> ·
+      <a href="/legal/privacy-policy.html">حریم خصوصی</a> ·
+      <a href="/legal/terms.html">شرایط استفاده</a>
     </p>
   </div>
 </footer>
