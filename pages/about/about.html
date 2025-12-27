@@ -34,7 +34,7 @@
 
     a { color:inherit; text-decoration:none; }
 
-    /* ================= HEADER ================= */
+   /* ================= HEADER ================= */
 
     .site-header {
       border-bottom:1px solid var(--border);
@@ -46,8 +46,8 @@
       margin:0 auto;
       padding:1.25rem;
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
       gap:1rem;
     }
 
@@ -63,9 +63,15 @@
       height:28px;
     }
 
+    .brand-name {
+      font-size:1.05rem;
+      letter-spacing:-0.02em;
+    }
+
     .site-nav {
       display:flex;
       gap:1.25rem;
+      flex-wrap:wrap;
     }
 
     .site-nav a {
