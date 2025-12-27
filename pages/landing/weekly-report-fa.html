@@ -1,1 +1,392 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>گزارش هفتگی | آنچه دریافت می‌کنید</title>
+
+  <meta
+    name="description"
+    content="ببینید گزارش هفتگی شامل چه بخش‌هایی است، چگونه خوانده می‌شود و چطور هر هفته به تصمیم‌گیری بهتر کمک می‌کند."
+  />
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.8;
+      text-align:right;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ================= HEADER ================= */
+
+    .site-header {
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+
+    .header-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-direction:row-reverse;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+      direction:ltr;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .brand-name {
+      font-size:1.05rem;
+      letter-spacing:-0.02em;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner {
+        flex-direction:column;
+      }
+    }
+
+    /* ================= CONTENT ================= */
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+
+    h1, h2, h3 {
+      line-height:1.35;
+      letter-spacing:-0.02em;
+      margin:.4rem 0;
+    }
+
+    p {
+      margin:.6rem 0;
+      color: var(--muted);
+    }
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background: rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .card {
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:1.75rem;
+      box-shadow: var(--shadow);
+      margin-top:1.5rem;
+    }
+
+    ul {
+      margin:.75rem 0 0;
+      padding-right:1.1rem;
+    }
+
+    li {
+      margin:.45rem 0;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top:2.5rem;
+    }
+
+    .report-block {
+      border-right: 4px solid var(--primary);
+      padding-right:1rem;
+      margin-top:1rem;
+    }
+
+    .highlight {
+      background: rgba(14,165,164,.08);
+      border:1px solid rgba(14,165,164,.2);
+      border-radius: 12px;
+      padding:1rem;
+      margin-top:1rem;
+      font-weight:700;
+      color:#0f172a;
+    }
+
+    .preview-image {
+      margin-top:1rem;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#f8fafc;
+    }
+
+    .preview-image img {
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .btns {
+      display:flex;
+      gap:.75rem;
+      margin-top:2rem;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+    }
+
+    .btn {
+      padding:.75rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:700;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color:#fff;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background: #fff;
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      flex-direction:row-reverse;
+      text-align:right;
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+    }
+
+    .footer-logo {
+      width:26px;
+      height:26px;
+    }
+
+    .footer-copy {
+      font-size:.95rem;
+      color: var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index-fa.html" class="brand-link" aria-label="خانه بیتا دیجیتال هاب">
+      <img src="/assets/icons/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" class="brand-logo" />
+      <span class="brand-name">بیتا دیجیتال هاب</span>
+    </a>
+
+    <nav class="site-nav" aria-label="منوی اصلی">
+      <a href="/index.html" class="btn primary">En</a>
+      <a href="/pages/landing/process.html">نحوه کار</a>
+      <a href="/pages/landing/weekly-report-fa.html">گزارش هفتگی</a>
+      <a href="/pages/about/about-fa.html">درباره ما</a>
+      <a href="/pages/contact/contact-fa.html">تماس</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="container">
+
+  <span class="kicker">مرحله ۴</span>
+  <h1>گزارش هفتگی شما</h1>
+
+  <p>
+    این بخش هسته‌ی اصلی سرویس است.
+    گزارش به‌گونه‌ای طراحی شده که
+    در چند دقیقه خوانده شود،
+    فوراً قابل درک باشد،
+    و به شما کمک کند تصمیم بعدی را بگیرید.
+  </p>
+
+  <div class="card">
+    <h2>این گزارش چیست (و چه چیزی نیست)</h2>
+    <ul>
+      <li>✔ خلاصه‌ای شفاف از اتفاقات این هفته</li>
+      <li>✔ تمرکز روی روندها و تغییرات</li>
+      <li>✔ نوشته‌شده برای انسان‌ها</li>
+      <li>✘ نه یک داشبورد پیچیده</li>
+      <li>✘ نه نمودارهای بدون توضیح</li>
+    </ul>
+
+    <div class="preview-image">
+      <img
+        src="/assets/images/weekly-report.png"
+        alt="نمونه گزارش هفتگی شامل شاخص‌ها، روندها و اقدامات بعدی"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>داخل گزارش چه چیزی وجود دارد</h2>
+
+    <div class="card report-block">
+      <h3>۱. نمای کلی هفته</h3>
+      <ul>
+        <li>تعداد کل لیدها / رکوردها</li>
+        <li>تغییر نسبت به هفته قبل</li>
+        <li>هشدارها یا موفقیت‌های فوری</li>
+      </ul>
+    </div>
+
+    <div class="card report-block">
+      <h3>۲. تحلیل عملکرد</h3>
+      <ul>
+        <li>بر اساس منبع، کمپین یا دسته‌بندی</li>
+        <li>بهترین و ضعیف‌ترین بخش‌ها</li>
+        <li>مقایسه‌های شفاف</li>
+      </ul>
+    </div>
+
+    <div class="card report-block">
+      <h3>۳. روندها و بینش‌ها</h3>
+      <ul>
+        <li>چه چیزی در حال بهتر شدن است</li>
+        <li>چه چیزی افت کرده است</li>
+        <li>دلیل احتمالی آن</li>
+      </ul>
+    </div>
+
+    <div class="card report-block">
+      <h3>۴. اقدامات بعدی</h3>
+      <ul>
+        <li>چه چیزی را ادامه دهید</li>
+        <li>چه چیزی را اصلاح کنید</li>
+        <li>چه چیزی را هفته آینده تست کنید</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section card">
+    <h2>فرمت تحویل</h2>
+    <ul>
+      <li>گزارش PDF</li>
+      <li>فایل Excel / CSV تمیز شده</li>
+    </ul>
+
+    <div class="highlight">
+      گزارش خودش توضیح می‌دهد. نیازی به راهنما ندارد.
+    </div>
+  </div>
+
+  <div class="section card">
+    <h2>آنچه هر هفته به شما می‌دهد</h2>
+    <ul>
+      <li>شفافیت</li>
+      <li>اطمینان</li>
+      <li>یک ریتم هفتگی قابل تکرار</li>
+    </ul>
+  </div>
+
+  <div class="btns">
+    <a href="/pages/landing/free-first-report.html" class="btn">درخواست گزارش نمونه</a>
+    <a href="/pages/landing/process.html" class="btn primary">نحوه کار</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index-fa.html" class="footer-brand" aria-label="خانه بیتا دیجیتال هاب">
+      <img src="/assets/icons/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" class="footer-logo" />
+      <span>بیتا دیجیتال هاب</span>
+    </a>
+
+    <p class="footer-copy">
+      © بیتا دیجیتال هاب — ساده، شفاف، قابل اقدام
+      <br />
+      ایمیل:
+      <a href="mailto:contact@bitadigitalhub.com">
+        contact@bitadigitalhub.com
+      </a>
+      <br />
+      <a href="/pages/landing/pricing.html">قیمت‌گذاری</a> ·
+      <a href="/legal/privacy-policy.html">حریم خصوصی</a> ·
+      <a href="/legal/terms.html">شرایط استفاده</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
