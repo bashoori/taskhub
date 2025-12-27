@@ -35,9 +35,7 @@
 
     a { color:inherit; text-decoration:none; }
 
-    /* HEADER */
-
-   /* ================= HEADER ================= */
+    /* ================= HEADER ================= */
 
     .site-header {
       border-bottom:1px solid var(--border);
@@ -92,7 +90,7 @@
       }
     }
 
-    /* MAIN */
+    /* ================= MAIN ================= */
 
     main {
       max-width:900px;
@@ -160,7 +158,7 @@
       border:1px solid var(--border);
       background:#fff;
       font-weight:800;
-      min-width:200px;
+      min-width:180px;
       text-align:center;
     }
 
@@ -176,7 +174,7 @@
       color:var(--muted);
     }
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     .site-footer {
       border-top:1px solid var(--border);
@@ -219,107 +217,96 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/index.html" class="brand-link">
-        <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
-        <span>Bita Digital Hub</span>
-      </a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="brand-link">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
+      <span class="brand-name">Bita Digital Hub</span>
+    </a>
 
-      <nav class="site-nav">
-        <a href="/pages/landing/process.html">How it works</a>
-        <a href="/pages/landing/weekly-report.html">Weekly report</a>
-        <a href="/pages/about/about.html">About</a>
-        <a href="/pages/contact/contact.html">Contact</a>
-      </nav>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/pages/landing/process.html">How it works</a>
+      <a href="/pages/landing/weekly-report.html">Weekly report</a>
+      <a href="/pages/about/about.html">About</a>
+      <a href="/pages/contact/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <span class="kicker">Free first report</span>
+  <h1>See a real weekly report using your own data</h1>
+
+  <p>
+    Before committing to anything ongoing, get one complete weekly report.
+    Built from your data. Delivered once. No demos. No dashboards.
+  </p>
+
+  <div class="card">
+    <h2>What you’ll receive</h2>
+    <ul>
+      <li>One complete weekly report (PDF)</li>
+      <li>Cleaned and structured Excel / CSV file</li>
+      <li>Key trends and week-over-week changes</li>
+      <li>Clear, practical next-step recommendations</li>
+    </ul>
+
+    <div class="highlight">
+      This is a real deliverable, not a preview.
     </div>
-  </header>
+  </div>
 
-  <!-- MAIN -->
-  <main>
-
-    <span class="kicker">Free first report</span>
-    <h1>See a real weekly report using your own data</h1>
+  <div class="card">
+    <h2>What you need to send</h2>
+    <ul>
+      <li>One Excel or CSV file (or Google Sheet link)</li>
+      <li>A short note on what you want to understand weekly</li>
+    </ul>
 
     <p>
-      Before committing to anything ongoing, get one complete weekly report.
-      Built from your data. Delivered once. No demos. No dashboards.
+      Your data does not need to be clean.
+      Cleaning and structure are part of the work.
     </p>
+  </div>
 
-    <div class="card">
-      <h2>What you’ll receive</h2>
-      <ul>
-        <li>One complete weekly report (PDF)</li>
-        <li>Cleaned and structured Excel / CSV file</li>
-        <li>Key trends and week-over-week changes</li>
-        <li>Clear, practical next-step recommendations</li>
-      </ul>
+  <div class="card">
+    <h2>What happens after</h2>
+    <ul>
+      <li>You review the report and decide if it’s useful</li>
+      <li>If yes, we continue with paid weekly reporting</li>
+      <li>If not, you keep the report — no obligation</li>
+    </ul>
+  </div>
 
-      <div class="highlight">
-        This is a real deliverable, not a preview.
-      </div>
-    </div>
+  <div class="btns">
+    <a href="/pages/contact/contact.html" class="btn primary">Request free first report</a>
+    <a href="/pages/landing/process.html" class="btn">See how it works</a>
+    <a href="/pages/landing/pricing.html" class="btn">View pricing</a>
+  </div>
 
-    <div class="card">
-      <h2>What you need to send</h2>
-      <ul>
-        <li>One Excel or CSV file (or Google Sheet link)</li>
-        <li>A short note on what you want to understand weekly</li>
-      </ul>
+  <p class="note">
+    Final pricing is confirmed after reviewing your first report.
+  </p>
 
-      <p>
-        Your data does not need to be clean.
-        Cleaning and structure are part of the work.
-      </p>
-    </div>
+</main>
 
-    <div class="card">
-      <h2>What happens after</h2>
-      <ul>
-        <li>You review the report and decide if it’s useful</li>
-        <li>If yes, we continue with paid weekly reporting</li>
-        <li>If not, you keep the report — no obligation</li>
-      </ul>
-    </div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index.html" class="footer-brand">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="footer-logo" />
+      <span>Bita Digital Hub</span>
+    </a>
 
-    <div class="btns">
-      <a href="/pages/contact/contact.html" class="btn primary">
-        Request free first report
-      </a>
-
-      <a href="/pages/landing/process.html" class="btn">
-        See how it works
-      </a>
-
-      <a href="/pages/landing/pricing.html" class="btn">
-        View pricing
-      </a>
-    </div>
-
-    <p class="note">
-      Final pricing is confirmed after reviewing your first report.
+    <p class="footer-copy">
+      © Bita Digital Hub — Simple. Clear. Actionable.<br />
+      Email: <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
+      <a href="/pages/landing/pricing.html">Pricing</a> ·
+      <a href="/legal/privacy-policy.html">Privacy Policy</a> ·
+      <a href="/legal/terms.html">Terms of Service</a>
     </p>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="/index.html" class="footer-brand">
-        <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="footer-logo" />
-        <span>Bita Digital Hub</span>
-      </a>
-
-      <p class="footer-copy">
-        © Bita Digital Hub — Simple. Clear. Actionable.<br />
-        Email: <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
-        <a href="/pages/landing/pricing.html">Pricing</a> ·
-        <a href="/legal/privacy-policy.html">Privacy Policy</a> ·
-        <a href="/legal/terms.html">Terms of Service</a>
-      </p>
-    </div>
-  </footer>
+  </div>
+</footer>
 
 </body>
 </html>
