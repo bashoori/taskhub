@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>تماس | بیتا دیجیتال هاب</title>
+
+  <meta
+    name="description"
+    content="برای شروع گزارش‌های هفتگی شفاف با بیتا دیجیتال هاب تماس بگیرید."
+  />
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+      --max-width:1100px;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.8;
+      text-align:right;
+    }
+
+    a { color:inherit; text-decoration:none; }
+
+    h1,h2,h3 {
+      margin:.4rem 0;
+      line-height:1.3;
+      letter-spacing:-0.01em;
+    }
+
+    p {
+      margin:.6rem 0;
+      color:var(--muted);
+    }
+
+    .container {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-direction:row-reverse;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+      direction:ltr;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a[aria-current="page"],
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner { flex-direction:column; }
+    }
+
+    /* CONTENT */
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.85rem;
+      margin-bottom:.75rem;
+    }
+
+    .section { margin-top:2.5rem; }
+
+    .grid {
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:1.5rem;
+    }
+
+    @media (max-width:900px) {
+      .grid { grid-template-columns:1fr; }
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.75rem;
+      box-shadow:var(--shadow);
+    }
+
+    .row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+    }
+
+    @media (max-width:600px) {
+      .row { grid-template-columns:1fr; }
+    }
+
+    label {
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    input,
+    textarea {
+      width:100%;
+      padding:.75rem;
+      border-radius:10px;
+      border:1px solid var(--border);
+      font:inherit;
+      margin-top:.25rem;
+    }
+
+    textarea { min-height:140px; }
+
+    .btn {
+      padding:.8rem 1.2rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .btn.primary {
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
+    }
+
+    ul.list {
+      padding-right:1.1rem;
+      margin-top:.75rem;
+    }
+
+    ul.list li {
+      margin:.45rem 0;
+      color:var(--muted);
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      background:#fff;
+      border-top:1px solid var(--border);
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-direction:row-reverse;
+      text-align:right;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+      color:var(--text);
+      flex-direction:row-reverse;
+    }
+
+    .footer-logo {
+      width:28px;
+      height:28px;
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index-fa.html" class="brand-link" aria-label="خانه بیتا دیجیتال هاب">
+      <img src="/assets/icons/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" class="brand-logo" />
+      <span>بیتا دیجیتال هاب</span>
+    </a>
+
+    <nav class="site-nav">
+      <a href="/index.html" class="btn primary">En</a>
+      <a href="/pages/landing/process.html">نحوه کار</a>
+      <a href="/pages/landing/weekly-report.html">گزارش هفتگی</a>
+      <a href="/pages/about/about.html">درباره ما</a>
+      <a href="/pages/contact/contact-fa.html" aria-current="page">تماس</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section">
+    <span class="kicker">تماس</span>
+    <h1>شروع گردش کار گزارش‌دهی هفتگی</h1>
+    <p>
+      به ما بگویید از داده‌هایتان چه چیزی می‌خواهید بفهمید.
+      اگر هنوز مطمئن نیستید، همان فایل‌هایی که دارید را ارسال کنید.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="grid">
+
+      <div class="card">
+        <h2>ارسال درخواست</h2>
+
+        <form action="#" method="POST">
+          <div class="row">
+            <div>
+              <label for="name">نام کامل</label>
+              <input id="name" name="name" required />
+            </div>
+            <div>
+              <label for="email">ایمیل</label>
+              <input id="email" type="email" name="email" required />
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;">
+            <label for="message">چه چیزی را می‌خواهید دنبال کنید؟</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="لیدهای هفتگی، روندها، مقایسه‌ها…"
+              required
+            ></textarea>
+          </div>
+
+          <div style="margin-top:1.25rem;">
+            <button type="submit" class="btn primary">
+              ارسال پیام
+            </button>
+          </div>
+
+          <p style="margin-top:1rem; font-size:.9rem;">
+            یا مستقیماً ایمیل بزنید:
+            <a href="mailto:contact@bitadigitalhub.com">
+              <strong>contact@bitadigitalhub.com</strong>
+            </a>
+          </p>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h2>بعدش چه می‌شود؟</h2>
+        <ul class="list">
+          <li>پیام شما را بررسی می‌کنیم</li>
+          <li>فایل‌های موردنیاز را مشخص می‌کنیم</li>
+          <li>یک برنامه تحویل شفاف دریافت می‌کنید</li>
+        </ul>
+
+        <img
+          src="/assets/images/what-happen-next.png"
+          alt="مراحل بعدی"
+          style="width:100%; margin-top:1rem; border-radius:12px;"
+        />
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index-fa.html" class="footer-brand">
+      <img src="/assets/icons/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" class="footer-logo" />
+      <span>بیتا دیجیتال هاب</span>
+    </a>
+
+    <p>
+      © بیتا دیجیتال هاب — ساده، شفاف، قابل اقدام<br />
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
+      <a href="/pages/landing/pricing.html">قیمت‌گذاری</a> ·
+      <a href="/legal/privacy-policy.html">حریم خصوصی</a> ·
+      <a href="/legal/terms.html">شرایط استفاده</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
