@@ -11,100 +11,225 @@
     content="Contact Bita Digital Hub to start your weekly reporting workflow."
   />
 
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/layout.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-
   <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+      --max-width:1100px;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a { color:inherit; text-decoration:none; }
+
+    h1, h2, h3 {
+      line-height:1.25;
+      letter-spacing:-0.02em;
+      margin:.4rem 0;
+    }
+
+    p {
+      margin:.5rem 0;
+      color:var(--muted);
+    }
+
+    /* ================= LAYOUT ================= */
+
     .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.25rem 4rem;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+
+    /* ================= HEADER ================= */
+
+    .site-header {
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+
+    .header-inner {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner {
+        flex-direction:column;
+      }
+    }
+
+    /* ================= CONTENT ================= */
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.85rem;
+      margin-bottom:.75rem;
     }
 
     .section {
-      margin-bottom: 2.5rem;
+      margin-top:2.5rem;
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.5rem;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:1.5rem;
     }
 
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:900px) {
+      .grid { grid-template-columns:1fr; }
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.75rem;
+      box-shadow:var(--shadow);
     }
 
     .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
     }
 
-    @media (max-width: 600px) {
-      .row {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:600px) {
+      .row { grid-template-columns:1fr; }
     }
 
-    .kicker {
-      display: inline-block;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #0f766e;
-      background: rgba(14,165,164,0.1);
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      margin-bottom: 0.75rem;
+    label {
+      font-weight:700;
+      font-size:.9rem;
     }
 
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      font: inherit;
+    input,
+    textarea {
+      width:100%;
+      padding:.75rem;
+      border-radius:10px;
+      border:1px solid var(--border);
+      font:inherit;
+      margin-top:.25rem;
     }
 
-    form textarea {
-      min-height: 140px;
+    textarea { min-height:140px; }
+
+    .btn {
+      padding:.8rem 1.2rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+      cursor:pointer;
     }
 
     .btn.primary {
-      background: #0ea5a4;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.2rem;
-      border-radius: 12px;
-      font-weight: 800;
-      cursor: pointer;
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
     }
 
-    .btn.primary:hover {
-      opacity: 0.95;
+    ul.list {
+      padding-left:1.1rem;
+      margin-top:.75rem;
     }
 
-    .list {
-      padding-left: 1.1rem;
+    ul.list li {
+      margin:.45rem 0;
+      color:var(--muted);
     }
 
-    .list li {
-      margin: 0.5rem 0;
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background:#fff;
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <a href="/index.html" class="brand-link">
-      <img src="/assets/icons/taskhub-logo.svg" class="brand-logo" />
-      <span class="brand-name">Bita Digital Hub</span>
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
+      <span>Bita Digital Hub</span>
     </a>
 
     <nav class="site-nav">
@@ -116,6 +241,7 @@
   </div>
 </header>
 
+<!-- MAIN -->
 <main class="container">
 
   <section class="section">
@@ -133,10 +259,8 @@
       <div class="card">
         <h2>Send a request</h2>
 
-        <form
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
-        >
+        <!-- Replace action when ready -->
+        <form action="#" method="POST">
           <div class="row">
             <div>
               <label>Full name</label>
@@ -157,8 +281,6 @@
             ></textarea>
           </div>
 
-          <input type="hidden" name="source" value="Contact page" />
-
           <div style="margin-top:1.25rem;">
             <button type="submit" class="btn primary">
               Send message
@@ -177,6 +299,7 @@
 
         <img
           src="/assets/images/what-happen-next.png"
+          alt="Next steps illustration"
           style="width:100%; margin-top:1rem; border-radius:12px;"
         />
       </aside>
@@ -186,9 +309,11 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <span>© Bita Digital Hub — Simple. Clear. Actionable.</span>
+    <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
   </div>
 </footer>
 
