@@ -1,1 +1,330 @@
-1
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>گزارش نمونه رایگان | بیتا دیجیتال هاب</title>
+
+  <meta
+    name="description"
+    content="اولین گزارش هفتگی خود را به‌صورت رایگان دریافت کنید. با داده‌های واقعی خودتان و بدون هیچ تعهدی."
+  />
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.8;
+      text-align:right;
+    }
+
+    a { color:inherit; text-decoration:none; }
+
+    /* ================= HEADER ================= */
+
+    .site-header {
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+
+    .header-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-direction:row-reverse;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+      direction:ltr;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .brand-name {
+      font-size:1.05rem;
+      letter-spacing:-0.02em;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner {
+        flex-direction:column;
+      }
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+      max-width:900px;
+      margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+
+    h1, h2 {
+      line-height:1.4;
+      margin:.4rem 0;
+    }
+
+    p { margin:.6rem 0; color:var(--muted); }
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.75rem;
+      box-shadow:var(--shadow);
+      margin-top:1.5rem;
+    }
+
+    ul {
+      padding-right:1.1rem;
+      margin-top:.75rem;
+    }
+
+    li {
+      margin:.45rem 0;
+      color:var(--muted);
+    }
+
+    .highlight {
+      background:rgba(14,165,164,.08);
+      border:1px solid rgba(14,165,164,.2);
+      border-radius:12px;
+      padding:1rem;
+      margin-top:1rem;
+      font-weight:700;
+      color:var(--text);
+    }
+
+    .btns {
+      display:flex;
+      gap:.75rem;
+      margin-top:2rem;
+      flex-wrap:wrap;
+    }
+
+    .btn {
+      padding:.75rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+      min-width:180px;
+      text-align:center;
+    }
+
+    .btn.primary {
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
+    }
+
+    .note {
+      margin-top:.75rem;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background:#fff;
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      flex-direction:row-reverse;
+      text-align:right;
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+    }
+
+    .footer-logo { width:26px; height:26px; }
+
+    .footer-copy {
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index-fa.html" class="brand-link">
+      <img src="/assets/icons/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" class="brand-logo" />
+      <span class="brand-name">بیتا دیجیتال هاب</span>
+    </a>
+
+    <nav class="site-nav" aria-label="منوی اصلی">
+      <a href="/pages/landing/process-fa.html">نحوه کار</a>
+      <a href="/pages/landing/weekly-report-fa.html">گزارش هفتگی</a>
+      <a href="/pages/about/about-fa.html">درباره ما</a>
+      <a href="/pages/contact/contact-fa.html">تماس</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <span class="kicker">گزارش نمونه رایگان</span>
+  <h1>یک گزارش هفتگی واقعی با داده‌های خودتان ببینید</h1>
+
+  <p>
+    قبل از هر تعهد بلندمدت،
+    یک گزارش هفتگی کامل دریافت می‌کنید.
+    بر اساس داده‌های واقعی شما.
+    فقط یک‌بار. بدون دمو. بدون داشبورد.
+  </p>
+
+  <div class="card">
+    <h2>چه چیزی دریافت می‌کنید</h2>
+    <ul>
+      <li>یک گزارش هفتگی کامل (PDF)</li>
+      <li>فایل داده تمیز و ساختاریافته (Excel / CSV)</li>
+      <li>روندها و تغییرات هفته‌به‌هفته</li>
+      <li>پیشنهادهای عملی و قابل اجرا</li>
+    </ul>
+
+    <div class="highlight">
+      این یک خروجی واقعی است، نه پیش‌نمایش.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>چه چیزی باید ارسال کنید</h2>
+    <ul>
+      <li>یک فایل Excel یا CSV (یا لینک Google Sheet)</li>
+      <li>یک توضیح کوتاه درباره اینکه هر هفته چه چیزی برایتان مهم است</li>
+    </ul>
+
+    <p>
+      داده‌ها لازم نیست تمیز باشند.
+      تمیزسازی و ساختاردهی بخشی از کار ماست.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>بعد از آن چه می‌شود</h2>
+    <ul>
+      <li>گزارش را بررسی می‌کنید و می‌بینید مفید است یا نه</li>
+      <li>در صورت رضایت، همکاری هفتگی ادامه پیدا می‌کند</li>
+      <li>در غیر این صورت، گزارش را نگه می‌دارید — بدون هیچ تعهدی</li>
+    </ul>
+  </div>
+
+  <div class="btns">
+    <a href="/pages/contact/contact-fa.html" class="btn primary">
+      درخواست گزارش نمونه رایگان
+    </a>
+
+    <a href="/pages/landing/process-fa.html" class="btn">
+      نحوه کار
+    </a>
+
+    <a href="/pages/landing/pricing.html" class="btn">
+      مشاهده قیمت‌ها
+    </a>
+  </div>
+
+  <p class="note">
+    قیمت نهایی پس از بررسی گزارش نمونه مشخص می‌شود.
+  </p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index-fa.html" class="footer-brand">
+      <img src="/assets/icons/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" class="footer-logo" />
+      <span>بیتا دیجیتال هاب</span>
+    </a>
+
+    <p class="footer-copy">
+      © بیتا دیجیتال هاب — ساده، شفاف، قابل اقدام
+      <br />
+      ایمیل:
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
+      <br />
+      <a href="/pages/landing/pricing.html">قیمت‌گذاری</a> ·
+      <a href="/legal/privacy-policy.html">حریم خصوصی</a> ·
+      <a href="/legal/terms.html">شرایط استفاده</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
+
