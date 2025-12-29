@@ -13,217 +13,206 @@
 
   <style>
     :root {
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --primary: #0ea5a4;
-      --border: #e2e8f0;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
-      --max-width: 1100px;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+      --max-width:1100px;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing:border-box; }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a { color:inherit; text-decoration:none; }
 
-    h1, h2, h3 {
-      margin: .4rem 0;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
+    h1,h2,h3 {
+      margin:.4rem 0;
+      line-height:1.25;
+      letter-spacing:-0.02em;
     }
 
-    p {
-      margin: .5rem 0;
-      color: var(--muted);
-    }
+    p { margin:.5rem 0; color:var(--muted); }
 
     .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 3rem 1.25rem 4rem;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:3rem 1.25rem 4rem;
     }
 
-    /* HEADER */
+    /* ================= HEADER ================= */
 
     .site-header {
-      background: #fff;
-      border-bottom: 1px solid var(--border);
+      background:#fff;
+      border-bottom:1px solid var(--border);
     }
 
     .header-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
     }
 
     .brand-link {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-weight: 900;
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
     }
 
-    .brand-logo {
-      width: 28px;
-      height: 28px;
-    }
+    .brand-logo { width:28px; height:28px; }
 
     .site-nav {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
     }
 
     .site-nav a {
-      font-weight: 700;
-      color: var(--muted);
+      font-weight:700;
+      color:var(--muted);
     }
 
     .site-nav a[aria-current="page"],
     .site-nav a:hover {
-      color: var(--text);
+      color:var(--text);
     }
 
-    @media (max-width: 700px) {
-      .header-inner { flex-direction: column; }
+    @media (max-width:700px) {
+      .header-inner { flex-direction:column; }
     }
 
-    /* CONTENT */
+    /* ================= CONTENT ================= */
 
     .kicker {
-      display: inline-block;
-      padding: .35rem .75rem;
-      border-radius: 999px;
-      background: rgba(14,165,164,.1);
-      color: #0f766e;
-      font-weight: 700;
-      font-size: .85rem;
-      margin-bottom: .75rem;
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.85rem;
+      margin-bottom:.75rem;
     }
-
-    .section { margin-top: 2.5rem; }
 
     .grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 1.5rem;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:1.5rem;
+      margin-top:2.5rem;
     }
 
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr; }
+    @media (max-width:900px) {
+      .grid { grid-template-columns:1fr; }
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      box-shadow: var(--shadow);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.75rem;
+      box-shadow:var(--shadow);
     }
 
     .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
     }
 
-    @media (max-width: 600px) {
-      .row { grid-template-columns: 1fr; }
+    @media (max-width:600px) {
+      .row { grid-template-columns:1fr; }
     }
 
     label {
-      font-weight: 700;
-      font-size: .9rem;
+      font-weight:700;
+      font-size:.9rem;
     }
 
-    input,
-    textarea {
-      width: 100%;
-      padding: .75rem;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      font: inherit;
-      margin-top: .25rem;
+    input, textarea {
+      width:100%;
+      margin-top:.25rem;
+      padding:.75rem;
+      border-radius:10px;
+      border:1px solid var(--border);
+      font:inherit;
     }
 
-    textarea { min-height: 140px; }
+    textarea { min-height:140px; }
 
     .btn {
-      padding: .8rem 1.2rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: #fff;
-      font-weight: 800;
-      cursor: pointer;
+      padding:.8rem 1.2rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+      cursor:pointer;
     }
 
     .btn.primary {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #fff;
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
     }
 
     ul.list {
-      padding-left: 1.1rem;
-      margin-top: .75rem;
+      padding-left:1.1rem;
+      margin-top:.75rem;
     }
 
     ul.list li {
-      margin: .45rem 0;
-      color: var(--muted);
+      margin:.45rem 0;
+      color:var(--muted);
     }
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     .site-footer {
-      background: #fff;
-      border-top: 1px solid var(--border);
-      margin-top: 4rem;
+      background:#fff;
+      border-top:1px solid var(--border);
+      margin-top:4rem;
     }
 
     .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 2rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      font-size: .95rem;
-      color: var(--muted);
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      font-size:.95rem;
+      color:var(--muted);
     }
 
     .footer-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-weight: 800;
-      color: var(--text);
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+      color:var(--text);
     }
 
-    .footer-logo {
-      width: 28px;
-      height: 28px;
-    }
+    .footer-logo { width:28px; height:28px; }
 
-    @media (max-width: 700px) {
+    @media (max-width:700px) {
       .footer-inner {
-        flex-direction: column;
-        text-align: center;
+        flex-direction:column;
+        text-align:center;
       }
     }
   </style>
@@ -231,6 +220,7 @@
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <a href="/index.html" class="brand-link">
@@ -247,78 +237,83 @@
   </div>
 </header>
 
+<!-- MAIN -->
 <main class="container">
 
-  <section class="section">
-    <span class="kicker">Contact</span>
-    <h1>Start your weekly reporting workflow</h1>
-    <p>
-      Tell us what you want to understand from your data.
-      If you’re not sure yet, send what you have.
-    </p>
-  </section>
+  <span class="kicker">Contact</span>
+  <h1>Start your weekly reporting workflow</h1>
+  <p>
+    Tell us what you want to understand from your data.
+    If you’re not sure yet, send what you have.
+  </p>
 
-  <section class="section">
-    <div class="grid">
+  <div class="grid">
 
-      <div class="card">
-        <h2>Send a request</h2>
+    <!-- FORM -->
+    <div class="card">
+      <h2>Send a request</h2>
 
-        <form action="#" method="POST">
-          <div class="row">
-            <div>
-              <label for="name">Full name</label>
-              <input id="name" name="name" required />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" type="email" name="email" required />
-            </div>
+      <!-- ready for Cloudflare Worker / Google Apps Script -->
+      <form id="contact-form" method="POST" action="/api/contact">
+
+        <div class="row">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" name="name" required />
           </div>
 
-          <div style="margin-top:1rem;">
-            <label for="message">What do you want to track?</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Weekly leads, trends, comparisons…"
-              required
-            ></textarea>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
           </div>
+        </div>
 
-          <div style="margin-top:1.25rem;">
-            <button type="submit" class="btn primary">
-              Send message
-            </button>
-          </div>
+        <div style="margin-top:1rem;">
+          <label for="message">What do you want to track?</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Weekly leads, trends, comparisons…"
+            required
+          ></textarea>
+        </div>
 
-          <p style="margin-top:1rem; font-size:.9rem;">
-            Or email directly:
-            <a href="mailto:contact@bitadigitalhub.com"><strong>contact@bitadigitalhub.com</strong></a>
-          </p>
-        </form>
-      </div>
+        <div style="margin-top:1.25rem;">
+          <button type="submit" class="btn primary">
+            Send message
+          </button>
+        </div>
 
-      <aside class="card">
-        <h2>What happens next</h2>
-        <ul class="list">
-          <li>We review your message</li>
-          <li>We confirm which files we need</li>
-          <li>You receive a clear delivery plan</li>
-        </ul>
-
-        <img
-          src="/assets/images/what-happen-next.png"
-          alt="Next steps illustration"
-          style="width:100%; margin-top:1rem; border-radius:12px;"
-        />
-      </aside>
-
+        <p style="margin-top:1rem; font-size:.9rem;">
+          Or email directly:
+          <a href="mailto:contact@bitadigitalhub.com">
+            <strong>contact@bitadigitalhub.com</strong>
+          </a>
+        </p>
+      </form>
     </div>
-  </section>
+
+    <!-- SIDE INFO -->
+    <aside class="card">
+      <h2>What happens next</h2>
+      <ul class="list">
+        <li>We review your message</li>
+        <li>We confirm which files we need</li>
+        <li>You receive a clear delivery plan</li>
+      </ul>
+
+      <img
+        src="/assets/images/what-happen-next.png"
+        alt="Next steps illustration"
+        style="width:100%; margin-top:1rem; border-radius:12px;"
+      />
+    </aside>
+
+  </div>
 
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <a href="/index.html" class="footer-brand">
