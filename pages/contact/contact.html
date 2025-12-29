@@ -50,7 +50,7 @@
       padding:3rem 1.25rem 4rem;
     }
 
-    /* ================= HEADER ================= */
+    /* HEADER */
 
     .site-header {
       background:#fff;
@@ -96,7 +96,7 @@
       .header-inner { flex-direction:column; }
     }
 
-    /* ================= CONTENT ================= */
+    /* CONTENT */
 
     .kicker {
       display:inline-block;
@@ -179,7 +179,13 @@
       color:var(--muted);
     }
 
-    /* ================= FOOTER ================= */
+    .status {
+      margin-top:1rem;
+      font-size:.9rem;
+      font-weight:600;
+    }
+
+    /* FOOTER */
 
     .site-footer {
       background:#fff;
@@ -220,7 +226,6 @@
 
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <a href="/index.html" class="brand-link">
@@ -237,7 +242,6 @@
   </div>
 </header>
 
-<!-- MAIN -->
 <main class="container">
 
   <span class="kicker">Contact</span>
@@ -249,22 +253,19 @@
 
   <div class="grid">
 
-    <!-- FORM -->
     <div class="card">
       <h2>Send a request</h2>
 
-      <!-- ready for Cloudflare Worker / Google Apps Script -->
-      <form id="contact-form" method="POST" action="/api/contact">
-
+      <form id="contact-form">
         <div class="row">
           <div>
             <label for="name">Full name</label>
-            <input id="name" name="name" required />
+            <input id="name" required />
           </div>
 
           <div>
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
+            <input id="email" type="email" required />
           </div>
         </div>
 
@@ -272,28 +273,21 @@
           <label for="message">What do you want to track?</label>
           <textarea
             id="message"
-            name="message"
             placeholder="Weekly leads, trends, comparisons…"
             required
           ></textarea>
         </div>
 
         <div style="margin-top:1.25rem;">
-          <button type="submit" class="btn primary">
+          <button class="btn primary" type="submit">
             Send message
           </button>
         </div>
 
-        <p style="margin-top:1rem; font-size:.9rem;">
-          Or email directly:
-          <a href="mailto:contact@bitadigitalhub.com">
-            <strong>contact@bitadigitalhub.com</strong>
-          </a>
-        </p>
+        <div id="status" class="status"></div>
       </form>
     </div>
 
-    <!-- SIDE INFO -->
     <aside class="card">
       <h2>What happens next</h2>
       <ul class="list">
@@ -301,19 +295,12 @@
         <li>We confirm which files we need</li>
         <li>You receive a clear delivery plan</li>
       </ul>
-
-      <img
-        src="/assets/images/what-happen-next.png"
-        alt="Next steps illustration"
-        style="width:100%; margin-top:1rem; border-radius:12px;"
-      />
     </aside>
 
   </div>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <a href="/index.html" class="footer-brand">
@@ -323,13 +310,41 @@
 
     <p>
       © Bita Digital Hub — Simple. Clear. Actionable.<br />
-      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
-      <a href="/pages/landing/pricing.html">Pricing</a> ·
-      <a href="/legal/privacy-policy.html">Privacy Policy</a> ·
-      <a href="/legal/terms.html">Terms of Service</a>
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
     </p>
   </div>
 </footer>
+
+<script>
+const form = document.getElementById("contact-form");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  status.textContent = "Sending…";
+
+  const payload = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+
+  try {
+    const res = await fetch("https://contact-api.bitadigitalacademy.workers.dev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) throw new Error();
+
+    status.textContent = "Message sent successfully ✔";
+    form.reset();
+  } catch {
+    status.textContent = "Something went wrong. Please try again.";
+  }
+});
+</script>
 
 </body>
 </html>
