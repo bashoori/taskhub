@@ -4,264 +4,298 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>بیتا دیجیتال هاب | گزارش‌های هفتگی شفاف از داده‌های نامرتب</title>
+  <title>بیتا دیجیتال هاب | گزارش‌دهی هفتگی برای تیم‌ها</title>
 
   <meta
     name="description"
-    content="تبدیل فایل‌های اکسل و داده‌های نامرتب به گزارش‌های هفتگی شفاف و قابل تصمیم‌گیری. بدون داشبورد. بدون ابزار پیچیده."
+    content="گزارش‌دهی هفتگی برای تیم‌هایی که به شفافیت نیاز دارند، نه ابزارهای بیشتر. تبدیل داده‌های نامرتب به گزارش‌های قابل تصمیم‌گیری."
   />
 
   <style>
     :root {
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --primary: #0ea5a4;
-      --border: #e2e8f0;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
-      --max-width: 1100px;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:14px;
+      --shadow:0 6px 20px rgba(2,6,23,.06);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing:border-box; }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.9;
-      direction: rtl;
-      text-align: right;
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.9;
+      text-align:right;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a { color:inherit; text-decoration:none; }
 
     h1, h2, h3 {
-      margin: .4rem 0;
-      line-height: 1.35;
-      letter-spacing: -0.01em;
+      line-height:1.35;
+      letter-spacing:-0.01em;
+      margin:.5rem 0;
     }
 
     p {
-      margin: .6rem 0;
-      color: var(--muted);
+      margin:.6rem 0;
+      color:var(--muted);
     }
 
     /* ================= HEADER ================= */
 
     .site-header {
-      background: #fff;
-      border-bottom: 1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      background:#fff;
     }
 
     .header-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-direction: row-reverse;
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-direction:row-reverse;
     }
 
     .brand-link {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-weight: 900;
-      direction: ltr;
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+      direction:ltr;
     }
 
-    .brand-logo {
-      width: 28px;
-      height: 28px;
-    }
+    .brand-logo { width:28px; height:28px; }
 
     .site-nav {
-      display: flex;
-      gap: 1.1rem;
-      align-items: center;
-      flex-wrap: wrap;
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
     .site-nav a {
-      font-weight: 700;
-      color: var(--muted);
+      font-weight:700;
+      color:var(--muted);
     }
 
-    .site-nav a:hover {
-      color: var(--text);
-    }
+    .site-nav a:hover { color:var(--text); }
 
     .lang-btn {
-      padding: .4rem .6rem;
-      border-radius: 10px;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 700;
-      font-size: .85rem;
+      padding:.35rem .6rem;
+      border-radius:10px;
+      background:var(--primary);
+      color:#fff;
+      font-weight:700;
+      font-size:.85rem;
     }
 
-    @media (max-width: 700px) {
-      .header-inner {
-        flex-direction: column;
-      }
+    @media (max-width:700px) {
+      .header-inner { flex-direction:column; }
     }
 
     /* ================= MAIN ================= */
 
     .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 3rem 1.25rem 4rem;
+      max-width:1100px;
+      margin:0 auto;
+      padding:3.25rem 1.25rem 4rem;
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:2rem;
+      align-items:center;
+      margin-bottom:3.5rem;
     }
 
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
+    @media (max-width:900px) {
+      .hero {
+        grid-template-columns:1fr;
+        text-align:center;
+      }
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      box-shadow: var(--shadow);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.5rem;
+      box-shadow:var(--shadow);
     }
 
     .kicker {
-      display: inline-block;
-      padding: .35rem .75rem;
-      border-radius: 999px;
-      background: rgba(14,165,164,.1);
-      color: #0f766e;
-      font-weight: 700;
-      font-size: .9rem;
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.12);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
     }
 
     .hero h1 {
-      margin-top: 1rem;
-      font-size: 2.25rem;
+      margin-top:1rem;
+      font-size:2.2rem;
     }
 
     .buttons {
-      display: flex;
-      gap: .75rem;
-      margin-top: 1.25rem;
-      flex-wrap: wrap;
+      display:flex;
+      gap:.75rem;
+      margin-top:1.5rem;
+      flex-wrap:wrap;
+      justify-content:flex-start;
     }
 
     .btn {
-      padding: .8rem 1rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: #fff;
-      font-weight: 800;
+      padding:.8rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
     }
 
     .btn.primary {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #fff;
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
     }
 
-    .preview-image {
-      margin-top: .75rem;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
+    /* Founder image */
+
+    .founder-image {
+      max-width:300px;
+      margin:0 auto;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#f8fafc;
     }
 
-    .preview-image img {
-      width: 100%;
-      display: block;
+    .founder-image img {
+      width:100%;
+      display:block;
     }
 
-    /* ================= SECTIONS ================= */
-
-    .section {
-      margin-top: 3rem;
+    .founder-caption {
+      margin-top:.75rem;
+      font-size:.95rem;
+      color:var(--muted);
+      text-align:center;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+    /* ================= WHAT YOU GET ================= */
+
+    .deliverables {
+      margin-top:3.25rem;
     }
 
-    @media (max-width: 900px) {
-      .grid-3 { grid-template-columns: 1fr; }
+    .deliverables-inner {
+      max-width:950px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:2rem;
+      align-items:center;
+    }
+
+    @media (max-width:900px) {
+      .deliverables-inner {
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+    }
+
+    .deliverables img {
+      width:100%;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#f8fafc;
     }
 
     ul {
-      padding-right: 1.1rem;
-      margin-top: .75rem;
+      padding-right:1.1rem;
+      margin-top:.75rem;
     }
 
     li {
-      margin: .45rem 0;
-      color: var(--muted);
+      margin:.45rem 0;
+      color:var(--muted);
     }
 
+    /* ================= WHY ================= */
+
+    .section {
+      margin-top:3.25rem;
+    }
+
+    .grid-3 {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.1rem;
+    }
+
+    @media (max-width:900px) {
+      .grid-3 { grid-template-columns:1fr; }
+    }
+
+    /* ================= CTA ================= */
+
     .cta {
-      margin-top: 3.5rem;
-      background: rgba(14,165,164,.08);
-      border: 1px solid rgba(14,165,164,.2);
-      border-radius: var(--radius);
-      padding: 2rem;
-      text-align: center;
+      margin-top:3.75rem;
+      background:rgba(14,165,164,.1);
+      border:1px solid rgba(14,165,164,.25);
+      border-radius:var(--radius);
+      padding:2rem;
+      text-align:center;
     }
 
     /* ================= FOOTER ================= */
 
     .site-footer {
-      background: #fff;
-      border-top: 1px solid var(--border);
-      margin-top: 4rem;
+      border-top:1px solid var(--border);
+      background:#fff;
+      margin-top:4rem;
     }
 
     .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 2rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-direction: row-reverse;
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-direction:row-reverse;
     }
 
     .footer-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-weight: 800;
-      flex-direction: row-reverse; 
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
     }
 
-    .footer-logo {
-      width: 26px;
-      height: 26px;
-    }
+    .footer-logo { width:26px; height:26px; }
 
     .footer-copy {
-      font-size: .95rem;
-      color: var(--muted);
+      font-size:.95rem;
+      color:var(--muted);
     }
 
-    @media (max-width: 700px) {
+    @media (max-width:700px) {
       .footer-inner {
-        flex-direction: column;
-        text-align: center;
+        flex-direction:column;
+        text-align:center;
       }
     }
   </style>
@@ -269,7 +303,6 @@
 
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <a href="/index-fa.html" class="brand-link">
@@ -287,76 +320,114 @@
   </div>
 </header>
 
-<!-- MAIN -->
 <main class="container">
 
+  <!-- HERO -->
   <section class="hero">
 
     <div class="card">
-      <span class="kicker">داده‌های نامرتب ← تصمیم‌های شفاف</span>
-      <h1>گزارش‌های هفتگی شفاف از داده‌هایی که همین حالا دارید</h1>
+      <span class="kicker">گزارش‌دهی هفتگی برای تصمیم‌های واقعی</span>
+
+      <h1>گزارش‌های هفتگی شفاف، از داده‌هایی که همین حالا دارید</h1>
 
       <p>
-        شما به یک داشبورد دیگر نیاز ندارید.
-        باید بدانید چه اتفاقی در داده‌ها می‌افتد و قدم بعدی چیست.
+        بیشتر تیم‌ها به داشبوردهای بیشتر نیاز ندارند.
+        آن‌ها به توضیحی شفاف از این نیاز دارند که چه چیزی تغییر کرده،
+        چرا مهم است، و قدم بعدی چیست.
       </p>
 
       <p>
-        ما فایل‌های اکسل، خروجی‌ها و داده‌های پراکنده را
-        به گزارش‌های هفتگی قابل استفاده تبدیل می‌کنیم.
+        بیتا دیجیتال هاب گزارش‌های هفتگی آرام و ساختارمندی ارائه می‌دهد
+        که دقیقاً همین موارد را توضیح می‌دهند.
       </p>
 
       <div class="buttons">
-        <a href="/pages/landing/process-fa.html" class="btn primary">نحوه کار</a>
-        <a href="/pages/landing/free-first-report-fa.html" class="btn">دریافت گزارش نمونه</a>
+        <a href="/pages/contact/contact-fa.html" class="btn primary">شروع گفتگو</a>
+        <a href="/pages/landing/process-fa.html" class="btn">نحوه کار</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="preview-image">
-        <img src="/assets/images/clear-weekly-report.png" alt="نمونه گزارش هفتگی" />
+      <div class="founder-image">
+        <img
+          src="/assets/images/profile-photo.png"
+          alt="بیتا آشوری، مهندس داده و بنیان‌گذار بیتا دیجیتال هاب"
+          loading="lazy"
+        />
       </div>
 
-      <h3 style="margin-top:1rem;">چه چیزی دریافت می‌کنید</h3>
-      <ul>
-        <li>گزارش PDF هفتگی، ساده و قابل اشتراک</li>
-        <li>داده تمیز شده (Excel / CSV)</li>
-        <li>پیشنهادهای شفاف برای قدم بعدی</li>
-      </ul>
+      <p class="founder-caption">
+        ساخته و اداره‌شده توسط <strong>بیتا آشوری</strong><br />
+        مهندس داده · ونکوور، کانادا<br />
+        تبدیل داده خام به تصمیم‌های شفاف و تکرارپذیر
+      </p>
     </div>
 
   </section>
 
+  <!-- WHAT YOU GET -->
+  <section class="deliverables">
+    <div class="card">
+      <div class="deliverables-inner">
+
+        <div>
+          <img
+            src="/assets/images/clear-weekly-report.png"
+            alt="نمونه‌ای از یک گزارش هفتگی شفاف با شاخص‌های کلیدی و پیشنهاد اقدام"
+            loading="lazy"
+          />
+        </div>
+
+        <div>
+          <h2>چه چیزی دریافت می‌کنید</h2>
+          <ul>
+            <li><strong>گزارش PDF هفتگی</strong> — خوانا و قابل اشتراک</li>
+            <li><strong>داده تمیز Excel / CSV</strong> — ساختارمند و قابل استفاده مجدد</li>
+            <li><strong>پیشنهادهای شفاف برای قدم بعدی</strong> — برای حرکت رو به جلو</li>
+          </ul>
+
+          <p>
+            بدون داشبورد.<br />
+            بدون لاگین.<br />
+            فقط گزارش شفاف، هر هفته.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
   <section class="section grid-3">
     <div class="card">
-      <h3>بدون یادگیری ابزار جدید</h3>
-      <p>فایل‌ها را ارسال می‌کنید، ما بقیه کار را انجام می‌دهیم.</p>
+      <h3>بدون ابزار جدید</h3>
+      <p>فایل‌ها را ارسال می‌کنید؛ بقیه کار با ماست.</p>
     </div>
 
     <div class="card">
       <h3>طراحی‌شده برای تصمیم‌گیری</h3>
-      <p>تمرکز روی روندها، تغییرات و اقدام بعدی.</p>
+      <p>تمرکز بر روندها، تغییرات و اقدامات — نه ظاهر.</p>
     </div>
 
     <div class="card">
-      <h3>قابل تکرار هر هفته</h3>
-      <p>یک ریتم مشخص و قابل اعتماد.</p>
+      <h3>قابل اتکا هر هفته</h3>
+      <p>ریتم گزارش‌دهی منظم که می‌توانید به آن اعتماد کنید.</p>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta">
-    <h2>آماده‌اید داده‌هایتان شفاف شود؟</h2>
-    <p>با همان فایل‌هایی که دارید شروع کنید.</p>
+    <h2>آماده‌اید گزارش‌دهی هفتگی‌تان شفاف شود؟</h2>
+    <p>با داده‌هایی که همین حالا دارید شروع کنید.</p>
 
     <div class="buttons" style="justify-content:center;">
-      <a href="/pages/landing/free-first-report-fa.html" class="btn">درخواست گزارش نمونه</a>
       <a href="/pages/contact/contact-fa.html" class="btn primary">تماس</a>
+      <a href="/pages/landing/process-fa.html" class="btn">بیشتر بدانید</a>
     </div>
   </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <a href="/index-fa.html" class="footer-brand">
@@ -365,10 +436,8 @@
     </a>
 
     <p class="footer-copy">
-      © بیتا دیجیتال هاب — ساده، شفاف، قابل اقدام
-      <br />
-      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
-      <br />
+      © بیتا دیجیتال هاب — ساده، شفاف، قابل اقدام<br />
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
       <a href="/pages/landing/pricing-fa.html">قیمت‌گذاری</a> ·
       <a href="/legal/privacy-policy-fa.html">حریم خصوصی</a> ·
       <a href="/legal/terms-fa.html">شرایط استفاده</a>
