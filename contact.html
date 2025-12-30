@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Contact | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Contact Bita Digital Hub to start your weekly reporting workflow."
+  />
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+      --max-width:1100px;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a { color:inherit; text-decoration:none; }
+
+    h1,h2,h3 {
+      margin:.4rem 0;
+      line-height:1.25;
+      letter-spacing:-0.02em;
+    }
+
+    p { margin:.5rem 0; color:var(--muted); }
+
+    .container {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+    }
+
+    .brand-logo { width:28px; height:28px; }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a[aria-current="page"],
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+     .lang-btn {
+      padding:.35rem .6rem;
+      border-radius:10px;
+      background:var(--primary);
+      color:#fff;
+      font-weight:700;
+      font-size:.85rem;
+    }
+
+    @media (max-width:700px) {
+      .header-inner { flex-direction:column; }
+    }
+
+    /* CONTENT */
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.1);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.85rem;
+      margin-bottom:.75rem;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:1.5rem;
+      margin-top:2.5rem;
+    }
+
+    @media (max-width:900px) {
+      .grid { grid-template-columns:1fr; }
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.75rem;
+      box-shadow:var(--shadow);
+    }
+
+    .row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+    }
+
+    @media (max-width:600px) {
+      .row { grid-template-columns:1fr; }
+    }
+
+    label {
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    input, textarea {
+      width:100%;
+      margin-top:.25rem;
+      padding:.75rem;
+      border-radius:10px;
+      border:1px solid var(--border);
+      font:inherit;
+    }
+
+    textarea { min-height:140px; }
+
+    .btn {
+      padding:.8rem 1.2rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .btn.primary {
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
+    }
+
+    ul.list {
+      padding-left:1.1rem;
+      margin-top:.75rem;
+    }
+
+    ul.list li {
+      margin:.45rem 0;
+      color:var(--muted);
+    }
+
+    .status {
+      margin-top:1rem;
+      font-size:.9rem;
+      font-weight:600;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      background:#fff;
+      border-top:1px solid var(--border);
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+      color:var(--text);
+    }
+
+    .footer-logo { width:28px; height:28px; }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="brand-link">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
+      <span>Bita Digital Hub</span>
+    </a>
+
+    <nav class="site-nav">
+      <a href="/pages/landing/process.html">How it works</a>
+      <a href="/pages/landing/weekly-report.html">Weekly report</a>
+      <a href="/pages/about/about.html">About</a>
+      <a href="/pages/contact/contact.html" aria-current="page">Contact</a>
+      <a href="/index-fa.html" class="lang-btn">FA</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <span class="kicker">Contact</span>
+  <h1>Start your weekly reporting workflow</h1>
+  <p>
+    Tell us what you want to understand from your data.
+    If you’re not sure yet, send what you have.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>Send a request</h2>
+
+      <form id="contact-form">
+        <div class="row">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" required />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" required />
+          </div>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <label for="message">What do you want to track?</label>
+          <textarea
+            id="message"
+            placeholder="Weekly leads, trends, comparisons…"
+            required
+          ></textarea>
+        </div>
+
+        <div style="margin-top:1.25rem;">
+          <button class="btn primary" type="submit">
+            Send message
+          </button>
+        </div>
+
+        <div id="status" class="status"></div>
+      </form>
+    </div>
+
+    <aside class="card">
+      <h2>What happens next</h2>
+      <ul class="list">
+        <li>We review your message</li>
+        <li>We confirm which files we need</li>
+        <li>You receive a clear delivery plan</li>
+      </ul>
+    </aside>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index.html" class="footer-brand">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="footer-logo" />
+      <span>Bita Digital Hub</span>
+    </a>
+
+    <p>
+      © Bita Digital Hub — Simple. Clear. Actionable.<br />
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+const form = document.getElementById("contact-form");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  status.textContent = "Sending…";
+
+  const payload = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+
+  try {
+    const res = await fetch("https://contact-api.bitadigitalacademy.workers.dev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) throw new Error();
+
+    status.textContent = "Message sent successfully ✔";
+    form.reset();
+  } catch {
+    status.textContent = "Something went wrong. Please try again.";
+  }
+});
+</script>
+
+</body>
+</html>
