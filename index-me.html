@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Bita Digital Hub | Weekly Reporting for Teams</title>
+  <title>Bita Digital Hub | Clear Weekly Reports from Messy Data</title>
 
   <meta
     name="description"
-    content="Weekly reporting for teams that need clarity, not more tools. We turn messy spreadsheets into calm, decision-ready reports."
+    content="We turn messy spreadsheets and exports into clear weekly reports. No dashboards. No tools to learn. Just decision-ready clarity."
   />
 
   <style>
@@ -19,8 +19,8 @@
       --muted:#475569;
       --primary:#0ea5a4;
       --border:#e2e8f0;
-      --radius:14px;
-      --shadow:0 6px 20px rgba(2,6,23,.06);
+      --radius:16px;
+      --shadow:0 8px 24px rgba(2,6,23,.06);
     }
 
     * { box-sizing:border-box; }
@@ -109,7 +109,7 @@
       grid-template-columns:1.15fr .85fr;
       gap:2rem;
       align-items:center;
-      margin-bottom:3.5rem;
+      margin-bottom:4rem;
     }
 
     @media (max-width:900px) {
@@ -131,7 +131,7 @@
 
     .hero h1 {
       margin-top:1rem;
-      font-size:2.3rem;
+      font-size:2.4rem;
     }
 
     .buttons {
@@ -172,14 +172,14 @@
     }
 
     .founder-caption {
-      margin-top:.75rem;
+      margin-top:.8rem;
       font-size:.95rem;
       color:var(--muted);
       text-align:center;
     }
 
     .founder-links {
-      margin-top:.8rem;
+      margin-top:.9rem;
       display:flex;
       justify-content:center;
       gap:.6rem;
@@ -210,16 +210,58 @@
       fill:currentColor;
     }
 
-    /* ================= VALUE ================= */
+    /* ================= DELIVERABLES ================= */
+
+    .deliverables {
+      margin-top:4rem;
+    }
+
+    .deliverables-inner {
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:2.5rem;
+      align-items:center;
+    }
+
+    @media (max-width:900px) {
+      .deliverables-inner {
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+    }
+
+    .deliverables-image {
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#f8fafc;
+    }
+
+    .deliverables-image img {
+      width:100%;
+      display:block;
+    }
+
+    ul {
+      padding-left:1.1rem;
+      margin-top:.8rem;
+    }
+
+    li {
+      margin:.45rem 0;
+      color:var(--muted);
+    }
+
+    /* ================= WHY ================= */
 
     .section {
-      margin-top:3.5rem;
+      margin-top:4rem;
     }
 
     .grid-3 {
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:1.1rem;
+      gap:1.2rem;
     }
 
     @media (max-width:900px) {
@@ -229,11 +271,11 @@
     /* ================= CTA ================= */
 
     .cta {
-      margin-top:4rem;
+      margin-top:4.5rem;
       background:rgba(14,165,164,.1);
       border:1px solid rgba(14,165,164,.25);
       border-radius:var(--radius);
-      padding:2rem;
+      padding:2.2rem;
       text-align:center;
     }
 
@@ -299,19 +341,19 @@
   <section class="hero">
 
     <div class="card">
-      <span class="kicker">Weekly reporting for real decisions</span>
+      <span class="kicker">Messy data → clear decisions</span>
 
-      <h1>Clarity from the data your team already has</h1>
+      <h1>Clear weekly reports from the data you already have</h1>
 
       <p>
-        Most teams don’t have a data problem.
-        They have a clarity problem.
+        Most teams don’t need more dashboards.
+        They need to understand what changed, why it matters,
+        and what to do next.
       </p>
 
       <p>
-        We turn messy spreadsheets and exports into calm,
-        readable weekly reports that explain what changed,
-        why it matters, and what to do next.
+        We turn spreadsheets and raw exports into calm,
+        structured weekly reports your team can actually use.
       </p>
 
       <div class="buttons">
@@ -350,19 +392,51 @@
 
   </section>
 
-  <!-- VALUE -->
+  <!-- WHAT YOU GET -->
+  <section class="deliverables">
+    <div class="card">
+      <div class="deliverables-inner">
+
+        <div class="deliverables-image">
+          <img
+            src="/assets/images/clear-weekly-report.png"
+            alt="From messy spreadsheets to a clear weekly report with next steps"
+            loading="lazy"
+          />
+        </div>
+
+        <div>
+          <h2>What you get</h2>
+          <ul>
+            <li><strong>Weekly PDF report</strong> — easy to read and share</li>
+            <li><strong>Clean Excel / CSV data</strong> — structured and reusable</li>
+            <li><strong>Clear next-step recommendations</strong> — so decisions move forward</li>
+          </ul>
+
+          <p>
+            No dashboards.<br />
+            No logins.<br />
+            Just clear reporting, delivered every week.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
   <section class="section grid-3">
     <div class="card">
       <h3>No tools to learn</h3>
-      <p>You send your files. Reporting is handled end-to-end.</p>
+      <p>You send your files. We handle the rest.</p>
     </div>
     <div class="card">
       <h3>Designed for decisions</h3>
-      <p>Focused on trends, changes, and next steps — not dashboards.</p>
+      <p>Focused on trends, changes, and actions — not visuals.</p>
     </div>
     <div class="card">
       <h3>Reliable every week</h3>
-      <p>A consistent reporting rhythm your team can trust.</p>
+      <p>A consistent reporting rhythm your team can rely on.</p>
     </div>
   </section>
 
