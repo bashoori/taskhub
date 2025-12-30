@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Weekly reporting for teams that need clarity, not more tools. Turn messy spreadsheets into clear, decision-ready reports."
+    content="Weekly reporting for teams that need clarity, not more tools. We turn messy spreadsheets into calm, decision-ready reports."
   />
 
   <style>
@@ -41,13 +41,13 @@
       margin:.4rem 0;
     }
 
-    p { margin:.5rem 0; color:var(--muted); }
+    p { margin:.6rem 0; color:var(--muted); }
 
     /* ================= HEADER ================= */
 
     .site-header {
-      border-bottom:1px solid var(--border);
       background:#fff;
+      border-bottom:1px solid var(--border);
     }
 
     .header-inner {
@@ -86,13 +86,23 @@
       .header-inner { flex-direction:column; }
     }
 
-    /* ================= MAIN ================= */
+    /* ================= LAYOUT ================= */
 
     .container {
       max-width:1100px;
       margin:0 auto;
-      padding:3.25rem 1.25rem 4rem;
+      padding:3.5rem 1.25rem 4rem;
     }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.6rem;
+      box-shadow:var(--shadow);
+    }
+
+    /* ================= HERO ================= */
 
     .hero {
       display:grid;
@@ -103,15 +113,10 @@
     }
 
     @media (max-width:900px) {
-      .hero { grid-template-columns:1fr; text-align:center; }
-    }
-
-    .card {
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:1.6rem;
-      box-shadow:var(--shadow);
+      .hero {
+        grid-template-columns:1fr;
+        text-align:center;
+      }
     }
 
     .kicker {
@@ -126,7 +131,7 @@
 
     .hero h1 {
       margin-top:1rem;
-      font-size:2.35rem;
+      font-size:2.3rem;
     }
 
     .buttons {
@@ -205,39 +210,10 @@
       fill:currentColor;
     }
 
-    /* ================= WHAT YOU GET ================= */
-
-    .deliverables {
-      margin-top:3.25rem;
-    }
-
-    .deliverables-inner {
-      max-width:950px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:2rem;
-      align-items:center;
-    }
-
-    @media (max-width:900px) {
-      .deliverables-inner { grid-template-columns:1fr; text-align:center; }
-    }
-
-    .deliverables img {
-      width:100%;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:#f8fafc;
-    }
-
-    ul { padding-left:1.1rem; margin-top:.75rem; }
-    li { margin:.4rem 0; color:var(--muted); }
-
-    /* ================= WHY ================= */
+    /* ================= VALUE ================= */
 
     .section {
-      margin-top:3.25rem;
+      margin-top:3.5rem;
     }
 
     .grid-3 {
@@ -253,7 +229,7 @@
     /* ================= CTA ================= */
 
     .cta {
-      margin-top:3.75rem;
+      margin-top:4rem;
       background:rgba(14,165,164,.1);
       border:1px solid rgba(14,165,164,.25);
       border-radius:var(--radius);
@@ -264,9 +240,9 @@
     /* ================= FOOTER ================= */
 
     .site-footer {
-      border-top:1px solid var(--border);
-      background:#fff;
       margin-top:4rem;
+      background:#fff;
+      border-top:1px solid var(--border);
     }
 
     .footer-inner {
@@ -322,21 +298,20 @@
   <!-- HERO -->
   <section class="hero">
 
-    <!-- TEXT CARD -->
     <div class="card">
       <span class="kicker">Weekly reporting for real decisions</span>
 
-      <h1>Clear weekly reports from the data you already have</h1>
+      <h1>Clarity from the data your team already has</h1>
 
       <p>
-        Most teams don’t need more dashboards.
-        They need clarity around what changed, why it matters,
-        and what to do next.
+        Most teams don’t have a data problem.
+        They have a clarity problem.
       </p>
 
       <p>
-        Bita Digital Hub delivers calm, structured weekly reports
-        designed for decision-making — not monitoring.
+        We turn messy spreadsheets and exports into calm,
+        readable weekly reports that explain what changed,
+        why it matters, and what to do next.
       </p>
 
       <div class="buttons">
@@ -345,7 +320,6 @@
       </div>
     </div>
 
-    <!-- FOUNDER CARD -->
     <div class="card">
       <div class="founder-image">
         <img
@@ -362,21 +336,45 @@
       </p>
 
       <div class="founder-links">
-        <a href="https://www.linkedin.com/in/bitaashoori/" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.32V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.34-1.85 3.57 0 4.23 2.35 4.23 5.41v6.33zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/></svg>
         </a>
         <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank" aria-label="YouTube">
           <svg viewBox="0 0 24 24"><path d="M10 15.5v-7l6 3.5-6 3.5z"/></svg>
         </a>
         <a href="https://gumroad.com/YOUR_GUMROAD" target="_blank" aria-label="Gumroad">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10z"/></svg>
         </a>
       </div>
     </div>
 
+  </section>
+
+  <!-- VALUE -->
+  <section class="section grid-3">
+    <div class="card">
+      <h3>No tools to learn</h3>
+      <p>You send your files. Reporting is handled end-to-end.</p>
+    </div>
+    <div class="card">
+      <h3>Designed for decisions</h3>
+      <p>Focused on trends, changes, and next steps — not dashboards.</p>
+    </div>
+    <div class="card">
+      <h3>Reliable every week</h3>
+      <p>A consistent reporting rhythm your team can trust.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to bring clarity to your weekly reporting?</h2>
+    <p>Start with the data you already have.</p>
+
+    <div class="buttons" style="justify-content:center;">
+      <a href="/pages/contact/contact.html" class="btn primary">Contact</a>
+      <a href="/pages/landing/process.html" class="btn">Learn more</a>
+    </div>
   </section>
 
 </main>
