@@ -15,7 +15,7 @@
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/js/core/script.js" defer></script>
 
-  <!-- Page-specific styles -->
+  <!-- Page Styles -->
   <style>
     :root {
       --bg:#f6f8fb;
@@ -49,9 +49,7 @@
       margin:0 auto;
     }
 
-    .text-center {
-      text-align:center;
-    }
+    .text-center { text-align:center; }
 
     .tool-title {
       font-size:2.4rem;
@@ -163,8 +161,7 @@
     <h2 class="section-title">Generators</h2>
 
     <div class="card-grid">
-      <!-- cards unchanged -->
-      <!-- keep your existing cards here exactly as before -->
+      <!-- generator cards go here -->
     </div>
   </div>
 </section>
@@ -175,7 +172,7 @@
     <h2 class="section-title">Utilities</h2>
 
     <div class="card-grid">
-      <!-- utilities cards -->
+      <!-- utility cards go here -->
     </div>
   </div>
 </section>
@@ -186,7 +183,7 @@
     <h2 class="section-title">Converters</h2>
 
     <div class="card-grid">
-      <!-- converter cards -->
+      <!-- converter cards go here -->
     </div>
   </div>
 </section>
@@ -197,9 +194,11 @@
   fetch("/components/footer.html")
     .then(r => r.text())
     .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
 
+<script>
   document.addEventListener("DOMContentLoaded", () => {
-    lucide.createIcons();
+    if (window.lucide) lucide.createIcons();
   });
 </script>
 
