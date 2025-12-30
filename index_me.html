@@ -1,45 +1,399 @@
-<div class="card">
-  <div class="founder-image">
-    <img
-      src="/assets/images/profile-photo.png"
-      alt="Bita Ashoori, Data Engineer and founder of Bita Digital Hub"
-      loading="lazy"
-    />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Bita Digital Hub | Weekly Reporting for Teams</title>
+
+  <meta
+    name="description"
+    content="Weekly reporting for teams that need clarity, not more tools. Turn messy spreadsheets into clear, decision-ready reports."
+  />
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:14px;
+      --shadow:0 6px 20px rgba(2,6,23,.06);
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a { color:inherit; text-decoration:none; }
+
+    h1, h2, h3 {
+      line-height:1.25;
+      letter-spacing:-0.02em;
+      margin:.4rem 0;
+    }
+
+    p { margin:.5rem 0; color:var(--muted); }
+
+    /* ================= HEADER ================= */
+
+    .site-header {
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+
+    .header-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+    }
+
+    .brand-logo { width:28px; height:28px; }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover { color:var(--text); }
+
+    @media (max-width:700px) {
+      .header-inner { flex-direction:column; }
+    }
+
+    /* ================= MAIN ================= */
+
+    .container {
+      max-width:1100px;
+      margin:0 auto;
+      padding:3.25rem 1.25rem 4rem;
+    }
+
+    .hero {
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:2rem;
+      align-items:center;
+      margin-bottom:3.5rem;
+    }
+
+    @media (max-width:900px) {
+      .hero { grid-template-columns:1fr; text-align:center; }
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.6rem;
+      box-shadow:var(--shadow);
+    }
+
+    .kicker {
+      display:inline-block;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      background:rgba(14,165,164,.12);
+      color:#0f766e;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .hero h1 {
+      margin-top:1rem;
+      font-size:2.35rem;
+    }
+
+    .buttons {
+      display:flex;
+      gap:.75rem;
+      margin-top:1.5rem;
+      flex-wrap:wrap;
+    }
+
+    .btn {
+      padding:.8rem 1rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+    }
+
+    .btn.primary {
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
+    }
+
+    /* ================= FOUNDER ================= */
+
+    .founder-image {
+      max-width:280px;
+      margin:0 auto;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#f8fafc;
+    }
+
+    .founder-image img {
+      width:100%;
+      display:block;
+    }
+
+    .founder-caption {
+      margin-top:.75rem;
+      font-size:.95rem;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    .founder-links {
+      margin-top:.8rem;
+      display:flex;
+      justify-content:center;
+      gap:.6rem;
+    }
+
+    .founder-links a {
+      width:36px;
+      height:36px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--muted);
+      transition:all .2s ease;
+    }
+
+    .founder-links a:hover {
+      background:var(--primary);
+      color:#fff;
+      border-color:var(--primary);
+    }
+
+    .founder-links svg {
+      width:18px;
+      height:18px;
+      fill:currentColor;
+    }
+
+    /* ================= WHAT YOU GET ================= */
+
+    .deliverables {
+      margin-top:3.25rem;
+    }
+
+    .deliverables-inner {
+      max-width:950px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:2rem;
+      align-items:center;
+    }
+
+    @media (max-width:900px) {
+      .deliverables-inner { grid-template-columns:1fr; text-align:center; }
+    }
+
+    .deliverables img {
+      width:100%;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#f8fafc;
+    }
+
+    ul { padding-left:1.1rem; margin-top:.75rem; }
+    li { margin:.4rem 0; color:var(--muted); }
+
+    /* ================= WHY ================= */
+
+    .section {
+      margin-top:3.25rem;
+    }
+
+    .grid-3 {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.1rem;
+    }
+
+    @media (max-width:900px) {
+      .grid-3 { grid-template-columns:1fr; }
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      margin-top:3.75rem;
+      background:rgba(14,165,164,.1);
+      border:1px solid rgba(14,165,164,.25);
+      border-radius:var(--radius);
+      padding:2rem;
+      text-align:center;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background:#fff;
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+    }
+
+    .footer-logo { width:26px; height:26px; }
+
+    .footer-copy {
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner { flex-direction:column; text-align:center; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="brand-link">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
+      <span>Bita Digital Hub</span>
+    </a>
+
+    <nav class="site-nav">
+      <a href="/pages/landing/process.html">How it works</a>
+      <a href="/pages/landing/weekly-report.html">Weekly report</a>
+      <a href="/pages/about/about.html">About</a>
+      <a href="/pages/contact/contact.html">Contact</a>
+    </nav>
   </div>
+</header>
 
-  <p class="founder-caption">
-    Built and operated by <strong>Bita Ashoori</strong><br />
-    Data Engineer · Vancouver, Canada<br />
-    Helping teams turn raw data into clear, repeatable decisions
-  </p>
+<main class="container">
 
-  <div class="founder-links">
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24">
-        <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.32V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.34-1.85 3.57 0 4.23 2.35 4.23 5.41v6.33zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/>
-      </svg>
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- TEXT CARD -->
+    <div class="card">
+      <span class="kicker">Weekly reporting for real decisions</span>
+
+      <h1>Clear weekly reports from the data you already have</h1>
+
+      <p>
+        Most teams don’t need more dashboards.
+        They need clarity around what changed, why it matters,
+        and what to do next.
+      </p>
+
+      <p>
+        Bita Digital Hub delivers calm, structured weekly reports
+        designed for decision-making — not monitoring.
+      </p>
+
+      <div class="buttons">
+        <a href="/pages/contact/contact.html" class="btn primary">Start a conversation</a>
+        <a href="/pages/landing/process.html" class="btn">See how it works</a>
+      </div>
+    </div>
+
+    <!-- FOUNDER CARD -->
+    <div class="card">
+      <div class="founder-image">
+        <img
+          src="/assets/images/profile-photo.png"
+          alt="Bita Ashoori, Data Engineer and founder of Bita Digital Hub"
+          loading="lazy"
+        />
+      </div>
+
+      <p class="founder-caption">
+        Built and operated by <strong>Bita Ashoori</strong><br />
+        Data Engineer · Vancouver, Canada<br />
+        Turning raw data into clear, repeatable decisions
+      </p>
+
+      <div class="founder-links">
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.32V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.34-1.85 3.57 0 4.23 2.35 4.23 5.41v6.33zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M10 15.5v-7l6 3.5-6 3.5z"/></svg>
+        </a>
+        <a href="https://gumroad.com/YOUR_GUMROAD" target="_blank" aria-label="Gumroad">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index.html" class="footer-brand">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="footer-logo" />
+      <span>Bita Digital Hub</span>
     </a>
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg viewBox="0 0 24 24">
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.75 6a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 17.75 6z"/>
-      </svg>
-    </a>
-
-    <!-- YouTube -->
-    <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank" rel="noopener" aria-label="YouTube">
-      <svg viewBox="0 0 24 24">
-        <path d="M21.6 7.2a3 3 0 0 0-2.11-2.12C17.6 4.5 12 4.5 12 4.5s-5.6 0-7.49.58A3 3 0 0 0 2.4 7.2 31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.11 2.12C6.4 19.5 12 19.5 12 19.5s5.6 0 7.49-.58A3 3 0 0 0 21.6 16.8 31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
-      </svg>
-    </a>
-
-    <!-- Gumroad -->
-    <a href="https://gumroad.com/YOUR_GUMROAD" target="_blank" rel="noopener" aria-label="Gumroad">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm0 4.2a5.8 5.8 0 0 1 4.35 1.9l-1.47 1.26A3.9 3.9 0 0 0 12 8.1 3.9 3.9 0 1 0 15.6 12H12v-1.8h5.6a7.2 7.2 0 1 1-5.6-4z"/>
-      </svg>
-    </a>
+    <p class="footer-copy">
+      © Bita Digital Hub — Simple. Clear. Actionable.<br />
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
+    </p>
   </div>
-</div>
+</footer>
+
+</body>
+</html>
