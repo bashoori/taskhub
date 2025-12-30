@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Free Online Tools | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Free browser-based tools by Bita Digital Hub. SEO generators, Instagram tools, CSV cleaner, converters, and utilities. No login required."
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="/js/core/script.js" defer></script>
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0ea5a4;
+      --border:#e2e8f0;
+      --radius:14px;
+      --shadow:0 8px 22px rgba(2,6,23,.06);
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a { text-decoration:none; color:inherit; }
+
+    /* ================= LAYOUT ================= */
+
+    .section {
+      padding:4rem 1.25rem;
+    }
+
+    .container {
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    .text-center {
+      text-align:center;
+    }
+
+    /* ================= INTRO ================= */
+
+    .tool-title {
+      font-size:2.4rem;
+      letter-spacing:-0.02em;
+    }
+
+    .tool-description {
+      max-width:640px;
+      margin:1rem auto 0;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    .section-title {
+      font-size:1.6rem;
+      margin-bottom:1.5rem;
+      letter-spacing:-0.02em;
+    }
+
+    /* ================= GRID ================= */
+
+    .card-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:1.25rem;
+    }
+
+    /* ================= CARD ================= */
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.25rem;
+      display:flex;
+      gap:1rem;
+      align-items:flex-start;
+      transition:all .2s ease;
+      box-shadow:var(--shadow);
+    }
+
+    .card:hover {
+      transform:translateY(-3px);
+      border-color:rgba(14,165,164,.4);
+    }
+
+    .card.primary {
+      border-left:4px solid var(--primary);
+    }
+
+    .card.secondary {
+      border-left:4px solid #ec4899;
+    }
+
+    /* ================= ICON ================= */
+
+    .tool-icon {
+      width:42px;
+      height:42px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+      background:rgba(14,165,164,.1);
+      color:var(--primary);
+    }
+
+    .icon-blue   { background:rgba(59,130,246,.12); color:#2563eb; }
+    .icon-pink   { background:rgba(236,72,153,.12); color:#db2777; }
+    .icon-purple { background:rgba(139,92,246,.12); color:#7c3aed; }
+    .icon-orange { background:rgba(249,115,22,.12); color:#ea580c; }
+    .icon-green  { background:rgba(34,197,94,.12); color:#16a34a; }
+
+    .tool-icon i {
+      width:20px;
+      height:20px;
+    }
+
+    /* ================= CARD CONTENT ================= */
+
+    .content h3 {
+      margin:0;
+      font-size:1.05rem;
+      line-height:1.3;
+    }
+
+    .content p {
+      margin:.35rem 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width:600px) {
+      .tool-title {
+        font-size:2rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="tools-page">
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
+
+<!-- INTRO -->
+<section class="section text-center">
+  <div class="container">
+    <h1 class="tool-title">Free Online Tools</h1>
+    <p class="tool-description">
+      Simple, browser-based tools to help you write clearly,
+      generate content, and handle everyday digital tasks.
+      No signup. No friction.
+    </p>
+  </div>
+</section>
+
+<!-- GENERATORS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Generators</h2>
+
+    <div class="card-grid">
+      <a class="card primary" href="/pages/tools/generators/seo-meta-generator/">
+        <div class="tool-icon icon-blue"><i data-lucide="search"></i></div>
+        <div class="content">
+          <h3>SEO Title & Description Generator</h3>
+          <p>Explain your page clearly to search engines and humans.</p>
+        </div>
+      </a>
+
+      <a class="card secondary" href="/pages/tools/generators/instagram-bio-generator/">
+        <div class="tool-icon icon-pink"><i data-lucide="instagram"></i></div>
+        <div class="content">
+          <h3>Instagram Bio Generator</h3>
+          <p>Tell people what you do in one glance.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/generators/instagram-caption-generator/">
+        <div class="tool-icon icon-purple"><i data-lucide="edit-3"></i></div>
+        <div class="content">
+          <h3>Instagram Caption Generator</h3>
+          <p>Write captions people actually read.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/generators/hashtag-generator/">
+        <div class="tool-icon icon-orange"><i data-lucide="hash"></i></div>
+        <div class="content">
+          <h3>Hashtag Generator</h3>
+          <p>Relevant hashtags without guessing.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/generators/content-idea-generator/">
+        <div class="tool-icon icon-green"><i data-lucide="lightbulb"></i></div>
+        <div class="content">
+          <h3>Content Idea Generator</h3>
+          <p>Know what to post before you open the app.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/generators/url-shortener/">
+        <div class="tool-icon icon-blue"><i data-lucide="link"></i></div>
+        <div class="content">
+          <h3>URL Shortener</h3>
+          <p>Clean, shareable links.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/generators/qr-generator/">
+        <div class="tool-icon icon-purple"><i data-lucide="qr-code"></i></div>
+        <div class="content">
+          <h3>QR Code Generator</h3>
+          <p>Create QR codes for links and profiles.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/generators/password-generator/">
+        <div class="tool-icon icon-green"><i data-lucide="lock"></i></div>
+        <div class="content">
+          <h3>Password Generator</h3>
+          <p>Strong, random passwords instantly.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- UTILITIES -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Utilities</h2>
+
+    <div class="card-grid">
+      <a class="card" href="/pages/tools/appointments/">
+        <div class="tool-icon icon-orange"><i data-lucide="calendar"></i></div>
+        <div class="content">
+          <h3>Appointment Builder</h3>
+          <p>Create calendar-ready files and links.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/utilities/zip-unzip/">
+        <div class="tool-icon icon-purple"><i data-lucide="archive"></i></div>
+        <div class="content">
+          <h3>Zip / Unzip</h3>
+          <p>Compress and extract small archives.</p>
+        </div>
+      </a>
+
+      <a class="card" href="/pages/tools/utilities/csv-cleaner/">
+        <div class="tool-icon icon-green"><i data-lucide="table"></i></div>
+        <div class="content">
+          <h3>CSV Cleaner</h3>
+          <p>Clean and normalize messy CSV files.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERTERS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Converters</h2>
+
+    <div class="card-grid">
+      <a class="card" href="/pages/tools/converters/file-converter/">
+        <div class="tool-icon icon-blue"><i data-lucide="file"></i></div>
+        <div class="content">
+          <h3>File Converter</h3>
+          <p>Convert between common file formats.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+  });
+</script>
+
+</body>
+</html>
