@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Weekly reporting for teams that need clarity, not more tools. Turn messy spreadsheets and exports into clear, decision-ready reports."
+    content="Weekly reporting for teams that need clarity, not more tools. Turn messy spreadsheets into clear, decision-ready reports."
   />
 
   <style>
@@ -91,9 +91,7 @@
     }
 
     @media (max-width:700px) {
-      .header-inner {
-        flex-direction:column;
-      }
+      .header-inner { flex-direction:column; }
     }
 
     /* ================= MAIN ================= */
@@ -184,7 +182,46 @@
       color:var(--muted);
     }
 
-    /* ================= SECTIONS ================= */
+    /* ================= WHAT YOU GET ================= */
+
+    .deliverables {
+      margin-top:3.5rem;
+    }
+
+    .deliverables-inner {
+      max-width:1000px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:2rem;
+      align-items:center;
+    }
+
+    @media (max-width:900px) {
+      .deliverables-inner {
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+    }
+
+    .deliverables img {
+      width:100%;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:#f8fafc;
+    }
+
+    ul {
+      padding-left:1.1rem;
+      margin-top:.75rem;
+    }
+
+    li {
+      margin:.4rem 0;
+      color:var(--muted);
+    }
+
+    /* ================= WHY ================= */
 
     .section {
       margin-top:3.5rem;
@@ -197,10 +234,10 @@
     }
 
     @media (max-width:900px) {
-      .grid-3 {
-        grid-template-columns:1fr;
-      }
+      .grid-3 { grid-template-columns:1fr; }
     }
+
+    /* ================= CTA ================= */
 
     .cta {
       margin-top:4rem;
@@ -257,6 +294,7 @@
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <a href="/index.html" class="brand-link">
@@ -290,8 +328,8 @@
       </p>
 
       <p>
-        That’s exactly what your weekly report delivers —
-        calm, structured insights built from the data you already use.
+        Bita Digital Hub delivers calm, structured weekly reports
+        built from the data your team already uses.
       </p>
 
       <div class="buttons">
@@ -303,7 +341,7 @@
     <div class="card">
       <div class="founder-image">
         <img
-          src="/assets/images/bita.jpg"
+          src="/assets/images/profile-photo.png"
           alt="Bita Ashoori, Data Engineer and founder of Bita Digital Hub"
           loading="lazy"
         />
@@ -316,6 +354,38 @@
       </p>
     </div>
 
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="deliverables">
+    <div class="card">
+      <div class="deliverables-inner">
+
+        <div>
+          <img
+            src="/assets/images/weekly-report-preview.png"
+            alt="Example of a clear weekly report with key metrics and next steps"
+            loading="lazy"
+          />
+        </div>
+
+        <div>
+          <h2>What you get</h2>
+          <ul>
+            <li><strong>Weekly PDF report</strong> — easy to read and share</li>
+            <li><strong>Clean Excel / CSV data</strong> — structured and reusable</li>
+            <li><strong>Clear next-step recommendations</strong> — so decisions don’t stall</li>
+          </ul>
+
+          <p>
+            No dashboards.<br />
+            No logins.<br />
+            Just clear reporting, delivered every week.
+          </p>
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <!-- WHY -->
