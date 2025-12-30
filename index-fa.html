@@ -42,10 +42,7 @@
       margin:.5rem 0;
     }
 
-    p {
-      margin:.6rem 0;
-      color:var(--muted);
-    }
+    p { margin:.6rem 0; color:var(--muted); }
 
     /* ================= HEADER ================= */
 
@@ -153,7 +150,6 @@
       gap:.75rem;
       margin-top:1.5rem;
       flex-wrap:wrap;
-      justify-content:flex-start;
     }
 
     .btn {
@@ -170,7 +166,7 @@
       color:#fff;
     }
 
-    /* Founder image */
+    /* Founder */
 
     .founder-image {
       max-width:300px;
@@ -191,6 +187,34 @@
       font-size:.95rem;
       color:var(--muted);
       text-align:center;
+    }
+
+    .founder-links {
+      margin-top:.75rem;
+      display:flex;
+      justify-content:center;
+      gap:.6rem;
+    }
+
+    .founder-links a {
+      width:34px;
+      height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      border:1px solid var(--border);
+      font-weight:800;
+      font-size:.8rem;
+      color:var(--muted);
+      background:#fff;
+      transition:all .2s ease;
+    }
+
+    .founder-links a:hover {
+      color:#fff;
+      background:var(--primary);
+      border-color:var(--primary);
     }
 
     /* ================= WHAT YOU GET ================= */
@@ -325,6 +349,7 @@
   <!-- HERO -->
   <section class="hero">
 
+    <!-- TEXT CARD -->
     <div class="card">
       <span class="kicker">گزارش‌دهی هفتگی برای تصمیم‌های واقعی</span>
 
@@ -347,7 +372,9 @@
       </div>
     </div>
 
+    <!-- FOUNDER CARD -->
     <div class="card">
+
       <div class="founder-image">
         <img
           src="/assets/images/profile-photo.png"
@@ -361,6 +388,14 @@
         مهندس داده · ونکوور، کانادا<br />
         تبدیل داده خام به تصمیم‌های شفاف و تکرارپذیر
       </p>
+
+      <div class="founder-links">
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" aria-label="Instagram">ig</a>
+        <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank" aria-label="YouTube">yt</a>
+        <a href="https://gumroad.com/YOUR_GUMROAD" target="_blank" aria-label="Gumroad">gm</a>
+      </div>
+
     </div>
 
   </section>
