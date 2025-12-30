@@ -166,7 +166,7 @@
       color:#fff;
     }
 
-    /* Founder */
+    /* ================= FOUNDER ================= */
 
     .founder-image {
       max-width:300px;
@@ -197,17 +197,15 @@
     }
 
     .founder-links a {
-      width:34px;
-      height:34px;
-      display:flex;
+      width:36px;
+      height:36px;
+      display:inline-flex;
       align-items:center;
       justify-content:center;
       border-radius:50%;
       border:1px solid var(--border);
-      font-weight:800;
-      font-size:.8rem;
-      color:var(--muted);
       background:#fff;
+      color:var(--muted);
       transition:all .2s ease;
     }
 
@@ -215,6 +213,12 @@
       color:#fff;
       background:var(--primary);
       border-color:var(--primary);
+    }
+
+    .founder-links svg {
+      width:18px;
+      height:18px;
+      fill:currentColor;
     }
 
     /* ================= WHAT YOU GET ================= */
@@ -390,10 +394,25 @@
       </p>
 
       <div class="founder-links">
-        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" aria-label="LinkedIn">in</a>
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" aria-label="Instagram">ig</a>
-        <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank" aria-label="YouTube">yt</a>
-        <a href="https://gumroad.com/YOUR_GUMROAD" target="_blank" aria-label="Gumroad">gm</a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.32V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.34-1.85 3.57 0 4.23 2.35 4.23 5.41v6.33zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.75 6a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 17.75 6z"/></svg>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M21.6 7.2a3 3 0 0 0-2.11-2.12C17.6 4.5 12 4.5 12 4.5s-5.6 0-7.49.58A3 3 0 0 0 2.4 7.2 31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.11 2.12C6.4 19.5 12 19.5 12 19.5s5.6 0 7.49-.58A3 3 0 0 0 21.6 16.8 31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+        </a>
+
+        <!-- Gumroad -->
+        <a href="https://gumroad.com/YOUR_GUMROAD" target="_blank" rel="noopener" aria-label="Gumroad">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm0 4.2a5.8 5.8 0 0 1 4.35 1.9l-1.47 1.26A3.9 3.9 0 0 0 12 8.1 3.9 3.9 0 1 0 15.6 12H12v-1.8h5.6a7.2 7.2 0 1 1-5.6-4z"/></svg>
+        </a>
       </div>
 
     </div>
@@ -404,15 +423,9 @@
   <section class="deliverables">
     <div class="card">
       <div class="deliverables-inner">
-
         <div>
-          <img
-            src="/assets/images/clear-weekly-report.png"
-            alt="نمونه‌ای از یک گزارش هفتگی شفاف با شاخص‌های کلیدی و پیشنهاد اقدام"
-            loading="lazy"
-          />
+          <img src="/assets/images/clear-weekly-report.png" alt="نمونه گزارش هفتگی" loading="lazy" />
         </div>
-
         <div>
           <h2>چه چیزی دریافت می‌کنید</h2>
           <ul>
@@ -420,41 +433,23 @@
             <li><strong>داده تمیز Excel / CSV</strong> — ساختارمند و قابل استفاده مجدد</li>
             <li><strong>پیشنهادهای شفاف برای قدم بعدی</strong> — برای حرکت رو به جلو</li>
           </ul>
-
-          <p>
-            بدون داشبورد.<br />
-            بدون لاگین.<br />
-            فقط گزارش شفاف، هر هفته.
-          </p>
+          <p>بدون داشبورد. بدون لاگین. فقط گزارش شفاف، هر هفته.</p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- WHY -->
   <section class="section grid-3">
-    <div class="card">
-      <h3>بدون ابزار جدید</h3>
-      <p>فایل‌ها را ارسال می‌کنید؛ بقیه کار با ماست.</p>
-    </div>
-
-    <div class="card">
-      <h3>طراحی‌شده برای تصمیم‌گیری</h3>
-      <p>تمرکز بر روندها، تغییرات و اقدامات — نه ظاهر.</p>
-    </div>
-
-    <div class="card">
-      <h3>قابل اتکا هر هفته</h3>
-      <p>ریتم گزارش‌دهی منظم که می‌توانید به آن اعتماد کنید.</p>
-    </div>
+    <div class="card"><h3>بدون ابزار جدید</h3><p>فایل‌ها را ارسال می‌کنید؛ بقیه کار با ماست.</p></div>
+    <div class="card"><h3>طراحی‌شده برای تصمیم‌گیری</h3><p>تمرکز بر روندها، تغییرات و اقدامات — نه ظاهر.</p></div>
+    <div class="card"><h3>قابل اتکا هر هفته</h3><p>ریتم گزارش‌دهی منظم که می‌توانید به آن اعتماد کنید.</p></div>
   </section>
 
   <!-- CTA -->
   <section class="cta">
     <h2>آماده‌اید گزارش‌دهی هفتگی‌تان شفاف شود؟</h2>
     <p>با داده‌هایی که همین حالا دارید شروع کنید.</p>
-
     <div class="buttons" style="justify-content:center;">
       <a href="/pages/contact/contact-fa.html" class="btn primary">تماس</a>
       <a href="/pages/landing/process-fa.html" class="btn">بیشتر بدانید</a>
