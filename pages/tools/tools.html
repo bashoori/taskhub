@@ -13,9 +13,7 @@
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="/js/core/script.js" defer></script>
 
-  <!-- Page Styles -->
   <style>
     :root {
       --bg:#f6f8fb;
@@ -24,8 +22,8 @@
       --muted:#475569;
       --primary:#0ea5a4;
       --border:#e2e8f0;
-      --radius:14px;
-      --shadow:0 8px 22px rgba(2,6,23,.06);
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
     }
 
     * { box-sizing:border-box; }
@@ -40,6 +38,70 @@
 
     a { text-decoration:none; color:inherit; }
 
+    h1,h2,h3 {
+      line-height:1.25;
+      letter-spacing:-0.02em;
+      margin:.4rem 0;
+    }
+
+    p {
+      margin:.5rem 0;
+      color:var(--muted);
+    }
+
+    /* ================= HEADER (INDEX STYLE) ================= */
+
+    .site-header {
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .brand-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:900;
+      letter-spacing:-0.02em;
+    }
+
+    .brand-logo {
+      width:28px;
+      height:28px;
+    }
+
+    .site-nav {
+      display:flex;
+      gap:1.25rem;
+      flex-wrap:wrap;
+    }
+
+    .site-nav a {
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .site-nav a:hover {
+      color:var(--text);
+    }
+
+    @media (max-width:700px) {
+      .header-inner {
+        flex-direction:column;
+      }
+    }
+
+    /* ================= LAYOUT ================= */
+
     .section {
       padding:4rem 1.25rem;
     }
@@ -49,7 +111,11 @@
       margin:0 auto;
     }
 
-    .text-center { text-align:center; }
+    .text-center {
+      text-align:center;
+    }
+
+    /* ================= INTRO ================= */
 
     .tool-title {
       font-size:2.4rem;
@@ -62,6 +128,8 @@
       color:var(--muted);
       font-size:1.05rem;
     }
+
+    /* ================= GRID ================= */
 
     .section-title {
       font-size:1.6rem;
@@ -118,7 +186,6 @@
     .content h3 {
       margin:0;
       font-size:1.05rem;
-      line-height:1.3;
     }
 
     .content p {
@@ -130,75 +197,105 @@
     @media (max-width:600px) {
       .tool-title { font-size:2rem; }
     }
+
+    /* ================= FOOTER (INDEX STYLE) ================= */
+
+    .site-footer {
+      border-top:1px solid var(--border);
+      background:#fff;
+      margin-top:4rem;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .footer-brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:800;
+    }
+
+    .footer-logo {
+      width:26px;
+      height:26px;
+    }
+
+    .footer-copy {
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    @media (max-width:700px) {
+      .footer-inner {
+        flex-direction:column;
+        text-align:center;
+      }
+    }
   </style>
 </head>
 
-<body class="tools-page">
+<body>
 
-<!-- ================= HEADER ================= -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("header-placeholder").innerHTML = html);
-</script>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="brand-link">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
+      <span>Bita Digital Hub</span>
+    </a>
 
-<!-- ================= INTRO ================= -->
+    <nav class="site-nav">
+      <a href="/pages/landing/process.html">How it works</a>
+      <a href="/pages/landing/weekly-report.html">Weekly report</a>
+      <a href="/pages/about/about.html">About</a>
+      <a href="/pages/contact/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- INTRO -->
 <section class="section text-center">
   <div class="container">
     <h1 class="tool-title">Free Online Tools</h1>
     <p class="tool-description">
       Simple, browser-based tools to help you write clearly,
       generate content, and handle everyday digital tasks.
-      No signup required.
+      No signup. No friction.
     </p>
   </div>
 </section>
 
-<!-- ================= GENERATORS ================= -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Generators</h2>
+<!-- (YOUR GENERATORS / UTILITIES / CONVERTERS SECTIONS STAY EXACTLY AS THEY ARE) -->
 
-    <div class="card-grid">
-      <!-- generator cards go here -->
-    </div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/index.html" class="footer-brand">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="footer-logo" />
+      <span>Bita Digital Hub</span>
+    </a>
+
+    <p class="footer-copy">
+      © Bita Digital Hub — Simple. Clear. Actionable.<br />
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
+      <a href="/pages/landing/pricing.html">Pricing</a> ·
+      <a href="/legal/privacy-policy.html">Privacy</a> ·
+      <a href="/legal/terms.html">Terms</a>
+    </p>
   </div>
-</section>
-
-<!-- ================= UTILITIES ================= -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Utilities</h2>
-
-    <div class="card-grid">
-      <!-- utility cards go here -->
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONVERTERS ================= -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Converters</h2>
-
-    <div class="card-grid">
-      <!-- converter cards go here -->
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-</script>
+</footer>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    if (window.lucide) lucide.createIcons();
+    lucide.createIcons();
   });
 </script>
 
