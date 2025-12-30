@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Bita Digital Hub</title>
+
+  <title>About | Bita Digital Hub</title>
 
   <meta
     name="description"
-    content="Contact Bita Digital Hub to start your weekly reporting workflow. Send your files, tell us your goal, and we’ll handle the rest."
+    content="Bita Digital Hub turns messy data into clear, readable reports. Built for clarity, consistency, and better decisions."
   />
 
   <style>
@@ -34,11 +35,21 @@
 
     a { color:inherit; text-decoration:none; }
 
-   /* ================= HEADER ================= */
+    h1, h2 {
+      line-height:1.25;
+      letter-spacing:-0.02em;
+      margin:.4rem 0;
+    }
+
+    p, li {
+      color:var(--muted);
+    }
+
+    /* ================= HEADER ================= */
 
     .site-header {
-      border-bottom:1px solid var(--border);
       background:#fff;
+      border-bottom:1px solid var(--border);
     }
 
     .header-inner {
@@ -46,8 +57,8 @@
       margin:0 auto;
       padding:1.25rem;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       gap:1rem;
     }
 
@@ -61,11 +72,6 @@
     .brand-logo {
       width:28px;
       height:28px;
-    }
-
-    .brand-name {
-      font-size:1.05rem;
-      letter-spacing:-0.02em;
     }
 
     .site-nav {
@@ -83,137 +89,44 @@
       color:var(--text);
     }
 
-    .lang-btn {
-      padding:.35rem .6rem;
-      border-radius:10px;
-      background:var(--primary);
-      color:#fff;
-      font-weight:700;
-      font-size:.85rem;
-    }
-
-    
     @media (max-width:700px) {
       .header-inner {
         flex-direction:column;
       }
     }
 
-    /* ================= MAIN ================= */
+    /* ================= LAYOUT ================= */
 
-    main {
-      max-width:1000px;
+    .section {
+      padding:4rem 1.25rem;
+    }
+
+    .container {
+      max-width:900px;
       margin:0 auto;
-      padding:3rem 1.25rem 4rem;
     }
 
-    h1, h2, h3 {
-      line-height:1.25;
-      letter-spacing:-0.02em;
-      margin:.4rem 0;
-    }
-
-    p { margin:.6rem 0; color:var(--muted); }
-
-    .kicker {
-      display:inline-block;
-      padding:.35rem .75rem;
-      border-radius:999px;
-      background:rgba(14,165,164,.1);
-      color:#0f766e;
-      font-weight:700;
-      font-size:.9rem;
-    }
-
-    .grid {
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:1.25rem;
-      margin-top:1.25rem;
-    }
-
-    @media (max-width:900px) {
-      .grid { grid-template-columns:1fr; }
+    .text-center {
+      text-align:center;
     }
 
     .card {
       background:var(--card);
       border:1px solid var(--border);
       border-radius:var(--radius);
-      padding:1.6rem;
+      padding:2rem;
       box-shadow:var(--shadow);
     }
 
-    form {
-      margin-top:1rem;
-      display:grid;
-      gap:.9rem;
+    ul {
+      padding-left:1.2rem;
     }
 
-    label {
-      font-weight:700;
-      font-size:.95rem;
-      margin-bottom:.35rem;
-      display:block;
+    ul li {
+      margin:.5rem 0;
     }
 
-    input, textarea {
-      width:100%;
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:.85rem .9rem;
-      font:inherit;
-      background:#fff;
-    }
-
-    textarea {
-      min-height:140px;
-      resize:vertical;
-    }
-
-    .row {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:.9rem;
-    }
-
-    @media (max-width:650px) {
-      .row { grid-template-columns:1fr; }
-    }
-
-    .buttons {
-      display:flex;
-      gap:.75rem;
-      flex-wrap:wrap;
-      margin-top:.5rem;
-    }
-
-    .btn {
-      padding:.8rem 1rem;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-weight:800;
-      min-width:160px;
-      text-align:center;
-      cursor:pointer;
-    }
-
-    .btn.primary {
-      background:var(--primary);
-      border-color:var(--primary);
-      color:#fff;
-    }
-
-    .list {
-      margin:.75rem 0 0;
-      padding-left:1.1rem;
-    }
-
-    .list li { margin:.45rem 0; }
-
-
-   /* FOOTER */
+    /* ================= FOOTER ================= */
 
     .site-footer {
       background:#fff;
@@ -222,31 +135,49 @@
     }
 
     .footer-inner {
-      max-width:var(--max-width);
+      max-width:1100px;
       margin:0 auto;
-      padding:2rem 1.25rem;
+      padding:3rem 1.25rem;
       display:flex;
       justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      font-size:.95rem;
-      color:var(--muted);
+      align-items:flex-start;
+      gap:2rem;
     }
 
     .footer-brand {
       display:inline-flex;
       align-items:center;
-      gap:.5rem;
+      gap:.6rem;
       font-weight:800;
       color:var(--text);
     }
 
-    .footer-logo { width:28px; height:28px; }
+    .footer-logo {
+      width:26px;
+      height:26px;
+    }
+
+    .footer-copy {
+      font-size:.95rem;
+      color:var(--muted);
+      line-height:1.6;
+      max-width:520px;
+    }
+
+    .footer-copy a {
+      color:var(--text);
+      font-weight:600;
+    }
 
     @media (max-width:700px) {
       .footer-inner {
         flex-direction:column;
         text-align:center;
+        align-items:center;
+      }
+
+      .footer-copy {
+        max-width:none;
       }
     }
   </style>
@@ -254,102 +185,103 @@
 
 <body>
 
-<!-- =========================
-     HEADER
-========================== -->
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="/index.html" class="brand-link" aria-label="Bita Digital Hub home">
-      <img
-        src="/assets/icons/taskhub-logo.svg"
-        alt="Bita Digital Hub logo"
-        class="brand-logo"
-      />
-      <span class="brand-name">Bita Digital Hub</span>
+    <a href="/index.html" class="brand-link">
+      <img src="/assets/icons/taskhub-logo.svg" alt="Bita Digital Hub logo" class="brand-logo" />
+      <span>Bita Digital Hub</span>
     </a>
 
-    <nav class="site-nav" aria-label="Main navigation">
+    <nav class="site-nav">
       <a href="/pages/landing/process.html">How it works</a>
       <a href="/pages/landing/weekly-report.html">Weekly report</a>
       <a href="/pages/about/about.html">About</a>
       <a href="/pages/contact/contact.html">Contact</a>
-      <a href="/index-fa.html" class="lang-btn">FA</a>
     </nav>
   </div>
 </header>
 
-<main>
-
-<!-- =========================
-     PAGE INTRO
-========================== -->
+<!-- INTRO -->
 <section class="section text-center">
   <div class="container">
     <h1>About Bita Digital Hub</h1>
-    <p class="sub">
-      Clear thinking, honest data, and reports that help you decide what to do next.
+    <p>
+      Clear thinking beats more data.
     </p>
   </div>
 </section>
 
-<!-- =========================
-     ABOUT CONTENT
-========================== -->
+<!-- ABOUT CONTENT -->
 <section class="section">
   <div class="container">
-    <div class="card" style="max-width: 900px; margin: 0 auto;">
+    <div class="card">
 
       <h2>Why this exists</h2>
       <p>
         Most businesses don’t have a data problem.
-        They have a <strong>clarity problem</strong>.
+        They have a clarity problem.
       </p>
       <p>
-        Dashboards are everywhere.
-        Charts are endless.
-        Clear answers are rare.
+        Spreadsheets pile up.  
+        Exports arrive weekly.  
+        Dashboards multiply.
       </p>
       <p>
-        Bita Digital Hub exists to close that gap —
-        turning messy spreadsheets, exports, and raw data
-        into calm, readable weekly reports.
+        Somewhere in all that noise, decisions get harder instead of easier.
+      </p>
+      <p>
+        Bita Digital Hub exists to turn raw, messy data into something you can actually think with.
       </p>
 
       <h2>What we believe</h2>
       <ul>
         <li>Data should support decisions, not distract from them</li>
-        <li>You don’t need more tools — you need better explanations</li>
-        <li>Consistency beats complexity</li>
-        <li>A good report should take minutes to read</li>
+        <li>Consistency matters more than complexity</li>
+        <li>A good report should be readable in minutes</li>
+        <li>Trends matter more than isolated numbers</li>
+        <li>Less noise leads to better judgment</li>
       </ul>
 
       <h2>What we do</h2>
-      <ul>
-        <li>Clean and structure messy data</li>
-        <li>Explain weekly changes and trends</li>
-        <li>Deliver repeatable reports (PDF + Excel)</li>
-        <li>Highlight what matters and what doesn’t</li>
-      </ul>
-
       <p>
-        No dashboards.
-        No logins.
+        We focus on repeatable, human-readable reporting.
+      </p>
+      <ul>
+        <li>Clean and structure messy spreadsheets</li>
+        <li>Review weekly changes and patterns</li>
+        <li>Explain what moved, what didn’t, and why</li>
+        <li>Deliver simple reports in PDF and Excel</li>
+      </ul>
+      <p>
+        No dashboards.  
+        No logins.  
         No learning curve.
       </p>
 
       <h2>Who’s behind this</h2>
       <p>
-        Bita Digital Hub is built and operated by
-        <strong>Bita Ashoori</strong>,
+        Bita Digital Hub is built and run by <strong>Bita Ashoori</strong>,
         a data engineer based in Greater Vancouver, Canada.
       </p>
       <p>
-        The focus is accuracy, clarity, and usefulness —
-        not flashy visuals.
+        The focus is accuracy, clarity, and usefulness.
+        Not flashy visuals. Not buzzwords.
+      </p>
+
+      <h2>How to work together</h2>
+      <p>
+        If you have recurring data, weekly files, or reports that feel heavier than they should, this is likely a good fit.
       </p>
       <p>
+        You send the data.  
+        You explain the goal.  
+        The rest gets handled.
+      </p>
 
- </section>       
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -360,14 +292,11 @@
     </a>
 
     <p class="footer-copy">
-      © Bita Digital Hub — Simple. Clear. Actionable.
-      <br />
-      Email:
-      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
-      <br />
+      © Bita Digital Hub — Simple. Clear. Actionable.<br />
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
       <a href="/pages/landing/pricing.html">Pricing</a> ·
-      <a href="/legal/privacy-policy.html">Privacy Policy</a> ·
-      <a href="/legal/terms.html">Terms of Service</a>
+      <a href="/legal/privacy-policy.html">Privacy</a> ·
+      <a href="/legal/terms.html">Terms</a>
     </p>
   </div>
 </footer>
