@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Content Idea Generator | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Generate practical content ideas based on what you do, who it’s for, and where you post. No guessing. No fluff."
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div id="header-placeholder"></div>
+
+<!-- ================= MAIN ================= -->
+<main class="container">
+
+  <!-- ================= INTRO ================= -->
+  <section class="section text-center">
+    <h1 class="tool-title">Content Idea Generator</h1>
+
+    <p class="tool-description">
+      Never wonder what to post again.
+    </p>
+
+    <p class="tool-intro">
+      Describe what you do, who it’s for, and where you post.
+      This tool turns that into content ideas you can actually publish.
+    </p>
+  </section>
+
+  <!-- ================= TOOL ================= -->
+  <section class="section">
+    <div class="tool-card">
+
+      <label for="role">What do you do?</label>
+      <input
+        type="text"
+        id="role"
+        placeholder="e.g. Fitness coach, web designer, online store owner"
+      />
+
+      <label for="audience">Who is it for?</label>
+      <input
+        type="text"
+        id="audience"
+        placeholder="e.g. busy professionals, small business owners"
+      />
+
+      <label for="platform">Where will you post?</label>
+      <select id="platform">
+        <option value="Instagram">Instagram</option>
+        <option value="LinkedIn">LinkedIn</option>
+      />
+
+      <button class="btn primary" type="button" onclick="generateIdeas()">
+        Generate ideas
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ================= EXAMPLE ================= -->
+  <section class="section">
+    <div class="tool-example">
+      <h3>How this works</h3>
+
+      <p>
+        <strong>The situation</strong><br />
+        You want to post consistently, but every time you sit down,
+        your mind goes blank.
+      </p>
+
+      <p>
+        <strong>You enter</strong><br />
+        Fitness coach<br />
+        Busy professionals<br />
+        Instagram
+      </p>
+
+      <p>
+        <strong>You get</strong><br />
+        A short list of clear post ideas you can use immediately.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= OUTPUT ================= -->
+  <section class="section">
+    <div class="tool-output" id="output" style="display:none;">
+
+      <h3>Educational posts</h3>
+      <p id="educational"></p>
+
+      <h3>Behind-the-scenes posts</h3>
+      <p id="bts"></p>
+
+      <h3>Promotional posts</h3>
+      <p id="promo"></p>
+
+      <h3>Personal insight posts</h3>
+      <p id="personal"></p>
+
+      <button class="btn outline" type="button" onclick="copyAll()">
+        Copy all ideas
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ================= NEXT STEP ================= -->
+  <section class="section text-center">
+    <div class="tool-next">
+      <p>
+        Pick an idea and turn it into a real post.
+        <a href="/pages/tools/generators/instagram-caption-generator/">
+          Open the Caption Generator →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= ADS ================= -->
+  <section class="section">
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-section">
+    <h2>Simple tools. Clear thinking.</h2>
+
+    <p>
+      Get free tools, practical explanations, and ideas you can use.
+      Delivered once a week. No noise.
+    </p>
+
+    <div class="cta-actions">
+      <a href="/pages/auth/signup.html" class="cta-button">
+        Join the newsletter
+      </a>
+      <a href="/pages/tools/tools.html" class="cta-link">
+        Browse all free tools →
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<div id="footer-placeholder"></div>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => document.getElementById("header-placeholder").innerHTML = html);
+
+  fetch("/components/footer.html")
+    .then(r => r.text())
+    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+  });
+</script>
+
+</body>
+</html>
