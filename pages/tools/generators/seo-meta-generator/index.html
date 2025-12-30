@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Generate a clear SEO title and meta description in seconds. Built for clarity, not guesswork."
+    content="Generate clear SEO titles and meta descriptions in seconds. Built for clarity, not guesswork."
   />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,119 +27,138 @@
 </script>
 
 <!-- ================= MAIN ================= -->
-<main class="container">
+<main>
 
-  <div class="tool-wrapper">
-
-    <h1 class="tool-title">SEO Title & Description Generator</h1>
-
-    <p class="tool-description">
-      Generate SEO titles and meta descriptions that both
-      search engines and real people understand.
-    </p>
-
-    <p class="tool-intro">
-      Enter your page topic and a few details.
-      You’ll get clean, usable text in seconds.
-    </p>
-
-    <!-- ================= TOOL CARD ================= -->
-    <div class="tool-card">
-
-      <label for="topic">Page topic</label>
-      <input id="topic" type="text" placeholder="e.g. Emergency plumbing in Vancouver" />
-
-      <label for="keywords">Main keywords (optional)</label>
-      <input id="keywords" type="text" placeholder="e.g. plumber, 24/7, drain cleaning" />
-
-      <label for="brand">Brand name (optional)</label>
-      <input id="brand" type="text" placeholder="e.g. Bita Digital Hub" />
-
-      <label for="tone">Tone (optional)</label>
-      <select id="tone">
-        <option value="clear">Clear</option>
-        <option value="professional">Professional</option>
-        <option value="friendly">Friendly</option>
-        <option value="direct">Direct</option>
-      </select>
-
-      <button class="btn primary" type="button" onclick="generateSeo()">
-        Generate SEO Title & Description
-      </button>
-
-    </div>
-
-    <!-- ================= OUTPUT ================= -->
-    <div class="tool-output" id="output" style="display:none;">
-
-      <h3>SEO Title</h3>
-      <p id="titleResult"></p>
-
-      <h3>Meta Description</h3>
-      <p id="descResult"></p>
-
-      <button class="btn outline" type="button" onclick="copySeo()">
-        Copy Text
-      </button>
-    </div>
-
-    <!-- ================= NEXT STEP ================= -->
-    <div class="tool-next">
-      <p>
-        Want to use this on a real website?
-        <a href="/pages/learn/build-website.html">
-          Build your website in 30 minutes →
-        </a>
+  <!-- INTRO -->
+  <section class="section text-center">
+    <div class="container">
+      <h1 class="tool-title">SEO Title & Description Generator</h1>
+      <p class="tool-description">
+        Create SEO titles and meta descriptions that
+        search engines understand and people actually want to click.
       </p>
     </div>
+  </section>
 
-    <!-- ================= EXAMPLE ================= -->
-    <div class="tool-output" style="margin-top:2.5rem;">
+  <!-- TOOL -->
+  <section class="section">
+    <div class="container tool-wrapper">
 
-      <h3>Example</h3>
+      <div class="tool-card">
 
-      <p><strong>Input</strong></p>
-      <p>
-        <strong>Page topic:</strong> Emergency plumbing in Vancouver<br />
-        <strong>Keywords:</strong> plumber, 24/7, drain cleaning<br />
-        <strong>Brand:</strong> West Coast Plumbing<br />
-        <strong>Tone:</strong> Professional
-      </p>
+        <p class="tool-intro">
+          Enter your page topic and a few optional details.
+          You’ll get clean, usable SEO text in seconds.
+        </p>
 
-      <p><strong>Output</strong></p>
+        <label for="topic">Page topic</label>
+        <input
+          id="topic"
+          type="text"
+          placeholder="e.g. Emergency plumbing in Vancouver"
+        />
 
-      <p>
-        <strong>SEO Title</strong><br />
-        Emergency Plumbing in Vancouver | West Coast Plumbing
-      </p>
+        <label for="keywords">Main keywords (optional)</label>
+        <input
+          id="keywords"
+          type="text"
+          placeholder="e.g. plumber, 24/7, drain cleaning"
+        />
 
-      <p>
-        <strong>Meta Description</strong><br />
-        Learn what to expect from emergency plumbing in Vancouver.
-        Clear details, practical guidance, and next steps from West Coast Plumbing.
-        Keywords: plumber, 24/7, drain cleaning.
-      </p>
+        <label for="brand">Brand name (optional)</label>
+        <input
+          id="brand"
+          type="text"
+          placeholder="e.g. Bita Digital Hub"
+        />
 
-      <p class="tool-note">
-        You can paste this directly into SEO settings
-        (WordPress, Webflow, Shopify, or any site builder).
-      </p>
+        <label for="tone">Tone</label>
+        <select id="tone">
+          <option value="clear">Clear</option>
+          <option value="professional">Professional</option>
+          <option value="friendly">Friendly</option>
+          <option value="direct">Direct</option>
+        </select>
+
+        <button class="btn primary" type="button" onclick="generateSeo()">
+          Generate SEO Title & Description
+        </button>
+
+      </div>
+
+      <!-- OUTPUT -->
+      <div class="tool-output" id="output" style="display:none;">
+
+        <h3>SEO Title</h3>
+        <p id="titleResult"></p>
+
+        <h3>Meta Description</h3>
+        <p id="descResult"></p>
+
+        <button class="btn outline" type="button" onclick="copySeo()">
+          Copy text
+        </button>
+
+      </div>
+
+      <!-- EXAMPLE -->
+      <div class="tool-output">
+
+        <h3>Example</h3>
+
+        <p><strong>Input</strong></p>
+        <p>
+          Page topic: Emergency plumbing in Vancouver<br />
+          Keywords: plumber, 24/7, drain cleaning<br />
+          Brand: West Coast Plumbing<br />
+          Tone: Professional
+        </p>
+
+        <p><strong>Output</strong></p>
+
+        <p>
+          <strong>SEO Title</strong><br />
+          Emergency Plumbing in Vancouver | West Coast Plumbing
+        </p>
+
+        <p>
+          <strong>Meta Description</strong><br />
+          Learn what to expect from emergency plumbing in Vancouver.
+          Clear details, practical guidance, and next steps from West Coast Plumbing.
+          Keywords: plumber, 24/7, drain cleaning.
+        </p>
+
+        <p class="tool-note">
+          Paste this directly into your SEO settings
+          (WordPress, Webflow, Shopify, or any site builder).
+        </p>
+
+      </div>
+
+      <!-- NEXT STEP -->
+      <div class="tool-next">
+        <p>
+          Want to use this on a real site?
+          <a href="/pages/learn/build-website.html">
+            Build your website in 30 minutes →
+          </a>
+        </p>
+      </div>
+
+      <!-- ADSENSE -->
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
 
     </div>
+  </section>
 
-    <!-- ================= ADSENSE ================= -->
-    <div class="ad-container">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    </div>
-
-  </div>
-
-  <!-- ================= CTA ================= -->
+  <!-- CTA -->
   <section class="cta-section">
     <h2>Get Weekly Tools and Insights</h2>
     <p>
@@ -196,27 +215,29 @@
       return;
     }
 
-    const kwPhrase = keywords.length ? keywords.join(", ") : "";
+    const title = clampTitle(`${topic}${brand ? " | " + brand : ""}`);
 
-    let rawTitle = `${topic}${brand ? " | " + brand : ""}`;
-
-    let rawDesc;
-    if (tone === "professional") {
-      rawDesc = `Learn what to expect from ${topic}. Clear details and next steps${brand ? " from " + brand : ""}.`;
-    } else if (tone === "friendly") {
-      rawDesc = `Need help with ${topic}? Here’s a clear, simple breakdown${brand ? " — " + brand : ""}.`;
-    } else if (tone === "direct") {
-      rawDesc = `A direct overview of ${topic}. What matters and what to do next${brand ? " — " + brand : ""}.`;
-    } else {
-      rawDesc = `A clear, practical overview of ${topic}. Understand the key points fast${brand ? " — " + brand : ""}.`;
+    let desc;
+    switch (tone) {
+      case "professional":
+        desc = `Learn what to expect from ${topic}. Clear details and next steps${brand ? " from " + brand : ""}.`;
+        break;
+      case "friendly":
+        desc = `Need help with ${topic}? Here’s a clear, simple breakdown${brand ? " — " + brand : ""}.`;
+        break;
+      case "direct":
+        desc = `A direct overview of ${topic}. What matters and what to do next${brand ? " — " + brand : ""}.`;
+        break;
+      default:
+        desc = `A clear, practical overview of ${topic}. Understand the key points fast${brand ? " — " + brand : ""}.`;
     }
 
-    if (kwPhrase) {
-      rawDesc += ` Keywords: ${kwPhrase}.`;
+    if (keywords.length) {
+      desc += ` Keywords: ${keywords.join(", ")}.`;
     }
 
-    document.getElementById("titleResult").innerText = clampTitle(rawTitle);
-    document.getElementById("descResult").innerText = clampDesc(rawDesc);
+    document.getElementById("titleResult").innerText = title;
+    document.getElementById("descResult").innerText = clampDesc(desc);
     document.getElementById("output").style.display = "block";
   }
 
